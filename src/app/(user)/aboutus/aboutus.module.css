@@ -1,0 +1,182 @@
+/* hero  */
+
+.heroSection {
+  margin: 2rem 7rem;
+  padding: 4rem 0rem;
+  display: flex;
+}
+
+.heroSectionRight {
+  width: 30%;
+}
+
+.heroSectionLeft {
+  width: 70%;
+}
+/* vision section  */
+
+.headText {
+  color: black;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.despText {
+  color: gray;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.headMain {
+  color: black;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.valueSection {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  text-align: center;
+}
+
+.valueSectionOutline {
+  margin: 2rem 7rem;
+  padding: 4rem 0rem;
+}
+
+.eachBlock {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* mission and vision  */
+
+.missionSectionOutline {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 2rem 7rem;
+  column-gap: 1rem;
+  padding: 4rem 0rem;
+}
+
+.missionHead {
+  color: black;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.missiondesp {
+  color: gray;
+}
+
+.missionHeadTop {
+  background-color: #34a2dd;
+  margin-top: 1rem;
+  padding: 0.2rem;
+  font-size: 0.7rem;
+}
+
+/* team */
+
+.teamSection {
+  margin: 2rem 7rem;
+  padding: 4rem 0rem;
+}
+
+.teamInnerSection {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.teamInnerImage {
+  width: 80%;
+  height: 80%;
+  border-radius: 0.75rem;
+}
+
+.teamInnerleft {
+  width: 30%;
+}
+
+.teamInnerright {
+  width: 70%;
+}
+
+@media screen and (max-width: 1024px) {
+  .valueSection {
+    grid-template-columns: auto auto;
+    gap: 1rem;
+  }
+  .valueSectionOutline {
+    margin: 1rem 2rem;
+    padding: 2rem 0rem;
+  }
+  .missionSectionOutline {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 1rem 2rem;
+    column-gap: 0.5rem;
+    padding: 2rem 0rem;
+  }
+  .teamSection {
+    margin: 1rem 2rem;
+    padding: 2rem 0rem;
+  }
+  .heroSection {
+    margin: 1rem 2rem;
+    padding: 2rem 0rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .valueSection {
+    grid-template-columns: auto;
+    gap: 1rem;
+  }
+  .valueSectionOutline {
+    margin: 1rem 1rem;
+    padding: 1rem 0rem;
+  }
+  .missionSectionOutline {
+    grid-template-columns: auto;
+    padding: 1rem 0rem;
+  }
+  .teamSection {
+    margin: 1rem 1rem;
+    padding: 1rem 0rem;
+  }
+  .teamInnerSection {
+    display: block;
+  }
+  .teamInnerleft {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .teamInnerright {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  .teamInnerImage {
+    align-items: center;
+    width: 40%;
+    height: auto;
+  }
+  .heroSection {
+    margin: 1rem 1rem;
+    padding: 1rem 0rem;
+    display: block;
+  }
+  .heroSectionRight {
+    width: 100%;
+  }
+
+  .heroSectionLeft {
+    width: 100%;
+  }
+}

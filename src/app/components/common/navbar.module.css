@@ -1,0 +1,16 @@
+@media (max-width: 786px) {
+    .navUlMain{
+    position: absolute;
+    top: 8rem;
+    right: 20px;
+    /* background-color: black; */
+    width: 33% !important;
+
+}
+}
+
+@media (max-width: 769px) {
+    .navMain{
+        padding: 1rem 1rem;
+    }
+}

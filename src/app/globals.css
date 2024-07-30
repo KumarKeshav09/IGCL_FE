@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 0, 0, 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(2,0,36);
+background: white;
+/* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%); */
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+}
+.demo-wrap {
+  position: relative;
+}
+
+.demo-wrap:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background-image: url('/images/hero_banner8.webp');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
+
+.demo-content {
+  position: relative;
+}
+.heroLabourtext{
+  font-size: 10rem;
+  font-weight: 400;
+  /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(13,22,97,1) 0%, rgba(10,38,129,1) 47%, rgba(160,161,166,1) 100%); */
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(13,22,97,1) 0%, rgba(10,38,129,1) 47%, rgba(0,42,255,1) 100%);
+
+  -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.heroLabourImage{
+  width: 8rem;
+  height: 8rem;
+  align-self: center;
+}
+.heroCompliance{
+  display: flex;
+}
+.heroContent{
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+.image-container {
+  position: relative;
+    align-self: center;
+    height: fit-content;
+    width: fit-content !important;
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.image-container img {
+  display: block;
+  height: 4rem;
+  min-width: 7rem;
+}
+
+.image-container .hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .hover-image {
+  opacity: 1;
+}
+
+.image-container:hover .initial-image {
+  opacity: 0;
+}
+
+.contactDetail:hover{
+  color: rgb(176, 141, 94);
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@media (max-width: 1380px) {
+  .heroLabourtext{
+    font-size: 6rem;
+    font-weight: 400;
+  }
+
+  /* what we do */
+  .whatWeDoMain{
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .whatWeDoRIght{
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (max-width: 1180px) {
+  .heroContent{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .heroLabourtext{
+    font-size: 4rem;
+    font-weight: 400;
+  }
+  .heroLabourImage{
+    width: 5rem;
+    height:5rem;
+    align-self: center;
+  }
+}
+@media (max-width: 786px) {
+  .heroContent{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .heroLabourtext{
+    font-size: 4rem;
+    font-weight: 400;
+  }
+  .heroLabourImage{
+    display: none !important;
+  }
+  .heroCompliance{
+    display: block;
+  }
+  .labour{
+    margin-left: auto;
+  }
+  .law{
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .heroDesc{
+    text-align: center !important;
+  }
+  .compliance{
+    margin-left: auto;
+  }
+  .heroMoreInfo{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .whatWeDoRIght{
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  .faqs{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .heroLabourtext{
+    font-size: 3rem;
+    font-weight: 400;
+  }
+}
