@@ -31,7 +31,7 @@ export default function ServicesDetail() {
         >
           <li className="me-2" role="presentation">
             <button
-              className="inline-block p-4 border-b-2 rounded-t-lg"
+              className="inline-block p-4 border-b-2 rounded-t-lg hover:text-indigo-500"
               id="profile-tab"
               data-tabs-target="#profile"
               type="button"
@@ -44,7 +44,7 @@ export default function ServicesDetail() {
           </li>
           <li className="me-2" role="presentation">
             <button
-              className="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+              className="inline-block p-4 border-b-2 rounded-t-lg hover:text-indigo-500 hover:border-gray-300 dark:hover:text-gray-300"
               id="dashboard-tab"
               data-tabs-target="#dashboard"
               type="button"
@@ -57,7 +57,7 @@ export default function ServicesDetail() {
           </li>
           <li className="me-2" role="presentation">
             <button
-              className="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+              className="inline-block p-4 border-b-2 rounded-t-lg hover:text-indigo-500 hover:border-gray-300 dark:hover:text-gray-300"
               id="settings-tab"
               data-tabs-target="#settings"
               type="button"

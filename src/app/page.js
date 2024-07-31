@@ -786,110 +786,65 @@ The Central Government and respective State Governments have framed rules under 
                 <Slider {...clientssettings}>
                   <div className="image-container">
                     <img
-                      src="/images/clientBW1.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
-                    <img
                       src="/images/clientC1.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className="cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW2.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC2.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className="cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW3.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC3.jpg"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className="cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW4.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC4.jpg"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className="cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW5.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC5.jpg"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className="cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW6.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC6.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className="cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW7.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC7.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className="cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientC8.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC8.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className=" cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW9.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC9.jpg"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className=" cursor-pointer"
                     />
                   </div>
                   {/* <div className="image-container">
@@ -898,14 +853,9 @@ The Central Government and respective State Governments have framed rules under 
   </div> */}
                   <div className="image-container">
                     <img
-                      src="/images/clientBW11.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
-                    <img
                       src="/images/clientC11.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className=" cursor-pointer"
                     />
                   </div>
                   {/* <div className="image-container">
@@ -914,134 +864,79 @@ The Central Government and respective State Governments have framed rules under 
   </div> */}
                   <div className="image-container">
                     <img
-                      src="/images/clientBW13.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
-                    <img
                       src="/images/clientC13.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className=" cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW1.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC1.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className=" cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW2.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC2.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className=" cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW3.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC3.jpg"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className=" cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW4.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC4.jpg"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className="cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW14.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC14.jpg"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className="cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW15.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC15.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className=" cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW16.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC16.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className=" cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW17.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC17.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className="cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
-                    <img
-                      src="/images/clientBW18.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
                     <img
                       src="/images/clientC18.jpg"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className=" cursor-pointer"
                     />
                   </div>
                   <div className="image-container">
                     <img
-                      src="/images/clientBW19.png"
-                      alt="Initial Image"
-                      className="initial-image cursor-pointer"
-                    />
-                    <img
                       src="/images/clientC19.png"
                       alt="Hover Image"
-                      className="hover-image cursor-pointer"
+                      className="cursor-pointer"
                     />
                   </div>
                 </Slider>

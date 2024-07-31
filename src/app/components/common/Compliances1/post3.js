@@ -7,7 +7,7 @@ export default function CompliancesPost3() {
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <div className="">
               <div className="text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+                <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
                   Comprehensive Coverage and Benefits Under the Employee State
                   Insurance Act (ESI)
                 </h2>

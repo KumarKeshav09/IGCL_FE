@@ -106,12 +106,9 @@ export default function Contact() {
       <div>
         <section class="bg-white border-b dark:bg-gray-900">
           <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="grid grid-cols-7 md:grid-cols-7 gap-1">
-              <div className="col-span-1">
-                <p className="hidden md:block text-blue-900 font-bold">Contact Us</p>
-              </div>
-              <div class="col-span-6 max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 class="mb-4 text-2xl tracking-tight font-semibold text-gray-900 dark:text-white">
+            <div className="">
+              <div class=" text-gray-500 sm:text-lg dark:text-gray-400">
+                <h2 class="mb-4 text-2xl text-justify tracking-tight font-semibold text-gray-900 dark:text-white">
                 For inquiries or requests that require a more personal response, we will make every attempt to respond in a timely manner. Or, if you prefer to contact us by phone or please find a office near you.
                 </h2>
                 {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-2">

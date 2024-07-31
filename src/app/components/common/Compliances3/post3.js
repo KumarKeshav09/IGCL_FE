@@ -5,25 +5,20 @@ export default function CompliancesPost3() {
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="grid grid-cols-7 md:grid-cols-7 gap-1">
-              <div className="col-span-1">
-                <p className="hidden md:block text-blue-900 font-bold">
-                  Overview
-                </p>
-              </div>
-              <div className="col-span-6 max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+            <div className="">
+              <div className="text-gray-500 sm:text-lg dark:text-gray-400">
+                <h2 className="mb-4 tracking-tight text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                   Navigating Legal Obligations in Contractor Audits Under the
                   CLRA Act
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     Contractor Audit under the Contract Labour (Regulation and
                     Abolition) Act (CLRA) is a systematic examination of
                     contractors' compliance with legal requirements and
                     regulations governing the employment of contract labor.
                   </p>
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     This audit aims to ensure that contractors fulfill their
                     obligations towards contract workers, including providing
                     wages, benefits, and working conditions as mandated by law.
@@ -47,7 +42,7 @@ export default function CompliancesPost3() {
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 What to Expect
               </h1>
-              <h3 className="text-xl mb-5 font-light text-gray-800">
+              <h3 className="text-xl mb-5 lg:text-nowrap font-light text-gray-800">
                 Empowering clients with innovative solutions and unparalleled
                 support.
               </h3>
@@ -59,7 +54,7 @@ export default function CompliancesPost3() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
+            <div className="rounded-lg  dark:bg-gray-800">
               <ul
                 role="list"
                 className="space-y-4 mt-8 text-gray-500 dark:text-gray-400"
@@ -80,7 +75,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Comprehensive review of contractor agreements, ensuring
                     compliance with CLRA provisions and legal requirements.
                   </span>
@@ -101,7 +96,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Verification of contractor registration and licensing status
                     to ensure adherence to regulatory obligations.
                   </span>
@@ -122,7 +117,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Evaluation of contractor practices related to wages, working
                     hours, benefits, and other employment conditions for
                     contract laborers.
@@ -144,7 +139,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Examination of contractor's provision of amenities and
                     welfare measures as mandated by CLRA, such as health and
                     safety facilities.
@@ -166,7 +161,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assessment of contractor's compliance with record-keeping
                     and documentation requirements, including registers, wage
                     records, and other statutory filings.
@@ -188,7 +183,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Identification of any instances of non-compliance or
                     discrepancies and recommendations for corrective action.
                   </span>
@@ -209,7 +204,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     OVerification of contractor's adherence to provisions
                     regarding payment of wages, deductions, and timely disbursal
                     to contract workers.
@@ -231,7 +226,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Evaluation of contractor's implementation of grievance
                     redressal mechanisms and dispute resolution procedures for
                     contract laborers.
@@ -253,7 +248,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Provision of detailed audit reports outlining findings,
                     recommendations, and action plans for ensuring compliance
                     and improving contractor practices.

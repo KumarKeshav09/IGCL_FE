@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="footerMain w-full">
@@ -43,24 +45,24 @@ export default function Footer() {
             </h2>
             <ul className="text-gray-800 dark:text-gray-800 font-medium">
               <li className="mb-4">
-                <a href="#" className=" hover:underline">
+                <Link href="/aboutus" className=" hover:underline">
                   About
-                </a>
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Careers
-                </a>
+                <Link href="/contact" className="hover:underline">
+                  Contact 
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Brand Center
-                </a>
+                <Link href="/services" className="hover:underline">
+                  Services
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Blog
-                </a>
+                <Link href="#" className="hover:underline">
+                  Resources
+                </Link>
               </li>
             </ul>
           </div>

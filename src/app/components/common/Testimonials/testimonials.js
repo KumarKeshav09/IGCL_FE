@@ -3,18 +3,20 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styles from "./testimonial.module.css"
 
 
 const settings = {
   infinite: true,
-  speed: 500,
-  slidesToShow: 4,
+  slidesToShow: 3,
   slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 1000,
   responsive: [
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
@@ -52,7 +54,7 @@ const Testimonials = () => {
           <div className="-mx-3">
             <div className="px-16">
             <Slider {...settings} >
-              <div className="w-full h-56 mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+              <div className={`${styles.cardWidth} mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6`}>
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                     <img src="https://i.pravatar.cc/100?img=1" alt="Kenzie Edgar" />
@@ -71,7 +73,7 @@ const Testimonials = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-full h-56 mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+              <div className={`${styles.cardWidth} mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6`}>
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                     <img src="https://i.pravatar.cc/100?img=2" alt="Stevie Tifft" />
@@ -82,7 +84,7 @@ const Testimonials = () => {
                     </h6>
                   </div>
                 </div>
-                <div className="w-full h-56">
+                <div className="w-full">
                   <p className="text-sm leading-tight text-justify">
                     <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
                     We turned to ICGL Labour Law Company during a challenging time in our business. Their expertise and strategic guidance were invaluable in resolving our disputes efficiently and favorably. The attorneys at ICGL are not only knowledgeable but also approachable, making the entire process smoother. We are incredibly grateful for their support.
@@ -90,7 +92,7 @@ const Testimonials = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-full h-56 mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+              <div className={`${styles.cardWidth} mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6`}>
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                     <img src="https://i.pravatar.cc/100?img=3" alt="Tommie Ewart" />
@@ -109,7 +111,7 @@ const Testimonials = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-full h-56 mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+              <div className={`${styles.cardWidth} mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6`}>
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                     <img src="https://i.pravatar.cc/100?img=4" alt="Charlie Howse" />
@@ -123,12 +125,12 @@ const Testimonials = () => {
                 <div className="w-full">
                   <p className="text-sm leading-tight text-justify">
                     <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
-                    This Company has proven to be an invaluable partner for our business. Their deep knowledge of labor regulations and proactive approach to legal challenges have helped us maintain compliance and avoid potential issues. Their commitment to excellence and client satisfaction is truly impressive.
+                    This Company has proven to be an invaluable partner for our business. Their deep knowledge of labor regulations ,labor regulations and proactive approach to legal challenges have helped us maintain compliance and avoid potential issues. Their commitment to excellence and client satisfaction is truly impressive.
                     <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
                   </p>
                 </div>
               </div>
-              <div className="w-full h-56 mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+              <div className={`${styles.cardWidth} mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6`}>
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                     <img src="https://i.pravatar.cc/100?img=5" alt="Nevada Herbertson" />
@@ -147,7 +149,7 @@ const Testimonials = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-full h-56 mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+              <div className={`${styles.cardWidth} mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6`}>
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                     <img src="https://i.pravatar.cc/100?img=6" alt="Kris Stanton" />

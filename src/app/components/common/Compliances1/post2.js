@@ -7,7 +7,7 @@ export default function CompliancesPost2() {
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <div className="">
               <div className="text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+                <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
                   Ensuring Financial Security for Your Future with EPF
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
