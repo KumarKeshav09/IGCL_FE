@@ -12,9 +12,9 @@ export default function Navbar() {
   }, []);
   return (
     <>
-      <nav className="bg-transparent dark:bg-gray-900  w-full relative z-50 top-0 start-0">
+      <nav className=" h-32 bg-gray-100 dark:bg-gray-900  w-full relative z-50 top-0 start-0">
         <div
-          className={`${styles.navMain} max-w-screen flex flex-wrap items-center justify-between mx-auto  py-12  px-28 `}
+          className={`${styles.navMain} max-w-screen flex flex-wrap items-center justify-between mx-auto  py-4  px-28 `}
         >
           <Link
             href="/"
@@ -22,7 +22,7 @@ export default function Navbar() {
           >
             <img
               src="/images/logoWithoutBg.png"
-              className="h-20"
+              className="h-24"
               alt="IGCl Logo"
             />
           </Link>
@@ -60,8 +60,8 @@ export default function Navbar() {
                   href="/"
                   className={`${
                     pathname == "/"
-                      ? "block py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-white text-white md:text-blue-700 md:p-0 dark:text-white md:dark:text-white "
-                      : "block py-2 px-3 text-white  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                      ? "block text-lg py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-black text-black md:text-blue-700 md:p-0 dark:text-white md:dark:text-white "
+                      : "block text-lg py-2 px-3 text-black  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
                   }`}
                   aria-current="page"
                 >
@@ -73,8 +73,8 @@ export default function Navbar() {
                   href="/aboutus"
                   className={`${
                     pathname == "/aboutus"
-                      ? "block py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-white text-white md:text-blue-700 md:p-0 dark:text-white md:dark:text-white "
-                      : "block py-2 px-3 text-white  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                      ? "block text-lg py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-black text-black md:text-blue-700 md:p-0 dark:text-white md:dark:text-white "
+                      : "block text-lg py-2 px-3 text-black  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
                   }`}
                   aria-current="page"
                 >
@@ -86,8 +86,8 @@ export default function Navbar() {
                   href="/services"
                   className={`${
                     pathname == "/services"
-                      ? "block py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-white text-white md:text-blue-700 md:p-0 dark:text-white md:dark:text-white "
-                      : "block py-2 px-3 text-white  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                      ? "block text-lg py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-black text-black md:text-blue-700 md:p-0 dark:text-white md:dark:text-white "
+                      : "block text-lg py-2 px-3 text-black  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
                   }`}
                 >
                   Services
@@ -95,10 +95,30 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
+                  href="#"
+                  className={`${
+                      "block text-lg py-2 px-3 text-black  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                  }`}
+                >
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className={`${
+                      "block text-lg py-2 px-3 text-black  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                  }`}
+                >
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className={`${pathname == '/contact' 
-                    ? "block py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-blue-700 text-white md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 " :
-                    "block py-2 px-3 text-white  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"}`}
+                    ? "block text-lg py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-blue-700 text-black md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 " :
+                    "block text-lg py-2 px-3 text-black  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"}`}
                                   >
                   Contact
                 </Link>
