@@ -5,7 +5,7 @@ import Navbar from "../../components/common/navbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "../../components/common/footer";
-import { initFlowbite } from "flowbite";
+// import { initFlowbite } from "flowbite";
 import { useCallback, useEffect, useState } from "react";
 import styles from "../../services.module.css";
 import { API_BASE_URL } from "../../../../utils/constants";
@@ -16,6 +16,8 @@ export default function Contact() {
     const [Name, setName] = useState('');
     const [Email, setEmail] = useState('');
     const [Message, setMessage] = useState('');
+    const [Mobile, setMobile] = useState();
+
     const handleName = useCallback((value) => {
         console.log('value',value.target.value)
         setName(() => value.target.value);
@@ -23,6 +25,10 @@ export default function Contact() {
       const handleEmail = useCallback((value) => {
         console.log('value',value.target.value)
         setEmail(() => value.target.value);
+      }, []);
+      const handleMobile = useCallback((value) => {
+        console.log('value',value.target.value)
+        setMobile(() => value.target.value);
       }, []);
       const handleMessage = useCallback((value) => {
         console.log('value',value.target.value)
@@ -50,6 +56,9 @@ export default function Contact() {
           Email,
           Message
         }
+        if (Mobile !== '') {
+          data.Mobile = Mobile;
+        }
         try {
           const res = await fetch(`${API_BASE_URL}/contact/addContact`, {
             method: "POST",
@@ -68,6 +77,7 @@ export default function Contact() {
             setName('')
             setEmail('')
             setMessage('')
+            setMobile('')
             return {successMessage:resData};
           } else {
             toast.error(resData.error);
@@ -208,7 +218,13 @@ export default function Contact() {
                                     value={Email}
                                     onChange={handleEmail}
                                     className={`${styles.forthBoxInput2} py-3 border-b bg-transparent text-xl focus:outline-0 focus:border-white hover:border-white placeholder-gray-300 hover:placeholder-white `} />
-                            </div>
+                             <input
+                                    placeholder="Your Mobile Number"
+                                    type="number"
+                                    value={Mobile}
+                                    onChange={handleMobile}
+                                    className={`${styles.forthBoxInput2} py-3 border-0 border-b border-gray-300  appearance-none bg-transparent text-xl focus:outline-0 focus:border-white hover:border-white placeholder-gray-300 hover:placeholder-white `} />
+                           </div>
                             <textarea
                               rows="4"
                                 placeholder="Ask your question"

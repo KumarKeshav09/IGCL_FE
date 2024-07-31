@@ -5,7 +5,7 @@ import Navbar from "../../components/common/navbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "../../components/common/footer";
-import { initFlowbite } from "flowbite";
+// import { initFlowbite } from "flowbite";
 import { useEffect } from "react";
 import styles from "../../services.module.css";
 
