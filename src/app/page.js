@@ -12,6 +12,7 @@ import styles from "./services.module.css";
 import { API_BASE_URL } from "../../utils/constants";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Testimonials from "./components/common/Testimonials/testimonials";
 export default function Home() {
   const [Name, setName] = useState('');
   const [Email, setEmail] = useState('');
@@ -270,14 +271,14 @@ export default function Home() {
                   We Provide the Best Facilities for Your Business
                 </h1>
                 <p className="mb-8 text-lg text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
-                  IGCL India provides outstanding and unsurpassed service that,
+                  IGCL INDIA provides outstanding and unsurpassed service that,
                   together, delivers premium values to our customers. Since
                   then, IGCL INDIA has been diversified into multiple business
                   domains hence words fall short to describe the enthusiasm and
                   working profile of our corporation.
                 </p>
                 <p className="mb-8 mt-4 text-lg text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
-                  At IGCL India, we believe in treating people the way they want
+                  At IGCL INDIA, we believe in treating people the way they want
                   to be treated, with friendliness, calmness, and respect. Our
                   success is not only due to the quality of our work, It’s due
                   to our attitude, our approach, and the way we treat our
@@ -529,7 +530,7 @@ The Central Government and respective State Governments have framed rules under 
       </div>
 
       {/* Testimonials */}
-      <div className="min-w-screen  flex items-center justify-center py-5">
+      {/* <div className="min-w-screen  flex items-center justify-center py-5">
         <div className="w-full border-b border-gray-200 px-5 py-5 md:py-5 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
@@ -739,7 +740,9 @@ The Central Government and respective State Governments have framed rules under 
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <Testimonials />
 
 
       {/* Clients */}

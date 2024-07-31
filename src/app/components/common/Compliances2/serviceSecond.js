@@ -22,7 +22,7 @@ const Compliances2 = () => {
             onClick={() => handleTabChange("profile")}
             className={`inline-flex items-center px-4 py-3 rounded-lg w-full ${
               activeTab === "profile"
-                ? "text-white bg-blue-700 dark:bg-blue-600"
+                ? "text-white bg-indigo-500 dark:bg-indigo-500"
                 : "bg-gray-50 text-gray-500 dark:bg-gray-800 dark:text-gray-400"
             }`}
           >
@@ -34,7 +34,7 @@ const Compliances2 = () => {
             onClick={() => handleTabChange("dashboard")}
             className={`inline-flex items-center px-4 py-3 rounded-lg w-full ${
               activeTab === "dashboard"
-                ? "text-white bg-blue-700 dark:bg-blue-600"
+                ? "text-white bg-indigo-500 dark:bg-indigo-500"
                 : "bg-gray-50 text-gray-500 dark:bg-gray-800 dark:text-gray-400"
             }`}
           >
@@ -46,7 +46,7 @@ const Compliances2 = () => {
             onClick={() => handleTabChange("settings")}
             className={`inline-flex items-center px-4 py-3 rounded-lg w-full ${
               activeTab === "settings"
-                ? "text-white bg-blue-700 dark:bg-blue-600"
+                ? "text-white bg-indigo-500 dark:bg-indigo-500"
                 : "bg-gray-50 text-gray-500 dark:bg-gray-800 dark:text-gray-400"
             }`}
           >
@@ -58,7 +58,7 @@ const Compliances2 = () => {
             onClick={() => handleTabChange("contact")}
             className={`inline-flex items-center px-4 py-3 rounded-lg w-full ${
               activeTab === "contact"
-                ? "text-white bg-blue-700 dark:bg-blue-600"
+                ? "text-white bg-indigo-500 dark:bg-indigo-500"
                 : "bg-gray-50 text-gray-500 dark:bg-gray-800 dark:text-gray-400"
             }`}
           >
@@ -70,7 +70,7 @@ const Compliances2 = () => {
             onClick={() => handleTabChange("about")}
             className={`inline-flex items-center px-4 py-3 rounded-lg w-full ${
               activeTab === "about"
-                ? "text-white bg-blue-700 dark:bg-blue-600"
+                ? "text-white bg-indigo-500 dark:bg-indigo-500"
                 : "bg-gray-50 text-gray-500 dark:bg-gray-800 dark:text-gray-400"
             }`}
           >

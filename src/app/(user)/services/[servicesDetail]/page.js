@@ -15,16 +15,16 @@ export default function ServicesDetail() {
   return (
     <main className="">
       <Navbar />
-      <div className="-mt-44">
+      {/* <div className="-mt-44">
         <section className="bg-top h-62 bg-no-repeat bg-[url('/images/hero_banner5.jpg')] bg-top bg-gray-100 bg-blend-multiply">
           <div className="heroContent mx-auto max-w-screen text-center py-44 lg:py-44"></div>
         </section>
-      </div>
+      </div> */}
 
       <div className={`mb-4 border-b border-gray-200 dark:border-gray-700`}>
-        
+
         <ul
-          className={`${styles.navBar} flex flex-wrap -mb-px text-sm font-medium text-center`}
+          className={`${styles.navBar} pl-16 flex flex-wrap -mb-px text-sm font-medium text-center`}
           id="default-tab"
           data-tabs-toggle="#default-tab-content"
           role="tablist"

@@ -5,15 +5,11 @@ export default function CompliancesPost4() {
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="grid grid-cols-7 md:grid-cols-7 gap-1">
-              <div className="col-span-1">
-                <p className="hidden md:block text-blue-900 font-bold">
-                  Overview
-                </p>
-              </div>
-              <div className="col-span-6 max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
+            <div className="">
+              <div className="text-gray-500 sm:text-lg dark:text-gray-400">
                 <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
-                Navigating Legal Obligations Under the Prevention of Sexual Harassment (POSH) Act
+                  Navigating Legal Obligations Under the Prevention of Sexual
+                  Harassment (POSH) Act
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">

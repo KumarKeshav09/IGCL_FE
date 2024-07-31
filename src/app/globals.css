@@ -29,6 +29,10 @@ background: white;
     )
     rgb(var(--background-start-rgb)); */
 }
+.slick-prev:before, .slick-next:before {
+  color: black !important;
+}
+
 .demo-wrap {
   position: relative;
 }
