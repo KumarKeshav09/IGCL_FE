@@ -4,7 +4,7 @@ import styles from "./aboutus.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { initFlowbite } from "flowbite";
+// import { initFlowbite } from "flowbite";
 import { useEffect } from "react";
 import Footer from "@/app/components/common/footer";
 import Testimonials from "@/app/components/common/Testimonials/testimonials";
