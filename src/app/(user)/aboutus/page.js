@@ -51,11 +51,11 @@ export default function aboutUs() {
   return (
     <>
       <Navbar />
-      <div className="-mt-44">
+      {/* <div className="-mt-44">
         <section className="bg-top h-62 bg-no-repeat bg-[url('/images/hero_banner5.jpg')] bg-top bg-gray-100 bg-blend-multiply">
           <div className="heroContent mx-auto max-w-screen text-center py-44 lg:py-44"></div>
         </section>
-      </div>
+      </div> */}
       <div className={`${styles.heroSection}`} >
         <div className={`${styles.heroSectionLeft} pr-10`}>
           <h1 className={`${styles.heroMain}`}>About ICGL</h1>

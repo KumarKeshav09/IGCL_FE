@@ -51,12 +51,19 @@ background: white;
 .demo-content {
   position: relative;
 }
+.heroImage{
+  height: 52rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .heroLabourtext{
-  font-size: 10rem;
-  font-weight: 400;
+  font-size: 7rem;
+  /* font-weight: 400; */
   /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(13,22,97,1) 0%, rgba(10,38,129,1) 47%, rgba(160,161,166,1) 100%); */
-  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(13,22,97,1) 0%, rgba(10,38,129,1) 47%, rgba(0,42,255,1) 100%);
-
+  /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(13,22,97,1) 0%, rgba(10,38,129,1) 47%, rgba(0,42,255,1) 100%); */
+  background: linear-gradient(90deg, rgb(144 125 125) 0%, rgb(102 118 255) 0%, rgb(27 68 202) 47%, rgba(160, 161, 166, 1) 100%);
+ 
   -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -130,20 +130,33 @@ export default function Home() {
       <ToastContainer />
       <Navbar />
       {/* hero section */}
-      <div className="-mt-44">
+      <div className="">
         {/* <Slider {...herosettings}> */}
         {/* bg-[url('/images/hero_banner8.webp')] */}
-          <section className="bg-center demo-wrap h-screen bg-no-repeat  bg-cover bg-gray-100 bg-blend-multiply">
+        
+
+<section className="heroImage bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
+    <div className="px-2 mx-auto max-w-screen-xl text-center">
+        <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">YOUR COMPLIANCE, </h1>
+        <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white ">   OUR PRIORITY</h1>
+        {/* <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">Your Compliance, </h1>
+        <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white ">   Our Priority</h1> */}
+        <p className="mb-12 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">IGCL INDIA has been diversified into multiple business domains hence words fall short to describe the enthusiasm and working profile of our corporation.</p>
+        <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+           
+            <a href="#" className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                More info
+            </a>  
+        </div>
+    </div>
+</section>
+
+          {/* <section className="bg-center demo-wrap h-screen bg-no-repeat  bg-cover bg-gray-100 bg-blend-multiply">
             <div className="demo-content heroContent mx-auto max-w-screen text-center py-44 lg:py-44">
               <div className="flex w-fit labour mr-auto">
                 <h1 className="mb-4 heroLabourtext  tracking-tight leading-none text-gray-900 ">
                 YOUR 
                 </h1> 
-                {/* <img
-                  className="heroLabourImage rounded-sm ml-4"
-                  src="/images/hero_labourNew.jpg"
-                  alt="labour"
-                /> */}
               </div>
               <div className="w-fit law">
                 <h1 className="mb-4 heroLabourtext  tracking-tight leading-none text-gray-900 ">
@@ -156,11 +169,6 @@ export default function Home() {
                   COMPANION
                   </h1>
                 </div>
-                {/* <img
-                  className="heroLabourImage rounded-sm ml-4"
-                  src="/images/hero_labourNew.jpg"
-                  alt="labour"
-                /> */}
               </div>
               <div className="mt-auto mt-4 mr-auto ml-4">
                 <div>
@@ -178,7 +186,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
           {/* <section className="bg-center h-screen bg-no-repeat bg-[url('/images/hero_labourNew.jpg')] bg-gray-700 bg-blend-multiply">
             <div className="heroContent mx-auto max-w-screen text-center py-44 lg:py-44">
               <div className="flex w-fit labour mr-auto">

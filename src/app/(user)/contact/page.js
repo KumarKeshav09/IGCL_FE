@@ -83,13 +83,13 @@ export default function Contact() {
               <ToastContainer />
 
              <Navbar />
-             <div className="-mt-44">
+             {/* <div className="-mt-44">
           <section className="bg-top h-62 bg-no-repeat bg-[url('/images/hero_banner5.jpg')] bg-top bg-gray-100 bg-blend-multiply">
             <div className="heroContent mx-auto max-w-screen text-center py-44 lg:py-44">
               
             </div>
           </section>
-          </div>
+          </div> */}
 
          
            {/* overview */}

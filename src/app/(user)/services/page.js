@@ -15,13 +15,13 @@ export default function Services() {
     return (
         <main className="">
              <Navbar />
-             <div className="-mt-44">
-          <section className="bg-top h-62 bg-no-repeat bg-[url('/images/hero_banner5.jpg')] bg-top bg-gray-100 bg-blend-multiply">
+             {/* <div className="-mt-44"> */}
+          {/* <section className="bg-top h-62 bg-no-repeat bg-[url('/images/hero_banner5.jpg')] bg-top bg-gray-100 bg-blend-multiply">
             <div className="heroContent mx-auto max-w-screen text-center py-44 lg:py-44">
               
             </div>
-          </section>
-          </div>
+          </section> */}
+          {/* </div> */}
              <div className="min-w-screen border-b flex items-center justify-center py-5">
         <div className="w-full  border-gray-200 md:px-12 px-5  py-16 md:py-24 ">
           <div className="w-full mx-auto">
