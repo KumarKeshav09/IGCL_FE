@@ -3,13 +3,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./navbar.module.css";
 import { useEffect } from "react";
-import { initFlowbite } from "flowbite";
+// import { initFlowbite } from "flowbite";
 
 export default function Navbar() {
   const pathname = usePathname();
   useEffect(() => {
-    initFlowbite(); // Call initCarousels() when component mounts
+    // Import Flowbite only on the client side
+    import('flowbite').then((module) => {
+      const { initFlowbite } = module;
+      initFlowbite();
+    });
   }, []);
+  
   return (
     <>
       <nav className=" h-32 bg-gray-100 dark:bg-gray-900  w-full relative z-50 top-0 start-0">
@@ -84,6 +89,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/services"
+                  id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
                   className={`${
                     pathname == "/services"
                       ? "block text-lg py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-black text-black md:text-blue-700 md:p-0 dark:text-white md:dark:text-white "
@@ -92,6 +98,22 @@ export default function Navbar() {
                 >
                   Services
                 </Link>
+                <div id="dropdownHover" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+    <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+      <li>
+        <Link href="/services/1" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Labour Law Compliances</Link>
+      </li>
+      <li>
+        <Link href="/services/1" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Environment Social and Governance</Link>
+      </li>
+      <li>
+        <Link href="/services/1" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Training & Consultancy</Link>
+      </li>
+      <li>
+        <Link href="/services/1" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Staffing Solution</Link>
+      </li>
+    </ul>
+</div>
               </li>
               <li>
                 <Link

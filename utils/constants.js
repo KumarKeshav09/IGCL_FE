@@ -1,1 +1,2 @@
-export const API_BASE_URL = "http://localhost:2000/v1";
+export const API_BASE_URL = "https://igcl.onrender.com/v1";
+// export const API_BASE_URL = "http://localhost:2000/v1";
