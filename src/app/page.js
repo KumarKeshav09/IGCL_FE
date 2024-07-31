@@ -414,14 +414,14 @@ export default function Home() {
                         className="border-none  text-gray-800 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
-                        Lorem ipsum dolor sit amet consectetur adipisicing?
+                        What is labour law compliance? 
                       </Accordion.Title>
                       <Accordion.Content
                         className="border-none text-gray-800 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                         <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
-                          Lorem ipsum dolor sit amet consectetur adipisicing.
+                        Labour law compliance involves adhering to all applicable labour laws and regulations to protect employees' rights and welfare.
                         </p>
                       </Accordion.Content>
                     </section>
@@ -432,14 +432,14 @@ export default function Home() {
                         className="border-none  text-gray-800 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
-                        Lorem ipsum dolor sit amet consectetur adipisicing?
+                      Why is labour law compliance important for businesses? 
                       </Accordion.Title>
                       <Accordion.Content
                         className="border-none text-gray-800 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                         <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
-                          Lorem ipsum dolor sit amet consectetur adipisicing.
+                        Compliance helps businesses avoid legal penalties, improve employee satisfaction, and maintain a positive reputation. It ensures a safe and fair working environment.
                         </p>
                       </Accordion.Content>
                     </section>
@@ -450,14 +450,65 @@ export default function Home() {
                         className="border-none  text-gray-800 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
-                        Lorem ipsum dolor sit amet consectetur adipisicing?
+                        How can businesses ensure labour law compliance? 
                       </Accordion.Title>
                       <Accordion.Content
                         className="border-none text-gray-800 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                         <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
-                          Lorem ipsum dolor sit amet consectetur adipisicing.
+                        Businesses can ensure compliance by staying updated with legal changes, maintaining proper records, conducting regular audits, and seeking professional advice from compliance experts.
+                        </p>
+                      </Accordion.Content>
+                    </section>
+                  </Accordion.Panel>
+                  <Accordion.Panel className=" border border-b border-gray-200">
+                    <section className=" border-b border-gray-200">
+                      <Accordion.Title
+                        className="border-none  text-gray-800 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                      >
+                      What are the various categories of labour laws in India? 
+                      </Accordion.Title>
+                      <Accordion.Content
+                        className="border-none text-gray-800 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                      >
+                        <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        Labour laws in India can be categorised as follows: (i) industrial relations, (ii) industrial safety and health, (iii) child and women labour, (iv) social security, (v) wages, and (vi) labour welfare. 
+                        </p>
+                      </Accordion.Content>
+                    </section>
+                  </Accordion.Panel>
+                  <Accordion.Panel className=" border border-b border-gray-200">
+                    <section className=" border-b border-gray-200">
+                      <Accordion.Title
+                        className="border-none  text-gray-800 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                      >
+                    	What are the important labour and employment laws typically applicable to businesses in India?
+                      </Accordion.Title>
+                      <Accordion.Content
+                        className="border-none text-gray-800 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                      >
+                        <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        Some of the important labour laws which should be considered while setting up and operating a business in India are as follows:
+(i) Factories Act, 1948
+(ii) Industrial Dispute Act, 1947
+(iii) Shops and Establishment Act as framed by respective State Governments
+(iv) Minimum Wages Act, 1948
+(v) Payment of Wages Act, 1936
+(vi) Payment of Bonus Act, 1965
+(vii) Contract Labour (Regulation and Prohibition) Act, 1970
+(viii) Employees Provident Fund and Miscellaneous Provisions Act, 1952
+(ix) Employees’ State Insurance Act, 1948
+(x) Payment of Gratuity Act, 1965
+(xi) Equal Remuneration Act, 1976
+(xii) Maternity Benefit Act, 1961
+(xiii) Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013
+The Central Government and respective State Governments have framed rules under the above-mentioned laws.
+
                         </p>
                       </Accordion.Content>
                     </section>
@@ -506,10 +557,7 @@ export default function Home() {
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quos sunt ratione dolor exercitationem minima quas itaque
-                      saepe quasi architecto vel! Accusantium, vero sint
-                      recusandae cum tempora nemo commodi soluta deleniti.
+                      Company has been a game-changer for our organization. Their deep understanding of labor laws and exceptional legal advice have helped us navigate complex employment issues with ease. Their team is professional, responsive, and always goes above and beyond to ensure our needs are met. Highly recommended!
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
@@ -532,9 +580,7 @@ export default function Home() {
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum, dolor sit amet, consectetur adipisicing elit.
-                      Dolore quod necessitatibus, labore sapiente, est,
-                      dignissimos ullam error ipsam sint quam tempora vel.
+                      We turned to ICGL Labour Law Company during a challenging time in our business. Their expertise and strategic guidance were invaluable in resolving our disputes efficiently and favorably. The attorneys at ICGL are not only knowledgeable but also approachable, making the entire process smoother. We are incredibly grateful for their support.
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
@@ -557,9 +603,7 @@ export default function Home() {
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Vitae, obcaecati ullam excepturi dicta error deleniti
-                      sequi.
+                      Working with this company has been an outstanding experience. Their legal team is exceptionally skilled and well-versed in all aspects of labor law. They have consistently provided us with accurate and practical legal solutions. Their dedication to their clients is evident in the quality of their work. We highly recommend their services.
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
@@ -583,11 +627,7 @@ export default function Home() {
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Architecto inventore voluptatum nostrum atque, corrupti,
-                      vitae esse id accusamus dignissimos neque reprehenderit
-                      natus, hic sequi itaque dicta nisi voluptatem! Culpa,
-                      iusto.
+                     This Company has proven to be an invaluable partner for our business. Their deep knowledge of labor regulations and proactive approach to legal challenges have helped us maintain compliance and avoid potential issues. Their commitment to excellence and client satisfaction is truly impressive.
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
@@ -611,11 +651,7 @@ export default function Home() {
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nobis, voluptatem porro obcaecati dicta, quibusdam sunt
-                      ipsum, laboriosam nostrum facere exercitationem pariatur
-                      deserunt tempora molestiae assumenda nesciunt alias eius?
-                      Illo, autem!
+                      They offers unparalleled legal expertise and exceptional client service. Their attorneys are not only highly skilled but also genuinely care about the well-being of their clients. They have helped us successfully navigate numerous labor-related matters, and we couldn't be more satisfied with their services.
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
@@ -638,8 +674,7 @@ export default function Home() {
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Voluptatem iusto, explicabo, cupiditate quas totam!
+                      This Company has been instrumental in guiding us through complex employment regulations and labor disputes. Their prompt and insightful advice has saved us time and resources. The team’s professionalism and commitment to our success make them an invaluable partner. We trust ICGL completely with our labor law needs.
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
