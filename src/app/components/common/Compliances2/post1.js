@@ -15,15 +15,15 @@ export default function CompliancesPost1() {
                 <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
                 Ensuring Adherence to Regulations for Shops and Commercial Establishments
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  <p className="mb-4 font-medium">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     Shop and Establishment Compliances refer to the regulatory
                     obligations that businesses operating within commercial
                     establishments must adhere to. These regulations typically
                     cover aspects such as working hours, holidays, wages, and
                     conditions of work for employees.
                   </p>
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     These compliances are established under the Shop and
                     establishment act 1958. Compliance ensures that businesses
                     operate within the legal framework set by local authorities,
@@ -78,7 +78,7 @@ export default function CompliancesPost1() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Registration assistance for Shop and Establishment
                     compliance with local authorities.
                   </span>
@@ -99,7 +99,7 @@ export default function CompliancesPost1() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Guidance on maintaining records and documentation required
                     by Shop and Establishment regulations.
                   </span>
@@ -120,7 +120,7 @@ export default function CompliancesPost1() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Support in understanding and implementing working hour
                     regulations, including overtime and rest intervals.
                   </span>
@@ -141,7 +141,7 @@ export default function CompliancesPost1() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in ensuring compliance with rules regarding
                     holidays, leave entitlements, and employee welfare measures.
                   </span>
@@ -162,7 +162,7 @@ export default function CompliancesPost1() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Advisory services on wage calculations, minimum wages, and
                     timely payment to employees.
                   </span>
@@ -183,7 +183,7 @@ export default function CompliancesPost1() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Ongoing compliance monitoring and updates to ensure
                     adherence to evolving Shop and Establishment regulations.
                   </span>
@@ -216,7 +216,7 @@ export default function CompliancesPost1() {
               </div>
             </div>
             <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
-              <ul className="list-disc mt-8 text-gray-500">
+              <ul className="list-disc text-gray-500 text-justify text-lg lg:text-xl">
                 <li>
                   Shop and Establishment Compliances are applicable to various
                   commercial establishments, including shops, offices, eateries,

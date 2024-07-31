@@ -16,7 +16,7 @@ export default function CompliancesPost3() {
                 Comprehensive Coverage and Benefits Under the Employee State Insurance Act (ESI)
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     The Employees' State Insurance Corporation (ESIC) Act is a
                     social security legislation enacted in India to provide
                     comprehensive benefits to employees and their dependents. It
@@ -75,7 +75,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                   Providing day-to-day consultancy on matters pertaining to ESI
                   </span>
                 </li>
@@ -95,7 +95,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                   Update all eligible employees’ personal and family details on the ESI Portal for various benefits under the ESI Scheme and maintain Form 1
                   </span>
                 </li><li className="flex space-x-2 rtl:space-x-reverse items-center">
@@ -114,7 +114,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                   Arrange and issue the ESIC card to all such eligible employees covered under the ESIC 
                   </span>
                 </li><li className="flex space-x-2 rtl:space-x-reverse items-center">
@@ -133,7 +133,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                   Guide employers as well as employees to get proper benefits available under the ESI Scheme 
                   </span>
                 </li><li className="flex space-x-2 rtl:space-x-reverse items-center">
@@ -152,7 +152,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                   Consulting on Monthly ESI contribution and remittance 
                   </span>
                 </li>
@@ -172,7 +172,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">Prepare & maintain the inspection book, accident book, and other various forms</span>
+                  <span className="leading-tight text-justify text-lg lg:text-xl">Prepare & maintain the inspection book, accident book, and other various forms</span>
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
@@ -190,7 +190,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">Ensure timely compliance and smooth working of the clients with ownership concept.</span>
+                  <span className="leading-tight text-justify text-lg lg:text-xl">Ensure timely compliance and smooth working of the clients with ownership concept.</span>
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
@@ -208,7 +208,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                   Replying & Stratifying show cause notice issued under the ESI Act. 
                   </span>
                 </li>
@@ -239,8 +239,8 @@ export default function CompliancesPost3() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
-              <p className="mb-3 text-gray-500 dark:text-gray-400">
+            <div className=" p-4  rounded-lg md:p-2 dark:bg-gray-800">
+              <p className="mb-3 text-gray-500 dark:text-gray-400 text-justify text-lg lg:text-xl">
                 The ESI scheme is applicable to all factories and other
                 establishments as defined in the Act with 10 or more persons
                 employed in such establishments and the beneficiaries’ monthly

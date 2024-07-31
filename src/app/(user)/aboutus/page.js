@@ -57,9 +57,9 @@ export default function aboutUs() {
         </section>
       </div>
       <div className={`${styles.heroSection}`} >
-        <div className={`${styles.heroSectionLeft}`}>
-          <h1 className="text-black font-semibold text-2xl mb-2">About ICGL</h1>
-          <p className="text-gray-600">
+        <div className={`${styles.heroSectionLeft} pr-10`}>
+          <h1 className={`${styles.heroMain}`}>About ICGL</h1>
+          <p className={`${styles.despText} text-justify`}>
             Innovative Governance Corporation Limited (IGCL INDIA) is a public
             limited corporation, set up under “The Companies Act 2013” of the
             Ministry of Corporate Affairs, Government of INDIA having its
@@ -91,34 +91,33 @@ export default function aboutUs() {
           <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
         </div>
         <div className={`${styles.valueSection}`}>
-          <div className={`${styles.eachBlock}`}>
-            <img src="../../images/talent.png" width={60} height={60} />
-            <h1 className={`${styles.headText} mt-2`}>Success</h1>
-            <p className={`${styles.despText}`}>
-              We are committed to ensuring that our advice and recommendations
-              are based on the best combination of methods, information
-              research, creativity and internal quality assurance.
+        <div className={`${styles.eachBlock}`}>
+            <img src="../../images/people-roof1.png" width={60} height={60} />
+            <h1 className={`${styles.headText} mt-2`}>Family</h1>
+            <p className={`${styles.despText} text-justify `}>
+              We are stronger because of our network of diverse peers, mentors,
+              organizations, and communities.
             </p>
           </div>
           <div className={`${styles.eachBlock}`}>
-            <img src="../../images/bulb.png" width={60} height={60} />
+            <img src="../../images/bulb1.png" width={60} height={60} />
             <h1 className={`${styles.headText} mt-2`}>Innovation</h1>
-            <p className={`${styles.despText}`}>
+            <p className={`${styles.despText} text-justify`}>
               We love trying new things to run more effectively and efficiently.
             </p>
           </div>
           <div className={`${styles.eachBlock}`}>
-            <img src="../../images/store-buyer.png" width={60} height={60} />
+            <img src="../../images/store-buyer1.png" width={60} height={60} />
             <h1 className={`${styles.headText} mt-2`}>Ownership</h1>
-            <p className={`${styles.despText}`}>
+            <p className={`${styles.despText} text-justify`}>
               We take initiative and responsibility for projects to achieve
               positive client results and social impact.
             </p>
           </div>
           <div className={`${styles.eachBlock}`}>
-            <img src="../../images/customer.png" width={60} height={60} />
+            <img src="../../images/customer1.png" width={60} height={60} />
             <h1 className={`${styles.headText} mt-2`}>Happy Customer</h1>
-            <p className={`${styles.despText}`}>
+            <p className={`${styles.despText} text-justify`}>
               Our customers are assured about the confidentiality and uniqueness
               of the service they are provided. Every client is reassured by the
               fact that the service provided to them is made-to-measure and will
@@ -126,17 +125,18 @@ export default function aboutUs() {
             </p>
           </div>
           <div className={`${styles.eachBlock}`}>
-            <img src="../../images/people-roof.png" width={60} height={60} />
-            <h1 className={`${styles.headText} mt-2`}>Family</h1>
-            <p className={`${styles.despText}`}>
-              We are stronger because of our network of diverse peers, mentors,
-              organizations, and communities.
+            <img src="../../images/talent1.png" width={60} height={60} />
+            <h1 className={`${styles.headText} mt-2`}>Success</h1>
+            <p className={`${styles.despText} text-justify`}>
+              We are committed to ensuring that our advice and recommendations
+              are based on the best combination of methods, information
+              research, creativity and internal quality assurance.
             </p>
           </div>
           <div className={`${styles.eachBlock}`}>
-            <img src="../../images/trust-alt.png" width={60} height={60} />
+            <img src="../../images/trust-alt1.png" width={60} height={60} />
             <h1 className={`${styles.headText} mt-2`}>Trust</h1>
-            <p className={`${styles.despText}`}>
+            <p className={`${styles.despText} text-justify`}>
               Our customers are the heart of all we do; we strive to deliver the
               best. We appreciate the trust that our clients put in us as we
               work with them to improve their business.
@@ -155,7 +155,7 @@ export default function aboutUs() {
             </span>
           </p>
           <h1 className={`${styles.missionHead}`}>Our Mission</h1>
-          <p className={`${styles.missiondesp}`}>
+          <p className={`${styles.missiondesp} text-justify`}>
             Led by energetic and experienced professionals, we use a dedicated
             business approach to produce innovative and strategic, yet
             affordable, solutions and result oriented service which helps
@@ -169,7 +169,7 @@ export default function aboutUs() {
             </span>
           </p>
           <h1 className={`${styles.missionHead}`}>Our Vision</h1>
-          <p className={`${styles.missiondesp}`}>
+          <p className={`${styles.missiondesp} text-justify`}>
             To be recognized as a key provider of strategic consulting for the
             development and execution of growth strategies across the world.
           </p>
@@ -192,8 +192,8 @@ export default function aboutUs() {
             <img className={`${styles.teamInnerImage}`} src="../../images/person1.jpg" />
           </div>
           <div className={`${styles.teamInnerright}`}>
-            <h1 className="text-black font-semibold text-xl">Dr Vijay Vyas</h1>
-            <p className="text-gray-600">Welcome to Innovative Governance Corporation Limited (IGCL INDIA), where we specialize in navigating the complex terrain of labor law with precision and expertise. As the Director of this esteemed consultancy, I am proud to lead a team dedicated to providing unparalleled support and guidance to businesses across industries. Our mission is to empower organizations with the knowledge and strategies needed to thrive while upholding the highest standards of legal compliance. At IGCL INDIA, we believe that proactive compliance not only mitigates risk but also fosters a culture of fairness and respect in the workplace. It is our privilege to serve as your trusted advisors, providing clarity and peace of mind in the complex world of labor law.</p>
+            <h1 className={`${styles.heroMain}`}>Dr Vijay Vyas</h1>
+            <p className={`${styles.despText}`}>Welcome to Innovative Governance Corporation Limited (IGCL INDIA), where we specialize in navigating the complex terrain of labor law with precision and expertise. As the Director of this esteemed consultancy, I am proud to lead a team dedicated to providing unparalleled support and guidance to businesses across industries. Our mission is to empower organizations with the knowledge and strategies needed to thrive while upholding the highest standards of legal compliance. At IGCL INDIA, we believe that proactive compliance not only mitigates risk but also fosters a culture of fairness and respect in the workplace. It is our privilege to serve as your trusted advisors, providing clarity and peace of mind in the complex world of labor law.</p>
           </div>
         </div>
         <div className={`${styles.teamInnerSection}`}>
@@ -201,8 +201,8 @@ export default function aboutUs() {
             <img className={`${styles.teamInnerImage}`}  src="../../images/person1.jpg" />
           </div>
           <div className={`${styles.teamInnerright}`}>
-            <h1 className="text-black font-semibold text-xl">Nitesh Choudhary</h1>
-            <p className="text-gray-600">Progress for me has never been a dream. It has always been a distant reality and once one milestone is achieved, there is always another one waiting to be crossed. It is with this belief that I started INNOVATIVE GOVERNANCE CORPORATION LIMITED (IGCL) in 2020, a company that is in Labour Law Compliance. I always wanted to push my company to more prosperous milestones. More than being a global player, I always perceived my company as a unit that could make a difference with its quality and competitively priced services. The journey of IGCL is never-ending. But with the support of my team and clients, I am confident that the company will continue to scale milestones of excellence for years to come.</p>
+            <h1 className={`${styles.heroMain}`}>Nitesh Choudhary</h1>
+            <p className={`${styles.despText}`}>Progress for me has never been a dream. It has always been a distant reality and once one milestone is achieved, there is always another one waiting to be crossed. It is with this belief that I started INNOVATIVE GOVERNANCE CORPORATION LIMITED (IGCL) in 2020, a company that is in Labour Law Compliance. I always wanted to push my company to more prosperous milestones. More than being a global player, I always perceived my company as a unit that could make a difference with its quality and competitively priced services. The journey of IGCL is never-ending. But with the support of my team and clients, I am confident that the company will continue to scale milestones of excellence for years to come.</p>
           </div>
         </div>
       </div>
@@ -210,7 +210,7 @@ export default function aboutUs() {
 
       {/* client */}
       <div className="min-w-screen  flex items-center justify-center py-5">
-        <div className="w-full border-b border-gray-200 px-10 py-16 md:py-24 text-gray-800">
+        <div className="w-full border-b border-gray-200 px-5 py-5 md:py-10 text-gray-800">
           <div className="w-full max-w-screen mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
@@ -229,7 +229,7 @@ export default function aboutUs() {
               </div>
             </div>
             <div className="-mx-3 ">
-              <div className="px-3 ">
+              <div className="px-3 pb-10">
                 <Slider {...clientssettings}>
                   <div className="image-container">
                     <img
@@ -500,8 +500,8 @@ export default function aboutUs() {
 
       {/* testimonials  */}
       <div className="min-w-screen  flex items-center justify-center py-5">
-        <div className="w-full border-b border-gray-200 px-5 py-16 md:py-24 text-gray-800">
-          <div className="w-full max-w-6xl mx-auto">
+        <div className="w-full border-b border-gray-200 px-5 py-5 md:py-5 ">
+          <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 What people are saying.
@@ -518,8 +518,8 @@ export default function aboutUs() {
               </div>
             </div>
             <div className="-mx-3 ">
-              <div className="px-3 grid grid-cols-2 md:grid-cols-3 gap-3">
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+              <div className="py-5 px-24 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=1" alt="" />
@@ -531,21 +531,18 @@ export default function aboutUs() {
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
-                      <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
+                    <p className="text-sm leading-tight text-justify">
+                      <span className="text-lg leading-none  italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quos sunt ratione dolor exercitationem minima quas itaque
-                      saepe quasi architecto vel! Accusantium, vero sint
-                      recusandae cum tempora nemo commodi soluta deleniti.
+                      Company has been a game-changer for our organization. Their deep understanding of labor laws and exceptional legal advice have helped us navigate complex employment issues with ease. Their team is professional, responsive, and always goes above and beyond to ensure our needs are met. Highly recommended!
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
                     </p>
                   </div>
                 </div>
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=2" alt="" />
@@ -557,20 +554,64 @@ export default function aboutUs() {
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
+                    <p className="text-sm leading-tight text-justify">
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum, dolor sit amet, consectetur adipisicing elit.
-                      Dolore quod necessitatibus, labore sapiente, est,
-                      dignissimos ullam error ipsam sint quam tempora vel.
+                      We turned to ICGL Labour Law Company during a challenging time in our business. Their expertise and strategic guidance were invaluable in resolving our disputes efficiently and favorably. The attorneys at ICGL are not only knowledgeable but also approachable, making the entire process smoother. We are incredibly grateful for their support.
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
                     </p>
                   </div>
                 </div>
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                  <div className="w-full flex mb-4 items-center">
+                    <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+                      <img src="https://i.pravatar.cc/100?img=2" alt="" />
+                    </div>
+                    <div className="flex-grow pl-3">
+                      <h6 className="font-bold text-sm uppercase text-gray-600">
+                        Ramesh
+                      </h6>
+                    </div>
+                  </div>
+                  <div className="w-full">
+                    <p className="text-sm leading-tight text-justify">
+                      <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
+                        "
+                      </span>
+                      We turned to ICGL Labour Law Company during a challenging time in our business. Their expertise and strategic guidance were invaluable in resolving our disputes efficiently and favorably. The attorneys at ICGL are not only knowledgeable but also approachable, making the entire process smoother. We are incredibly grateful for their support.
+                      <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
+                        "
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                  <div className="w-full flex mb-4 items-center">
+                    <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+                      <img src="https://i.pravatar.cc/100?img=2" alt="" />
+                    </div>
+                    <div className="flex-grow pl-3">
+                      <h6 className="font-bold text-sm uppercase text-gray-600">
+                        Suresh
+                      </h6>
+                    </div>
+                  </div>
+                  <div className="w-full">
+                    <p className="text-sm leading-tight text-justify">
+                      <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
+                        "
+                      </span>
+                      We turned to ICGL Labour Law Company during a challenging time in our business. Their expertise and strategic guidance were invaluable in resolving our disputes efficiently and favorably. The attorneys at ICGL are not only knowledgeable but also approachable, making the entire process smoother. We are incredibly grateful for their support.
+                      <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
+                        "
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=3" alt="" />
@@ -582,13 +623,11 @@ export default function aboutUs() {
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
+                    <p className="text-sm leading-tight text-justify">
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Vitae, obcaecati ullam excepturi dicta error deleniti
-                      sequi.
+                      Working with this company has been an outstanding experience. Their legal team is exceptionally skilled and well-versed in all aspects of labor law. They have consistently provided us with accurate and practical legal solutions. Their dedication to their clients is evident in the quality of their work. We highly recommend their services.
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
@@ -596,7 +635,7 @@ export default function aboutUs() {
                   </div>
                 </div>
 
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=4" alt="" />
@@ -608,15 +647,11 @@ export default function aboutUs() {
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
+                    <p className="text-sm leading-tight text-justify">
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Architecto inventore voluptatum nostrum atque, corrupti,
-                      vitae esse id accusamus dignissimos neque reprehenderit
-                      natus, hic sequi itaque dicta nisi voluptatem! Culpa,
-                      iusto.
+                     This Company has proven to be an invaluable partner for our business. Their deep knowledge of labor regulations and proactive approach to legal challenges have helped us maintain compliance and avoid potential issues. Their commitment to excellence and client satisfaction is truly impressive.
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
@@ -624,7 +659,7 @@ export default function aboutUs() {
                   </div>
                 </div>
 
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=5" alt="" />
@@ -636,22 +671,18 @@ export default function aboutUs() {
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
+                    <p className="text-sm leading-tight text-justify">
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nobis, voluptatem porro obcaecati dicta, quibusdam sunt
-                      ipsum, laboriosam nostrum facere exercitationem pariatur
-                      deserunt tempora molestiae assumenda nesciunt alias eius?
-                      Illo, autem!
+                      They offers unparalleled legal expertise and exceptional client service. Their attorneys are not only highly skilled but also genuinely care about the well-being of their clients. They have helped us successfully navigate numerous labor-related matters, and we couldn't be more satisfied with their services.
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
                     </p>
                   </div>
                 </div>
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=6" alt="" />
@@ -663,12 +694,11 @@ export default function aboutUs() {
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
+                    <p className="text-sm leading-tight text-justify">
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Voluptatem iusto, explicabo, cupiditate quas totam!
+                      This Company has been instrumental in guiding us through complex employment regulations and labor disputes. Their prompt and insightful advice has saved us time and resources. The team’s professionalism and commitment to our success make them an invaluable partner. We trust ICGL completely with our labor law needs.
                       <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
                         "
                       </span>
@@ -680,6 +710,7 @@ export default function aboutUs() {
           </div>
         </div>
       </div>
+
 
       <Footer />
     </>

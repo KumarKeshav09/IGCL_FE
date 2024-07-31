@@ -15,8 +15,8 @@ export default function CompliancesPost2() {
                 <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
                 Prioritizing Safety and Compliance in Factory Environments
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  <p className="mb-4 font-medium">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     Factories Compliances encompass the regulatory requirements
                     that govern the establishment, operation, and management of
                     factories in India. These compliances are established under
@@ -24,7 +24,7 @@ export default function CompliancesPost2() {
                     aiming to ensure the safety, health, and welfare of workers
                     employed in industrial settings.
                   </p>
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     They cover various aspects such as working hours, employment
                     conditions, safety measures, welfare amenities, and
                     environmental regulations. Adherence to factory compliances
@@ -81,7 +81,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Comprehensive assistance in understanding and complying with
                     the provisions of the Factory Act of 1948 and relevant
                     state-specific regulations.
@@ -103,7 +103,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Guidance on factory registration and obtaining necessary
                     licenses and permits from regulatory authorities.
                   </span>
@@ -124,7 +124,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Support in establishing and implementing safety measures,
                     including risk assessments, safety training, and emergency
                     preparedness plans.
@@ -146,7 +146,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in maintaining records and documentation required
                     by factory regulations, including registers, inspection
                     reports, and accident records.
@@ -168,7 +168,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Advisory services on employment conditions, working hours,
                     leave entitlements, and welfare amenities for factory
                     workers.
@@ -190,7 +190,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Ongoing compliance monitoring, audits, and updates to ensure
                     adherence to evolving factory regulations and standards.
                   </span>
@@ -223,7 +223,7 @@ export default function CompliancesPost2() {
               </div>
             </div>
             <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
-              <ul className="list-disc mt-8 text-gray-500">
+              <ul className="list-disc mt-8 text-gray-500 text-justify text-lg lg:text-xl">
                 <li>
                   Factory compliances are applicable to all establishments
                   categorized as factories under the Factory Act of 1948 and its

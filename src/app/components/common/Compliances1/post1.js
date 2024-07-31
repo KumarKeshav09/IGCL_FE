@@ -12,11 +12,11 @@ export default function CompliancesPost1() {
                 </p>
               </div>
               <div className="col-span-6 max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+                <h2 className="mb-4 text-4xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Streamlined Solutions for Efficient Payroll Processing
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
-                  <p className="mb-4 font-medium">
+                  <p className="font-medium mt-4 text-justify text-lg lg:text-xl">
                     Our payroll management services streamline the complexities
                     of managing employee compensation, ensuring accuracy,
                     compliance, and efficiency. From salary calculation to tax
@@ -53,7 +53,7 @@ export default function CompliancesPost1() {
               </div>
             </div>
             <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
-              <p className="mb-3 text-gray-500 dark:text-gray-400">
+              <p className="mb-3 text-gray-500 dark:text-gray-400 text-justify text-lg lg:text-xl">
                 Partner with us for reliable and comprehensive payroll
                 management solutions tailored to your business needs. Focus on
                 growing your business while we handle the complexities of
@@ -80,7 +80,7 @@ export default function CompliancesPost1() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">Save Time and Resources</span>
+                  <span className="leading-tight text-justify text-lg lg:text-xl">Save Time and Resources</span>
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
@@ -98,7 +98,7 @@ export default function CompliancesPost1() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">Ensure Accuracy</span>
+                  <span className="leading-tight text-justify text-lg lg:text-xl">Ensure Accuracy</span>
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
@@ -116,7 +116,7 @@ export default function CompliancesPost1() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">Stay Compliant</span>
+                  <span className="leading-tight text-justify text-lg lg:text-xl">Stay Compliant</span>
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
@@ -134,7 +134,7 @@ export default function CompliancesPost1() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Enhance Employee Satisfaction
                   </span>
                 </li>

@@ -16,7 +16,7 @@ export default function CompliancesPost5() {
                   Ensuring Financial Security for Your Future with EPF
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     Labour Law Compliances are regulations governing labor
                     relations and workplace practices, ensuring fair treatment
                     and legal standards adherence. Covering areas such as wages,
@@ -74,7 +74,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Registration of Firm Under Employee Provident Fund Act (EPF)
                     (Year)
                   </span>
@@ -95,7 +95,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Generate Monthly Contribution ECR and PF Return Filing
                   </span>
                 </li>
@@ -115,7 +115,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Registration of New Joiners Under the Establishment Code
                   </span>
                 </li>
@@ -135,7 +135,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Updating the KYC of Employees
                   </span>
                 </li>
@@ -155,7 +155,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Provide Consultancy regarding EPF.
                   </span>
                 </li>
@@ -175,7 +175,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Provide support in online PF Transfers and Withdrawal Claims
                   </span>
                 </li>
@@ -195,7 +195,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Provide support in E- Nomination under EPF
                   </span>
                 </li>
@@ -227,7 +227,7 @@ export default function CompliancesPost5() {
               </div>
             </div>
             <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
-              <ul className="list-disc mt-8 text-gray-500">
+              <ul className="list-disc mt-8 text-gray-500 text-justify text-lg lg:text-xl">
                 <li>
                   The EPF scheme mandatorily applies to all establishments that
                   have employed a minimum of 20 people.

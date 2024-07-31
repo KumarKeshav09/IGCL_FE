@@ -16,7 +16,7 @@ export default function CompliancesPost5() {
                 Understanding Employee Entitlements Under The Payment of Gratuity Act, 1972
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     The Payment of Gratuity Act, of 1972 is a significant
                     legislation in India that aims to provide financial security
                     and a sense of appreciation to employees upon their
@@ -74,7 +74,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Providing day-to-day consultancy on matters pertaining to
                     payment of gratuity
                   </span>
@@ -95,7 +95,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in calculating the amount of gratuity payable to
                     an employee
                   </span>
@@ -116,7 +116,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in obtaining appropriate Gratuity plans from
                     insurance companies for meeting the liability of the
                     employer towards payment of gratuity
@@ -138,7 +138,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in payment of contribution to the Approved
                     Gratuity Fund
                   </span>
@@ -159,7 +159,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in ensuring compliance with various provisions of
                     the act related to disclosures, notices, displays,
                     deductions, forfeiture etc
@@ -181,7 +181,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Replying to / Satisfying Show Cause Notices issued by the
                     Inspector / Controlling Authority
                   </span>
@@ -202,7 +202,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Representing the establishments in front of the Inspector /
                     Controlling Authority
                   </span>
@@ -223,7 +223,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance at the time of inspection
                   </span>
                 </li>
@@ -243,7 +243,7 @@ export default function CompliancesPost5() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Representing establishments at the inquiries conducted by
                     the inspector
                   </span>
@@ -275,8 +275,8 @@ export default function CompliancesPost5() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
-              <p className="mb-3 text-gray-500 dark:text-gray-400">
+            <div className=" p-4  rounded-lg md:p-2 dark:bg-gray-800">
+              <p className="mb-3 text-gray-500 dark:text-gray-400 text-justify text-lg lg:text-xl">
                 The Act applies to every factory, shop, or other establishment
                 where ten or more employees are employed, or were employed, on
                 any day of the preceding twelve months. The Act covers employees

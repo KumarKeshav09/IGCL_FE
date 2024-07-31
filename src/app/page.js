@@ -226,7 +226,7 @@ export default function Home() {
               <div>
                 <img
                   className="h-36 md:h-96  w-full"
-                  src="/images/whatWeDo1.png"
+                  src="/images/imgp1.jpeg"
                   alt=""
                 />
               </div>
@@ -261,14 +261,14 @@ export default function Home() {
                 <h1 className="mb-4 text-4xl text-gray-900 font-extrabold tracking-tight leading-none  md:text-5xl lg:text-6xl dark:text-white">
                   We Provide the Best Facilities for Your Business
                 </h1>
-                <p className="mb-8 text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
+                <p className="mb-8 text-lg text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
                   IGCL India provides outstanding and unsurpassed service that,
                   together, delivers premium values to our customers. Since
                   then, IGCL INDIA has been diversified into multiple business
                   domains hence words fall short to describe the enthusiasm and
                   working profile of our corporation.
                 </p>
-                <p className="mb-8 mt-4 text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
+                <p className="mb-8 mt-4 text-lg text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
                   At IGCL India, we believe in treating people the way they want
                   to be treated, with friendliness, calmness, and respect. Our
                   success is not only due to the quality of our work, It’s due
@@ -278,7 +278,7 @@ export default function Home() {
                 <div className="flex flex-col space-y-4 sm:flex-row  sm:space-y-0">
                   <a
                     href="#"
-                    className="py-3 px-5  text-sm font-medium text-blue-600 focus:outline-none  border border-blue-800 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-70"
+                    className="py-3 px-5  text-sm font-medium text-indigo-500 focus:outline-none  border border-indigo-500 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-70"
                   >
                     Get to know us
                   </a>
@@ -291,7 +291,7 @@ export default function Home() {
 
       {/* Services */}
       <div className="min-w-screen  flex items-center justify-center py-5">
-        <div className="w-full border-t border-gray-200 px-5 py-16 md:py-24 ">
+        <div className="w-full border-t border-gray-200 px-5 py-16 md:py-16 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
@@ -317,8 +317,8 @@ export default function Home() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>01-</h3>
-                            <h3 className={styles.textDesp}>Minimum Wage</h3>
-                            <p className={styles.textSecret}>Ensuring payment of at least the minimum wage as prescribed by law for all employees.</p>
+                            <h3 className={styles.textDesp}>Labour Law Compliances</h3>
+                            <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labour Law Compliance</p>
                         </div>
                     </div>
                 </div>
@@ -330,8 +330,8 @@ export default function Home() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>02-</h3>
-                            <h3 className={styles.textDesp}>Working Hours</h3>
-                            <p className={styles.textSecret}>Adhering to regulations on maximum working hours per day and per week, including provisions for overtime pay.</p>
+                            <h3 className={styles.textDesp}>Environment Social and Governance</h3>
+                            <p className={styles.textSecret}>Driving Sustainable Development Through Comprehensive ESG Strategies</p>
                         </div>
                     </div>
                 </div>
@@ -343,8 +343,8 @@ export default function Home() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <div><h3 className={styles.textNum}>03-</h3></div>
-                            <div><h3 className={styles.textDesp}>Employee Contracts</h3></div>
-                            <p className={styles.textSecret}>Providing written contracts outlining terms of employment, including benefits and termination conditions.</p>
+                            <div><h3 className={styles.textDesp}>Training & Consultancy</h3></div>
+                            <p className={styles.textSecret}>Enhancing Organizational Skills Through Tailored Training and Expert Consultancy</p>
                         </div>
                     </div>
                 </div>
@@ -356,8 +356,8 @@ export default function Home() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>04-</h3>
-                            <h3 className={styles.textDesp}>Health and Safety</h3>
-                            <p className={styles.textSecret}>Maintaining a safe working environment, including equipment, and procedures to prevent accidents</p>
+                            <h3 className={styles.textDesp}>Staffing Solution</h3>
+                            <p className={styles.textSecret}>Providing Comprehensive Staffing Solutions for Optimal Workforce Management</p>
                         </div>
                     </div>
                 </div>
@@ -368,7 +368,7 @@ export default function Home() {
 
       {/* FAQ */}
       <div className="min-w-screen  flex items-center justify-center py-5">
-        <div className="w-full border-t border-b border-gray-200 px-5 py-16 md:py-24 ">
+        <div className="w-full border-t border-b border-gray-200 px-5 py-16 md:py-16 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
@@ -385,18 +385,18 @@ export default function Home() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className="py-24 px-24 faqs mx-auto flex flex-col md:flex-row gap-12">
+            <div className="py-5 px-24 faqs mx-auto flex flex-col md:flex-row gap-12">
               <div className="flex flex-col text-left basis-1/2">
                 <p className="inline-block font-semibold text-gray-800 mb-4">
                   QUESTIONS & ANSWERS
                 </p>
-                <p className="sm:text-4xl text-3xl text-gray-800 font-bold text-base-content">
+                <p className="sm:text-4xl text-4xl md:text-7xl font-bold text-gray-800">
                   Have any questions?
                 </p>
-                <p className="sm:text-4xl text-3xl text-gray-800 font-bold text-base-content">
+                <p className="sm:text-4xl text-4xl md:text-7xl font-bold text-gray-800">
                   Find answers here
                 </p>
-                <p className="inline-block text-gray-800 mt-4 text-primary mb-4">
+                <p className="inline-block text-gray-800 mt-4 text-justify text-primary mb-4 text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
                   Whether you're curious about our services, need assistance, or
                   have a specific question, our FAQ section is here to help.
                   Browse through our most frequently asked questions and find
@@ -408,16 +408,16 @@ export default function Home() {
                   collapseAll
                   className="border-none border-b border-gray-800"
                 >
-                  <Accordion.Panel className=" border border-b border-gray-800">
-                    <section className=" border-b border-gray-800">
+                  <Accordion.Panel className=" border border-b border-gray-200">
+                    <section className=" border-b border-gray-200">
                       <Accordion.Title
-                        className="border-none  text-gray-800 bg-transparent hover:bg-transparent
+                        className="border-none  text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                         What is labour law compliance? 
                       </Accordion.Title>
                       <Accordion.Content
-                        className="border-none text-gray-800 hover:bg-transparent
+                        className="border-none text-lg  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                         <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
@@ -429,13 +429,13 @@ export default function Home() {
                   <Accordion.Panel className=" border border-b border-gray-200">
                     <section className=" border-b border-gray-200">
                       <Accordion.Title
-                        className="border-none  text-gray-800 bg-transparent hover:bg-transparent
+                        className="border-none  text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                       Why is labour law compliance important for businesses? 
                       </Accordion.Title>
                       <Accordion.Content
-                        className="border-none text-gray-800 hover:bg-transparent
+                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                         <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
@@ -447,16 +447,16 @@ export default function Home() {
                   <Accordion.Panel className=" border border-b border-gray-200">
                     <section className=" border-b border-gray-200">
                       <Accordion.Title
-                        className="border-none  text-gray-800 bg-transparent hover:bg-transparent
+                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                         How can businesses ensure labour law compliance? 
                       </Accordion.Title>
                       <Accordion.Content
-                        className="border-none text-gray-800 hover:bg-transparent
+                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
-                        <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        <p className=" mb-2 text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 dark:text-gray-800 ">
                         Businesses can ensure compliance by staying updated with legal changes, maintaining proper records, conducting regular audits, and seeking professional advice from compliance experts.
                         </p>
                       </Accordion.Content>
@@ -465,13 +465,13 @@ export default function Home() {
                   <Accordion.Panel className=" border border-b border-gray-200">
                     <section className=" border-b border-gray-200">
                       <Accordion.Title
-                        className="border-none  text-gray-800 bg-transparent hover:bg-transparent
+                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                       What are the various categories of labour laws in India? 
                       </Accordion.Title>
                       <Accordion.Content
-                        className="border-none text-gray-800 hover:bg-transparent
+                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                         <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
@@ -483,13 +483,13 @@ export default function Home() {
                   <Accordion.Panel className=" border border-b border-gray-200">
                     <section className=" border-b border-gray-200">
                       <Accordion.Title
-                        className="border-none  text-gray-800 bg-transparent hover:bg-transparent
+                        className="border-none  text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                     	What are the important labour and employment laws typically applicable to businesses in India?
                       </Accordion.Title>
                       <Accordion.Content
-                        className="border-none text-gray-800 hover:bg-transparent
+                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                         <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
@@ -522,8 +522,8 @@ The Central Government and respective State Governments have framed rules under 
 
       {/* Testimonials */}
       <div className="min-w-screen  flex items-center justify-center py-5">
-        <div className="w-full border-b border-gray-200 px-5 py-16 md:py-24 text-gray-800">
-          <div className="w-full max-w-6xl mx-auto">
+        <div className="w-full border-b border-gray-200 px-5 py-5 md:py-5 ">
+          <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 What people are saying.
@@ -540,8 +540,8 @@ The Central Government and respective State Governments have framed rules under 
               </div>
             </div>
             <div className="-mx-3 ">
-              <div className="px-3 grid grid-cols-2 md:grid-cols-3 gap-3">
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+              <div className="py-5 px-24 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=1" alt="" />
@@ -553,8 +553,8 @@ The Central Government and respective State Governments have framed rules under 
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
-                      <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
+                    <p className="text-sm leading-tight text-justify">
+                      <span className="text-lg leading-none  italic font-bold text-gray-400 mr-1">
                         "
                       </span>
                       Company has been a game-changer for our organization. Their deep understanding of labor laws and exceptional legal advice have helped us navigate complex employment issues with ease. Their team is professional, responsive, and always goes above and beyond to ensure our needs are met. Highly recommended!
@@ -564,7 +564,7 @@ The Central Government and respective State Governments have framed rules under 
                     </p>
                   </div>
                 </div>
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=2" alt="" />
@@ -576,7 +576,7 @@ The Central Government and respective State Governments have framed rules under 
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
+                    <p className="text-sm leading-tight text-justify">
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
@@ -587,7 +587,53 @@ The Central Government and respective State Governments have framed rules under 
                     </p>
                   </div>
                 </div>
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                  <div className="w-full flex mb-4 items-center">
+                    <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+                      <img src="https://i.pravatar.cc/100?img=2" alt="" />
+                    </div>
+                    <div className="flex-grow pl-3">
+                      <h6 className="font-bold text-sm uppercase text-gray-600">
+                        Ramesh
+                      </h6>
+                    </div>
+                  </div>
+                  <div className="w-full">
+                    <p className="text-sm leading-tight text-justify">
+                      <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
+                        "
+                      </span>
+                      We turned to ICGL Labour Law Company during a challenging time in our business. Their expertise and strategic guidance were invaluable in resolving our disputes efficiently and favorably. The attorneys at ICGL are not only knowledgeable but also approachable, making the entire process smoother. We are incredibly grateful for their support.
+                      <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
+                        "
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                  <div className="w-full flex mb-4 items-center">
+                    <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+                      <img src="https://i.pravatar.cc/100?img=2" alt="" />
+                    </div>
+                    <div className="flex-grow pl-3">
+                      <h6 className="font-bold text-sm uppercase text-gray-600">
+                        Suresh
+                      </h6>
+                    </div>
+                  </div>
+                  <div className="w-full">
+                    <p className="text-sm leading-tight text-justify">
+                      <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
+                        "
+                      </span>
+                      We turned to ICGL Labour Law Company during a challenging time in our business. Their expertise and strategic guidance were invaluable in resolving our disputes efficiently and favorably. The attorneys at ICGL are not only knowledgeable but also approachable, making the entire process smoother. We are incredibly grateful for their support.
+                      <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
+                        "
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=3" alt="" />
@@ -599,7 +645,7 @@ The Central Government and respective State Governments have framed rules under 
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
+                    <p className="text-sm leading-tight text-justify">
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
@@ -611,7 +657,7 @@ The Central Government and respective State Governments have framed rules under 
                   </div>
                 </div>
 
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=4" alt="" />
@@ -623,7 +669,7 @@ The Central Government and respective State Governments have framed rules under 
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
+                    <p className="text-sm leading-tight text-justify">
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
@@ -635,7 +681,7 @@ The Central Government and respective State Governments have framed rules under 
                   </div>
                 </div>
 
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=5" alt="" />
@@ -647,7 +693,7 @@ The Central Government and respective State Governments have framed rules under 
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
+                    <p className="text-sm leading-tight text-justify">
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
@@ -658,7 +704,7 @@ The Central Government and respective State Governments have framed rules under 
                     </p>
                   </div>
                 </div>
-                <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+                <div className="w-full mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                   <div className="w-full flex mb-4 items-center">
                     <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                       <img src="https://i.pravatar.cc/100?img=6" alt="" />
@@ -670,7 +716,7 @@ The Central Government and respective State Governments have framed rules under 
                     </div>
                   </div>
                   <div className="w-full">
-                    <p className="text-sm leading-tight">
+                    <p className="text-sm leading-tight text-justify">
                       <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
                         "
                       </span>
@@ -690,7 +736,7 @@ The Central Government and respective State Governments have framed rules under 
 
       {/* Clients */}
       <div className="min-w-screen  flex items-center justify-center py-5">
-        <div className="w-full border-b border-gray-200 px-10 py-16 md:py-24 text-gray-800">
+        <div className="w-full border-b border-gray-200 px-5 py-5 md:py-10 text-gray-800">
           <div className="w-full max-w-screen mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
@@ -709,7 +755,7 @@ The Central Government and respective State Governments have framed rules under 
               </div>
             </div>
             <div className="-mx-3 ">
-              <div className="px-3 ">
+              <div className="px-3 pb-10">
                 <Slider {...clientssettings}>
                   <div className="image-container">
                     <img

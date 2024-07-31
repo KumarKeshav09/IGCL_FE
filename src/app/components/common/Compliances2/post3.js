@@ -16,7 +16,7 @@ export default function CompliancesPost3() {
                 Navigating Legal Obligations Under the CLRA Act for Contract Labour Management
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     The Contract Labour (Regulation and Abolition) Act, 1970
                     (CLRA) is a crucial piece of legislation enacted by the
                     Government of India to regulate the employment of contract
@@ -26,7 +26,7 @@ export default function CompliancesPost3() {
                     ensuring social security, and preventing exploitation of
                     contract workers.
                   </p>
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     Adherence to CLRA Compliances is essential for both
                     principal employers and contractors to uphold legal
                     compliance, safeguard the interests of contract labor, and
@@ -81,7 +81,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in understanding and interpreting the provisions
                     of the Contract Labour (Regulation and Abolition) Act, 1970
                     (CLRA) and its relevant state-specific regulations.
@@ -103,7 +103,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Support in obtaining registration and licenses required
                     under CLRA for both principal employers and contractors.
                   </span>
@@ -124,7 +124,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Guidance on compliance with wage-related requirements,
                     including timely payment of wages, deductions, and
                     maintenance of wage registers.
@@ -146,7 +146,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Advisory services on providing amenities and facilities
                     mandated by CLRA, such as canteens, restrooms, and first aid
                     facilities, ensure the welfare of contract laborers.
@@ -168,7 +168,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in maintaining records and documentation as per
                     CLRA regulations, including registers, returns, and annual
                     reports.
@@ -190,7 +190,7 @@ export default function CompliancesPost3() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Ongoing compliance monitoring, audits, and updates to ensure
                     adherence to evolving CLRA regulations and standards,
                     mitigating risks of non-compliance and penalties.
@@ -224,7 +224,7 @@ export default function CompliancesPost3() {
               </div>
             </div>
             <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
-              <ul className="list-disc mt-8 text-gray-500">
+              <ul className="list-disc mt-8 text-gray-500 text-justify text-lg lg:text-xl">
                 <li>
                   CLRA (Contract Labour Regulation and Abolition) Compliances
                   are applicable to all establishments or contractors employing

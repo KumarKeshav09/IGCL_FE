@@ -16,7 +16,7 @@ export default function CompliancesPost4() {
                 Maximizing Employee Rewards with the Payment of Bonus Act, 1965
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     The Payment of Bonus Act, of 1965 is a significant
                     legislation enacted in India to regulate the payment of
                     bonuses to employees. It aims to provide for the payment of
@@ -73,7 +73,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Providing day-to-day consultancy on matters pertaining to
                     payment of bonus
                   </span>
@@ -94,7 +94,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in the calculation of the accurate amount of
                     bonus
                   </span>
@@ -115,7 +115,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Preparation & Submission of Annual returns as prescribed
                     under the act
                   </span>
@@ -136,7 +136,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Replying / Satisfying Show Cause Notices issued by the
                     Inspector
                   </span>
@@ -157,7 +157,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance to establishments at the time of inspection.{" "}
                   </span>
                 </li>
@@ -177,7 +177,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Representing establishments at the inquiries conducted by
                     the inspector.
                   </span>
@@ -209,8 +209,8 @@ export default function CompliancesPost4() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
-              <p className="mb-3 text-gray-500 dark:text-gray-400">
+            <div className=" p-4  rounded-lg md:p-2 dark:bg-gray-800">
+              <p className="mb-3 text-gray-500 dark:text-gray-400 text-justify text-lg lg:text-xl">
                 The Act applies to every establishment in which 20 or more
                 employees are employed on any day during an accounting year. The
                 Act covers employees whose salary or wage does not exceed a

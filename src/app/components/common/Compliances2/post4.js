@@ -15,15 +15,15 @@ export default function CompliancesPost4() {
                 <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
                 Navigating Legal Obligations Under the Prevention of Sexual Harassment (POSH) Act
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  <p className="mb-4 font-medium">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     POSH Compliances refers to the legal obligations outlined in
                     the Sexual Harassment of Women at Workplace (Prevention,
                     Prohibition and Redressal) Act, 2013. This legislation aims
                     to create a safe and respectful work environment for women
                     by preventing and addressing instances of sexual harassment.
                   </p>
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     POSH Compliances encompasses a range of measures, including
                     the establishment of Internal Complaints Committees (ICCs),
                     employee awareness and training programs, and the
@@ -82,7 +82,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Development and implementation of comprehensive POSH
                     policies tailored to the specific needs and requirements of
                     the organization.
@@ -104,7 +104,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Establishment and structuring of Internal Complaints
                     Committees (ICCs), including training committee members on
                     their roles and responsibilities.
@@ -126,7 +126,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Conducting awareness and sensitization programs on
                     preventing sexual harassment in the workplace for employees
                     at all levels.
@@ -148,7 +148,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in drafting and disseminating communication
                     materials, including posters, handbooks, and reporting
                     mechanisms, to ensure widespread understanding of POSH
@@ -171,7 +171,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Training sessions for employees to understand their rights,
                     responsibilities, and the procedures for reporting incidents
                     of sexual harassment.
@@ -193,7 +193,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Support in conducting impartial and thorough investigations
                     into complaints of sexual harassment, ensuring
                     confidentiality and adherence to due process.
@@ -215,7 +215,7 @@ export default function CompliancesPost4() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Regular review and audit of POSH policies and procedures to
                     ensure compliance with legal requirements and effectiveness
                     in creating a safe and respectful work environment.
@@ -249,7 +249,7 @@ export default function CompliancesPost4() {
               </div>
             </div>
             <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
-              <ul className="list-disc mt-8 text-gray-500">
+              <ul className="list-disc mt-8 text-gray-500 text-justify text-lg lg:text-xl">
                 <li>
                   POSH (Prevention of Sexual Harassment) Compliances are
                   applicable to all workplaces, including both public and

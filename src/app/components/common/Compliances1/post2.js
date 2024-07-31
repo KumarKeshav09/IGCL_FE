@@ -15,14 +15,14 @@ export default function CompliancesPost2() {
                 <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
                   Ensuring Financial Security for Your Future with EPF
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  <p className="mb-4 font-medium">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     The Employees' Provident Fund provides social security
                     benefits to Employees of establishments on which the
                     Employees’ Provident Fund and Miscellaneous Provisions Act
                     1952 applies.
                   </p>
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     The Act mainly provides Retirement or old age benefits
                     such as Provident fund, Superannuation fund, Family Pension,
                     and Deposit Linked Insurance.
@@ -76,7 +76,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                   Registration of Firm Under Employee Provident Fund Act (EPF) (Year)
                   </span>
                 </li>
@@ -96,7 +96,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">Generate Monthly Contribution ECR and PF Return Filing</span>
+                  <span className="leading-tight text-justify text-lg lg:text-xl">Generate Monthly Contribution ECR and PF Return Filing</span>
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
@@ -114,7 +114,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">Registration of New Joiners Under the Establishment Code</span>
+                  <span className="leading-tight text-justify text-lg lg:text-xl">Registration of New Joiners Under the Establishment Code</span>
                 </li><li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
                     className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
@@ -131,7 +131,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">Updating the KYC of Employees</span>
+                  <span className="leading-tight text-justify text-lg lg:text-xl">Updating the KYC of Employees</span>
                 </li><li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
                     className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
@@ -148,7 +148,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">Provide Consultancy regarding EPF.</span>
+                  <span className="leading-tight text-justify text-lg lg:text-xl">Provide Consultancy regarding EPF.</span>
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
@@ -166,7 +166,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">Provide support in online PF Transfers and Withdrawal Claims</span>
+                  <span className="leading-tight text-justify text-lg lg:text-xl">Provide support in online PF Transfers and Withdrawal Claims</span>
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
@@ -184,7 +184,7 @@ export default function CompliancesPost2() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                   Provide support in E- Nomination under EPF
                   </span>
                 </li>
@@ -215,12 +215,12 @@ export default function CompliancesPost2() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
-              <ul className="list-disc mt-8 text-gray-500">
+            <div className=" p-4  rounded-lg md:p-4 dark:bg-gray-800">
+              <ul className="list-disc text-gray-500 text-justify text-lg lg:text-xl">
                 <li>
                 The EPF scheme mandatorily applies to all establishments that have employed a minimum of 20 people.
                 </li>
-                <li>
+                <li className="mt-2">
                 Establishments with less than 20 employees can also opt for voluntary registration. All the employees of such an establishment will be eligible for EPF right from the beginning of their employment. 
                 </li>
                 <li>

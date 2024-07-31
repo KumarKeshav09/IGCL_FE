@@ -18,7 +18,7 @@ export default function CompliancesPost6() {
                   worldwide
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
-                  <p className="mb-4 font-medium">
+                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     Professional Tax is a state-level tax levied on individuals
                     earning income from employment or profession. LWF, or Labor
                     Welfare Fund, is a statutory contribution managed by state
@@ -76,7 +76,7 @@ export default function CompliancesPost6() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Professional Tax (PT) registration assistance
                   </span>
                 </li>
@@ -96,7 +96,7 @@ export default function CompliancesPost6() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     PT calculation and deduction guidance
                   </span>
                 </li>
@@ -116,7 +116,7 @@ export default function CompliancesPost6() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     PT filing and compliance support
                   </span>
                 </li>
@@ -136,7 +136,7 @@ export default function CompliancesPost6() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Labor Welfare Fund (LWF) registration facilitation
                   </span>
                 </li>
@@ -156,7 +156,7 @@ export default function CompliancesPost6() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     LWF contribution calculation assistance
                   </span>
                 </li>
@@ -176,7 +176,7 @@ export default function CompliancesPost6() {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     LWF compliance advisory services
                   </span>
                 </li>
@@ -207,8 +207,8 @@ export default function CompliancesPost6() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
-              <p className="mb-3 text-gray-500 dark:text-gray-400">
+            <div className=" p-4  rounded-lg md:p-2 dark:bg-gray-800">
+              <p className="mb-3 text-gray-500 dark:text-gray-400 text-justify text-lg lg:text-xl">
                 Professional Tax (PT) applies to individuals earning income
                 through employment or profession, varying by state regulations.
                 Similarly, the Labor Welfare Fund (LWF) mandates contributions

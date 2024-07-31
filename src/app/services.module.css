@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: auto auto;
     gap: 2rem;
-    padding: 4rem 6rem;
+    padding: 1rem 6rem 0rem 6rem;
 }
 
 .card {
@@ -33,7 +33,7 @@
 }
 
 .overlay:hover {
-    background-color: #34a2dd;
+    background-color: #3F51B5;
     transform: scale(0.95);
 }
 
