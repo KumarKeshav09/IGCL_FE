@@ -49,8 +49,8 @@ export default function Services() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>01-</h3>
-                            <h3 className={styles.textDesp}>Minimum Wage</h3>
-                            <p className={styles.textSecret}>Ensuring payment of at least the minimum wage as prescribed by law for all employees.</p>
+                            <h3 className={styles.textDesp}>Labour Law Compliances</h3>
+                            <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labour Law Compliance</p>
                         </div>
                     </div>
                 </Link>
@@ -62,8 +62,8 @@ export default function Services() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>02-</h3>
-                            <h3 className={styles.textDesp}>Working Hours</h3>
-                            <p className={styles.textSecret}>Adhering to regulations on maximum working hours per day and per week, including provisions for overtime pay.</p>
+                            <h3 className={styles.textDesp}>Environment Social and Governance</h3>
+                            <p className={styles.textSecret}>Driving Sustainable Development Through Comprehensive ESG Strategies</p>
                         </div>
                     </div>
                 </Link>
@@ -75,8 +75,8 @@ export default function Services() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <div><h3 className={styles.textNum}>03-</h3></div>
-                            <div><h3 className={styles.textDesp}>Employee Contracts</h3></div>
-                            <p className={styles.textSecret}>Providing written contracts outlining terms of employment, including benefits and termination conditions.</p>
+                            <div><h3 className={styles.textDesp}>Training & Consultancy</h3></div>
+                            <p className={styles.textSecret}>Enhancing Organizational Skills Through Tailored Training and Expert Consultancy</p>
                         </div>
                     </div>
                 </Link>
@@ -88,8 +88,21 @@ export default function Services() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>04-</h3>
-                            <h3 className={styles.textDesp}>Health and Safety</h3>
-                            <p className={styles.textSecret}>Maintaining a safe working environment, including equipment, and procedures to prevent accidents</p>
+                            <h3 className={styles.textDesp}>Staffing Solution</h3>
+                            <p className={styles.textSecret}>Providing Comprehensive Staffing Solutions for Optimal Workforce Management</p>
+                        </div>
+                    </div>
+                </Link>
+                <Link href='/services/1' className={styles.card}>
+                    <img
+                        src="/images/image5.jpg"
+                        className={styles.image}
+                    />
+                    <div className={styles.overlay}>
+                        <div className={styles.text}>
+                            <h3 className={styles.textNum}>05-</h3>
+                            <h3 className={styles.textDesp}>Research & Development</h3>
+                            <p className={styles.textSecret}>Driving Innovation and Growth Through Advanced Research & Development</p>
                         </div>
                     </div>
                 </Link>
