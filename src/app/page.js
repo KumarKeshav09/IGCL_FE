@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import { Accordion } from "flowbite-react";
 import Footer from "./components/common/footer";
 // import { initFlowbite } from "flowbite";
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import styles from "./services.module.css";
 import { API_BASE_URL } from "../../utils/constants";
@@ -23,7 +24,7 @@ export default function Home() {
     dots: false,
     arrows: false,
     infinite: true,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 3000,
     speed: 500,
     slidesToShow: 1,
@@ -148,22 +149,36 @@ export default function Home() {
       <Navbar />
       {/* hero section */}
       <div className="">
-        {/* <Slider {...herosettings}> */}
         {/* bg-[url('/images/hero_banner8.webp')] */}
         
 
-<section className="heroImage bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
-    <div className="px-2 mx-auto max-w-screen-xl text-center">
-        <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">YOUR COMPLIANCE, </h1>
+<section className="heroImage bg-center  bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
+    <div className="px-2 mx-auto max-w-screen-2xl overflow-x-hidden text-center">
+        <Slider {...herosettings}>
+          <div>
+        <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">YOUR COMPLIANCE </h1>
         <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white ">   OUR PRIORITY</h1>
+          </div>
+
+          <div>
+        <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">YOUR COMPLIANCE  </h1>
+        <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white "> COMPANION</h1>
+          </div>
+
+          <div>
+        <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">ENSURING COMPLIANCE </h1>
+        <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white "> EMPOWERING  WORKFORCE</h1>
+          </div>
+         </Slider>
+
         {/* <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">Your Compliance, </h1>
         <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white ">   Our Priority</h1> */}
         <p className="mb-12 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">IGCL INDIA has been diversified into multiple business domains hence words fall short to describe the enthusiasm and working profile of our corporation.</p>
         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
            
-            <a href="#" className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+            <Link href="/services" className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
                 More info
-            </a>  
+            </Link>  
         </div>
     </div>
 </section>
@@ -301,12 +316,12 @@ export default function Home() {
                   clients.
                 </p>
                 <div className="flex flex-col space-y-4 sm:flex-row  sm:space-y-0">
-                  <a
-                    href="#"
+                  <Link
+                    href="/aboutus"
                     className="py-3 px-5  text-sm font-medium text-indigo-500 focus:outline-none  border border-indigo-500 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-70"
                   >
                     Get to know us
-                  </a>
+                  </Link>
                 </div>
               </div>
             </section>
@@ -334,7 +349,7 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.BoxContainer}>
-            <div className={styles.card}>
+            <Link href='/services/1' className={styles.card}>
                     <img
                         src="/images/image1.jpg"
                         className={styles.image}
@@ -346,8 +361,8 @@ export default function Home() {
                             <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labour Law Compliance</p>
                         </div>
                     </div>
-                </div>
-                <div className={styles.card}>
+                </Link>
+                <Link href='/services/1' className={styles.card}>
                     <img
                         src="/images/image2.jpg"
                         className={styles.image}
@@ -359,8 +374,8 @@ export default function Home() {
                             <p className={styles.textSecret}>Driving Sustainable Development Through Comprehensive ESG Strategies</p>
                         </div>
                     </div>
-                </div>
-                <div className={styles.card}>
+                </Link>
+                <Link href='/services/1' className={styles.card}>
                     <img
                         src="/images/image3.jpg"
                         className={styles.image}
@@ -372,8 +387,8 @@ export default function Home() {
                             <p className={styles.textSecret}>Enhancing Organizational Skills Through Tailored Training and Expert Consultancy</p>
                         </div>
                     </div>
-                </div>
-                <div className={styles.card}>
+                </Link>
+                <Link href='/services/1' className={styles.card}>
                     <img
                         src="/images/image4.jpg"
                         className={styles.image}
@@ -385,7 +400,7 @@ export default function Home() {
                             <p className={styles.textSecret}>Providing Comprehensive Staffing Solutions for Optimal Workforce Management</p>
                         </div>
                     </div>
-                </div>
+                </Link>
             </div>
           </div>
         </div>

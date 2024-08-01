@@ -73,7 +73,7 @@ input[type=number] {
   align-items: center;
 }
 .heroLabourtext{
-  font-size: 7rem;
+  font-size: 6rem;
   /* font-weight: 400; */
   /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(13,22,97,1) 0%, rgba(10,38,129,1) 47%, rgba(160,161,166,1) 100%); */
   /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(13,22,97,1) 0%, rgba(10,38,129,1) 47%, rgba(0,42,255,1) 100%); */
@@ -136,7 +136,7 @@ input[type=number] {
 }
 @media (max-width: 1380px) {
   .heroLabourtext{
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: 400;
   }
 
@@ -156,7 +156,7 @@ input[type=number] {
     padding-right: 2rem;
   }
   .heroLabourtext{
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 400;
   }
   .heroLabourImage{
@@ -171,7 +171,7 @@ input[type=number] {
     padding-right: 1rem;
   }
   .heroLabourtext{
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 400;
   }
   .heroLabourImage{
@@ -208,7 +208,7 @@ input[type=number] {
 }
 @media (max-width: 500px) {
   .heroLabourtext{
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 400;
   }
 }
