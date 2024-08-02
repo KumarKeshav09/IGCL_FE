@@ -1,6 +1,7 @@
 .loginMain {
     background-color: #6592D3 !important;
     height: 100vh;
+    padding-top: 15rem;
   }
   .signInBtn{
     background-color: #2b4ac7 !important;
