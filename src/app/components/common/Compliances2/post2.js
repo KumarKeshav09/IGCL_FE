@@ -34,6 +34,46 @@ export default function CompliancesPost2() {
         </section>
       </div>
 
+      {/* Applicability  */}
+
+      <div>
+        <section className="bg-white border-b dark:bg-gray-900">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+                Applicability
+              </h1>
+              <h3 className="text-xl mb-5 lg:text-nowrap font-light text-gray-800">
+                Empowering clients with innovative solutions and unparalleled
+                support.
+              </h3>
+              <div className="text-center mb-10">
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+              </div>
+            </div>
+            <div className=" rounded-lg dark:bg-gray-800">
+              <ul className="list-disc mt-8 text-gray-500 text-justify text-lg lg:text-xl">
+                <li>
+                  Factory compliances are applicable to all establishments
+                  categorized as factories under the Factory Act of 1948 and its
+                  relevant state-specific amendments.
+                </li>
+                <li>
+                  The applicability extends to any premises where ten or more
+                  workers are engaged in manufacturing processes with the aid of
+                  power, or where twenty or more workers are engaged in
+                  manufacturing processes without the aid of power, on any day
+                  of the preceding twelve months.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
       {/* what to expect */}
 
       <div>
@@ -189,47 +229,6 @@ export default function CompliancesPost2() {
                     Ongoing compliance monitoring, audits, and updates to ensure
                     adherence to evolving factory regulations and standards.
                   </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      {/* Applicability  */}
-
-      <div>
-        <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
-                Applicability
-              </h1>
-              <h3 className="text-xl mb-5 lg:text-nowrap font-light text-gray-800">
-                Empowering clients with innovative solutions and unparalleled
-                support.
-              </h3>
-              <div className="text-center mb-10">
-                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
-                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-              </div>
-            </div>
-            <div className=" rounded-lg dark:bg-gray-800">
-              <ul className="list-disc mt-8 text-gray-500 text-justify text-lg lg:text-xl">
-                <li>
-                  Factory compliances are applicable to all establishments
-                  categorized as factories under the Factory Act of 1948 and its
-                  relevant state-specific amendments.
-                </li>
-                <li>
-                  The applicability extends to any premises where ten or more
-                  workers are engaged in manufacturing processes with the aid of
-                  power, or where twenty or more workers are engaged in
-                  manufacturing processes without the aid of power, on any day
-                  of the preceding twelve months.
                 </li>
               </ul>
             </div>

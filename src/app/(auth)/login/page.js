@@ -43,7 +43,7 @@ export default function Login() {
     const resData = await res.json();
     if (resData?.success == true) {
       toast.success(resData?.message);
-      router.push("/dashboard");
+      router.push("/testimonials");
     } else {
       toast.error(resData?.error);
       return;

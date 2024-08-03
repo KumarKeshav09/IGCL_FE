@@ -63,17 +63,37 @@ export default function Home() {
       },
     ],
   };
+
   const [listData, setListData] = useState([]);
+  const [listFAQData, setListFAQData] = useState([]);
   const [loading, setLoading] = useState(false); // Add loading state
 
   useEffect(() => {
     getAllClient();
+    getAllFAQ();
   }, []);
+
+  const getAllFAQ = async () => {
+    setLoading(true); // Show loader
+    try {
+      const res = await fetch(`${API_BASE_URL}/faq/allFAQ`);
+      const data = await res.json();
+      if (data.success) {
+        setListFAQData(data);
+      } else {
+        toast.error(data.errMessage || "Failed to fetch FAQs");
+      }
+    } catch (error) {
+      toast.error("An error occurred while fetching FAQs");
+    } finally {
+      setLoading(false); // Hide loader
+    }
+  };
 
   const getAllClient = async () => {
     setLoading(true); // Set loading to true before fetching
     try {
-      const response = await fetch(`${API_BASE_URL}/client/allClient`);
+      const response = await fetch(`${API_BASE_URL}/client/allClient?page=1&limit=100`);
       const data = await response.json();
       if (data.success) {
         setListData(data);
@@ -286,7 +306,7 @@ export default function Home() {
 
       {/* what we do */}
       <div className="py-8 mt-12 whatWeDoMain px-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
           <div className="grid grid-cols-2 sm:grid-cols-2 gap-2">
             <div className="mx-1 mt-24">
               <div>
@@ -297,20 +317,34 @@ export default function Home() {
                 />
               </div>
               <div className="mt-3">
+                <img
+                  className="h-36 md:h-96  w-full"
+                  src="/images/image5.jpg"
+                  alt=""
+                />
+              </div>
+              {/* <div className="mt-3">
                 <div className={`${styles.weDoBox2}`}>
                   <img className={`${styles.weDoBoxIcon}`} src="../images/customer-care.png" />
                   <h1 className={`${styles.weDoBoxHead}`}>436</h1>
                   <p className={`${styles.weDoBoxPara}`}>SATISFIED CLIENTS</p>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="mx-1">
-            <div className="mt-3">
+            {/* <div className="mt-3">
                 <div className={`${styles.weDoBox3}`}>
                   <img className={`${styles.weDoBoxIcon}`} src="../images/customer-care.png" />
                   <h1 className={`${styles.weDoBoxHead}`}>532</h1>
                   <p className={`${styles.weDoBoxPara}`}>PROJECTS COMPLETED</p>
                 </div>
+              </div> */}
+              <div>
+                <img
+                  className="h-36 md:h-96  w-full"
+                  src="/images/whatWeDo3.png"
+                  alt=""
+                />
               </div>
               <div className="mt-3">
                 <img
@@ -323,7 +357,7 @@ export default function Home() {
           </div>
           <div>
             <section className=" dark:bg-gray-900">
-              <div className="py-8 whatWeDoRIght mx-auto max-w-screen-xl text-left lg:py-16 md:px-28">
+              <div className="py-8 whatWeDoRIght mx-auto max-w-screen-xl text-left lg:py-16 md:px-16">
                 <h1 className="mb-4 text-4xl text-gray-900 font-extrabold tracking-tight leading-none  md:text-5xl lg:text-6xl dark:text-white">
                   We Provide the Best Facilities for Your Business
                 </h1>
@@ -356,8 +390,8 @@ export default function Home() {
       </div>
 
       {/* Services */}
-      <div className="min-w-screen  flex items-center justify-center py-5">
-        <div className="w-full border-t border-gray-200 px-5 py-16 md:py-16 ">
+      <div className="min-w-screen bgAlternate  flex items-center justify-center py-5">
+        <div className="w-full border-gray-200 px-5 py-16 md:py-16 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
@@ -434,7 +468,7 @@ export default function Home() {
 
       {/* FAQ */}
       <div className="min-w-screen  flex items-center justify-center py-5">
-        <div className="w-full border-t border-b border-gray-200 px-5 py-16 md:py-16 ">
+        <div className="w-full border-gray-200 px-5 py-16 md:py-16 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
@@ -474,25 +508,27 @@ export default function Home() {
                   collapseAll
                   className="border-none border-b border-gray-800"
                 >
+                  {listFAQData?.data?.map((item) => (
                   <Accordion.Panel className=" border border-b border-gray-200">
                     <section className=" border-b border-gray-200">
                       <Accordion.Title
                         className="border-none  text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
-                        What is labour law compliance? 
+                        {item.Question} 
                       </Accordion.Title>
                       <Accordion.Content
                         className="border-none text-lg  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                       >
                         <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
-                        Labour law compliance involves adhering to all applicable labour laws and regulations to protect employees' rights and welfare.
+                          {item.Answer}
                         </p>
                       </Accordion.Content>
                     </section>
                   </Accordion.Panel>
-                  <Accordion.Panel className=" border border-b border-gray-200">
+                  ))}
+                  {/* <Accordion.Panel className=" border border-b border-gray-200">
                     <section className=" border-b border-gray-200">
                       <Accordion.Title
                         className="border-none  text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
@@ -578,7 +614,7 @@ The Central Government and respective State Governments have framed rules under 
                         </p>
                       </Accordion.Content>
                     </section>
-                  </Accordion.Panel>
+                  </Accordion.Panel> */}
                 </Accordion>
               </ul>
             </div>
@@ -592,7 +628,7 @@ The Central Government and respective State Governments have framed rules under 
 
       {/* Clients */}
       <div className="min-w-screen  flex items-center justify-center py-5">
-        <div className="w-full border-b border-gray-200 px-5 py-5 md:py-10 text-gray-800">
+        <div className="w-full border-gray-200 px-5 py-5 md:py-10 text-gray-800">
           <div className="w-full max-w-screen mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
@@ -634,12 +670,6 @@ The Central Government and respective State Governments have framed rules under 
             <section className={`${styles.forthSection}`}>
                 <div className={`${styles.forthSectionInner}`}>
                     <div className={`${styles.forthBoxImg}`}>
-                        <img 
-                            className=" mt-5"
-                            src="images/speech-bubble.png"
-                            width="130px"
-                            height="130px"
-                        />
                     </div>
                     <div className={`${styles.forthBoxMain}`}>
                         <div className={`${styles.forthBoxText}`}>
@@ -649,17 +679,17 @@ The Central Government and respective State Governments have framed rules under 
                         <form className={`${styles.forthBoxForm}`}>
                             <div className={`${styles.forthBoxInput}`}>
                                 <input
-                                    placeholder="Your First Name"
+                                    placeholder="Full Name"
                                     value={Name}
                                     onChange={handleName}
                                     className="border-b bg-transparent text-xl focus:outline-0 focus:border-white hover:border-white mr-2 placeholder-gray-300 hover:placeholder-white py-3" />
                                 <input
-                                    placeholder="Your Email Address"
+                                    placeholder="Email Address"
                                     value={Email}
                                     onChange={handleEmail}
                                     className={`${styles.forthBoxInput2} py-3 border-b bg-transparent text-xl focus:outline-0 mr-2 focus:border-white hover:border-white placeholder-gray-300 hover:placeholder-white `} />
                                 <input
-                                    placeholder="Your Mobile Number"
+                                    placeholder="Mobile Number"
                                     type="number"
                                     value={Mobile}
                                     onChange={handleMobile}
@@ -667,7 +697,7 @@ The Central Government and respective State Governments have framed rules under 
                             </div>
                             <textarea
                               rows="4"
-                                placeholder="Ask your question"
+                                placeholder="Ask Your Question"
                                 value={Message}
                                 onChange={handleMessage}
                                 className="block py-2.5 px-0 w-full resize-none text-xl text-white bg-transparent border-0 border-b border-gray-300 appearance-none focus:outline-0 focus:border-white hover:border-white placeholder-gray-300 hover:placeholder-white peer"

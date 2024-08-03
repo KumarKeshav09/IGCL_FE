@@ -33,6 +33,12 @@ background: white;
   color: black !important;
 }
 
+.bgAlternate{
+  background-color: #dae5ee;
+  /* background: rgb(159,189,236);
+  background: linear-gradient(160deg, rgba(159,189,236,1) 0%, rgba(135,177,228,1) 20%, rgba(118,149,171,1) 40%, rgba(188,233,255,1) 60%, rgba(138,181,205,1) 80%); */
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -42,8 +48,12 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+  padding-left: 0 !important;
+  --tw-ring-shadow: none !important;
 }
-
+textarea:focus {
+  --tw-ring-shadow: none !important;
+}
 .demo-wrap {
   position: relative;
 }
@@ -127,7 +137,7 @@ input[type=number] {
 }
 
 .contactDetail:hover{
-  color: rgb(176, 141, 94);
+  color: #3F51B5;
 }
 @layer utilities {
   .text-balance {

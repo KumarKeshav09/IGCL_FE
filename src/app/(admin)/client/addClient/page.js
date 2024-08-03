@@ -66,7 +66,7 @@ export default function addClient() {
   return (
     <section>
       <h1 className="text-2xl text-black underline mb-3 font-bold">
-        Add Your Testimonial Details
+        Add Your Client Details
       </h1>
       <Link href="/client">
         <div className="mb-5 mt-5">

@@ -40,7 +40,7 @@ export default function Services() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link href='/services/1' className={styles.card}>
                     <img
                         src="/images/image1.jpg"
@@ -93,7 +93,7 @@ export default function Services() {
                         </div>
                     </div>
                 </Link>
-                <Link href='/services/1' className={styles.card}>
+                {/* <Link href='/services/1' className={styles.card}>
                     <img
                         src="/images/image5.jpg"
                         className={styles.image}
@@ -105,7 +105,7 @@ export default function Services() {
                             <p className={styles.textSecret}>Driving Innovation and Growth Through Advanced Research & Development</p>
                         </div>
                     </div>
-                </Link>
+                </Link> */}
             </div>
           </div>
         </div>

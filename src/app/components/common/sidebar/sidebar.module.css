@@ -1,55 +1,16 @@
-.admintext{
-    color: white;
-    font-weight: bolder;
-
-}
 .inactiveTab{
     color: black !important;
 }
-.tabText{
-    color: white;
-}
 .activeTab{
     --tw-bg-opacity: 1;
-    background-color: rgb(243 244 246 / var(--tw-bg-opacity)) !important;
-    color: black !important;
+    background-color: #3F51B5!important;
+    color: white !important;
+}
+.tabSvg{
+    color: white !important;
 }
 .activeTabChild{
     --tw-bg-opacity: 1;
-    background-color:rgb(40, 101, 224)  !important;
+    background-color:#3F51B5  !important;
     color: white !important;
-}
-.inactiveTab:hover {
-    color: black !important;
-}
-.inactiveTab:hover .tabSvg {
-    color: black !important;
-}
-
-.sidebarMain{
-    background-color: #2b4ac7 !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-x: hidden;
-}
-.logobox{
-    background-color: #0a1c2ab3;
-    border-radius: 10px;
-}
-.sidebarBottomImgdiv{
-    margin-right: -1rem;
-    /* margin-left: -1rem; */
-
-} 
-
-.navText{
-    font-family: "Merriweather", serif;
-    /* font-weight: 900 !important; */
-    font-style: normal;
-}
-@media screen and (max-width:426px){
-    .navText{
-        font-size: 1rem !important;
-    }
 }

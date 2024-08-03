@@ -32,6 +32,50 @@ export default function CompliancesPost1() {
         </section>
       </div>
 
+      {/* Applicability  */}
+
+      <div>
+        <section className="bg-white border-b dark:bg-gray-900">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+                Applicability
+              </h1>
+              <h3 className="text-xl lg:text-nowrap mb-5 font-light text-gray-800">
+                Empowering clients with innovative solutions and unparalleled
+                support.
+              </h3>
+              <div className="text-center mb-10">
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+              </div>
+            </div>
+            <div className="rounded-lg dark:bg-gray-800">
+              <ul className="list-disc text-gray-500 text-justify text-lg lg:text-xl">
+                <li>
+                  Shop and Establishment Compliances are applicable to various
+                  commercial establishments, including shops, offices, eateries,
+                  and other businesses operating within a defined jurisdiction.
+                </li>
+                <li>
+                  The applicability varies by state or local government
+                  regulations, with each region having its own set of rules and
+                  requirements.
+                </li>
+                <li>
+                  Generally, businesses employing a certain number of workers,
+                  regardless of whether they are permanent, temporary, or
+                  contract, are subject to these compliances.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
       {/* what to expect */}
 
       <div>
@@ -190,49 +234,7 @@ export default function CompliancesPost1() {
         </section>
       </div>
 
-      {/* Applicability  */}
-
-      <div>
-        <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
-                Applicability
-              </h1>
-              <h3 className="text-xl lg:text-nowrap mb-5 font-light text-gray-800">
-                Empowering clients with innovative solutions and unparalleled
-                support.
-              </h3>
-              <div className="text-center mb-10">
-                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
-                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-              </div>
-            </div>
-            <div className="rounded-lg dark:bg-gray-800">
-              <ul className="list-disc text-gray-500 text-justify text-lg lg:text-xl">
-                <li>
-                  Shop and Establishment Compliances are applicable to various
-                  commercial establishments, including shops, offices, eateries,
-                  and other businesses operating within a defined jurisdiction.
-                </li>
-                <li>
-                  The applicability varies by state or local government
-                  regulations, with each region having its own set of rules and
-                  requirements.
-                </li>
-                <li>
-                  Generally, businesses employing a certain number of workers,
-                  regardless of whether they are permanent, temporary, or
-                  contract, are subject to these compliances.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </div>
+      
     </>
   );
 }

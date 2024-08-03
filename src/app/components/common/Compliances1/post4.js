@@ -27,6 +27,39 @@ export default function CompliancesPost4() {
         </section>
       </div>
 
+      {/* Applicability  */}
+
+      <div>
+        <section className="bg-white border-b dark:bg-gray-900">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+                Applicability
+              </h1>
+              <h3 className="text-xl lg:text-nowrap mb-5 font-light text-gray-800">
+                Empowering clients with innovative solutions and unparalleled
+                support.
+              </h3>
+              <div className="text-center mb-10">
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+              </div>
+            </div>
+            <div className=" p-4  rounded-lg md:p-2 dark:bg-gray-800">
+              <p className="mb-3 text-gray-500 dark:text-gray-400 text-justify text-lg lg:text-xl">
+                The Act applies to every establishment in which 20 or more
+                employees are employed on any day during an accounting year. The
+                Act covers employees whose salary or wage does not exceed a
+                specified amount of 21000.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
       {/* what to expect */}
 
       <div>
@@ -184,38 +217,7 @@ export default function CompliancesPost4() {
         </section>
       </div>
 
-      {/* Applicability  */}
-
-      <div>
-        <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
-                Applicability
-              </h1>
-              <h3 className="text-xl lg:text-nowrap mb-5 font-light text-gray-800">
-                Empowering clients with innovative solutions and unparalleled
-                support.
-              </h3>
-              <div className="text-center mb-10">
-                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
-                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-              </div>
-            </div>
-            <div className=" p-4  rounded-lg md:p-2 dark:bg-gray-800">
-              <p className="mb-3 text-gray-500 dark:text-gray-400 text-justify text-lg lg:text-xl">
-                The Act applies to every establishment in which 20 or more
-                employees are employed on any day during an accounting year. The
-                Act covers employees whose salary or wage does not exceed a
-                specified amount of 21000.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
+      
     </>
   );
 }

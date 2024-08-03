@@ -29,6 +29,42 @@ export default function CompliancesPost6() {
         </section>
       </div>
 
+      {/* Applicability  */}
+
+      <div>
+        <section className="bg-white border-b dark:bg-gray-900">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+                Applicability
+              </h1>
+              <h3 className="text-xl mb-5 lg:text-nowrap font-light text-gray-800">
+                Empowering clients with innovative solutions and unparalleled
+                support.
+              </h3>
+              <div className="text-center mb-10">
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+              </div>
+            </div>
+            <div className=" p-4  rounded-lg md:p-2 dark:bg-gray-800">
+              <p className="mb-3 text-gray-500 dark:text-gray-400 text-justify text-lg lg:text-xl">
+                Professional Tax (PT) applies to individuals earning income
+                through employment or profession, varying by state regulations.
+                Similarly, the Labor Welfare Fund (LWF) mandates contributions
+                from employers to support worker welfare initiatives, as
+                required by state law. Both PT and LWF compliance are essential
+                for employers and employees to fulfill statutory obligations and
+                contribute to social welfare.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
       {/* what to expect */}
 
       <div>
@@ -181,41 +217,7 @@ export default function CompliancesPost6() {
         </section>
       </div>
 
-      {/* Applicability  */}
-
-      <div>
-        <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
-                Applicability
-              </h1>
-              <h3 className="text-xl mb-5 lg:text-nowrap font-light text-gray-800">
-                Empowering clients with innovative solutions and unparalleled
-                support.
-              </h3>
-              <div className="text-center mb-10">
-                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
-                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-              </div>
-            </div>
-            <div className=" p-4  rounded-lg md:p-2 dark:bg-gray-800">
-              <p className="mb-3 text-gray-500 dark:text-gray-400 text-justify text-lg lg:text-xl">
-                Professional Tax (PT) applies to individuals earning income
-                through employment or profession, varying by state regulations.
-                Similarly, the Labor Welfare Fund (LWF) mandates contributions
-                from employers to support worker welfare initiatives, as
-                required by state law. Both PT and LWF compliance are essential
-                for employers and employees to fulfill statutory obligations and
-                contribute to social welfare.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
+      
     </>
   );
 }

@@ -95,7 +95,7 @@ console.log(params)
   return (
     <section>
       <h1 className="text-2xl text-black underline mb-3 font-bold">
-        Update Your Testimonial Details
+        Update Your Client Details
       </h1>
       <Link href="/client">
         <div className="mb-5 mt-5">

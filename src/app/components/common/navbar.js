@@ -98,7 +98,7 @@ export default function Navbar() {
                 >
                   Services
                 </Link>
-                <div id="dropdownHover" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                <div id="dropdownHover" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto dark:bg-gray-700">
     <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
       <li>
         <Link href="/services/1" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Labour Law Compliances</Link>
@@ -114,16 +114,6 @@ export default function Navbar() {
       </li>
     </ul>
 </div>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className={`${
-                      "block text-lg py-2 px-3 text-black  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                  }`}
-                >
-                  Products
-                </Link>
               </li>
               <li>
                 <Link

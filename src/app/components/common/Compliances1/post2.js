@@ -29,6 +29,49 @@ export default function CompliancesPost2() {
         </section>
       </div>
 
+      {/* Applicability  */}
+
+      <div>
+        <section className="bg-white border-b dark:bg-gray-900">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+                Applicability
+              </h1>
+              <h3 className="text-xl mb-5 lg:text-nowrap font-light text-gray-800">
+                Empowering clients with innovative solutions and unparalleled
+                support.
+              </h3>
+              <div className="text-center mb-10">
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+              </div>
+            </div>
+            <div className=" p-4  rounded-lg md:p-4 dark:bg-gray-800">
+              <ul className="list-disc text-gray-500 text-justify text-lg lg:text-xl">
+                <li>
+                  The EPF scheme mandatorily applies to all establishments that
+                  have employed a minimum of 20 people.
+                </li>
+                <li className="mt-2">
+                  Establishments with less than 20 employees can also opt for
+                  voluntary registration. All the employees of such an
+                  establishment will be eligible for EPF right from the
+                  beginning of their employment.
+                </li>
+                <li>
+                  For every employee whose wages (Basic + DA) are less than INR
+                  15000.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
       {/* what to expect */}
 
       <div>
@@ -202,48 +245,7 @@ export default function CompliancesPost2() {
         </section>
       </div>
 
-      {/* Applicability  */}
-
-      <div>
-        <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
-                Applicability
-              </h1>
-              <h3 className="text-xl mb-5 lg:text-nowrap font-light text-gray-800">
-                Empowering clients with innovative solutions and unparalleled
-                support.
-              </h3>
-              <div className="text-center mb-10">
-                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
-                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
-                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-              </div>
-            </div>
-            <div className=" p-4  rounded-lg md:p-4 dark:bg-gray-800">
-              <ul className="list-disc text-gray-500 text-justify text-lg lg:text-xl">
-                <li>
-                  The EPF scheme mandatorily applies to all establishments that
-                  have employed a minimum of 20 people.
-                </li>
-                <li className="mt-2">
-                  Establishments with less than 20 employees can also opt for
-                  voluntary registration. All the employees of such an
-                  establishment will be eligible for EPF right from the
-                  beginning of their employment.
-                </li>
-                <li>
-                  For every employee whose wages (Basic + DA) are less than INR
-                  15000.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </div>
+      
     </>
   );
 }
