@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
 import { API_BASE_URL } from "../../../../utils/constants";
+import Cookies from "js-cookie";
 
 export default function Clients() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -43,9 +44,15 @@ export default function Clients() {
 
   const handleDelete = async () => {
     try {
+      const token = Cookies.get("token");
+      console.log('token',token)
       const response = await fetch(`${API_BASE_URL}/client/deleteClient/${deleteId}`, {
         method: 'DELETE',
-      });
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
+        });
       const data = await response.json();
       if (data.success) {
         getAllClient();

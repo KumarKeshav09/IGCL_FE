@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     <>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></link>
         <Sidebar children={children} />
-        <ToastContainer autoClose={2000} closeOnClick/>
+        {/* <ToastContainer autoClose={2000} closeOnClick/> */}
         </>
        
   );
