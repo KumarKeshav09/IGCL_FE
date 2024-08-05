@@ -6,8 +6,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { API_BASE_URL } from "../../../../utils/constants";
 import { toast, ToastContainer } from "react-toastify";
+import Cookies from "js-cookie";
 import 'react-toastify/dist/ReactToastify.css'; 
-
 
 export default function Login() {
   const router = useRouter();
@@ -45,6 +45,7 @@ export default function Login() {
     const resData = await res.json();
     if (resData?.success == true) {
       toast.success(resData?.message);
+      Cookies.set("token", resData?.token);
       router.push("/testimonials");
     } else {
       toast.error(resData?.error);
