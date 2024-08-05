@@ -4,6 +4,8 @@ import { useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { API_BASE_URL } from "../../../../../utils/constants";
+import 'react-toastify/dist/ReactToastify.css'; 
+
 
 export default function AddTestiMonials() {
   const [name, setName] = useState("");

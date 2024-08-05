@@ -5,6 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
 import { API_BASE_URL } from "../../../../utils/constants";
+import 'react-toastify/dist/ReactToastify.css'; 
+
 
 export default function TestiMonials() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
