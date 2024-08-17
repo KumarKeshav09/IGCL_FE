@@ -6,6 +6,7 @@ import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
 import 'react-toastify/dist/ReactToastify.css'; // Ensure this import
 import { API_BASE_URL } from "../../../../utils/constants";
+//test
 
 export default function FAQ() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
