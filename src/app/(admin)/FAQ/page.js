@@ -6,6 +6,7 @@ import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
 import 'react-toastify/dist/ReactToastify.css'; // Ensure this import
 import { API_BASE_URL } from "../../../../utils/constants";
+import Cookies from "js-cookie";
 //test
 
 export default function FAQ() {
@@ -15,6 +16,8 @@ export default function FAQ() {
   const [page, setPage] = useState(1);
   const [searchData, setSearchData] = useState("");
   const [loading, setLoading] = useState(false); // Loader state
+  const token = Cookies.get("token");
+
 
   useEffect(() => {
     getAllFAQ();
@@ -42,6 +45,9 @@ export default function FAQ() {
       setLoading(true); // Show loader
       const res = await fetch(`${API_BASE_URL}/faq/deleteFAQ/${deleteId}`, {
         method: 'DELETE',
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
       });
       const data = await res.json();
       if (data.success) {

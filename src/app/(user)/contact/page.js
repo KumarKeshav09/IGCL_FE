@@ -99,11 +99,11 @@ export default function Contact() {
 
       {/* overview */}
       <div>
-        <section class="bg-white border-b dark:bg-gray-900">
-          <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <section class="bg-white dark:bg-gray-900">
+          <div class="pt-8 px-4 mx-auto max-w-screen-xl lg:pt-16 lg:px-6">
             <div className="">
               <div class=" text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 class="mb-4 text-2xl text-justify tracking-tight font-semibold text-gray-900 dark:text-white">
+                <h2 class="text-2xl text-justify tracking-tight font-semibold text-gray-900 dark:text-white">
                   For inquiries or requests that require a more personal
                   response, we will make every attempt to respond in a timely
                   manner. Or, if you prefer to contact us by phone or please
@@ -223,7 +223,7 @@ export default function Contact() {
         </section>
       </div>
 
-      <div className="grid grid-cols-1  md:grid-cols-2 gap-2 ">
+      <div className="grid grid-cols-1  md:grid-cols-2 gap-2 px-2 py-2 md:px-10 md:py-8">
         <div className="">
       <iframe className="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.0552144790804!2d75.77863037597295!3d26.96515075783419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3cddab37c43%3A0x2d77769bd35ce17f!2sIGCL%20India!5e0!3m2!1sen!2sin!4v1722684446948!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 

@@ -391,16 +391,16 @@ export default function Home() {
 
       {/* Services */}
       <div className="min-w-screen bgAlternate  flex items-center justify-center py-5">
-        <div className="w-full border-gray-200 px-5 py-16 md:py-16 ">
+        <div className="w-full border-gray-200 px-5 py-2 md:py-8 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 SERVICES
               </h1>
-              <h3 className="text-xl mb-5 font-light text-gray-600">
+              <h3 className="text-xl lg:text-nowrap mb-5 font-light text-gray-600">
                 Offering a range of services tailored to meet your needs.
               </h3>
-              <div className="text-center mb-10">
+              <div className="text-center mb-5">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -468,7 +468,7 @@ export default function Home() {
 
       {/* FAQ */}
       <div className="min-w-screen  flex items-center justify-center py-5">
-        <div className="w-full border-gray-200 px-5 py-16 md:py-16 ">
+        <div className="w-full border-gray-200 px-5 py-4 md:py-4 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
@@ -477,7 +477,7 @@ export default function Home() {
               <h3 className="text-xl mb-5 font-light text-gray-600">
                 Find answers to commonly asked questions.
               </h3>
-              <div className="text-center mb-10">
+              <div className="text-center mb-5">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -528,93 +528,6 @@ export default function Home() {
                     </section>
                   </Accordion.Panel>
                   ))}
-                  {/* <Accordion.Panel className=" border border-b border-gray-200">
-                    <section className=" border-b border-gray-200">
-                      <Accordion.Title
-                        className="border-none  text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
-                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
-                      >
-                      Why is labour law compliance important for businesses? 
-                      </Accordion.Title>
-                      <Accordion.Content
-                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 hover:bg-transparent
-                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
-                      >
-                        <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
-                        Compliance helps businesses avoid legal penalties, improve employee satisfaction, and maintain a positive reputation. It ensures a safe and fair working environment.
-                        </p>
-                      </Accordion.Content>
-                    </section>
-                  </Accordion.Panel>
-                  <Accordion.Panel className=" border border-b border-gray-200">
-                    <section className=" border-b border-gray-200">
-                      <Accordion.Title
-                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
-                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
-                      >
-                        How can businesses ensure labour law compliance? 
-                      </Accordion.Title>
-                      <Accordion.Content
-                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 hover:bg-transparent
-                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
-                      >
-                        <p className=" mb-2 text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 dark:text-gray-800 ">
-                        Businesses can ensure compliance by staying updated with legal changes, maintaining proper records, conducting regular audits, and seeking professional advice from compliance experts.
-                        </p>
-                      </Accordion.Content>
-                    </section>
-                  </Accordion.Panel>
-                  <Accordion.Panel className=" border border-b border-gray-200">
-                    <section className=" border-b border-gray-200">
-                      <Accordion.Title
-                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
-                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
-                      >
-                      What are the various categories of labour laws in India? 
-                      </Accordion.Title>
-                      <Accordion.Content
-                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 hover:bg-transparent
-                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
-                      >
-                        <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
-                        Labour laws in India can be categorised as follows: (i) industrial relations, (ii) industrial safety and health, (iii) child and women labour, (iv) social security, (v) wages, and (vi) labour welfare. 
-                        </p>
-                      </Accordion.Content>
-                    </section>
-                  </Accordion.Panel>
-                  <Accordion.Panel className=" border border-b border-gray-200">
-                    <section className=" border-b border-gray-200">
-                      <Accordion.Title
-                        className="border-none  text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
-                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
-                      >
-                    	What are the important labour and employment laws typically applicable to businesses in India?
-                      </Accordion.Title>
-                      <Accordion.Content
-                        className="border-none text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 hover:bg-transparent
-                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
-                      >
-                        <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
-                        Some of the important labour laws which should be considered while setting up and operating a business in India are as follows:
-(i) Factories Act, 1948
-(ii) Industrial Dispute Act, 1947
-(iii) Shops and Establishment Act as framed by respective State Governments
-(iv) Minimum Wages Act, 1948
-(v) Payment of Wages Act, 1936
-(vi) Payment of Bonus Act, 1965
-(vii) Contract Labour (Regulation and Prohibition) Act, 1970
-(viii) Employees Provident Fund and Miscellaneous Provisions Act, 1952
-(ix) Employees’ State Insurance Act, 1948
-(x) Payment of Gratuity Act, 1965
-(xi) Equal Remuneration Act, 1976
-(xii) Maternity Benefit Act, 1961
-(xiii) Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013
-The Central Government and respective State Governments have framed rules under the above-mentioned laws.
-
-                        </p>
-                      </Accordion.Content>
-                    </section>
-                  </Accordion.Panel> */}
                 </Accordion>
               </ul>
             </div>
@@ -634,7 +547,7 @@ The Central Government and respective State Governments have framed rules under 
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 CLIENTS
               </h1>
-              <h3 className="text-xl mb-5 font-light text-gray-800">
+              <h3 className="text-xl lg:text-nowrap mb-5 font-light text-gray-800">
                 Empowering clients with innovative solutions and unparalleled
                 support.
               </h3>

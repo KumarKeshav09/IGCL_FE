@@ -3,6 +3,7 @@
     grid-template-columns: auto auto;
     gap: 2rem;
     padding: 1rem 6rem 0rem 6rem;
+    height: 50rem;
 }
 
 .card {
@@ -71,6 +72,12 @@
     font-size: 20px;
     bottom: 3rem;
     position: absolute;
+}
+
+@media screen and (max-width: 1400px) {
+    .BoxContainer{
+        height: 100% !important;
+    }
 }
 
 @media screen and (max-width: 1225px) {
@@ -205,9 +212,8 @@
 /* contact us */
 
 .forthSection{
-    background-color: rgb(176, 141, 94);
+    background-color: #3F51B5;
     margin-right: 20rem;
-    margin-bottom: 5rem;
 }
 
 .forthSectionInner{
@@ -254,7 +260,7 @@
 }
 
 .forthButton:hover {
-    background-color: rgb(150, 116, 72);
+    background-color:#26358b;
     color: white;
 }
 
@@ -265,7 +271,6 @@
     .forthSection{
         background-color: rgb(176, 141, 94);
         margin-right: 10rem;
-        margin-bottom: 5rem;
     }
 }
 
@@ -276,7 +281,6 @@
     .forthSection{
         background-color: rgb(176, 141, 94);
         margin-right: 0rem;
-        margin-bottom: 5rem;
     }
 }
 

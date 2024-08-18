@@ -1,15 +1,17 @@
 "use client";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import 'react-toastify/dist/ReactToastify.css';
 import { API_BASE_URL } from "../../../../../utils/constants";
+import Cookies from "js-cookie";
 
 export default function AddFaq() {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const router = useRouter();
+  const token = Cookies.get("token");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -32,18 +34,21 @@ export default function AddFaq() {
     try {
       const res = await fetch(`${API_BASE_URL}/faq/add`, {
         method: 'POST',
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
         body: formData,
       });
 
       const data = await res.json();
-      if (data.success) {
-        router.push("/FAQ");
+      if (res.ok) {
         toast.success(data.message || "FAQ added successfully");
+        router.push("/FAQ");
       } else {
         toast.error(data.errMessage || "Failed to add FAQ");
       }
     } catch (error) {
-      console.log(error)
+      console.error(error);
       toast.error("An error occurred while adding the FAQ");
     }
   };

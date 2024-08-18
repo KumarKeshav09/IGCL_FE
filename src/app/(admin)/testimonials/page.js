@@ -6,6 +6,7 @@ import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
 import { API_BASE_URL } from "../../../../utils/constants";
 import 'react-toastify/dist/ReactToastify.css'; 
+import Cookies from "js-cookie";
 
 
 export default function TestiMonials() {
@@ -14,6 +15,8 @@ export default function TestiMonials() {
   const [deleteId, setDeleteId] = useState(null);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false); // Add loading state
+  const token = Cookies.get("token");
+
 
   useEffect(() => {
     getAllTestimonial();
@@ -47,6 +50,9 @@ export default function TestiMonials() {
         `${API_BASE_URL}/testimonial/deleteTestimonial/${deleteId}`,
         {
           method: "DELETE",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          },
         }
       );
       const data = await res.json();

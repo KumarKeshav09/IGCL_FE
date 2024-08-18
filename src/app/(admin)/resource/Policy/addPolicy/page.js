@@ -5,11 +5,13 @@ import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import 'react-toastify/dist/ReactToastify.css';
 import { API_BASE_URL } from "../../../../../../utils/constants";
+import Cookies from "js-cookie";
 
 
 export default function AddPolicy() {
   const [name, setName] = useState("");
   const router = useRouter();
+  const token = Cookies.get("token");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -28,6 +30,9 @@ export default function AddPolicy() {
     try {
       const res = await fetch(`${API_BASE_URL}/policy/add`, {
         method: 'POST',
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
         body: formData,
       });
 

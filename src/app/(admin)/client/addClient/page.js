@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { API_BASE_URL } from "../../../../../utils/constants";
+import Cookies from "js-cookie";
 
 export default function addClient() {
   const [name, setName] = useState("");
@@ -11,6 +12,7 @@ export default function addClient() {
   const [image, setImage] = useState(null); // Use null for image state
   const imageInputRef = useRef(null);
   const router = useRouter();
+  const token = Cookies.get("token");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -48,6 +50,9 @@ export default function addClient() {
     try {
       const res = await fetch(`${API_BASE_URL}/client/add`, {
         method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
         body: formData,
       });
       const data = await res.json();
@@ -139,7 +144,7 @@ export default function addClient() {
                   <h3>Selected Image</h3>
                 </div>
                 <img
-                  src={URL.createObjectURL(image)} // Create a temporary URL for the selected image
+                  src={URL.createObjectURL(image)}
                   alt="Selected preview"
                   className="object-cover m-2 mt-5 border border-black rounded-lg"
                   width={200}

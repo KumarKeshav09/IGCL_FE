@@ -6,6 +6,7 @@ import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
 import 'react-toastify/dist/ReactToastify.css';
 import { API_BASE_URL } from "../../../../../utils/constants";
+import Cookies from "js-cookie";
 
 export default function Policy() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -13,6 +14,8 @@ export default function Policy() {
   const [deleteId, setDeleteId] = useState(null);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const token = Cookies.get("token");
+
 
   useEffect(() => {
     import("flowbite").then((module) => {
@@ -44,6 +47,9 @@ export default function Policy() {
     try {
       const res = await fetch(`${API_BASE_URL}/policy/deletePolicy/${deleteId}`, {
         method: 'DELETE',
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
       });
       const data = await res.json();
       if (data.success) {
@@ -170,9 +176,11 @@ export default function Policy() {
         </table>
       </div>
       <Pagination data={listData} pageNo={handlePageChange} pageVal={page} />
-        <Popup
-          title="Confirm Deletion"
-          message="Are you sure you want to delete this policy?"
+      <Popup
+          isOpen={isPopupOpen}
+          title="Are you sure you want to delete this policy?"
+          confirmLabel="Yes, I'm sure"
+          cancelLabel="No, cancel"
           onConfirm={handleDelete}
           onCancel={handleCancel}
         />

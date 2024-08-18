@@ -49,7 +49,6 @@ export default function Clients() {
       const response = await fetch(`${API_BASE_URL}/client/deleteClient/${deleteId}`, {
         method: 'DELETE',
         headers: {
-          "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`,
         },
         });

@@ -5,16 +5,23 @@ import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import 'react-toastify/dist/ReactToastify.css'; 
 import { API_BASE_URL } from "../../../../../../utils/constants";
+import Cookies from "js-cookie";
 
 export default function EditPolicy({ params }) {
   const [question, setQuestion] = useState("");
   const router = useRouter();
   const policyId = params?.editPolicy; // Adjusted to match the parameter name for policy
+  const token = Cookies.get("token");
+
 
   useEffect(() => {
     const fetchPolicyDetails = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/policy/PolicyById/${policyId}`);
+        const res = await fetch(`${API_BASE_URL}/policy/PolicyById/${policyId}`, {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          },
+        });
         const data = await res.json();
         if (data.success) {
           setQuestion(data.data?.PolicyName);

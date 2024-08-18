@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { API_BASE_URL } from "../../../../../utils/constants";
 import Cookies from "js-cookie";
 
-export default function Abstract() {
+export default function Judgement() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [listData, setListData] = useState(null);
   const [deleteId, setDeleteId] = useState(null);
@@ -17,21 +17,25 @@ export default function Abstract() {
   const token = Cookies.get("token");
 
   useEffect(() => {
-    getAllPolicies();
+    import("flowbite").then((module) => {
+      const { initFlowbite } = module;
+      initFlowbite();
+    });
+    getAllJudgements();
   }, [page]);
 
-  const getAllPolicies = async () => {
+  const getAllJudgements = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/abstract/allAbstract?page=${page}&limit=10`);
+      const res = await fetch(`${API_BASE_URL}/judgement/allJudgement?page=${page}&limit=10`);
       const data = await res.json();
       if (data.success) {
         setListData(data);
       } else {
-        toast.error(data.errMessage || "Failed to fetch policies");
+        toast.error(data.errMessage || "Failed to fetch judgements");
       }
     } catch (error) {
-      toast.error("An error occurred while fetching policies");
+      toast.error("An error occurred while fetching judgements");
     } finally {
       setLoading(false);
     }
@@ -40,7 +44,7 @@ export default function Abstract() {
   const handleDelete = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/abstract/deleteAbstract/${deleteId}`, {
+      const res = await fetch(`${API_BASE_URL}/judgement/deleteJudgement/${deleteId}`, {
         method: 'DELETE',
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -48,15 +52,15 @@ export default function Abstract() {
       });
       const data = await res.json();
       if (data.success) {
-        getAllPolicies();
+        getAllJudgements();
         setDeleteId(null);
         setIsPopupOpen(false);
-        toast.success(data.message || "Abstract deleted successfully");
+        toast.success(data.message || "Judgement deleted successfully");
       } else {
-        toast.error(data.errMessage || "Failed to delete abstract");
+        toast.error(data.errMessage || "Failed to delete judgement");
       }
     } catch (error) {
-      toast.error("An error occurred while deleting the abstract");
+      toast.error("An error occurred while deleting the judgement");
     } finally {
       setLoading(false);
     }
@@ -66,7 +70,7 @@ export default function Abstract() {
     setPage(newPage);
   };
 
-  const deletePolicyModal = (id) => {
+  const deleteJudgementModal = (id) => {
     setDeleteId(id);
     setIsPopupOpen(true);
   };
@@ -80,16 +84,16 @@ export default function Abstract() {
     <section>
       <div className="relative overflow-x-auto sm:rounded-lg">
         <h1 className="text-2xl text-black underline mb-3 font-bold">
-          Abstract
+          Judgements
         </h1>
         <div className="flex flex-col sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
           <div>
-            <Link href="/resource/abstract/addAbstract">
+            <Link href={"resource/judgement/addJudgement"}>
               <button
                 className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                 type="button"
               >
-                + Add Abstract
+                + Add Judgement
               </button>
             </Link>
           </div>
@@ -98,10 +102,13 @@ export default function Abstract() {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Policy Name
+                Policy
               </th>
               <th scope="col" className="px-6 py-3">
-                PDF
+                Title
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Description
               </th>
               <th scope="col" className="px-6 py-3">
                 Action
@@ -139,35 +146,27 @@ export default function Abstract() {
                   key={item._id}
                   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
+                  <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {item.PolicyId.PolicyName}
+                  </td>
                   <td
-                    scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    {item.PolicyId?.PolicyName} {/* Adjust field name if needed */}
+                    {item.Title}
                   </td>
                   <td className="px-6 py-4">
-                    {item.PDF ? (
-                      <a
-                        href={item.PDF}
-                        download
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                      >
-                        Download PDF
-                      </a>
-                    ) : (
-                      <span>No PDF available</span>
-                    )}
+                    {item.Description}
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center space-x-2">
                       <Link
-                        href={`/resource/abstract/${item._id}`}
+                        href={`/resource/judgement/${item._id}`}
                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                       >
                         <i className="bi bi-pencil-square"></i>
                       </Link>
                       <button
-                        onClick={() => deletePolicyModal(item._id)}
+                        onClick={() => deleteJudgementModal(item._id)}
                         className="font-medium text-red-600 dark:text-red-500 hover:underline"
                       >
                         <i className="bi bi-trash-fill"></i>
@@ -185,16 +184,18 @@ export default function Abstract() {
             )}
           </tbody>
         </table>
+        <Pagination data={listData} pageNo={handlePageChange} pageVal={page} />
       </div>
-      <Pagination data={listData} pageNo={handlePageChange} pageVal={page} />
-      <Popup
-        isOpen={isPopupOpen}
-        title="Are you sure you want to delete this abstract?"
-        confirmLabel="Yes, I'm sure"
-        cancelLabel="No, cancel"
-        onConfirm={handleDelete}
-        onCancel={handleCancel}
-      />
+      {isPopupOpen && (
+        <Popup
+          isOpen={isPopupOpen}
+          title="Are you sure you want to delete this judgement?"
+          confirmLabel="Yes, I'm sure"
+          cancelLabel="No, cancel"
+          onConfirm={handleDelete}
+          onCancel={handleCancel}
+        />
+      )}
     </section>
   );
 }

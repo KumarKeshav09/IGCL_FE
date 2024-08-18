@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { API_BASE_URL } from "../../../../../utils/constants";
 import 'react-toastify/dist/ReactToastify.css';
+import Cookies from "js-cookie";
 
 export default function EditTestiMonials(params) {
   const [name, setName] = useState("");
@@ -14,13 +15,19 @@ export default function EditTestiMonials(params) {
   const [loading, setLoading] = useState(false); // Add loading state
   const imageInputRef = useRef(null);
   const router = useRouter();
+  const token = Cookies.get("token");
+
 
   useEffect(() => {
     // Fetch the existing testimonial data
     const fetchTestimonial = async () => {
       setLoading(true); // Set loading to true before fetching
       try {
-        const res = await fetch(`${API_BASE_URL}/testimonial/testimonialById/${params.params.editTestiMonials}`);
+        const res = await fetch(`${API_BASE_URL}/testimonial/testimonialById/${params.params.editTestiMonials}`, {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          },
+        });
         const data = await res.json();
         if (data.success) {
           const { Name, Message, Image } = data.data;
@@ -76,6 +83,9 @@ export default function EditTestiMonials(params) {
     try {
       const res = await fetch(`${API_BASE_URL}/testimonial/updateTestimonial/${params.params.editTestiMonials}`, {
         method: "PATCH",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
         body: formData,
       });
       const data = await res.json();
