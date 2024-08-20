@@ -23,7 +23,7 @@ export default function Services() {
           </section> */}
           {/* </div> */}
              <div className="min-w-screen border-b flex items-center justify-center py-5">
-        <div className="w-full  border-gray-200 md:px-12 px-5  py-16 md:py-24 ">
+        <div className="w-full  border-gray-200 md:px-12 px-5  py-5 md:py-10 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
@@ -40,7 +40,7 @@ export default function Services() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className={styles.BoxContainer}>
             <Link href='/services/1' className={styles.card}>
                     <img
                         src="/images/image1.jpg"
@@ -49,7 +49,7 @@ export default function Services() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>01-</h3>
-                            <h3 className={styles.textDesp}>Labour Law Compliances</h3>
+                            <h3 className={styles.textDesp}>Statutory Compliances </h3>
                             <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labour Law Compliance</p>
                         </div>
                     </div>
@@ -62,7 +62,7 @@ export default function Services() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>02-</h3>
-                            <h3 className={styles.textDesp}>Environment Social and Governance</h3>
+                            <h3 className={styles.textDesp}>Establishment Compliances</h3>
                             <p className={styles.textSecret}>Driving Sustainable Development Through Comprehensive ESG Strategies</p>
                         </div>
                     </div>
@@ -75,7 +75,7 @@ export default function Services() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <div><h3 className={styles.textNum}>03-</h3></div>
-                            <div><h3 className={styles.textDesp}>Training & Consultancy</h3></div>
+                            <div><h3 className={styles.textDesp}>Labour Law Audit and Assessment</h3></div>
                             <p className={styles.textSecret}>Enhancing Organizational Skills Through Tailored Training and Expert Consultancy</p>
                         </div>
                     </div>
@@ -88,24 +88,11 @@ export default function Services() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>04-</h3>
-                            <h3 className={styles.textDesp}>Staffing Solution</h3>
+                            <h3 className={styles.textDesp}>Solutions for Startups </h3>
                             <p className={styles.textSecret}>Providing Comprehensive Staffing Solutions for Optimal Workforce Management</p>
                         </div>
                     </div>
                 </Link>
-                {/* <Link href='/services/1' className={styles.card}>
-                    <img
-                        src="/images/image5.jpg"
-                        className={styles.image}
-                    />
-                    <div className={styles.overlay}>
-                        <div className={styles.text}>
-                            <h3 className={styles.textNum}>05-</h3>
-                            <h3 className={styles.textDesp}>Research & Development</h3>
-                            <p className={styles.textSecret}>Driving Innovation and Growth Through Advanced Research & Development</p>
-                        </div>
-                    </div>
-                </Link> */}
             </div>
           </div>
         </div>

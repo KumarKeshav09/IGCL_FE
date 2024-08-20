@@ -65,7 +65,7 @@ const Testimonials = () => {
   console.log("listData",listData)
 
   return (
-    <div className="min-w-screen bgAlternate flex items-center justify-center py-5">
+    <div className="min-w-screen bgAlternate flex items-center justify-center md:py-5">
       <div className="w-full  border-gray-200 px-5 py-5 md:py-5">
         <div className="w-full mx-auto">
           <div className="text-center max-w-xl mx-auto">

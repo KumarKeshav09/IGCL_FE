@@ -7,7 +7,13 @@ export const config = {
     "/dashboard",
     "/testimonials",
     "/client",
-    "/FAQ"
+    "/FAQ",
+    "/contactus",
+    "/resource",
+    "/resource/Policy/:path*",
+    "/resource/notification/:path*",
+    "/resource/judgement/:path*",
+    "/resource/abstract/:path*"
   ],
 };
 

@@ -69,9 +69,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -90,9 +90,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -111,9 +111,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -133,9 +133,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -155,9 +155,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -177,9 +177,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -198,9 +198,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -220,9 +220,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -242,9 +242,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -264,13 +264,13 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Ongoing support and guidance to organizations in
                     implementing corrective measures and monitoring compliance
                     with CLRA provisions.

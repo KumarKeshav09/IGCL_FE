@@ -187,11 +187,6 @@ export default function aboutUs() {
       {/* mission and vision  */}
       <div className={`${styles.missionSectionOutline}`}>
         <div className="mt-4">
-          <p>
-            <span className={`${styles.missionHeadTop}`}>
-              WHO WE ARE. WHAT WE DO
-            </span>
-          </p>
           <h1 className={`${styles.missionHead}`}>Our Mission</h1>
           <p className={`${styles.missiondesp} text-justify`}>
             Led by energetic and experienced professionals, we use a dedicated
@@ -201,11 +196,6 @@ export default function aboutUs() {
           </p>
         </div>
         <div className="mt-4">
-          <p>
-            <span className={`${styles.missionHeadTop}`}>
-              WHAT WE ASPIRE TO BE
-            </span>
-          </p>
           <h1 className={`${styles.missionHead}`}>Our Vision</h1>
           <p className={`${styles.missiondesp} text-justify`}>
             To be recognized as a key provider of strategic consulting for the

@@ -147,6 +147,15 @@ export default function Home() {
       toast.error('Email is required');
       return;
     }
+    function isValidEmail(Email) {
+      // Regular expression to validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(Email);
+    }
+    if (!isValidEmail(Email)) {
+      toast.error("Invalid email format");
+      return;
+    }
     if(!Message){
 
       toast.error('Question is required');
@@ -159,6 +168,10 @@ export default function Home() {
     }
     if (Mobile !== '') {
       data.Mobile = Mobile;
+    }
+    if (!/^(\+\d{1,3}[- ]?)?\d{10}$/.test(Mobile)) {
+      toast.error('Please enter a valid 10-digit mobile number');
+      return false;
     }
     try {
       const res = await fetch(`${API_BASE_URL}/contact/addContact`, {
@@ -191,7 +204,6 @@ export default function Home() {
 };
   return (
     <main className="">
-      <ToastContainer />
       <Navbar />
       {/* hero section */}
       <div className="">
@@ -219,7 +231,7 @@ export default function Home() {
 
         {/* <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">Your Compliance, </h1>
         <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white ">   Our Priority</h1> */}
-        <p className="mb-12 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">IGCL INDIA has been diversified into multiple business domains hence words fall short to describe the enthusiasm and working profile of our corporation.</p>
+        <p className="mb-12 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">IGCL INDIA offers customized compliance solutions, ensuring your business meets all statutory requirements, from employee benefits to workplace safety.</p>
         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
            
             <Link href="/services" className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
@@ -305,20 +317,20 @@ export default function Home() {
       </div>
 
       {/* what we do */}
-      <div className="py-8 mt-12 whatWeDoMain px-24">
+      <div className="py-2 md:py-8 whatWeDoMain px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
-          <div className="grid grid-cols-2 sm:grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 lg:h-29">
             <div className="mx-1 mt-24">
               <div>
                 <img
-                  className="h-36 md:h-96  w-full"
+                  className="h-32 lg:h-64  w-full"
                   src="/images/imgp1.jpeg"
                   alt=""
                 />
               </div>
               <div className="mt-3">
                 <img
-                  className="h-36 md:h-96  w-full"
+                  className="h-32 lg:h-64 w-full"
                   src="/images/image5.jpg"
                   alt=""
                 />
@@ -341,14 +353,14 @@ export default function Home() {
               </div> */}
               <div>
                 <img
-                  className="h-36 md:h-96  w-full"
+                  className="h-32  lg:h-64  w-full"
                   src="/images/whatWeDo3.png"
                   alt=""
                 />
               </div>
               <div className="mt-3">
                 <img
-                  className="h-36 md:h-96  w-full"
+                  className="h-32  lg:h-64  w-full"
                   src="/images/whatWeDo4.webp"
                   alt=""
                 />
@@ -359,7 +371,7 @@ export default function Home() {
             <section className=" dark:bg-gray-900">
               <div className="py-8 whatWeDoRIght mx-auto max-w-screen-xl text-left lg:py-16 md:px-16">
                 <h1 className="mb-4 text-4xl text-gray-900 font-extrabold tracking-tight leading-none  md:text-5xl lg:text-6xl dark:text-white">
-                  We Provide the Best Facilities for Your Business
+                  Introducing Our Labour Law Consulting Company
                 </h1>
                 <p className="mb-8 text-lg text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
                   IGCL INDIA provides outstanding and unsurpassed service that,
@@ -390,8 +402,8 @@ export default function Home() {
       </div>
 
       {/* Services */}
-      <div className="min-w-screen bgAlternate  flex items-center justify-center py-5">
-        <div className="w-full border-gray-200 px-5 py-2 md:py-8 ">
+      <div className="min-w-screen bgAlternate  flex items-center justify-center md:py-5">
+        <div className="w-full border-gray-200 px-5 pt-6 md:py-8 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
@@ -417,7 +429,7 @@ export default function Home() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>01-</h3>
-                            <h3 className={styles.textDesp}>Labour Law Compliances</h3>
+                            <h3 className={styles.textDesp}>Statutory Compliances </h3>
                             <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labour Law Compliance</p>
                         </div>
                     </div>
@@ -430,7 +442,7 @@ export default function Home() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>02-</h3>
-                            <h3 className={styles.textDesp}>Environment Social and Governance</h3>
+                            <h3 className={styles.textDesp}>Establishment Compliances</h3>
                             <p className={styles.textSecret}>Driving Sustainable Development Through Comprehensive ESG Strategies</p>
                         </div>
                     </div>
@@ -443,7 +455,7 @@ export default function Home() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <div><h3 className={styles.textNum}>03-</h3></div>
-                            <div><h3 className={styles.textDesp}>Training & Consultancy</h3></div>
+                            <div><h3 className={styles.textDesp}>Labour Law Audit and Assessment</h3></div>
                             <p className={styles.textSecret}>Enhancing Organizational Skills Through Tailored Training and Expert Consultancy</p>
                         </div>
                     </div>
@@ -456,7 +468,7 @@ export default function Home() {
                     <div className={styles.overlay}>
                         <div className={styles.text}>
                             <h3 className={styles.textNum}>04-</h3>
-                            <h3 className={styles.textDesp}>Staffing Solution</h3>
+                            <h3 className={styles.textDesp}>Solutions for Startups </h3>
                             <p className={styles.textSecret}>Providing Comprehensive Staffing Solutions for Optimal Workforce Management</p>
                         </div>
                     </div>
@@ -467,7 +479,7 @@ export default function Home() {
       </div>
 
       {/* FAQ */}
-      <div className="min-w-screen  flex items-center justify-center py-5">
+      <div className="min-w-screen  flex items-center justify-center md:py-5">
         <div className="w-full border-gray-200 px-5 py-4 md:py-4 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
@@ -540,7 +552,7 @@ export default function Home() {
 
 
       {/* Clients */}
-      <div className="min-w-screen  flex items-center justify-center py-5">
+      <div className="min-w-screen  flex items-center justify-center md:py-5">
         <div className="w-full border-gray-200 px-5 py-5 md:py-10 text-gray-800">
           <div className="w-full max-w-screen mx-auto">
             <div className="text-center max-w-xl mx-auto">

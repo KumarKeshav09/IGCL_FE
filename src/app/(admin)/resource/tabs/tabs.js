@@ -4,6 +4,7 @@ import Abstract from "../abstract/abstract";
 import Policy from "../Policy/Policy";
 import Notification from "../notification/notification";
 import Judgement from "../judgement/judgement";
+import styles from "./tabs.module.css"
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState("policy");
@@ -24,7 +25,7 @@ export default function Tabs() {
   return (
     <>
       <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
-        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center" role="tablist">
+        <ul className={`${styles.WrapText} flex flex-wrap -mb-px text-sm font-medium text-center`} role="tablist">
           <li className="me-2" role="presentation">
             <button
               className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === "policy" ? "border-blue-500 text-blue-600" : "border-transparent text-gray-600 hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}

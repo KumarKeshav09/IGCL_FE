@@ -10,6 +10,7 @@ import styles from "./servicedetails.module.css";
 import Compliances1 from "@/app/components/common/Compliances1/servicesfirst";
 import Compliances2 from "@/app/components/common/Compliances2/serviceSecond";
 import Compliances3 from "@/app/components/common/Compliances3/serviceThird";
+import Compliances4 from "@/app/components/common/Compliances4/serviceThird";
 
 export default function ServicesDetail() {
   return (
@@ -68,6 +69,19 @@ export default function ServicesDetail() {
               Labour Law Audit & Assessment
             </button>
           </li>
+          <li className="me-2" role="presentation">
+            <button
+              className="inline-block p-4 border-b-2 rounded-t-lg hover:text-indigo-500 hover:border-gray-300 dark:hover:text-gray-300"
+              id="startup-tab"
+              data-tabs-target="#startup"
+              type="button"
+              role="tab"
+              aria-controls="startup"
+              aria-selected="false"
+            >
+              Solutions for Startups 
+            </button>
+          </li>
         </ul>
       </div>
       <div id="default-tab-content">
@@ -94,6 +108,14 @@ export default function ServicesDetail() {
           aria-labelledby="settings-tab"
         >
          <Compliances3 />
+        </div>
+        <div
+          className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          id="startup"
+          role="tabpanel"
+          aria-labelledby="startup-tab"
+        >
+         <Compliances4 />
         </div>
       </div>
       <Footer />
