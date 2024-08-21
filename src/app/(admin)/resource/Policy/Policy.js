@@ -84,9 +84,6 @@ export default function Policy() {
   return (
     <section>
       <div className="relative overflow-x-auto sm:rounded-lg">
-        <h1 className="text-2xl text-black underline mb-3 font-bold">
-          Policy
-        </h1>
         <div className="flex flex-col sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
           <div>
             <Link href={"resource/Policy/addPolicy"}>
@@ -103,7 +100,16 @@ export default function Policy() {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-              Policy Name
+                Policy Name
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Judgment Title
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Notification Title
+              </th>
+              <th scope="col" className="px-6 py-3">
+                PDF Link
               </th>
               <th scope="col" className="px-6 py-3">
                 Action
@@ -113,7 +119,7 @@ export default function Policy() {
           <tbody>
             {loading ? (
               <tr>
-                <td colSpan="2" className="text-center py-4">
+                <td colSpan="5" className="text-center py-4">
                   <div role="status" className="flex justify-center items-center">
                     <svg
                       aria-hidden="true"
@@ -147,6 +153,17 @@ export default function Policy() {
                   >
                     {item.PolicyName}
                   </td>
+                  <td className="px-6 py-4">{item.JudgmentTitle}</td>
+                  <td className="px-6 py-4">{item.NotificationTitle}</td>
+                  <td className="px-6 py-4">
+                    <a
+                      href={item.PDF}
+                      download="PolicyDocument.pdf"
+                      className="text-blue-600 hover:underline"
+                    >
+                      Download PDF
+                    </a>
+                  </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center space-x-2">
                       <Link
@@ -167,7 +184,7 @@ export default function Policy() {
               ))
             ) : (
               <tr>
-                <td colSpan="2" className="text-center py-4">
+                <td colSpan="5" className="text-center py-4">
                   No data available
                 </td>
               </tr>
@@ -177,13 +194,14 @@ export default function Policy() {
       </div>
       <Pagination data={listData} pageNo={handlePageChange} pageVal={page} />
       <Popup
-          isOpen={isPopupOpen}
-          title="Are you sure you want to delete this policy?"
-          confirmLabel="Yes, I'm sure"
-          cancelLabel="No, cancel"
-          onConfirm={handleDelete}
-          onCancel={handleCancel}
-        />
+        isOpen={isPopupOpen}
+        title="Are you sure you want to delete this policy?"
+        confirmLabel="Yes, I'm sure"
+        cancelLabel="No, cancel"
+        onConfirm={handleDelete}
+        onCancel={handleCancel}
+      />
     </section>
   );
+
 }

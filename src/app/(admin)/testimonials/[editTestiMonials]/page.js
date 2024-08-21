@@ -53,11 +53,10 @@ export default function EditTestiMonials(params) {
   const handleImageInputChange = (e) => {
     const acceptedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
     const file = e.target.files[0];
-    console.log("file",file)
-
+    console.log("Selected file:", file); // Ensure file is correctly logged
+  
     if (file && acceptedFileTypes.includes(file.type)) {
       setImageFile(file);
-      console.log("Imagefile",imageFile)
       setImage(URL.createObjectURL(file));
     } else {
       toast.error("Invalid image type. Please upload only JPEG or PNG files.");
@@ -66,22 +65,24 @@ export default function EditTestiMonials(params) {
       }
     }
   };
+  
 
   const submitForm = async () => {
     if (!name || !message) {
       toast.error("Please fill in all required fields.");
       return;
     }
-
+  
     setLoading(true);
     const formData = new FormData();
     formData.append("Name", name);
     formData.append("Message", message);
+    console.log("imageFile",imageFile)
     if (imageFile) {
-      formData.append("Image", imageFile);
+      formData.append("image", imageFile);
+    console.log("imageFileIF",imageFile)
     }
-    console.log("imageFileSubmit",imageFile)
-    console.log("formdata",formData)
+
     try {
       const res = await fetch(`${API_BASE_URL}/testimonial/updateTestimonial/${params.params.editTestiMonials}`, {
         method: "PATCH",
@@ -103,6 +104,7 @@ export default function EditTestiMonials(params) {
       setLoading(false);
     }
   };
+  
 
   return (
     <section>

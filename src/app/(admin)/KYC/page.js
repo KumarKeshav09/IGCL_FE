@@ -5,6 +5,7 @@ import Select from 'react-select'; // Ensure you have the react-select package i
 import { API_BASE_URL } from '../../../../utils/constants';
 
 const MyForm = () => {
+    const [FilteredData, setFilteredData] = useState([]);
     // Options for the select components
     const IndustryOptions = [
         { value: "Manufacturing with power", label: "Manufacturing with power" },
@@ -115,49 +116,56 @@ const MyForm = () => {
             const response = await fetch(`${API_BASE_URL}/kyc/allKYC`); // Adjust the URL as needed
             const data = await response.json();
             console.log(data)
-    
+
             // Define the filtering criteria
             const minEmployeeCount = formValues.employeeCount ? parseInt(formValues.employeeCount, 10) : 0;
-            const states = Array.isArray(formValues.statesOfOperation) ? formValues.statesOfOperation.map(option => option.value) : []; // Ensure it's an array
-            console.log("statess",formValues.statesOfOperation)
+            const states = Array.isArray(formValues.statesOfOperation)
+                ? formValues.statesOfOperation.map(option => option.value)
+                : formValues.statesOfOperation
+                    ? [formValues.statesOfOperation] // Handle single selection
+                    : [];
+            console.log("statess", states)
             const typeOfIndustry = formValues.TypeOfIndustry; // Adjust if necessary
-            console.log("statess",formValues.TypeOfIndustry)
-    
+            console.log("statess", formValues.TypeOfIndustry)
+            console.log("formValues.statesOfOperation:", formValues.statesOfOperation);
+
+
             // Filter data based on form values
             const filteredData = data.data.filter(row => {
                 const matchesEmployeeCount = row.EmployeeCount >= minEmployeeCount;
-                const matchesState = row.States.includes(state);
+                const matchesState = states.some(state => row.State.includes(state));
                 const matchesTypeOfIndustry = row.TypeOfIndustry.includes(typeOfIndustry);
-                
+
                 console.log({
                     row,
                     matchesEmployeeCount,
                     matchesState,
                     matchesTypeOfIndustry
                 });
-                
+
                 return matchesEmployeeCount && matchesState && matchesTypeOfIndustry;
             }).map(row => ({
-                actname: row.actname,
-                complianceFrequency: row.complianceFrequency
+                actname: row.ActName,
+                complianceFrequency: row.ComplianceFrequency
             }));
-            
-            console.log("formValues",formValues)
-            console.log("filteredData",filteredData)
-    
-            // Log the filtered data or handle it as needed
-            if (filteredData.length > 0) {
-                console.log("Filtered Data Matches:");
-                filteredData.forEach(item => {
-                    console.log("actname:", item.actname);
-                    console.log("complianceFrequency:", item.complianceFrequency);
-                });
-            } else {
-                console.log("No data matches the criteria.");
-            }
+
+
+            console.log("filteredData", filteredData);
+
+            setFilteredData(filteredData);
+            console.log("FilteredData", FilteredData);
+            setIsModalOpen(true);
+
         } catch (error) {
             console.error("Error fetching KYC data:", error);
         }
+    };
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Function to close the modal
+    const closeModal = () => {
+        setIsModalOpen(false);
     };
 
 
@@ -177,7 +185,7 @@ const MyForm = () => {
                         name="organizationName"
                         value={formValues.organizationName}
                         onChange={handleChange}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
                 </div>
@@ -231,7 +239,7 @@ const MyForm = () => {
                             name="gstinNumber"
                             value={formValues.gstinNumber}
                             onChange={handleChange}
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         />
                     </div>
                 )}
@@ -286,17 +294,17 @@ const MyForm = () => {
                 ) : (
                     <div className="mb-5">
                         <label
-                            htmlFor="State"
+                            htmlFor="statesOfOperation"
                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                         >
                             State Of Operation
                         </label>
                         <Select
                             className='text-black'
-                            name="State"
+                            name="statesOfOperation"
                             options={statesOptions}
                             value={statesOptions.find(
-                                (option) => option.value === formValues.State
+                                (option) => option.value === formValues.statesOfOperation
                             )}
                             onChange={handleSelectChange}
                             placeholder="Select State"
@@ -339,40 +347,40 @@ const MyForm = () => {
                             <>
                                 <div className="mb-5">
                                     <label
-                                        htmlFor="numberOfContractors"
-                                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                    >
-                                        Total Number of Contractors Engaged in Your Establishment
-                                    </label>
-                                    <input
-                                        type="number"
-                                        id="numberOfContractors"
-                                        name="numberOfContractors"
-                                        value={formValues.numberOfContractors}
-                                        onChange={handleChange}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    />
-                                </div>
-                                <div className="mb-5">
-                                    <label
-                                        htmlFor="maxContractLabourInAnyContractor"
+                                        htmlFor="maxContractLabourEngaged"
                                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                     >
                                         Maximum Number of Contract Labour Engaged in any Contractor
                                     </label>
                                     <input
                                         type="number"
-                                        id="maxContractLabourInAnyContract"
-                                        name="maxContractLabourInAnyContract"
+                                        id="maxContractLabourEngaged"
+                                        name="maxContractLabourEngaged"
                                         value={formValues.maxContractLabourEngaged}
                                         onChange={handleChange}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     />
                                 </div>
                             </>
                         )}
                     </>
                 )}
+                <div className="mb-5">
+                    <label
+                        htmlFor="numberOfContractors"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                        Total Number of Contractors Engaged in Your Establishment
+                    </label>
+                    <input
+                        type="number"
+                        id="numberOfContractors"
+                        name="numberOfContractors"
+                        value={formValues.numberOfContractors}
+                        onChange={handleChange}
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    />
+                </div>
                 <div className="mb-5">
                     <label
                         htmlFor="employeeCount"
@@ -386,7 +394,7 @@ const MyForm = () => {
                         name="employeeCount"
                         value={formValues.employeeCount}
                         onChange={handleChange}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
                 </div>
@@ -435,7 +443,7 @@ const MyForm = () => {
                                 name="maxContractLabourInAnyContract"
                                 value={formValues.maxContractLabourInAnyContract}
                                 onChange={handleChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             />
                         </div>
 
@@ -484,7 +492,7 @@ const MyForm = () => {
                         name="representativeName"
                         value={formValues.representativeName}
                         onChange={handleChange}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
                 </div>
@@ -501,7 +509,7 @@ const MyForm = () => {
                         name="representativeDesignation"
                         value={formValues.representativeDesignation}
                         onChange={handleChange}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
                 </div>
@@ -518,7 +526,7 @@ const MyForm = () => {
                         name="representativeEmail"
                         value={formValues.representativeEmail}
                         onChange={handleChange}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
                 </div>
@@ -535,7 +543,7 @@ const MyForm = () => {
                         name="representativeMobile"
                         value={formValues.representativeMobile}
                         onChange={handleChange}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
                 </div>
@@ -552,17 +560,64 @@ const MyForm = () => {
                         name="representativeWebsite"
                         value={formValues.representativeWebsite}
                         onChange={handleChange}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     />
                 </div>
             </form>
             <button
                 onClick={submit}
+                data-modal-target="default-modal" data-modal-toggle="default-modal"
                 type="button"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
                 Register new account
             </button>
+
+            {/* Modal */}
+            <div
+                id="default-modal"
+                tabIndex="-1"
+                aria-hidden="true"
+                className={`overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full ${isModalOpen ? 'block' : 'hidden'}`}
+            >
+                <div className="relative p-4 w-full max-w-2xl max-h-full">
+                    <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                                KYC
+                            </h3>
+                            <button onClick={closeModal} type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                                <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span className="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <div className="p-4 md:p-5 space-y-4">
+                            {FilteredData.map((item, key) => (
+                                <>
+                                    {FilteredData ?
+                                        (
+                                            <>
+                                                <div key={key}>
+                                                    <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                                        Act Name : {item.actname}
+                                                    </p>
+                                                    <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                                        Compliance Frequency : {item.complianceFrequency}
+                                                    </p>
+                                                </div>
+                                                <hr />
+                                            </>
+                                        )
+                                        : <h1>Loading..</h1>
+                                    }
+                                </>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };

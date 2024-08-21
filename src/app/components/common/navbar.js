@@ -114,11 +114,22 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  href="#"
-                  className={`${"block text-lg py-2 px-3 text-black  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                    }`}
+                  href="/resources"
+                  className={`${pathname == '/resources'
+                    ? "block text-lg py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-blue-700 text-black md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 " :
+                    "block text-lg py-2 px-3 text-black  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"}`}
                 >
                   Resources
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/product"
+                  className={`${pathname == '/product'
+                    ? "block text-lg py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-blue-700 text-black md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 " :
+                    "block text-lg py-2 px-3 text-black  rounded md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"}`}
+                >
+                  Product
                 </Link>
               </li>
               <li>

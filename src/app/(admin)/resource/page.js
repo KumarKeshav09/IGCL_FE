@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Tabs from "./tabs/tabs";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'; // Ensure that this is imported for toast notifications
+import Policy from "./Policy/Policy";
 
 // Popup component definition
 function Popup({
@@ -99,7 +100,8 @@ export default function Resource() {
           Resource
         </h1>
       </div>
-      <Tabs />
+      {/* <Tabs /> */}
+      <Policy />
     </section>
   );
 }

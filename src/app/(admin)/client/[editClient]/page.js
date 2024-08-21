@@ -17,7 +17,6 @@ export default function EditClients(params) {
   const router = useRouter();
   const token = Cookies.get("token");
 
-console.log(params)
   useEffect(() => {
     // Fetch the existing testimonial data
     const fetchTestimonial = async () => {
@@ -50,20 +49,20 @@ console.log(params)
   const handleNameChange = (e) => setName(e.target.value);
   const handleMessageChange = (e) => setMessage(e.target.value);
 
-  const handleImageInputChange = (event) => {
+  const handleImageInputChange = (e) => {
     const acceptedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
-    const file = event.target.files[0];
-
-    if (!acceptedFileTypes.includes(file.type)) {
+    const file = e.target.files[0];
+    console.log("Selected file:", file); // Ensure file is correctly logged
+  
+    if (file && acceptedFileTypes.includes(file.type)) {
+      setImageFile(file);
+      setImage(URL.createObjectURL(file));
+    } else {
       toast.error("Invalid image type. Please upload only JPEG or PNG files.");
       if (imageInputRef.current) {
-        imageInputRef.current.value = "";
+        imageInputRef.current.value = ""; // Clear the input
       }
-      return;
     }
-
-    setImageFile(file);
-    setImage(URL.createObjectURL(file)); // Preview the selected image
   };
 
   const submitForm = async () => {
@@ -76,8 +75,10 @@ console.log(params)
     const formData = new FormData();
     formData.append("Name", name);
     formData.append("Description", message);
+    console.log("imageFile",imageFile)
     if (imageFile) {
-      formData.append("Image", imageFile);
+      formData.append("image", imageFile);
+      console.log("imageFileIF",imageFile)
     }
 
     try {

@@ -8,11 +8,15 @@ import { API_BASE_URL } from "../../../../../../utils/constants";
 import Cookies from "js-cookie";
 
 export default function EditPolicy({ params }) {
-  const [question, setQuestion] = useState("");
+  const [policyName, setPolicyName] = useState("");
+  const [judgmentTitle, setJudgmentTitle] = useState("");
+  const [judgmentDescription, setJudgmentDescription] = useState("");
+  const [notificationTitle, setNotificationTitle] = useState("");
+  const [notificationDescription, setNotificationDescription] = useState("");
+  const [pdf, setPdf] = useState(null); // State to handle PDF upload
   const router = useRouter();
   const policyId = params?.editPolicy; // Adjusted to match the parameter name for policy
   const token = Cookies.get("token");
-
 
   useEffect(() => {
     const fetchPolicyDetails = async () => {
@@ -24,7 +28,12 @@ export default function EditPolicy({ params }) {
         });
         const data = await res.json();
         if (data.success) {
-          setQuestion(data.data?.PolicyName);
+          const policy = data.data;
+          setPolicyName(policy.PolicyName);
+          setJudgmentTitle(policy.JudgmentTitle);
+          setJudgmentDescription(policy.JudgmentDescription);
+          setNotificationTitle(policy.NotificationTitle);
+          setNotificationDescription(policy.NotificationDescription);
         } else {
           toast.error(data.errMessage || "Failed to fetch policy details");
         }
@@ -34,30 +43,56 @@ export default function EditPolicy({ params }) {
     };
 
     fetchPolicyDetails();
-  }, [policyId]);
+  }, [policyId, token]);
 
-  const handleQuestionChange = (e) => {
-    setQuestion(e.target.value);
+  const handleNotificationTitleChange = (e) => {
+    setNotificationTitle(e.target.value);
   };
 
+  const handlePdfChange = (e) => {
+    setPdf(e.target.files[0]); // Handling file input
+  };
+
+  const handleNotificationDescriptionChange = (e) => {
+    setNotificationDescription(e.target.value);
+  };
+
+  const handleJudgmentTitleChange = (e) => {
+    setJudgmentTitle(e.target.value);
+  };
+
+  const handleJudgmentDescriptionChange = (e) => {
+    setJudgmentDescription(e.target.value);
+  };
+
+  const handlePolicyChange = (e) => {
+    setPolicyName(e.target.value);
+  };
 
   const submitForm = async () => {
-    if (!question ) {
+    if (!policyName || !judgmentTitle || !judgmentDescription || !notificationTitle || !notificationDescription) {
       toast.error("Please fill in all required fields.");
       return;
     }
 
-    const formData = {
-      PolicyName: question,
-    };
+    const formData = new FormData();
+    formData.append('PolicyName', policyName);
+    formData.append('JudgmentTitle', judgmentTitle);
+    formData.append('JudgmentDescription', judgmentDescription);
+    formData.append('NotificationTitle', notificationTitle);
+    formData.append('NotificationDescription', notificationDescription);
+
+    if (pdf) {
+      formData.append('pdf', pdf);
+    }
 
     try {
       const res = await fetch(`${API_BASE_URL}/policy/updatePolicy/${policyId}`, {
         method: 'PATCH',
         headers: {
-          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
         },
-        body: JSON.stringify(formData),
+        body: formData,
       });
 
       const data = await res.json();
@@ -88,22 +123,104 @@ export default function EditPolicy({ params }) {
           </button>
         </div>
       </Link>
-      <form className="mb-5">
-        <div className="grid gap-4 mb-4 md:grid-cols-2">
+      <form className="mb-5" encType="multipart/form-data">
+      <div className="grid gap-4 mb-4 md:grid-cols-2">
           <div>
             <label
-              htmlFor="question"
+              htmlFor="policyName"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
             >
               Policy Name
             </label>
             <input
               type="text"
-              value={question}
-              onChange={handleQuestionChange}
-              id="question"
+              value={policyName}
+              onChange={handlePolicyChange}
+              id="policyName"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Policy Name"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="judgmentTitle"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
+            >
+              Judgment Title
+            </label>
+            <input
+              type="text"
+              value={judgmentTitle}
+              onChange={handleJudgmentTitleChange}
+              id="judgmentTitle"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Judgment Title"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="judgmentDescription"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
+            >
+              Judgment Description
+            </label>
+            <textarea
+              value={judgmentDescription}
+              onChange={handleJudgmentDescriptionChange}
+              id="judgmentDescription"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Judgment Description"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="notificationTitle"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
+            >
+              Notification Title
+            </label>
+            <input
+              type="text"
+              value={notificationTitle}
+              onChange={handleNotificationTitleChange}
+              id="notificationTitle"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Notification Title"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="notificationDescription"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
+            >
+              Notification Description
+            </label>
+            <textarea
+              value={notificationDescription}
+              onChange={handleNotificationDescriptionChange}
+              id="notificationDescription"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Notification Description"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="pdf"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
+            >
+              PDF
+            </label>
+            <input
+              type="file"
+              accept=".pdf"
+              onChange={handlePdfChange}
+              id="pdf"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
             />
           </div>
@@ -118,7 +235,6 @@ export default function EditPolicy({ params }) {
           Update
         </button>
       </div>
-      
     </section>
   );
 }
