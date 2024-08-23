@@ -158,7 +158,7 @@ export default function Policy() {
                   <td className="px-6 py-4">
                     <a
                       href={item.PDF}
-                      download="PolicyDocument.pdf"
+                      download="Document.pdf"
                       className="text-blue-600 hover:underline"
                     >
                       Download PDF

@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { API_BASE_URL } from "../../../../../utils/constants";
 import { toast } from "react-toastify";
+import { API_BASE_URL } from "../../../../../utils/constants";
 
 export default function Abstarcts() {
-  const [activeTab, setActiveTab] = useState(null); // Initialize with null
+  const [activeTab, setActiveTab] = useState(null);
   const [page, setPage] = useState(1);
   const [listData, setListData] = useState([]);
+  const [pdfSrc, setPdfSrc] = useState("");
 
   const handleTabChange = (id) => {
     setActiveTab(id);
@@ -25,11 +26,13 @@ export default function Abstarcts() {
     try {
       const res = await fetch(`${API_BASE_URL}/policy/allPolicy?page=${page}&limit=10`);
       const data = await res.json();
-      console.log("API response:", data); // Log the full response
+      console.log("API response:", data);
       if (data && data.data) {
         setListData(data.data);
         if (data.data.length > 0) {
-          setActiveTab(data.data[0]._id); // Set the first policy's ID as active
+          const firstPolicy = data.data[0];
+          setActiveTab(firstPolicy._id);
+          setPdfSrc(firstPolicy.PDF);
         }
       } else {
         toast.error(data.errMessage || "Failed to fetch policies");
@@ -38,6 +41,13 @@ export default function Abstarcts() {
       toast.error("An error occurred while fetching policies");
     }
   };
+
+  useEffect(() => {
+    const activePolicy = listData.find((item) => item._id === activeTab);
+    if (activePolicy) {
+      setPdfSrc(activePolicy.PDF);
+    }
+  }, [activeTab, listData]);
 
   return (
     <main>
@@ -62,10 +72,18 @@ export default function Abstarcts() {
 
         {/* Content */}
         <div className="p-6 bg-white text-medium text-gray-500 dark:text-gray-400 dark:bg-white w-full">
-          {activeTab && (
-            <div>
-                test
-            </div>
+          {pdfSrc ? (
+            <iframe
+              src={
+                !pdfSrc.includes("https")
+                  ? `${API_BASE_URL}/${pdfSrc}` // Adjust this based on your base URL
+                  : pdfSrc
+              }
+              style={{ width: "100%", height: "600px", border: "none" }}
+              title="PDF Viewer"
+            ></iframe>
+          ) : (
+            <p>Select a policy to view the PDF</p>
           )}
         </div>
       </div>

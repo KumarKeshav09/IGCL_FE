@@ -108,7 +108,7 @@ export default function Home() {
     }
   };
 
-  console.log("listData",listData)
+  console.log("listData", listData)
   useEffect(() => {
     // Import Flowbite only on the client side
     import('flowbite').then((module) => {
@@ -120,29 +120,29 @@ export default function Home() {
   //   initFlowbite(); // Call initCarousels() when component mounts
   // }, []);
   const handleName = useCallback((value) => {
-    console.log('value',value.target.value)
+    console.log('value', value.target.value)
     setName(() => value.target.value);
   }, []);
   const handleEmail = useCallback((value) => {
-    console.log('value',value.target.value)
+    console.log('value', value.target.value)
     setEmail(() => value.target.value);
   }, []);
   const handleMobile = useCallback((value) => {
-    console.log('value',value.target.value)
+    console.log('value', value.target.value)
     setMobile(() => value.target.value);
   }, []);
   const handleMessage = useCallback((value) => {
-    console.log('value',value.target.value)
+    console.log('value', value.target.value)
     setMessage(() => value.target.value);
   }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!Name){
-      
+    if (!Name) {
+
       toast.error('Name is required');
       return;
     }
-    if(!Email){
+    if (!Email) {
 
       toast.error('Email is required');
       return;
@@ -156,7 +156,7 @@ export default function Home() {
       toast.error("Invalid email format");
       return;
     }
-    if(!Message){
+    if (!Message) {
 
       toast.error('Question is required');
       return;
@@ -182,66 +182,66 @@ export default function Home() {
         body: JSON.stringify(data),
       });
       const resData = await res.json();
-     
-      console.log('resData',resData)
-     
-  
+
+      console.log('resData', resData)
+
+
       if (resData?.success) {
         toast.success('Question is successfully sent!');
         setName('')
         setEmail('')
         setMessage('')
         setMobile('')
-        return {successMessage:resData};
+        return { successMessage: resData };
       } else {
         toast.error(resData.error);
-        return {errMessage:resData.error};
+        return { errMessage: resData.error };
       }
     } catch (error) {
       toast.error("someting went wrong");
       console.log("error message ", error);
     }
-};
+  };
   return (
     <main className="">
       <Navbar />
       {/* hero section */}
       <div className="">
         {/* bg-[url('/images/hero_banner8.webp')] */}
-        
 
-<section className="heroImage bg-center  bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
-    <div className="px-2 mx-auto max-w-screen-2xl overflow-x-hidden text-center">
-        <Slider {...herosettings}>
-          <div>
-        <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">YOUR COMPLIANCE </h1>
-        <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white ">   OUR PRIORITY</h1>
-          </div>
 
-          <div>
-        <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">YOUR COMPLIANCE  </h1>
-        <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white "> COMPANION</h1>
-          </div>
+        <section className="heroImage bg-center  bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
+          <div className="px-2 mx-auto max-w-screen-2xl overflow-x-hidden text-center">
+            <Slider {...herosettings}>
+              <div>
+                <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">YOUR COMPLIANCE </h1>
+                <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white ">   OUR PRIORITY</h1>
+              </div>
 
-          <div>
-        <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">ENSURING COMPLIANCE </h1>
-        <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white "> EMPOWERING  WORKFORCE</h1>
-          </div>
-         </Slider>
+              <div>
+                <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">YOUR COMPLIANCE  </h1>
+                <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white "> COMPANION</h1>
+              </div>
 
-        {/* <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">Your Compliance, </h1>
+              <div>
+                <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">ENSURING COMPLIANCE </h1>
+                <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white "> EMPOWERING  WORKFORCE</h1>
+              </div>
+            </Slider>
+
+            {/* <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">Your Compliance, </h1>
         <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white ">   Our Priority</h1> */}
-        <p className="mb-12 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">IGCL INDIA offers customized compliance solutions, ensuring your business meets all statutory requirements, from employee benefits to workplace safety.</p>
-        <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-           
-            <Link href="/services" className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
-                More info
-            </Link>  
-        </div>
-    </div>
-</section>
+            <p className="mb-12 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">IGCL INDIA offers customized compliance solutions, ensuring your business meets all statutory requirements, from employee benefits to workplace safety.</p>
+            <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
 
-          {/* <section className="bg-center demo-wrap h-screen bg-no-repeat  bg-cover bg-gray-100 bg-blend-multiply">
+              <Link href="/services" className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                More info
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* <section className="bg-center demo-wrap h-screen bg-no-repeat  bg-cover bg-gray-100 bg-blend-multiply">
             <div className="demo-content heroContent mx-auto max-w-screen text-center py-44 lg:py-44">
               <div className="flex w-fit labour mr-auto">
                 <h1 className="mb-4 heroLabourtext  tracking-tight leading-none text-gray-900 ">
@@ -277,7 +277,7 @@ export default function Home() {
               </div>
             </div>
           </section> */}
-          {/* <section className="bg-center h-screen bg-no-repeat bg-[url('/images/hero_labourNew.jpg')] bg-gray-700 bg-blend-multiply">
+        {/* <section className="bg-center h-screen bg-no-repeat bg-[url('/images/hero_labourNew.jpg')] bg-gray-700 bg-blend-multiply">
             <div className="heroContent mx-auto max-w-screen text-center py-44 lg:py-44">
               <div className="flex w-fit labour mr-auto">
                 <h1 className="mb-4 heroLabourtext  tracking-tight leading-none text-white ">
@@ -344,7 +344,7 @@ export default function Home() {
               </div> */}
             </div>
             <div className="mx-1">
-            {/* <div className="mt-3">
+              {/* <div className="mt-3">
                 <div className={`${styles.weDoBox3}`}>
                   <img className={`${styles.weDoBoxIcon}`} src="../images/customer-care.png" />
                   <h1 className={`${styles.weDoBoxHead}`}>532</h1>
@@ -421,58 +421,58 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.BoxContainer}>
-            <Link href='/services/1' className={styles.card}>
-                    <img
-                        src="/images/image1.jpg"
-                        className={styles.image}
-                    />
-                    <div className={styles.overlay}>
-                        <div className={styles.text}>
-                            <h3 className={styles.textNum}>01-</h3>
-                            <h3 className={styles.textDesp}>Statutory Compliances </h3>
-                            <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labour Law Compliance</p>
-                        </div>
-                    </div>
-                </Link>
-                <Link href='/services/1' className={styles.card}>
-                    <img
-                        src="/images/image2.jpg"
-                        className={styles.image}
-                    />
-                    <div className={styles.overlay}>
-                        <div className={styles.text}>
-                            <h3 className={styles.textNum}>02-</h3>
-                            <h3 className={styles.textDesp}>Establishment Compliances</h3>
-                            <p className={styles.textSecret}>Driving Sustainable Development Through Comprehensive ESG Strategies</p>
-                        </div>
-                    </div>
-                </Link>
-                <Link href='/services/1' className={styles.card}>
-                    <img
-                        src="/images/image3.jpg"
-                        className={styles.image}
-                    />
-                    <div className={styles.overlay}>
-                        <div className={styles.text}>
-                            <div><h3 className={styles.textNum}>03-</h3></div>
-                            <div><h3 className={styles.textDesp}>Labour Law Audit and Assessment</h3></div>
-                            <p className={styles.textSecret}>Enhancing Organizational Skills Through Tailored Training and Expert Consultancy</p>
-                        </div>
-                    </div>
-                </Link>
-                <Link href='/services/1' className={styles.card}>
-                    <img
-                        src="/images/image4.jpg"
-                        className={styles.image}
-                    />
-                    <div className={styles.overlay}>
-                        <div className={styles.text}>
-                            <h3 className={styles.textNum}>04-</h3>
-                            <h3 className={styles.textDesp}>Solutions for Startups </h3>
-                            <p className={styles.textSecret}>Providing Comprehensive Staffing Solutions for Optimal Workforce Management</p>
-                        </div>
-                    </div>
-                </Link>
+              <Link href='/services/1' className={styles.card}>
+                <img
+                  src="/images/image1.jpg"
+                  className={styles.image}
+                />
+                <div className={styles.overlay}>
+                  <div className={styles.text}>
+                    <h3 className={styles.textNum}>01-</h3>
+                    <h3 className={styles.textDesp}>Statutory Compliances </h3>
+                    <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labour Law Compliance</p>
+                  </div>
+                </div>
+              </Link>
+              <Link href='/services/1' className={styles.card}>
+                <img
+                  src="/images/image2.jpg"
+                  className={styles.image}
+                />
+                <div className={styles.overlay}>
+                  <div className={styles.text}>
+                    <h3 className={styles.textNum}>02-</h3>
+                    <h3 className={styles.textDesp}>Establishment Compliances</h3>
+                    <p className={styles.textSecret}>Driving Sustainable Development Through Comprehensive ESG Strategies</p>
+                  </div>
+                </div>
+              </Link>
+              <Link href='/services/1' className={styles.card}>
+                <img
+                  src="/images/image3.jpg"
+                  className={styles.image}
+                />
+                <div className={styles.overlay}>
+                  <div className={styles.text}>
+                    <div><h3 className={styles.textNum}>03-</h3></div>
+                    <div><h3 className={styles.textDesp}>Labour Law Audit and Assessment</h3></div>
+                    <p className={styles.textSecret}>Enhancing Organizational Skills Through Tailored Training and Expert Consultancy</p>
+                  </div>
+                </div>
+              </Link>
+              <Link href='/services/1' className={styles.card}>
+                <img
+                  src="/images/image4.jpg"
+                  className={styles.image}
+                />
+                <div className={styles.overlay}>
+                  <div className={styles.text}>
+                    <h3 className={styles.textNum}>04-</h3>
+                    <h3 className={styles.textDesp}>Solutions for Startups </h3>
+                    <p className={styles.textSecret}>Providing Comprehensive Staffing Solutions for Optimal Workforce Management</p>
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -521,24 +521,24 @@ export default function Home() {
                   className="border-none border-b border-gray-800"
                 >
                   {listFAQData?.data?.map((item) => (
-                  <Accordion.Panel className=" border border-b border-gray-200">
-                    <section className=" border-b border-gray-200">
-                      <Accordion.Title
-                        className="border-none  text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    <Accordion.Panel className=" border border-b border-gray-200">
+                      <section className=" border-b border-gray-200">
+                        <Accordion.Title
+                          className="border-none  text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
-                      >
-                        {item.Question} 
-                      </Accordion.Title>
-                      <Accordion.Content
-                        className="border-none text-lg  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                        >
+                          {item.Question}
+                        </Accordion.Title>
+                        <Accordion.Content
+                          className="border-none text-lg  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
-                      >
-                        <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
-                          {item.Answer}
-                        </p>
-                      </Accordion.Content>
-                    </section>
-                  </Accordion.Panel>
+                        >
+                          <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                            {item.Answer}
+                          </p>
+                        </Accordion.Content>
+                      </section>
+                    </Accordion.Panel>
                   ))}
                 </Accordion>
               </ul>
@@ -574,15 +574,15 @@ export default function Home() {
             <div className="-mx-3 ">
               <div className="px-3 pb-10">
                 <Slider {...clientssettings}>
-                {listData?.data?.map((item) => (
-                  <div className="image-container">
-                    <img
-                      src={item.Image}
-                      alt="Hover Image"
-                      className="cursor-pointer"
-                    />
-                  </div>
-                ))}
+                  {listData?.data?.map((item) => (
+                    <div className="image-container">
+                      <img
+                        src={item.Image}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                    </div>
+                  ))}
                 </Slider>
               </div>
             </div>
@@ -591,51 +591,56 @@ export default function Home() {
       </div>
 
       {/* Contact Us */}
-     
-            <section className={`${styles.forthSection}`}>
-                <div className={`${styles.forthSectionInner}`}>
-                    <div className={`${styles.forthBoxImg}`}>
-                    </div>
-                    <div className={`${styles.forthBoxMain}`}>
-                        <div className={`${styles.forthBoxText}`}>
-                            <h1>We always love </h1>
-                            <h1>to hear from you</h1>
-                        </div>
-                        <form className={`${styles.forthBoxForm}`}>
-                            <div className={`${styles.forthBoxInput}`}>
-                                <input
-                                    placeholder="Full Name"
-                                    value={Name}
-                                    onChange={handleName}
-                                    className="border-b bg-transparent text-xl focus:outline-0 focus:border-white hover:border-white mr-2 placeholder-gray-300 hover:placeholder-white py-3" />
-                                <input
-                                    placeholder="Email Address"
-                                    value={Email}
-                                    onChange={handleEmail}
-                                    className={`${styles.forthBoxInput2} py-3 border-b bg-transparent text-xl focus:outline-0 mr-2 focus:border-white hover:border-white placeholder-gray-300 hover:placeholder-white `} />
-                                <input
-                                    placeholder="Mobile Number"
-                                    type="number"
-                                    value={Mobile}
-                                    onChange={handleMobile}
-                                    className={`${styles.forthBoxInput2} py-3 border-0 border-b border-gray-300  appearance-none bg-transparent text-xl focus:outline-0 focus:border-white hover:border-white placeholder-gray-300 hover:placeholder-white `} />
-                            </div>
-                            <textarea
-                              rows="4"
-                                placeholder="Ask Your Question"
-                                value={Message}
-                                onChange={handleMessage}
-                                className="block py-2.5 px-0 w-full resize-none text-xl text-white bg-transparent border-0 border-b border-gray-300 appearance-none focus:outline-0 focus:border-white hover:border-white placeholder-gray-300 hover:placeholder-white peer"
-                            />   
-                        </form>
-                    </div>
-                    <div className={`${styles.forthBoxButton}`}>
-                        <button onClick={handleSubmit} className={`${styles.forthButton}`}>Submit</button>
-                    </div>
 
+      <section className={`${styles.forthSection} flex`}>
+        <div className={`${styles.forthSectionInner}`}>
+          <div className={`${styles.forthBoxMain}`}>
+            <div className={`${styles.forthBoxText}`}>
+              <h1>We always love to hear from you</h1>
+            </div>
+            <form className={`${styles.forthBoxForm}`}>
+              <div className={`${styles.forthBoxInput}`}>
+                <input
+                  placeholder="Full Name"
+                  value={Name}
+                  onChange={handleName}
+                  className="border-b bg-transparent text-xl focus:outline-0 focus:border-white hover:border-white mr-2 placeholder-gray-300 hover:placeholder-white py-3" />
+                <input
+                  placeholder="Email Address"
+                  value={Email}
+                  onChange={handleEmail}
+                  className={`${styles.forthBoxInput2} py-3 border-b bg-transparent text-xl focus:outline-0 mr-2 focus:border-white hover:border-white placeholder-gray-300 hover:placeholder-white `} />
+                <input
+                  placeholder="Mobile Number"
+                  type="number"
+                  value={Mobile}
+                  onChange={handleMobile}
+                  className={`${styles.forthBoxInput2} py-3 border-0 border-b border-gray-300  appearance-none bg-transparent text-xl focus:outline-0 focus:border-white hover:border-white placeholder-gray-300 hover:placeholder-white `} />
+              </div>
+              <div className={`${styles.forthBoxDisplayForm}`}>
+                <textarea
+                  rows="4"
+                  placeholder="Ask Your Question"
+                  value={Message}
+                  onChange={handleMessage}
+                  className="block py-2.5 px-0 w-full resize-none text-xl text-white bg-transparent border-0 border-b border-gray-300 appearance-none focus:outline-0 focus:border-white hover:border-white placeholder-gray-300 hover:placeholder-white peer"
+                />
+                <div className={`${styles.forthBoxButton}`}>
+                  <button onClick={handleSubmit} className={`${styles.forthButton}`}>Submit</button>
                 </div>
-            </section>
-          
+              </div>
+            </form>
+          </div>
+
+
+        </div>
+        <div className={`${styles.forthSectionImg}`}>
+          <img
+            src="../../../../images/contact_us.png"
+          />
+        </div>
+      </section>
+
 
 
       <Footer />

@@ -213,19 +213,33 @@
 
 .forthSection{
     background-color: #3F51B5;
-    margin-right: 20rem;
+}
+
+.forthSectionImg{
+    background-color: white;
+    justify-content: center;
+    display: flex;
+    width: 36%;
+}
+
+.forthBoxDisplayForm{
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .forthSectionInner{
     display: flex;
-    padding-left: 18rem;
+    padding-left: 5rem;
     padding-top: 5rem;
+    padding-right: 3rem;
     padding-bottom: 5rem;
+    margin-right: 5rem;
 }
 
 .forthBoxText{
     font-size: 4rem;
     font-weight: bold;
+    text-wrap: nowrap;
 }
 
 .forthBoxForm{
@@ -266,28 +280,38 @@
 
 @media screen and (max-width: 1750px) {
     .forthSectionInner{
-        padding-left: 15rem;
+        padding-left: 8rem;
+        width: 75%;
     }
-    .forthSection{
-        background-color: rgb(176, 141, 94);
-        margin-right: 10rem;
+    .forthBoxText{
+        text-wrap: wrap;
     }
 }
 
 @media screen and (max-width: 1361px) {
     .forthSectionInner{
-        padding-left: 10rem;
+        padding-left: 3rem;
+    padding-right: 0rem;
+
+        width: 72%;
+    margin-right: 0rem;
+
     }
     .forthSection{
-        background-color: rgb(176, 141, 94);
         margin-right: 0rem;
     }
 }
 
-@media screen and (max-width: 1025px) {
-    .forthBoxMain{
-        margin-left: 1rem;
+@media screen and (max-width: 1200px) {
+    .forthSectionInner{
+        padding-left: 1rem;
+        width: 72%;
+    margin-right: 0rem;
+
     }
+}
+
+@media screen and (max-width: 1025px) {
     .forthSection{
         width: 100%;
     }
@@ -307,11 +331,17 @@
     .forthButton{
         margin-top: 2rem;
     }
-    .forthBoxImg{
-        margin-bottom: 1rem;
+    .forthSectionImg{
+        display: none !important;
     }
     .forthBoxInput2{
         margin-top: 1.5rem;
+    }
+    .forthBoxButton{
+        margin-left: 0rem;
+    }
+    .forthBoxDisplayForm{
+        display: block;
     }
 }
 
@@ -324,8 +354,8 @@
         display: flex;
         margin-top: 2rem;
     }
-    .forthBoxImg{
-        display: none;
+    .forthSectionImg{
+        display: none !important;
     }
     .forthBoxForm{
         margin-top: 0rem;
@@ -342,6 +372,9 @@
         padding-top: 5rem;
         padding-bottom: 5rem;
         width: 100%;
+    }
+    .forthBoxMain{
+        margin-left: 0.5rem;
     }
 }
 

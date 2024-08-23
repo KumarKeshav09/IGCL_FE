@@ -27,6 +27,10 @@ export default function FAQ() {
     setLoading(true); // Show loader
     try {
       const res = await fetch(`${API_BASE_URL}/faq/allFAQ?page=${page}&limit=10`);
+      if (!res) {
+        const errorText = await res.text();
+        throw new Error(`HTTP error! Status: ${res.status}, ${errorText}`);
+      }
       const data = await res.json();
       if (data.success) {
         setListData(data);
