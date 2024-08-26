@@ -73,15 +73,11 @@ export default function Abstarcts() {
         {/* Content */}
         <div className="p-6 bg-white text-medium text-gray-500 dark:text-gray-400 dark:bg-white w-full">
           {pdfSrc ? (
-            <iframe
-              src={
-                !pdfSrc.includes("https")
-                  ? `${API_BASE_URL}/${pdfSrc}` // Adjust this based on your base URL
-                  : pdfSrc
-              }
+            <embed
+              src={pdfSrc}
               style={{ width: "100%", height: "600px", border: "none" }}
               title="PDF Viewer"
-            ></iframe>
+            ></embed>
           ) : (
             <p>Select a policy to view the PDF</p>
           )}

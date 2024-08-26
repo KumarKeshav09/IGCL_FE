@@ -98,16 +98,16 @@ export default function Navbar() {
                 <div id="dropdownHover" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto dark:bg-gray-700">
                   <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
                     <li>
-                      <Link href="/services/1" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Statutory Compliances</Link>
+                      <Link href='/services/1-detail#profile' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Statutory Compliances</Link>
                     </li>
                     <li>
-                      <Link href="/services/1" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Establishment Compliances </Link>
+                      <Link href='/services/1-detail#dashboard' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Establishment Compliances </Link>
                     </li>
                     <li>
-                      <Link href="/services/1" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Labour Law Audit and Assessment </Link>
+                      <Link href='/services/1-detail#settings' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Labour Law Audit and Assessment </Link>
                     </li>
                     <li>
-                      <Link href="/services/1" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Solutions for Startups </Link>
+                      <Link href='/services/1-detail#startup' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Solutions for Startups </Link>
                     </li>
                   </ul>
                 </div>

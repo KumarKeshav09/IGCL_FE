@@ -41,7 +41,7 @@ export default function Services() {
                             </div>
                         </div>
                         <div className={styles.BoxContainer}>
-                            <Link href='/services/1' className={styles.card}>
+                            <Link href='/services/1-detail#profile' className={styles.card}>
                                 <img
                                     src="/images/image1.jpg"
                                     className={styles.image}
@@ -54,7 +54,7 @@ export default function Services() {
                                     </div>
                                 </div>
                             </Link>
-                            <Link href='/services/serviceDetails2' className={styles.card}>
+                            <Link href='/services/1-detail#dashboard' className={styles.card}>
                                 <img
                                     src="/images/image2.jpg"
                                     className={styles.image}
@@ -67,7 +67,7 @@ export default function Services() {
                                     </div>
                                 </div>
                             </Link>
-                            <Link href='/services/1' className={styles.card}>
+                            <Link href='/services/1-detail#settings' className={styles.card}>
                                 <img
                                     src="/images/image3.jpg"
                                     className={styles.image}
@@ -80,7 +80,7 @@ export default function Services() {
                                     </div>
                                 </div>
                             </Link>
-                            <Link href='/services/1' className={styles.card}>
+                            <Link href='/services/1-detail#startup' className={styles.card}>
                                 <img
                                     src="/images/image4.jpg"
                                     className={styles.image}

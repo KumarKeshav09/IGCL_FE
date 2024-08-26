@@ -4,7 +4,7 @@ export default function CompliancesPost3() {
       {/* overview */}
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="">
               <div className="text-gray-500 sm:text-lg dark:text-gray-400">
                 <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
@@ -39,7 +39,7 @@ export default function CompliancesPost3() {
 
        <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 Applicability
@@ -85,7 +85,7 @@ export default function CompliancesPost3() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 What to Expect

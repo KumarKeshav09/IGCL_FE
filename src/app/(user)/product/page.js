@@ -56,8 +56,6 @@ export default function Product() {
             </div>
             <button onClick={openModal}>Show Modal</button>
             <Modal isOpen={isModalOpen} onClose={closeModal}>
-                <h2>Modal Content</h2>
-                <p>This is the content inside the modal.</p>
             </Modal>
             <Footer />
         </main>

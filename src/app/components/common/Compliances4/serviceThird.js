@@ -1,7 +1,7 @@
 export default function Compliances4() {
     return (
         <>
-            <div className="max-w-full mx-auto p-6">
+            <div className="max-w-full mx-auto md:p-6">
                 <header className="text-center mb-5">
                     <h1 className="text-4xl font-bold text-gray-800">Welcome to Start-up Solutions by IGCL India</h1>
                     <p className="text-lg text-gray-600">Empowering Your Start-up Journey with Comprehensive Services</p>
