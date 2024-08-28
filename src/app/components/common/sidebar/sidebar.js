@@ -3,9 +3,16 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Styles from "./sidebar.module.css";
+import Cookies from "js-cookie";
 
 export default function Sidebar({ children }) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleSignOut = () => {
+    Cookies.remove('token');
+    router.push('/login');
+  };
 
   const [activeTab, setActiveTab] = useState();
 
@@ -38,13 +45,13 @@ export default function Sidebar({ children }) {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    fill-rule="evenodd"
+                    clipRule="evenodd"
+                    fillRule="evenodd"
                     d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
                   ></path>
                 </svg>
               </button>
-              <a href="https://flowbite.com" className="flex ms-2 md:me-24">
+              <a href="/" className="flex ms-2 md:me-24">
                 <img
                   src="../../../../images/logo.png"
                   className="h-8 me-3"
@@ -81,46 +88,23 @@ export default function Sidebar({ children }) {
                       className="text-sm text-gray-900 dark:text-white"
                       role="none"
                     >
-                      Neil Sims
+                      IGCL
                     </p>
                     <p
                       className="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
                       role="none"
                     >
-                      neil.sims@flowbite.com
+                      Igcl@gmail.com
                     </p>
                   </div>
                   <ul className="py-1" role="none">
                     <li>
                       <a
                         href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                        role="menuitem"
-                      >
-                        Dashboard
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                        role="menuitem"
-                      >
-                        Settings
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                        role="menuitem"
-                      >
-                        Earnings
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleSignOut();
+                        }}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"
                       >
@@ -147,16 +131,14 @@ export default function Sidebar({ children }) {
                 href="/testimonials"
                 to="/testimonials"
                 onClick={() => handleTabClick("testimonials")}
-                className={` ${
-                  activeTab?.includes("testimonials")
+                className={` ${activeTab?.includes("testimonials")
                     ? Styles.activeTab
                     : Styles.inactiveTab
-                } flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group`}
+                  } flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group`}
               >
                 <svg
-                  className={`${
-                    activeTab?.includes("testimonials") ? Styles.tabSvg : Styles.inactiveTab
-                  } flex-shrink-0 w-5 h-5 text-gray-900 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-black`}
+                  className={`${activeTab?.includes("testimonials") ? Styles.tabSvg : Styles.inactiveTab
+                    } flex-shrink-0 w-5 h-5 text-gray-900 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-black`}
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -172,17 +154,15 @@ export default function Sidebar({ children }) {
                 href="/client"
                 to="/client"
                 onClick={() => handleTabClick("client")}
-                className={` ${
-                  activeTab?.includes("client")
+                className={` ${activeTab?.includes("client")
                     ? Styles.activeTab
                     : Styles.inactiveTab
-                } flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group`}
+                  } flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group`}
               >
                 <svg
-                  className={`${
-                    activeTab?.includes("client") ? Styles.tabSvg
-                    : Styles.inactiveTab
-                  } flex-shrink-0 w-5 h-5 text-gray-900 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-black`}
+                  className={`${activeTab?.includes("client") ? Styles.tabSvg
+                      : Styles.inactiveTab
+                    } flex-shrink-0 w-5 h-5 text-gray-900 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-black`}
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -198,16 +178,14 @@ export default function Sidebar({ children }) {
                 href="/FAQ"
                 to="/FAQ"
                 onClick={() => handleTabClick("FAQ")}
-                className={` ${
-                  activeTab?.includes("FAQ")
+                className={` ${activeTab?.includes("FAQ")
                     ? Styles.activeTab
                     : Styles.inactiveTab
-                } flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group`}
+                  } flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group`}
               >
                 <svg
-                  className={`${
-                    activeTab?.includes("FAQ") ? Styles.tabSvg : Styles.inactiveTab
-                  } flex-shrink-0 w-5 h-5 text-gray-900 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-black`}
+                  className={`${activeTab?.includes("FAQ") ? Styles.tabSvg : Styles.inactiveTab
+                    } flex-shrink-0 w-5 h-5 text-gray-900 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-black`}
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -216,6 +194,52 @@ export default function Sidebar({ children }) {
                   <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                 </svg>
                 <span className="ms-3">FAQ</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/resource"
+                to="/resource"
+                onClick={() => handleTabClick("resource")}
+                className={` ${activeTab?.includes("resource")
+                    ? Styles.activeTab
+                    : Styles.inactiveTab
+                  } flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group`}
+              >
+                <svg
+                  className={`${activeTab?.includes("resource") ? Styles.tabSvg : Styles.inactiveTab
+                    } flex-shrink-0 w-5 h-5 text-gray-900 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-black`}
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 18"
+                >
+                  <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
+                </svg>
+                <span className="ms-3">Resource</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/contactus"
+                to="/contactus"
+                onClick={() => handleTabClick("contactus")}
+                className={` ${activeTab?.includes("contactus")
+                    ? Styles.activeTab
+                    : Styles.inactiveTab
+                  } flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 dark:hover:bg-blue-700 group`}
+              >
+                <svg
+                  className={`${activeTab?.includes("contactus") ? Styles.tabSvg : Styles.inactiveTab
+                    } flex-shrink-0 w-5 h-5 text-gray-900 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-black`}
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 18"
+                >
+                  <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
+                </svg>
+                <span className="ms-3">Contact</span>
               </Link>
             </li>
           </ul>

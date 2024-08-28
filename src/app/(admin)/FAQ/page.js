@@ -6,6 +6,8 @@ import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
 import 'react-toastify/dist/ReactToastify.css'; // Ensure this import
 import { API_BASE_URL } from "../../../../utils/constants";
+import Cookies from "js-cookie";
+//test
 
 export default function FAQ() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -14,6 +16,8 @@ export default function FAQ() {
   const [page, setPage] = useState(1);
   const [searchData, setSearchData] = useState("");
   const [loading, setLoading] = useState(false); // Loader state
+  const token = Cookies.get("token");
+
 
   useEffect(() => {
     getAllFAQ();
@@ -23,6 +27,10 @@ export default function FAQ() {
     setLoading(true); // Show loader
     try {
       const res = await fetch(`${API_BASE_URL}/faq/allFAQ?page=${page}&limit=10`);
+      if (!res) {
+        const errorText = await res.text();
+        throw new Error(`HTTP error! Status: ${res.status}, ${errorText}`);
+      }
       const data = await res.json();
       if (data.success) {
         setListData(data);
@@ -41,6 +49,9 @@ export default function FAQ() {
       setLoading(true); // Show loader
       const res = await fetch(`${API_BASE_URL}/faq/deleteFAQ/${deleteId}`, {
         method: 'DELETE',
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
       });
       const data = await res.json();
       if (data.success) {
@@ -152,13 +163,13 @@ export default function FAQ() {
                     <div className="flex items-center space-x-2">
                       <Link
                         href={`/FAQ/${item._id}`}
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        className="font-medium text-blue-600 text-lg dark:text-blue-500 hover:underline"
                       >
                         <i className="bi bi-pencil-square"></i>
                       </Link>
                       <Link
                         href="#"
-                        className="font-medium text-red-600 dark:text-red-500 hover:underline"
+                        className="font-medium text-red-600 text-lg dark:text-red-500 hover:underline"
                       >
                         <i
                           onClick={() => deleteTestimonialModal(item._id)}

@@ -1,0 +1,6 @@
+@media (max-width: 710px) {
+    .WrapText{
+        flex-wrap: nowrap !important;
+        overflow-x: scroll;
+    }
+}

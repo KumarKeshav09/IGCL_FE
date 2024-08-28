@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
 import { API_BASE_URL } from "../../../../utils/constants";
+import Cookies from "js-cookie";
 
 export default function Clients() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -43,9 +44,14 @@ export default function Clients() {
 
   const handleDelete = async () => {
     try {
+      const token = Cookies.get("token");
+      console.log('token',token)
       const response = await fetch(`${API_BASE_URL}/client/deleteClient/${deleteId}`, {
         method: 'DELETE',
-      });
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
+        });
       const data = await response.json();
       if (data.success) {
         getAllClient();
@@ -162,13 +168,13 @@ export default function Clients() {
                       <div className="flex items-center space-x-2">
                         <Link
                           href={`/client/${item._id}`}
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="font-medium text-blue-600 text-lg dark:text-blue-500 hover:underline"
                         >
                           <i className="bi bi-pencil-square"></i>
                         </Link>
                         <button
                           onClick={() => deleteClientModal(item._id)}
-                          className="font-medium text-red-600 dark:text-red-500 hover:underline"
+                          className="font-medium text-red-600 text-lg dark:text-red-500 hover:underline"
                         >
                           <i className="bi bi-trash-fill"></i>
                         </button>

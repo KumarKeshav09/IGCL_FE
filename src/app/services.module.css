@@ -1,8 +1,9 @@
-.BoxContainer{
+.BoxContainer {
     display: grid;
     grid-template-columns: auto auto;
     gap: 2rem;
     padding: 1rem 6rem 0rem 6rem;
+    height: 50rem;
 }
 
 .card {
@@ -23,13 +24,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 1.5rem;
-    opacity: 1; 
-    transition: background-color 0.3s ease , transform 0.3s ease;
+    opacity: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .overlay:hover {
@@ -48,7 +49,7 @@
     margin-bottom: 0.5rem;
 }
 
-.textDesp{
+.textDesp {
     position: absolute;
     font-weight: 700;
     font-size: 2rem;
@@ -60,10 +61,10 @@
     bottom: 7rem;
 }
 
-.textSecret{
+.textSecret {
     font-size: 14px;
     margin-bottom: 0;
-    display: none; 
+    display: none;
 }
 
 .overlay:hover .textSecret {
@@ -73,8 +74,14 @@
     position: absolute;
 }
 
+@media screen and (max-width: 1400px) {
+    .BoxContainer {
+        height: 100% !important;
+    }
+}
+
 @media screen and (max-width: 1225px) {
-    .textDesp{
+    .textDesp {
         font-size: 2rem;
         bottom: 3rem;
     }
@@ -91,7 +98,7 @@
 }
 
 @media screen and (max-width: 954px) {
-    .textDesp{
+    .textDesp {
         font-weight: 700;
         font-size: 1.3rem;
         bottom: 1rem;
@@ -109,41 +116,56 @@
 }
 
 @media screen and (max-width: 769px) {
-    .BoxContainer{
+    .BoxContainer {
         gap: 1rem;
         padding: 2rem 2rem;
     }
+
     .card {
         margin-bottom: 1rem;
     }
-    .textDesp{
+
+    .textDesp {
         font-weight: 700;
         font-size: 1.5rem;
     }
 }
 
 @media screen and (max-width: 578px) {
-    .BoxContainer{
+    .BoxContainer {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px 0;
+        scroll-behavior: smooth;
         gap: 0.1rem;
         padding: 1rem 1rem;
     }
+
     .card {
+        display: inline-block;
+        margin-right: 10px;
+        flex-shrink: 0;
+        width: 300px;
+        height: auto;
         margin-bottom: 1rem;
     }
 
-    .textDesp{
+    .textDesp {
         font-weight: 700;
         font-size: 1rem;
     }
+
     .overlay:hover .textDesp {
         bottom: 4rem;
     }
+
     .overlay:hover .textSecret {
         display: block;
         font-size: 10px;
     }
 
-    .textNum{
+    .textNum {
         font-size: 1rem;
     }
 }
@@ -153,10 +175,11 @@
         margin-bottom: 1rem;
     }
 
-    .textDesp{
+    .textDesp {
         font-size: 0.8rem;
         bottom: 1rem;
     }
+
     .overlay {
         padding: 0.5rem;
     }
@@ -171,17 +194,18 @@
         bottom: 1rem;
     }
 
-    .textNum{
+    .textNum {
         font-size: 0.5rem;
     }
 }
 
 @media screen and (max-width: 400px) {
 
-    .textDesp{
+    .textDesp {
         font-size: 0.5rem;
         bottom: 0.5rem;
     }
+
     .overlay {
         padding: 0.5rem;
     }
@@ -196,7 +220,7 @@
         bottom: 1rem;
     }
 
-    .textNum{
+    .textNum {
         font-size: 0.5rem;
     }
 }
@@ -204,25 +228,38 @@
 
 /* contact us */
 
-.forthSection{
-    background-color: rgb(176, 141, 94);
-    margin-right: 20rem;
-    margin-bottom: 5rem;
+.forthSection {
+    background-color: #3F51B5;
 }
 
-.forthSectionInner{
+.forthSectionImg {
+    background-color: white;
+    justify-content: center;
     display: flex;
-    padding-left: 18rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    width: 36%;
 }
 
-.forthBoxText{
+.forthBoxDisplayForm {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.forthSectionInner {
+    display: flex;
+    padding-left: 5rem;
+    padding-top: 5rem;
+    padding-right: 3rem;
+    padding-bottom: 5rem;
+    margin-right: 5rem;
+}
+
+.forthBoxText {
     font-size: 4rem;
     font-weight: bold;
+    text-wrap: nowrap;
 }
 
-.forthBoxForm{
+.forthBoxForm {
     display: grid;
     grid-template-columns: auto;
     gap: 2rem;
@@ -230,12 +267,12 @@
     margin-top: 2rem;
 }
 
-.forthBoxInput{
+.forthBoxInput {
     display: flex;
     margin-top: 4rem;
 }
 
-.forthBoxMain{
+.forthBoxMain {
     margin-left: 3rem;
 }
 
@@ -245,7 +282,7 @@
     margin-left: 2rem;
 }
 
-.forthButton{
+.forthButton {
     padding: 1rem 3rem;
     background: white;
     color: black;
@@ -254,40 +291,51 @@
 }
 
 .forthButton:hover {
-    background-color: rgb(150, 116, 72);
+    background-color: #26358b;
     color: white;
 }
 
 @media screen and (max-width: 1750px) {
-    .forthSectionInner{
-        padding-left: 15rem;
+    .forthSectionInner {
+        padding-left: 8rem;
+        width: 75%;
     }
-    .forthSection{
-        background-color: rgb(176, 141, 94);
-        margin-right: 10rem;
-        margin-bottom: 5rem;
+
+    .forthBoxText {
+        text-wrap: wrap;
     }
 }
 
 @media screen and (max-width: 1361px) {
-    .forthSectionInner{
-        padding-left: 10rem;
-    }
-    .forthSection{
-        background-color: rgb(176, 141, 94);
+    .forthSectionInner {
+        padding-left: 3rem;
+        padding-right: 0rem;
+
+        width: 72%;
         margin-right: 0rem;
-        margin-bottom: 5rem;
+
+    }
+
+    .forthSection {
+        margin-right: 0rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .forthSectionInner {
+        padding-left: 1rem;
+        width: 72%;
+        margin-right: 0rem;
+
     }
 }
 
 @media screen and (max-width: 1025px) {
-    .forthBoxMain{
-        margin-left: 1rem;
-    }
-    .forthSection{
+    .forthSection {
         width: 100%;
     }
-    .forthSectionInner{
+
+    .forthSectionInner {
         display: flex;
         flex-direction: column;
         padding-left: 5rem;
@@ -296,109 +344,131 @@
         padding-bottom: 5rem;
         width: 100%;
     }
-    .forthBoxInput{
+
+    .forthBoxInput {
         flex-direction: column;
         margin-top: 2rem;
     }
-    .forthButton{
+
+    .forthButton {
         margin-top: 2rem;
     }
-    .forthBoxImg{
-        margin-bottom: 1rem;
+
+    .forthSectionImg {
+        display: none !important;
     }
-    .forthBoxInput2{
+
+    .forthBoxInput2 {
         margin-top: 1.5rem;
+    }
+
+    .forthBoxButton {
+        margin-left: 0rem;
+    }
+
+    .forthBoxDisplayForm {
+        display: block;
     }
 }
 
 @media screen and (max-width: 700px) {
-    .forthBoxText{
+    .forthBoxText {
         font-size: 2rem;
         font-weight: bold;
     }
-    .forthBoxInput{
+
+    .forthBoxInput {
         display: flex;
         margin-top: 2rem;
     }
-    .forthBoxImg{
-        display: none;
+
+    .forthSectionImg {
+        display: none !important;
     }
-    .forthBoxForm{
+
+    .forthBoxForm {
         margin-top: 0rem;
     }
-    .forthBoxInput2{
+
+    .forthBoxInput2 {
         margin-top: 1.5rem;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .forthSectionInner{
+    .forthSectionInner {
         padding-left: 1rem;
         padding-right: 1rem;
         padding-top: 5rem;
         padding-bottom: 5rem;
         width: 100%;
     }
+
+    .forthBoxMain {
+        margin-left: 0.5rem;
+    }
 }
 
 /* what we do */
-.weDoBox2{
+.weDoBox2 {
     background-color: rgb(176, 141, 94);
     padding: 4rem 6rem;
     /* border-radius: 0.7rem; */
 }
 
-.weDoBox3{
+.weDoBox3 {
     background-color: #414562;
     padding: 4rem 6rem;
     /* border-radius: 0.7rem; */
 }
 
-.weDoBoxIcon{
+.weDoBoxIcon {
     width: 40%;
 }
 
-.weDoBoxHead{
+.weDoBoxHead {
     font-size: 4rem;
     margin-top: 1rem;
     font-weight: 600;
 }
 
 @media screen and (max-width: 1500px) {
-    .weDoBox2{
+    .weDoBox2 {
         background-color: rgb(176, 141, 94);
         padding: 4rem 4rem;
     }
-    .weDoBox3{
+
+    .weDoBox3 {
         padding: 4rem 4rem;
     }
 }
 
 @media screen and (max-width: 1100px) {
-    .weDoBox2{
+    .weDoBox2 {
         background-color: rgb(176, 141, 94);
         padding: 4rem 2rem;
     }
-    .weDoBox3{
+
+    .weDoBox3 {
         padding: 4rem 2rem;
     }
 }
 
 @media screen and (max-width: 748px) {
-    .weDoBox2{
+    .weDoBox2 {
         background-color: rgb(176, 141, 94);
         padding: 2rem 2rem;
     }
 
-    .weDoBox3{
+    .weDoBox3 {
         padding: 2rem 2rem;
     }
-    
-    .weDoBoxIcon{
+
+    .weDoBoxIcon {
         width: 20%;
     }
-    
-    .weDoBoxHead{
+
+    .weDoBoxHead {
         font-size: 2rem;
         margin-top: 1rem;
         font-weight: 600;
@@ -406,38 +476,39 @@
 }
 
 @media screen and (max-width: 500px) {
-    .weDoBox2{
+    .weDoBox2 {
         background-color: rgb(176, 141, 94);
         padding: 2rem 2rem;
     }
-    
-    .weDoBoxIcon{
+
+    .weDoBoxIcon {
         width: 40%;
     }
-    
-    .weDoBoxHead{
+
+    .weDoBoxHead {
         font-size: 1.5rem;
     }
-    .weDoBoxPara{
+
+    .weDoBoxPara {
         font-size: 0.5rem;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .weDoBox2{
+    .weDoBox2 {
         background-color: rgb(176, 141, 94);
         padding: 2rem 1rem;
     }
 
-    .weDoBox3{
+    .weDoBox3 {
         padding: 2rem 1rem;
     }
-    
-    .weDoBoxIcon{
+
+    .weDoBoxIcon {
         width: 40%;
     }
-    
-    .weDoBoxHead{
+
+    .weDoBoxHead {
         font-size: 1.5rem;
     }
 }

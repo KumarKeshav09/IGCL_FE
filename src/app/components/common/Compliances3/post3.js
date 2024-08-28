@@ -4,21 +4,19 @@ export default function CompliancesPost3() {
       {/* overview */}
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="">
               <div className="text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 className="mb-4 tracking-tight text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+                <h2 className="mb-4 pt-4 tracking-tight text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                   Navigating Legal Obligations in Contractor Audits Under the
                   CLRA Act
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     Contractor Audit under the Contract Labour (Regulation and
                     Abolition) Act (CLRA) is a systematic examination of
                     contractors' compliance with legal requirements and
                     regulations governing the employment of contract labor.
-                  </p>
-                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     This audit aims to ensure that contractors fulfill their
                     obligations towards contract workers, including providing
                     wages, benefits, and working conditions as mandated by law.
@@ -37,7 +35,7 @@ export default function CompliancesPost3() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 What to Expect
@@ -46,7 +44,7 @@ export default function CompliancesPost3() {
                 Empowering clients with innovative solutions and unparalleled
                 support.
               </h3>
-              <div className="text-center mb-10">
+              <div className="text-center mb-5">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -69,9 +67,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -90,9 +88,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -111,9 +109,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -133,9 +131,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -155,9 +153,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -177,9 +175,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -198,9 +196,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -220,9 +218,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -242,9 +240,9 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -264,13 +262,13 @@ export default function CompliancesPost3() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span className="leading-tight">
+                  <span className="leading-tight text-justify text-lg lg:text-xl">
                     Ongoing support and guidance to organizations in
                     implementing corrective measures and monitoring compliance
                     with CLRA provisions.

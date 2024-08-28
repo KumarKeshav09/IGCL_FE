@@ -5,6 +5,9 @@ import { ToastContainer, toast } from "react-toastify";
 import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
 import { API_BASE_URL } from "../../../../utils/constants";
+import 'react-toastify/dist/ReactToastify.css'; 
+import Cookies from "js-cookie";
+
 
 export default function TestiMonials() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -12,6 +15,8 @@ export default function TestiMonials() {
   const [deleteId, setDeleteId] = useState(null);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false); // Add loading state
+  const token = Cookies.get("token");
+
 
   useEffect(() => {
     getAllTestimonial();
@@ -45,6 +50,9 @@ export default function TestiMonials() {
         `${API_BASE_URL}/testimonial/deleteTestimonial/${deleteId}`,
         {
           method: "DELETE",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          },
         }
       );
       const data = await res.json();
@@ -162,13 +170,13 @@ export default function TestiMonials() {
                     <div className="flex items-center space-x-2">
                       <Link
                         href={`/testimonials/${item._id}`}
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        className="font-medium text-blue-600 text-lg dark:text-blue-500 hover:underline"
                       >
                         <i className="bi bi-pencil-square"></i>
                       </Link>
                       <button
                         onClick={() => deleteTestimonialModal(item._id)}
-                        className="font-medium text-red-600 dark:text-red-500 hover:underline"
+                        className="font-medium text-red-600 text-lg dark:text-red-500 hover:underline"
                       >
                         <i className="bi bi-trash-fill"></i>
                       </button>

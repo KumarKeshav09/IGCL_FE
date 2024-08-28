@@ -5,22 +5,28 @@ import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { API_BASE_URL } from "../../../../../utils/constants";
 import 'react-toastify/dist/ReactToastify.css';
+import Cookies from "js-cookie";
+// import { IMAGE_BASE_URL } from '../../../../../utils/constants';
 
 export default function EditTestiMonials(params) {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [image, setImage] = useState("");
-  const [imageFile, setImageFile] = useState(null); // To keep track of the new image file
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [imageFile, setImageFile] = useState(null);
+  const [loading, setLoading] = useState(false);
   const imageInputRef = useRef(null);
   const router = useRouter();
+  const token = Cookies.get("token");
 
   useEffect(() => {
-    // Fetch the existing testimonial data
     const fetchTestimonial = async () => {
-      setLoading(true); // Set loading to true before fetching
+      setLoading(true);
       try {
-        const res = await fetch(`${API_BASE_URL}/testimonial/testimonialById/${params.params.editTestiMonials}`);
+        const res = await fetch(`${API_BASE_URL}/testimonial/testimonialById/${params.params.editTestiMonials}`, {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          },
+        });
         const data = await res.json();
         if (data.success) {
           const { Name, Message, Image } = data.data;
@@ -33,49 +39,56 @@ export default function EditTestiMonials(params) {
       } catch (error) {
         toast.error("An error occurred while fetching testimonial data.");
       } finally {
-        setLoading(false); // Set loading to false after fetching
+        setLoading(false);
       }
     };
 
     fetchTestimonial();
-  }, [params.params.editTestiMonials]);
+  }, [params.params.editTestiMonials, token]);
 
   const handleNameChange = (e) => setName(e.target.value);
   const handleMessageChange = (e) => setMessage(e.target.value);
 
-  const handleImageInputChange = (event) => {
-    const acceptedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
-    const file = event.target.files[0];
 
-    if (!acceptedFileTypes.includes(file.type)) {
+  const handleImageInputChange = (e) => {
+    const acceptedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
+    const file = e.target.files[0];
+    console.log("Selected file:", file); // Ensure file is correctly logged
+  
+    if (file && acceptedFileTypes.includes(file.type)) {
+      setImageFile(file);
+      setImage(URL.createObjectURL(file));
+    } else {
       toast.error("Invalid image type. Please upload only JPEG or PNG files.");
       if (imageInputRef.current) {
-        imageInputRef.current.value = "";
+        imageInputRef.current.value = ""; // Clear the input
       }
-      return;
     }
-
-    setImageFile(file);
-    setImage(URL.createObjectURL(file)); // Preview the selected image
   };
+  
 
   const submitForm = async () => {
     if (!name || !message) {
       toast.error("Please fill in all required fields.");
       return;
     }
-
-    setLoading(true); // Set loading to true before submitting
+  
+    setLoading(true);
     const formData = new FormData();
     formData.append("Name", name);
     formData.append("Message", message);
+    console.log("imageFile",imageFile)
     if (imageFile) {
-      formData.append("Image", imageFile);
+      formData.append("image", imageFile);
+    console.log("imageFileIF",imageFile)
     }
 
     try {
       const res = await fetch(`${API_BASE_URL}/testimonial/updateTestimonial/${params.params.editTestiMonials}`, {
         method: "PATCH",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
         body: formData,
       });
       const data = await res.json();
@@ -88,9 +101,10 @@ export default function EditTestiMonials(params) {
     } catch (error) {
       toast.error("An error occurred while updating the testimonial.");
     } finally {
-      setLoading(false); // Set loading to false after submitting
+      setLoading(false);
     }
   };
+  
 
   return (
     <section>
@@ -210,6 +224,8 @@ export default function EditTestiMonials(params) {
           Update
         </button>
       </div>
+
+      <ToastContainer />
     </section>
   );
 }

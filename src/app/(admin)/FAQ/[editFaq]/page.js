@@ -5,17 +5,24 @@ import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import 'react-toastify/dist/ReactToastify.css'; 
 import { API_BASE_URL } from "../../../../../utils/constants";
+import Cookies from "js-cookie";
 
 export default function EditFaq({ params }) {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const router = useRouter();
   const faqId = params?.editFaq; 
+  const token = Cookies.get("token");
+
 
   useEffect(() => {
     const fetchFaqDetails = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/faq/FAQById/${faqId}`);
+        const res = await fetch(`${API_BASE_URL}/faq/FAQById/${faqId}`, {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          },
+        });
         const data = await res.json();
         if (data.success) {
           setQuestion(data.data?.Question);
@@ -54,7 +61,8 @@ export default function EditFaq({ params }) {
       const res = await fetch(`${API_BASE_URL}/faq/updateFAQ/${faqId}`, {
         method: 'PATCH',
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
         },
         body: JSON.stringify(formData),
       });

@@ -4,7 +4,7 @@ export default function CompliancesPost6() {
       {/* overview */}
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="">
               <div className="text-gray-500 sm:text-lg dark:text-gray-400">
                 <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
@@ -33,7 +33,7 @@ export default function CompliancesPost6() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 Applicability
@@ -42,7 +42,7 @@ export default function CompliancesPost6() {
                 Empowering clients with innovative solutions and unparalleled
                 support.
               </h3>
-              <div className="text-center mb-10">
+              <div className="text-center mb-5">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -69,7 +69,7 @@ export default function CompliancesPost6() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 What to Expect
@@ -78,7 +78,7 @@ export default function CompliancesPost6() {
                 Empowering clients with innovative solutions and unparalleled
                 support.
               </h3>
-              <div className="text-center mb-10">
+              <div className="text-center mb-5">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -101,9 +101,9 @@ export default function CompliancesPost6() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -121,9 +121,9 @@ export default function CompliancesPost6() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -141,9 +141,9 @@ export default function CompliancesPost6() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -161,9 +161,9 @@ export default function CompliancesPost6() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -181,9 +181,9 @@ export default function CompliancesPost6() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -201,9 +201,9 @@ export default function CompliancesPost6() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>

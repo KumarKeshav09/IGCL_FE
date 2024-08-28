@@ -4,23 +4,20 @@ export default function CompliancesPost2() {
       {/* overview */}
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="">
               <div className="text-gray-500 sm:text-lg dark:text-gray-400">
                 <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
                   Assessing HR Effectiveness Through Comprehensive HR Audits
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     HR Audit is a systematic assessment of an organization's
                     human resources function to evaluate its effectiveness,
                     compliance, and alignment with business objectives. This
                     process involves a comprehensive review of HR policies,
                     procedures, practices, and systems to identify strengths,
-                    weaknesses, and areas for improvement.
-                  </p>
-                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
-                    By conducting an HR Audit, organizations can ensure legal
+                    weaknesses, and areas for improvement.By conducting an HR Audit, organizations can ensure legal
                     compliance, optimize HR processes, enhance employee
                     satisfaction, and align HR strategies with overall business
                     goals.
@@ -36,7 +33,7 @@ export default function CompliancesPost2() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 What to Expect
@@ -45,7 +42,7 @@ export default function CompliancesPost2() {
                 Empowering clients with innovative solutions and unparalleled
                 support.
               </h3>
-              <div className="text-center mb-10">
+              <div className="text-center mb-5">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -68,9 +65,9 @@ export default function CompliancesPost2() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -90,9 +87,9 @@ export default function CompliancesPost2() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -112,9 +109,9 @@ export default function CompliancesPost2() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -134,9 +131,9 @@ export default function CompliancesPost2() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -156,9 +153,9 @@ export default function CompliancesPost2() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -178,9 +175,9 @@ export default function CompliancesPost2() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
@@ -200,9 +197,9 @@ export default function CompliancesPost2() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>

@@ -110,7 +110,7 @@ export default function aboutUs() {
       {/* value section  */}
       <div className={`${styles.valueSectionOutline}`}>
         <h1 className={`${styles.headMain}`}>Our Core Values</h1>
-        <div className="text-center mb-10">
+        <div className="text-center mb-5">
           <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -187,11 +187,6 @@ export default function aboutUs() {
       {/* mission and vision  */}
       <div className={`${styles.missionSectionOutline}`}>
         <div className="mt-4">
-          <p>
-            <span className={`${styles.missionHeadTop}`}>
-              WHO WE ARE. WHAT WE DO
-            </span>
-          </p>
           <h1 className={`${styles.missionHead}`}>Our Mission</h1>
           <p className={`${styles.missiondesp} text-justify`}>
             Led by energetic and experienced professionals, we use a dedicated
@@ -201,11 +196,6 @@ export default function aboutUs() {
           </p>
         </div>
         <div className="mt-4">
-          <p>
-            <span className={`${styles.missionHeadTop}`}>
-              WHAT WE ASPIRE TO BE
-            </span>
-          </p>
           <h1 className={`${styles.missionHead}`}>Our Vision</h1>
           <p className={`${styles.missiondesp} text-justify`}>
             To be recognized as a key provider of strategic consulting for the
@@ -218,7 +208,7 @@ export default function aboutUs() {
       {/* team  */}
       <div className={`${styles.teamSection}`}>
         <h1 className={`${styles.headMain}`}>Leadership</h1>
-        <div className="text-center mb-10">
+        <div className="text-center mb-5">
           <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -285,11 +275,11 @@ export default function aboutUs() {
               <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                 CLIENTS
               </h1>
-              <h3 className="text-xl mb-5 font-light text-gray-800">
+              <h3 className="text-xl lg:text-nowrap mb-5 font-light text-gray-800">
                 Empowering clients with innovative solutions and unparalleled
                 support.
               </h3>
-              <div className="text-center mb-10">
+              <div className="text-center mb-5">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>

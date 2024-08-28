@@ -16,7 +16,7 @@ const Compliances2 = () => {
   return (
     <div className="md:flex">
       {/* Sidebar */}
-      <ul className="flex-column space-y space-y-4 text-nowrap text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
+      <ul className="flex-column pt-4 space-y space-y-4 text-nowrap text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
         <li>
           <button
             onClick={() => handleTabChange("profile")}
@@ -80,7 +80,7 @@ const Compliances2 = () => {
       </ul>
 
       {/* Content */}
-      <div className="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
+      <div className=" md:px-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
         {activeTab === "profile" && (
           <div>
             <CompliancesPost1 />
