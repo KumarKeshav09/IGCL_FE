@@ -592,7 +592,7 @@ export default function Home() {
 
       {/* Contact Us */}
 
-      <section className={`${styles.forthSection} flex`}>
+      <section className={`${styles.forthSection} flex `}>
         <div className={`${styles.forthSectionInner}`}>
           <div className={`${styles.forthBoxMain}`}>
             <div className={`${styles.forthBoxText}`}>
