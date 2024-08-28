@@ -30,7 +30,7 @@ export default async function middleware(req) {
     // const isValid = await jwt.verify(cleanedToken, process.env.JWT_SECRET_KEY);
     const jwtRes = await jwtVerify(
         cleanedToken,
-        new TextEncoder().encode(process.env.JWT_SECRET_KEY)
+        new TextEncoder().encode("igcl123")
     );
     
     if (!jwtRes ) {
