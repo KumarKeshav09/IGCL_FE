@@ -1,0 +1,13 @@
+.sideBarWidth{
+    height: 60rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+    .sideBarWidth{
+        height: 20rem;
+        width: 90%;
+    }
+}

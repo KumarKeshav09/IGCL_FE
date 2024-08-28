@@ -10,17 +10,14 @@ export default function CompliancesPost2() {
                 <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
                   Assessing HR Effectiveness Through Comprehensive HR Audits
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     HR Audit is a systematic assessment of an organization's
                     human resources function to evaluate its effectiveness,
                     compliance, and alignment with business objectives. This
                     process involves a comprehensive review of HR policies,
                     procedures, practices, and systems to identify strengths,
-                    weaknesses, and areas for improvement.
-                  </p>
-                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
-                    By conducting an HR Audit, organizations can ensure legal
+                    weaknesses, and areas for improvement.By conducting an HR Audit, organizations can ensure legal
                     compliance, optimize HR processes, enhance employee
                     satisfaction, and align HR strategies with overall business
                     goals.

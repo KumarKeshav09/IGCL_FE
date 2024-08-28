@@ -10,17 +10,14 @@ export default function CompliancesPost2() {
                 <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
                   Prioritizing Safety and Compliance in Factory Environments
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     Factories Compliances encompass the regulatory requirements
                     that govern the establishment, operation, and management of
                     factories in India. These compliances are established under
                     the Factory Act of 1948 and its subsequent amendments,
                     aiming to ensure the safety, health, and welfare of workers
-                    employed in industrial settings.
-                  </p>
-                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
-                    They cover various aspects such as working hours, employment
+                    employed in industrial settings.They cover various aspects such as working hours, employment
                     conditions, safety measures, welfare amenities, and
                     environmental regulations. Adherence to factory compliances
                     is essential for factory owners to maintain legal

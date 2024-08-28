@@ -7,18 +7,16 @@ export default function CompliancesPost3() {
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="">
               <div className="text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 className="mb-4 tracking-tight text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+                <h2 className="mb-4 pt-4 tracking-tight text-4xl md:text-7xl font-bold mb-5 text-gray-800">
                   Navigating Legal Obligations in Contractor Audits Under the
                   CLRA Act
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     Contractor Audit under the Contract Labour (Regulation and
                     Abolition) Act (CLRA) is a systematic examination of
                     contractors' compliance with legal requirements and
                     regulations governing the employment of contract labor.
-                  </p>
-                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     This audit aims to ensure that contractors fulfill their
                     obligations towards contract workers, including providing
                     wages, benefits, and working conditions as mandated by law.

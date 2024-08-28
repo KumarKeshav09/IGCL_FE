@@ -18,8 +18,6 @@ export default function CompliancesPost4() {
                     Prohibition and Redressal) Act, 2013. This legislation aims
                     to create a safe and respectful work environment for women
                     by preventing and addressing instances of sexual harassment.
-                  </p>
-                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     POSH Compliances encompasses a range of measures, including
                     the establishment of Internal Complaints Committees (ICCs),
                     employee awareness and training programs, and the
@@ -278,7 +276,7 @@ export default function CompliancesPost4() {
         </section>
       </div>
 
-      
+
     </>
   );
 }

@@ -23,7 +23,7 @@ export default async function middleware(req) {
     const token = req.cookies.get("token");
 
     if (!token) {
-      return NextResponse.redirect(`http://localhost:3000/login`);
+      return NextResponse.redirect(`https://igcl.netlify.app/login`);
     }
     // const cleanedToken = token.value.replace(/"/g, '');
     const cleanedToken = token.value.replace(/"/g, "");
@@ -35,11 +35,11 @@ export default async function middleware(req) {
     
     if (!jwtRes ) {
       console.log('Invalid token, redirecting to login page');
-      return NextResponse.redirect(`http://localhost:3000/login`);
+      return NextResponse.redirect(`https://igcl.netlify.app/login`);
     }
     return NextResponse.next();
   } catch (error) {
     console.error('Error:', error);
-    return NextResponse.redirect(`http://localhost:3000/login`);
+    return NextResponse.redirect(`https://igcl.netlify.app/login`);
   }
 }

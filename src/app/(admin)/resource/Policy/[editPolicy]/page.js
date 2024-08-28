@@ -14,6 +14,7 @@ export default function EditPolicy({ params }) {
   const [notificationTitle, setNotificationTitle] = useState("");
   const [notificationDescription, setNotificationDescription] = useState("");
   const [pdf, setPdf] = useState(null); // State to handle PDF upload
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const policyId = params?.editPolicy; // Adjusted to match the parameter name for policy
   const token = Cookies.get("token");
@@ -34,6 +35,7 @@ export default function EditPolicy({ params }) {
           setJudgmentDescription(policy.JudgmentDescription);
           setNotificationTitle(policy.NotificationTitle);
           setNotificationDescription(policy.NotificationDescription);
+          setPdf(policy.PDF);
         } else {
           toast.error(data.errMessage || "Failed to fetch policy details");
         }
@@ -45,28 +47,59 @@ export default function EditPolicy({ params }) {
     fetchPolicyDetails();
   }, [policyId, token]);
 
-  const handleNotificationTitleChange = (e) => {
-    setNotificationTitle(e.target.value);
+  const uploadPDF = async (pdfFile) => {
+    setLoading(true);
+
+    try {
+      // Ensure the file is valid
+      if (!pdfFile || pdfFile.type !== 'application/pdf') {
+        throw new Error('Invalid file type. Please upload a PDF file.');
+      }
+
+      // Create a FormData object
+      const formData = new FormData();
+      formData.append('pdf', pdfFile);
+
+      const response = await fetch('https://igcl-api.onrender.com/v1/policy/upload', {
+        method: "POST",
+        body: formData,
+      });
+
+      // Check if the response status is OK
+      if (!response.ok) {
+        // Read response body to get detailed error message
+        const errorBody = await response.text();
+        throw new Error(`HTTP error! Status: ${response.status}. Response: ${errorBody}`);
+      }
+
+      const resData = await response.json();
+
+      if (resData?.success) {
+        return { successMessage: resData };
+      } else {
+        return { errMessage: resData.error || 'An error occurred' };
+      }
+    } catch (error) {
+      toast.error(`Error: ${error.message}`);
+      return { errMessage: error.message || 'Unknown error occurred' };
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handlePdfChange = (e) => {
-    setPdf(e.target.files[0]); // Handling file input
-  };
-
-  const handleNotificationDescriptionChange = (e) => {
-    setNotificationDescription(e.target.value);
-  };
-
-  const handleJudgmentTitleChange = (e) => {
-    setJudgmentTitle(e.target.value);
-  };
-
-  const handleJudgmentDescriptionChange = (e) => {
-    setJudgmentDescription(e.target.value);
-  };
-
-  const handlePolicyChange = (e) => {
-    setPolicyName(e.target.value);
+  const handlePdfChange = async (event) => {
+    const file = event.target.files[0];
+    if (file && file.type === 'application/pdf') {
+      const result = await uploadPDF(file);
+      if (result.successMessage) {
+        console.log('Upload successful:', result.successMessage.imageUrl);
+        setPdf(result.successMessage.imageUrl); // Save the URL or path returned by the upload
+      } else {
+        console.error('Upload error:', result.errMessage);
+      }
+    } else {
+      console.error('Please select a valid PDF file.');
+    }
   };
 
   const submitForm = async () => {
@@ -75,27 +108,28 @@ export default function EditPolicy({ params }) {
       return;
     }
 
-    const formData = new FormData();
-    formData.append('PolicyName', policyName);
-    formData.append('JudgmentTitle', judgmentTitle);
-    formData.append('JudgmentDescription', judgmentDescription);
-    formData.append('NotificationTitle', notificationTitle);
-    formData.append('NotificationDescription', notificationDescription);
-
-    if (pdf) {
-      formData.append('pdf', pdf);
-    }
+    const requestBody = {
+      PolicyName: policyName,
+      JudgmentTitle: judgmentTitle,
+      JudgmentDescription: judgmentDescription,
+      NotificationTitle: notificationTitle,
+      NotificationDescription: notificationDescription,
+      PDF: pdf, // Include the PDF URL or path
+    };
 
     try {
+      setLoading(true); // Set loading state to true when starting submission
       const res = await fetch(`${API_BASE_URL}/policy/updatePolicy/${policyId}`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
         },
-        body: formData,
+        body: JSON.stringify(requestBody),
       });
 
       const data = await res.json();
+      console.log("data", data);
       if (data.success) {
         toast.success(data.message || "Policy updated successfully");
         router.push("/resource");
@@ -105,6 +139,8 @@ export default function EditPolicy({ params }) {
     } catch (error) {
       console.error(error);
       toast.error("An error occurred while updating the policy");
+    } finally {
+      setLoading(false); // Reset loading state after completion
     }
   };
 
@@ -123,8 +159,8 @@ export default function EditPolicy({ params }) {
           </button>
         </div>
       </Link>
-      <form className="mb-5" encType="multipart/form-data">
-      <div className="grid gap-4 mb-4 md:grid-cols-2">
+      <form className="mb-5">
+        <div className="grid gap-4 mb-4 md:grid-cols-2">
           <div>
             <label
               htmlFor="policyName"
@@ -135,10 +171,26 @@ export default function EditPolicy({ params }) {
             <input
               type="text"
               value={policyName}
-              onChange={handlePolicyChange}
+              onChange={(e) => setPolicyName(e.target.value)}
               id="policyName"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Policy Name"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="pdf"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
+            >
+              Abstract PDF
+            </label>
+            <input
+              type="file"
+              accept=".pdf"
+              onChange={handlePdfChange}
+              id="pdf"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
             />
           </div>
@@ -152,7 +204,7 @@ export default function EditPolicy({ params }) {
             <input
               type="text"
               value={judgmentTitle}
-              onChange={handleJudgmentTitleChange}
+              onChange={(e) => setJudgmentTitle(e.target.value)}
               id="judgmentTitle"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Judgment Title"
@@ -168,7 +220,7 @@ export default function EditPolicy({ params }) {
             </label>
             <textarea
               value={judgmentDescription}
-              onChange={handleJudgmentDescriptionChange}
+              onChange={(e) => setJudgmentDescription(e.target.value)}
               id="judgmentDescription"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Judgment Description"
@@ -185,7 +237,7 @@ export default function EditPolicy({ params }) {
             <input
               type="text"
               value={notificationTitle}
-              onChange={handleNotificationTitleChange}
+              onChange={(e) => setNotificationTitle(e.target.value)}
               id="notificationTitle"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Notification Title"
@@ -201,26 +253,10 @@ export default function EditPolicy({ params }) {
             </label>
             <textarea
               value={notificationDescription}
-              onChange={handleNotificationDescriptionChange}
+              onChange={(e) => setNotificationDescription(e.target.value)}
               id="notificationDescription"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Notification Description"
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="pdf"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
-            >
-              PDF
-            </label>
-            <input
-              type="file"
-              accept=".pdf"
-              onChange={handlePdfChange}
-              id="pdf"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
             />
           </div>
@@ -231,8 +267,9 @@ export default function EditPolicy({ params }) {
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           type="button"
           onClick={submitForm}
+          disabled={loading} // Disable button when loading
         >
-          Update
+          {loading ? "Updating..." : "Update"}
         </button>
       </div>
     </section>

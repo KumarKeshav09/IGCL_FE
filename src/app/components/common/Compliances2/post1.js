@@ -11,16 +11,13 @@ export default function CompliancesPost1() {
                   Ensuring Adherence to Regulations for Shops and Commercial
                   Establishments
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     Shop and Establishment Compliances refer to the regulatory
                     obligations that businesses operating within commercial
                     establishments must adhere to. These regulations typically
                     cover aspects such as working hours, holidays, wages, and
-                    conditions of work for employees.
-                  </p>
-                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
-                    These compliances are established under the Shop and
+                    conditions of work for employees.These compliances are established under the Shop and
                     establishment act 1958. Compliance ensures that businesses
                     operate within the legal framework set by local authorities,
                     promoting fair labor practices and workplace standards.

@@ -157,7 +157,7 @@ export default function Policy() {
                   <td className="px-6 py-4">{item.NotificationTitle}</td>
                   <td className="px-6 py-4">
                     <a
-                      href={item.PDF}
+                      href={`https://igcl-api.onrender.com/uploads/` + `${item.PDF}`}
                       download="Document.pdf"
                       className="text-blue-600 hover:underline"
                     >
@@ -168,13 +168,13 @@ export default function Policy() {
                     <div className="flex items-center space-x-2">
                       <Link
                         href={`/resource/Policy/${item._id}`}
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        className="font-medium text-blue-600 text-lg dark:text-blue-500 hover:underline"
                       >
                         <i className="bi bi-pencil-square"></i>
                       </Link>
                       <button
                         onClick={() => deletePolicyModal(item._id)}
-                        className="font-medium text-red-600 dark:text-red-500 hover:underline"
+                        className="font-medium text-red-600 text-lg dark:text-red-500 hover:underline"
                       >
                         <i className="bi bi-trash-fill"></i>
                       </button>

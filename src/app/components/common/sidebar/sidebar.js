@@ -51,7 +51,7 @@ export default function Sidebar({ children }) {
                   ></path>
                 </svg>
               </button>
-              <a href="https://flowbite.com" className="flex ms-2 md:me-24">
+              <a href="/" className="flex ms-2 md:me-24">
                 <img
                   src="../../../../images/logo.png"
                   className="h-8 me-3"

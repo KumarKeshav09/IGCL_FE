@@ -45,7 +45,7 @@ export default function Product() {
                                 <div className={styles.overlay}>
                                     <div className={styles.text}>
                                         <h3 className={styles.textNum}>01-</h3>
-                                        <h3 className={styles.textDesp}>Statutory Compliances </h3>
+                                        <h3 className={styles.textDesp}>KYC</h3>
                                         <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labour Law Compliance</p>
                                     </div>
                                 </div>

@@ -168,13 +168,13 @@ export default function Clients() {
                       <div className="flex items-center space-x-2">
                         <Link
                           href={`/client/${item._id}`}
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="font-medium text-blue-600 text-lg dark:text-blue-500 hover:underline"
                         >
                           <i className="bi bi-pencil-square"></i>
                         </Link>
                         <button
                           onClick={() => deleteClientModal(item._id)}
-                          className="font-medium text-red-600 dark:text-red-500 hover:underline"
+                          className="font-medium text-red-600 text-lg dark:text-red-500 hover:underline"
                         >
                           <i className="bi bi-trash-fill"></i>
                         </button>

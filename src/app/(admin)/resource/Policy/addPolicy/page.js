@@ -13,6 +13,7 @@ export default function AddPolicy() {
   const [judgmentDescription, setJudgmentDescription] = useState("");
   const [notificationTitle, setNotificationTitle] = useState("");
   const [notificationDescription, setNotificationDescription] = useState("");
+  const [loading, setLoading] = useState(false)
   const [pdf, setPdf] = useState(null);
   const router = useRouter();
   const token = Cookies.get("token");
@@ -21,9 +22,12 @@ export default function AddPolicy() {
     setNotificationTitle(e.target.value);
   };
 
-  const handlePdfChange = (e) => {
-    setPdf(e.target.files[0]); // Handling file input
-  };
+  // const handlePdfChange = (e) => {
+  //   setPdf(e.target.files[0]); // Handling file input
+  // };
+
+
+
 
   const handleNotificationDescriptionChange = (e) => {
     setNotificationDescription(e.target.value);
@@ -41,41 +45,109 @@ export default function AddPolicy() {
     setPolicyName(e.target.value);
   };
 
-  const submitForm = async () => {
-    if (!policyName || !judgmentTitle || !judgmentDescription || !notificationTitle || !notificationDescription || !pdf) {
-      toast.error('Please fill in all required fields.');
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('PolicyName', policyName);
-    formData.append('JudgmentTitle', judgmentTitle);
-    formData.append('JudgmentDescription', judgmentDescription);
-    formData.append('NotificationTitle', notificationTitle);
-    formData.append('NotificationDescription', notificationDescription);
-    formData.append('pdf', pdf);
+  const uploadPDF = async (pdfFile, setLoading = () => { }) => {
+    setLoading(true);
 
     try {
-      const res = await fetch(`${API_BASE_URL}/policy/add`, {
-        method: 'POST',
-        headers: {
-          "Authorization": `Bearer ${token}`,
-        },
+      // Ensure the file is valid
+      if (!pdfFile || pdfFile.type !== 'application/pdf') {
+        throw new Error('Invalid file type. Please upload a PDF file.');
+      }
+
+      // Create a FormData object
+      const formData = new FormData();
+      formData.append('pdf', pdfFile); 
+
+      const response = await fetch('https://igcl-api.onrender.com/v1/policy/upload', {
+        method: "POST",
         body: formData,
       });
 
-      const data = await res.json();
-      if (data.success) {
-        router.push("/resource");
-        toast.success(data.message || "Policy added successfully");
+      // Check if the response status is OK
+      if (!response.ok) {
+        // Read response body to get detailed error message
+        const errorBody = await response.text();
+        throw new Error(`HTTP error! Status: ${response.status}. Response: ${errorBody}`);
+      }
+
+      const resData = await response.json();
+
+      if (resData?.success) {
+        return { successMessage: resData };
       } else {
-        toast.error(data.errMessage || "Failed to add policy");
+        return { errMessage: resData.error || 'An error occurred' };
       }
     } catch (error) {
-      console.error(error);
-      toast.error("An error occurred while adding the policy");
+      if (typeof toast !== 'undefined') {
+        toast.error(`Error: ${error.message}`);
+      }
+      return { errMessage: error.message || 'Unknown error occurred' };
+    } finally {
+      setLoading(false);
     }
   };
+
+  const handlePdfChange = async (event) => {
+    const file = event.target.files[0];
+    if (file && file.type === 'application/pdf') {
+      const result = await uploadPDF(file, setLoading);
+      if (result.successMessage) {
+        console.log('Upload successful:', result.successMessage.imageUrl);
+        setPdf(result.successMessage.imageUrl)
+      } else {
+        console.error('Upload error:', result.errMessage);
+      }
+    } else {
+      console.error('Please select a valid PDF file.');
+    }
+  };
+
+
+
+
+  const submitForm = async () => {
+    // Validate required fields
+    if (!policyName || !judgmentTitle || !judgmentDescription || !notificationTitle || !notificationDescription) {
+        toast.error('Please fill in all required fields.');
+        return;
+    }
+
+    // Create JSON object
+    const requestBody = {
+        PolicyName: policyName,
+        JudgmentTitle: judgmentTitle,
+        JudgmentDescription: judgmentDescription,
+        NotificationTitle: notificationTitle,
+        NotificationDescription: notificationDescription,
+        PDF: pdf  
+    };
+
+    try {
+        // Send POST request
+        const response = await fetch(`${API_BASE_URL}/policy/add`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestBody),
+        });
+
+        // Handle response
+        const data = await response.json();
+        console.log("data", data);
+        if (data.success) {
+            router.push("/resource");
+            toast.success(data.message || "Policy added successfully");
+        } else {
+            toast.error(data.errMessage || "Failed to add policy");
+        }
+    } catch (error) {
+        console.error(error);
+        toast.error("An error occurred while adding the policy");
+    }
+};
+
 
   return (
     <section>
@@ -108,6 +180,22 @@ export default function AddPolicy() {
               id="policyName"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Policy Name"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="pdf"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
+            >
+              Abstract PDF
+            </label>
+            <input
+              type="file"
+              accept=".pdf"
+              onChange={handlePdfChange}
+              id="pdf"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
             />
           </div>
@@ -174,22 +262,6 @@ export default function AddPolicy() {
               id="notificationDescription"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Notification Description"
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="pdf"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
-            >
-              PDF
-            </label>
-            <input
-              type="file"
-              accept=".pdf"
-              onChange={handlePdfChange}
-              id="pdf"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
             />
           </div>

@@ -10,15 +10,12 @@ export default function CompliancesPost2() {
                 <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
                   Ensuring Financial Security for Your Future with EPF
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     The Employees' Provident Fund provides social security
                     benefits to Employees of establishments on which the
                     Employees’ Provident Fund and Miscellaneous Provisions Act
-                    1952 applies.
-                  </p>
-                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
-                    The Act mainly provides Retirement or old age benefits such
+                    1952 applies.The Act mainly provides Retirement or old age benefits such
                     as Provident fund, Superannuation fund, Family Pension, and
                     Deposit Linked Insurance.
                   </p>

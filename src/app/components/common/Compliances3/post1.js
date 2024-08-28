@@ -11,17 +11,14 @@ export default function CompliancesPost1() {
                   Navigating Labour Law Compliance Through Effective Statutory
                   Audits
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
                     Labour Law and Statutory Audit is a comprehensive process
                     aimed at ensuring compliance with labor laws and statutory
                     regulations governing employment practices. This audit
                     evaluates an organization's adherence to legal requirements
                     related to wages, working hours, safety standards, and
-                    employee welfare.
-                  </p>
-                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
-                    By conducting thorough assessments and reviews, Labour Law
+                    employee welfare.By conducting thorough assessments and reviews, Labour Law
                     and Statutory Audit help organizations identify areas of
                     non-compliance, mitigate legal risks, and foster a fair and
                     lawful work environment.
