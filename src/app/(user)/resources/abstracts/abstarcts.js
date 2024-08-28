@@ -99,11 +99,11 @@ export default function Abstarcts() {
             </div>
           ) : (
             pdfSrc ? (
-              <embed
+              <iframe
                 src={`https://igcl-api.onrender.com/uploads/` + `${pdfSrc}`}
                 style={{ width: "100%", height: "600px", border: "none" }}
                 title="PDF Viewer"
-              ></embed>
+              ></iframe>
             ) : (
               <p>Select a policy to view the PDF</p>
             )
