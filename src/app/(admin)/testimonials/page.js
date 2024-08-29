@@ -17,10 +17,14 @@ export default function TestiMonials() {
   const [loading, setLoading] = useState(false); // Add loading state
   const token = Cookies.get("token");
 
-
   useEffect(() => {
+    import("flowbite").then((module) => {
+      const { initFlowbite } = module;
+      initFlowbite();
+    });
     getAllTestimonial();
   }, [page]);
+
 
   // Fetch all testimonials with pagination
   const getAllTestimonial = async () => {
