@@ -10,6 +10,7 @@ import Footer from "@/app/components/common/footer";
 import Testimonials from "@/app/components/common/Testimonials/testimonials";
 import { API_BASE_URL } from "../../../../utils/constants";
 import { toast } from "react-toastify";
+import VisionMission from "@/app/components/common/Mission/mission";
 
 export default function aboutUs() {
   useEffect(() => {
@@ -110,7 +111,7 @@ export default function aboutUs() {
       {/* value section  */}
       <div className={`${styles.valueSectionOutline}`}>
         <h1 className={`${styles.headMain}`}>Our Core Values</h1>
-        <div className="text-center mb-5">
+        <div className="text-center mb-2">
           <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -181,11 +182,12 @@ export default function aboutUs() {
             </p>
           </div>
         </div>
+
       </div>
       <hr />
 
       {/* mission and vision  */}
-      <div className={`${styles.missionSectionOutline}`}>
+      {/* <div className={`${styles.missionSectionOutline}`}>
         <div className="mt-4">
           <h1 className={`${styles.missionHead}`}>Our Mission</h1>
           <p className={`${styles.missiondesp} text-justify`}>
@@ -202,13 +204,16 @@ export default function aboutUs() {
             development and execution of growth strategies across the world.
           </p>
         </div>
+      </div> */}
+      <div className={`${styles.missionSectionOutline}`}>
+        <VisionMission />
       </div>
       <hr />
 
       {/* team  */}
       <div className={`${styles.teamSection}`}>
         <h1 className={`${styles.headMain}`}>Leadership</h1>
-        <div className="text-center mb-5">
+        <div className="text-center mb-2">
           <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -216,13 +221,14 @@ export default function aboutUs() {
           <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
         </div>
         <div className={`${styles.teamInnerSection}`}>
-          <div className={`${styles.teamInnerleft}`}>
+          <div className="w-[100%] md:w-[40%] lg:w-[20%] p-4">
             <img
+              src="../../images/vijay.jpg"
+              alt="Description of the image"
               className={`${styles.teamInnerImage}`}
-              src="../../images/person1.jpg"
             />
           </div>
-          <div className={`${styles.teamInnerright}`}>
+          <div className="w-[100%] md:w-[60%] lg:w-[80%] p-4 text-black lg:content-center">
             <h1 className={`${styles.heroMain}`}>Dr Vijay Vyas</h1>
             <p className={`${styles.despText} text-justify`}>
               Welcome to Innovative Governance Corporation Limited (IGCL INDIA),
@@ -241,20 +247,21 @@ export default function aboutUs() {
           </div>
         </div>
         <div className={`${styles.teamInnerSection}`}>
-          <div className={`${styles.teamInnerleft}`}>
+          <div className="w-[100%] md:w-[40%] lg:w-[20%] p-4">
             <img
+              src="../../images/nitesh.jpg"
+              alt="Description of the image"
               className={`${styles.teamInnerImage}`}
-              src="../../images/person1.jpg"
             />
           </div>
-          <div className={`${styles.teamInnerright}`}>
+          <div className="w-[100%] md:w-[60%] lg:w-[80%] p-4 text-black lg:content-center">
             <h1 className={`${styles.heroMain}`}>Nitesh Choudhary</h1>
             <p className={`${styles.despText} text-justify`}>
               Progress for me has never been a dream. It has always been a
               distant reality and once one milestone is achieved, there is
               always another one waiting to be crossed. It is with this belief
               that I started INNOVATIVE GOVERNANCE CORPORATION LIMITED (IGCL) in
-              2020, a company that is in Labour Law Compliance. I always wanted
+              2020, a company that is in Labor Law Compliance. I always wanted
               to push my company to more prosperous milestones. More than being
               a global player, I always perceived my company as a unit that
               could make a difference with its quality and competitively priced
@@ -268,17 +275,13 @@ export default function aboutUs() {
       <hr />
 
       {/* client */}
-      <div className="min-w-screen  flex items-center justify-center py-5">
-        <div className="w-full border-gray-200 px-5 py-5 md:py-10 text-gray-800">
+      <div className="min-w-screen  flex items-center justify-center md:py-2">
+        <div className="w-full border-gray-200 px-5 py-5 md:py-3 text-gray-800">
           <div className="w-full max-w-screen mx-auto">
             <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
-                CLIENTS
+              <h1 className="text-3xl md:text-4xl font-bold mb-2 text-gray-800">
+                Clients
               </h1>
-              <h3 className="text-xl lg:text-nowrap mb-5 font-light text-gray-800">
-                Empowering clients with innovative solutions and unparalleled
-                support.
-              </h3>
               <div className="text-center mb-5">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>

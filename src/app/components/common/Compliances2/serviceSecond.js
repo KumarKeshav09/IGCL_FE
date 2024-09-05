@@ -74,7 +74,7 @@ const Compliances2 = () => {
                 : "bg-gray-50 text-gray-500 dark:bg-gray-800 dark:text-gray-400"
             }`}
           >
-            Other Labour Law Compliances 
+            Other Labor Law Compliances 
           </button>
         </li>
       </ul>

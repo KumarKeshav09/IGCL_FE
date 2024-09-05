@@ -22,17 +22,14 @@ export default function Services() {
             </div>
           </section> */}
             {/* </div> */}
-            <div className="min-w-screen border-b flex items-center justify-center py-5">
-                <div className="w-full  border-gray-200 md:px-12 px-5  py-5 md:py-10 ">
+            <div className="min-w-screen border-b flex items-center justify-center py-3">
+                <div className="w-full  border-gray-200 md:px-12 px-5 md:py-10 ">
                     <div className="w-full mx-auto">
                         <div className="text-center max-w-xl mx-auto">
-                            <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
-                                SERVICES
+                            <h1 className="text-3xl md:text-5xl font-bold text-gray-800">
+                                Services
                             </h1>
-                            <h3 className="text-xl mb-5 font-light text-gray-600">
-                                Offering a range of services tailored to meet your needs.
-                            </h3>
-                            <div className="text-center mb-5">
+                            <div className="text-center mb-3">
                                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -50,13 +47,13 @@ export default function Services() {
                                     <div className={styles.text}>
                                         <h3 className={styles.textNum}>01-</h3>
                                         <h3 className={styles.textDesp}>Statutory Compliances </h3>
-                                        <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labour Law Compliance</p>
+                                        <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labor Law Compliance</p>
                                     </div>
                                 </div>
                             </Link>
                             <Link href='/services/1-detail#dashboard' className={styles.card}>
                                 <img
-                                    src="/images/image2.jpg"
+                                    src="/images/image4.jpg"
                                     className={styles.image}
                                 />
                                 <div className={styles.overlay}>
@@ -69,20 +66,20 @@ export default function Services() {
                             </Link>
                             <Link href='/services/1-detail#settings' className={styles.card}>
                                 <img
-                                    src="/images/image3.jpg"
+                                    src="/images/image2.jpg"
                                     className={styles.image}
                                 />
                                 <div className={styles.overlay}>
                                     <div className={styles.text}>
                                         <div><h3 className={styles.textNum}>03-</h3></div>
-                                        <div><h3 className={styles.textDesp}>Labour Law Audit and Assessment</h3></div>
+                                        <div><h3 className={styles.textDesp}>Labor Law Audit and Assessment</h3></div>
                                         <p className={styles.textSecret}>Enhancing Organizational Skills Through Tailored Training and Expert Consultancy</p>
                                     </div>
                                 </div>
                             </Link>
                             <Link href='/services/1-detail#startup' className={styles.card}>
                                 <img
-                                    src="/images/image4.jpg"
+                                    src="/images/Logo.jpg"
                                     className={styles.image}
                                 />
                                 <div className={styles.overlay}>

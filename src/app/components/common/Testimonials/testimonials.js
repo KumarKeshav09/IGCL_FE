@@ -65,17 +65,14 @@ const Testimonials = () => {
   console.log("listData",listData)
 
   return (
-    <div className="min-w-screen bgAlternate flex items-center justify-center md:py-5">
-      <div className="w-full  border-gray-200 px-5 py-5 md:py-5">
+    <div className="min-w-screen bgAlternate flex items-center justify-center md:py-3">
+      <div className="w-full  border-gray-200 px-5 py-5 md:py-3">
         <div className="w-full mx-auto">
           <div className="text-center max-w-xl mx-auto">
-            <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+            <h1 className="text-3xl md:text-4xl font-bold mb-2 text-gray-800">
               What people are saying.
             </h1>
-            <h3 className="text-xl mb-5 font-light text-gray-800">
-              Authentic testimonials from clients who trust us.
-            </h3>
-            <div className="text-center mb-10">
+            <div className="text-center mb-5">
               <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
               <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -84,7 +81,7 @@ const Testimonials = () => {
             </div>
           </div>
           <div className="-mx-3">
-            <div className="px-16">
+            <div className="px-5 md:px-16">
             <Slider {...settings} >
             {listData?.data?.map((item) => (
               <div className={`${styles.cardWidth} mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6`}>

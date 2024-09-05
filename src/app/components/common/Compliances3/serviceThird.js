@@ -24,7 +24,7 @@ const Compliances3 = () => {
                 : "bg-gray-50 text-gray-500 dark:bg-gray-800 dark:text-gray-400"
             }`}
           >
-            Labour Law and Statutory Audit  
+            Labor Law and Statutory Audit  
           </button>
         </li>
         <li>

@@ -3,12 +3,11 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
-import { API_BASE_URL } from "../../../../../utils/constants";
 import 'react-toastify/dist/ReactToastify.css';
+import { API_BASE_URL } from "../../../../../utils/constants";
 import Cookies from "js-cookie";
-// import { IMAGE_BASE_URL } from '../../../../../utils/constants';
 
-export default function EditTestiMonials(params) {
+export default function EditTestiMonials({ params }) {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [image, setImage] = useState("");
@@ -17,12 +16,13 @@ export default function EditTestiMonials(params) {
   const imageInputRef = useRef(null);
   const router = useRouter();
   const token = Cookies.get("token");
+  const testimonialId = params?.editTestiMonials; // Adjusted to match the parameter name
 
   useEffect(() => {
     const fetchTestimonial = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${API_BASE_URL}/testimonial/testimonialById/${params.params.editTestiMonials}`, {
+        const res = await fetch(`${API_BASE_URL}/testimonial/testimonialById/${testimonialId}`, {
           headers: {
             "Authorization": `Bearer ${token}`,
           },
@@ -44,17 +44,15 @@ export default function EditTestiMonials(params) {
     };
 
     fetchTestimonial();
-  }, [params.params.editTestiMonials, token]);
+  }, [testimonialId, token]);
 
   const handleNameChange = (e) => setName(e.target.value);
   const handleMessageChange = (e) => setMessage(e.target.value);
 
-
   const handleImageInputChange = (e) => {
     const acceptedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
     const file = e.target.files[0];
-    console.log("Selected file:", file); // Ensure file is correctly logged
-  
+
     if (file && acceptedFileTypes.includes(file.type)) {
       setImageFile(file);
       setImage(URL.createObjectURL(file));
@@ -65,26 +63,23 @@ export default function EditTestiMonials(params) {
       }
     }
   };
-  
 
   const submitForm = async () => {
     if (!name || !message) {
       toast.error("Please fill in all required fields.");
       return;
     }
-  
+
     setLoading(true);
     const formData = new FormData();
     formData.append("Name", name);
     formData.append("Message", message);
-    console.log("imageFile",imageFile)
     if (imageFile) {
       formData.append("image", imageFile);
-    console.log("imageFileIF",imageFile)
     }
 
     try {
-      const res = await fetch(`${API_BASE_URL}/testimonial/updateTestimonial/${params.params.editTestiMonials}`, {
+      const res = await fetch(`${API_BASE_URL}/testimonial/updateTestimonial/${testimonialId}`, {
         method: "PATCH",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -104,7 +99,6 @@ export default function EditTestiMonials(params) {
       setLoading(false);
     }
   };
-  
 
   return (
     <section>
@@ -173,59 +167,45 @@ export default function EditTestiMonials(params) {
                 onChange={handleMessageChange}
                 id="message"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder=""
+                placeholder="Message"
                 required
-                rows={4}
               />
             </div>
-            <div className="mb-6">
+            <div>
               <label
-                htmlFor="imageInput"
+                htmlFor="image"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Upload Image
+                Image (JPEG/PNG)
               </label>
               <input
-                type="file"
-                id="imageInput"
-                name="imageInput"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 ref={imageInputRef}
-                accept=".jpg, .jpeg, .png"
+                type="file"
+                id="image"
+                accept="image/jpeg, image/png"
                 onChange={handleImageInputChange}
+                className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               />
-            </div>
-            {image && (
-              <div className="flex flex-wrap">
-                <div className="mr-4 mb-4">
-                  <div className="ml-2 underline">
-                    <h3>Selected Image</h3>
-                  </div>
+              {image && (
+                <div className="mt-2">
                   <img
                     src={image}
-                    alt="Selected"
-                    className="object-cover m-2 mt-5 border border-black rounded-lg"
-                    width={200}
-                    height={200}
+                    alt="Testimonial Image Preview"
+                    className="max-w-full h-auto"
                   />
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
+          <button
+            type="button"
+            onClick={submitForm}
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Update Testimonial
+          </button>
         </form>
       )}
-
-      <div>
-        <button
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          type="button"
-          onClick={submitForm}
-        >
-          Update
-        </button>
-      </div>
-
-      <ToastContainer />
     </section>
   );
 }

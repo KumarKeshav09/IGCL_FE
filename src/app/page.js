@@ -231,7 +231,7 @@ export default function Home() {
 
             {/* <h1 className="heroLabourtext mb-4  font-bold tracking-tight leading-none text-white ">Your Compliance, </h1>
         <h1 className="heroLabourtext mb-12  font-bold tracking-tight leading-none text-white ">   Our Priority</h1> */}
-            <p className="mb-12 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">IGCL INDIA offers customized compliance solutions, ensuring your business meets all statutory requirements, from employee benefits to workplace safety.</p>
+            <p className="mb-12 text-base font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">IGCL INDIA offers customized compliance solutions, ensuring your business meets all statutory requirements, from employee benefits to workplace safety.</p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
 
               <Link href="/services" className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
@@ -370,22 +370,14 @@ export default function Home() {
           <div>
             <section className=" dark:bg-gray-900">
               <div className="py-8 whatWeDoRIght mx-auto max-w-screen-xl text-left lg:py-16 md:px-16">
-                <h1 className="mb-4 text-4xl text-gray-900 font-extrabold tracking-tight leading-none  md:text-5xl lg:text-6xl dark:text-white">
-                  Introducing Our Labour Law Consulting Company
+                <h1 className="mb-4 text-3xl text-gray-900 font-extrabold tracking-tight leading-none  md:text-4xl lg:text-6xl dark:text-white">
+                  Introducing Our Labor Law Consulting Company
                 </h1>
-                <p className="mb-8 text-lg text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
-                  IGCL INDIA provides outstanding and unsurpassed service that,
-                  together, delivers premium values to our customers. Since
-                  then, IGCL INDIA has been diversified into multiple business
-                  domains hence words fall short to describe the enthusiasm and
-                  working profile of our corporation.
+                <p className="mb-8 text-base text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
+                  IGCL India provides outstanding and unsurpassed service that, together, delivers premium values to our customers. Since then, IGCL INDIA has been diversified into multiple business domains hence words fall short to describe the enthusiasm and working profile of our corporation.
                 </p>
-                <p className="mb-8 mt-4 text-lg text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
-                  At IGCL INDIA, we believe in treating people the way they want
-                  to be treated, with friendliness, calmness, and respect. Our
-                  success is not only due to the quality of our work, It’s due
-                  to our attitude, our approach, and the way we treat our
-                  clients.
+                <p className="mb-8 mt-4 text-base text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
+                  At IGCL India, we believe in treating people the way they want to be treated, with friendliness, calmness, and respect. Our success is not only due to the quality of our work, It’s due to our attitude, our approach, and the way we treat our clients.
                 </p>
                 <div className="flex flex-col space-y-4 sm:flex-row  sm:space-y-0">
                   <Link
@@ -402,17 +394,14 @@ export default function Home() {
       </div>
 
       {/* Services */}
-      <div className="min-w-screen bgAlternate  flex items-center justify-center md:py-5">
-        <div className="w-full border-gray-200 px-5 pt-6 md:py-8 ">
+      <div className="min-w-screen bgAlternate  flex items-center justify-center md:py-3">
+        <div className="w-full border-gray-200 px-5 pt-3 md:py-3 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
-                SERVICES
+              <h1 className="text-3xl md:text-4xl font-bold mb-2 text-gray-800">
+                Services
               </h1>
-              <h3 className="text-xl lg:text-nowrap mb-5 font-light text-gray-600">
-                Offering a range of services tailored to meet your needs.
-              </h3>
-              <div className="text-center mb-5">
+              <div className="text-center mb-3">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -430,13 +419,13 @@ export default function Home() {
                   <div className={styles.text}>
                     <h3 className={styles.textNum}>01-</h3>
                     <h3 className={styles.textDesp}>Statutory Compliances </h3>
-                    <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labour Law Compliance</p>
+                    <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labor Law Compliance</p>
                   </div>
                 </div>
               </Link>
               <Link href='/services/1-detail#dashboard' className={styles.card}>
                 <img
-                  src="/images/image2.jpg"
+                  src="/images/image4.jpg"
                   className={styles.image}
                 />
                 <div className={styles.overlay}>
@@ -449,20 +438,20 @@ export default function Home() {
               </Link>
               <Link href='/services/1-detail#settings' className={styles.card}>
                 <img
-                  src="/images/image3.jpg"
+                  src="/images/image2.jpg"
                   className={styles.image}
                 />
                 <div className={styles.overlay}>
                   <div className={styles.text}>
                     <div><h3 className={styles.textNum}>03-</h3></div>
-                    <div><h3 className={styles.textDesp}>Labour Law Audit and Assessment</h3></div>
+                    <div><h3 className={styles.textDesp}>Labor Law Audit and Assessment</h3></div>
                     <p className={styles.textSecret}>Enhancing Organizational Skills Through Tailored Training and Expert Consultancy</p>
                   </div>
                 </div>
               </Link>
               <Link href='/services/1-detail#startup' className={styles.card}>
                 <img
-                  src="/images/image4.jpg"
+                  src="/images/image3.jpg"
                   className={styles.image}
                 />
                 <div className={styles.overlay}>
@@ -479,16 +468,13 @@ export default function Home() {
       </div>
 
       {/* FAQ */}
-      <div className="min-w-screen  flex items-center justify-center md:py-5">
-        <div className="w-full border-gray-200 px-5 py-4 md:py-4 ">
+      <div className="min-w-screen  flex items-center justify-center md:py-2">
+        <div className="w-full border-gray-200 px-5 py-2 md:py-3 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+              <h1 className="text-3xl md:text-4xl mb-2 font-bold text-gray-800">
                 FAQ's
               </h1>
-              <h3 className="text-xl mb-5 font-light text-gray-600">
-                Find answers to commonly asked questions.
-              </h3>
               <div className="text-center mb-5">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
@@ -497,15 +483,15 @@ export default function Home() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className="py-5 px-24 faqs mx-auto flex flex-col md:flex-row gap-12">
+            <div className="py-5 px-1 md:px-24 faqs mx-auto flex flex-col md:flex-row md:gap-12">
               <div className="flex flex-col text-left basis-1/2">
                 <p className="inline-block font-semibold text-gray-800 mb-4">
                   QUESTIONS & ANSWERS
                 </p>
-                <p className="sm:text-4xl text-4xl md:text-7xl font-bold text-gray-800">
+                <p className=" text-3xl md:text-4xl font-bold text-gray-800">
                   Have any questions?
                 </p>
-                <p className="sm:text-4xl text-4xl md:text-7xl font-bold text-gray-800">
+                <p className="text-3xl md:text-4xl font-bold text-gray-800">
                   Find answers here
                 </p>
                 <p className="inline-block text-gray-800 mt-4 text-justify text-primary mb-4 text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
@@ -524,13 +510,13 @@ export default function Home() {
                     <Accordion.Panel className=" border border-b border-gray-200">
                       <section className=" border-b border-gray-200">
                         <Accordion.Title
-                          className="border-none  text-lg font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                          className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                         >
                           {item.Question}
                         </Accordion.Title>
                         <Accordion.Content
-                          className="border-none text-lg  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                          className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                         >
                           <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
@@ -552,18 +538,14 @@ export default function Home() {
 
 
       {/* Clients */}
-      <div className="min-w-screen  flex items-center justify-center md:py-5">
-        <div className="w-full border-gray-200 px-5 py-5 md:py-10 text-gray-800">
+      <div className="min-w-screen  flex items-center justify-center md:py-2">
+        <div className="w-full border-gray-200 px-5 py-5 md:py-3 text-gray-800">
           <div className="w-full max-w-screen mx-auto">
             <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
-                CLIENTS
+              <h1 className="text-3xl md:text-4xl font-bold mb-2 text-gray-800">
+                Clients
               </h1>
-              <h3 className="text-xl lg:text-nowrap mb-5 font-light text-gray-800">
-                Empowering clients with innovative solutions and unparalleled
-                support.
-              </h3>
-              <div className="text-center mb-10">
+              <div className="text-center mb-5">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
