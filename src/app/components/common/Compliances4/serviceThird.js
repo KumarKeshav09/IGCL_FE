@@ -50,7 +50,7 @@ export default function Compliances4() {
                         </div>
 
                         <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-                            <h2 className="text-2xl font-semibold text-gray-800">5. Statutory and Labour Law Compliances</h2>
+                            <h2 className="text-2xl font-semibold text-gray-800">5. Statutory and Labor Law Compliances</h2>
                             <p className="text-gray-600">
                                 Staying compliant with statutory and labour laws is crucial for the long-term success of your start-up. Our team will ensure that your business adheres to all relevant regulations, minimizing the risk of penalties and legal issues.
                             </p>

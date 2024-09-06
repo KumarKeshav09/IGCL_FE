@@ -159,7 +159,7 @@ export default function Clients() {
                     <td className="px-6 py-4">
                       <img
                         className="imageCircle"
-                        src={item.Image}
+                        src={`https://igcl-api.onrender.com/uploads/` + `${item.Image}`}
                         width={100}
                         height={100}
                       />

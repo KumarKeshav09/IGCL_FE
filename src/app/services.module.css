@@ -247,9 +247,9 @@
 .forthSectionInner {
     display: flex;
     padding-left: 5rem;
-    padding-top: 5rem;
+    padding-top: 2rem;
     padding-right: 3rem;
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
     margin-right: 5rem;
 }
 
@@ -264,7 +264,7 @@
     grid-template-columns: auto;
     gap: 2rem;
     font-weight: 600;
-    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .forthBoxInput {

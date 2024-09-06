@@ -9,11 +9,11 @@ export default function CompliancesPost3() {
               <div className="text-gray-500 sm:text-lg dark:text-gray-400">
                 <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
                   Navigating Legal Obligations Under the CLRA Act for Contract
-                  Labour Management
+                  Labor Management
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
-                    The Contract Labour (Regulation and Abolition) Act, 1970
+                    The Contract Labor (Regulation and Abolition) Act, 1970
                     (CLRA) is a crucial piece of legislation enacted by the
                     Government of India to regulate the employment of contract
                     labor and ensure their welfare and rights. CLRA Compliances
@@ -56,7 +56,7 @@ export default function CompliancesPost3() {
             <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
               <ul className="list-disc mt-8 text-gray-500 text-justify text-lg lg:text-xl">
                 <li>
-                  CLRA (Contract Labour Regulation and Abolition) Compliances
+                  CLRA (Contract Labor Regulation and Abolition) Compliances
                   are applicable to all establishments or contractors employing
                   20 or more contract workers on any day of the preceding 12
                   months. Additionally, certain states may have their own
@@ -122,7 +122,7 @@ export default function CompliancesPost3() {
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in understanding and interpreting the provisions
-                    of the Contract Labour (Regulation and Abolition) Act, 1970
+                    of the Contract Labor (Regulation and Abolition) Act, 1970
                     (CLRA) and its relevant state-specific regulations.
                   </span>
                 </li>

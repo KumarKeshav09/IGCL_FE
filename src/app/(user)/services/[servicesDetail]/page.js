@@ -29,7 +29,7 @@ export default function ServicesDetail() {
 
       <div className={`mb-4 border-b border-gray-200 dark:border-gray-700`}>
         <ul
-          className={`${styles.navBar} lg:pl-16 flex flex-wrap -mb-px text-sm font-medium text-center`}
+          className={`${styles.navBar} lg:pl-16 flex flex-wrap -mb-px text-base font-medium text-center`}
           id="default-tab"
           role="tablist"
         >
@@ -57,7 +57,7 @@ export default function ServicesDetail() {
               onClick={() => handleTabChange("settings")}
               role="tab"
             >
-              Labour Law Audit & Assessment
+              Labor Law Audit & Assessment
             </button>
           </li>
           <li className="me-2" role="presentation">

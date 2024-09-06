@@ -13,7 +13,7 @@ export default function CompliancesPost3() {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
-                    Contractor Audit under the Contract Labour (Regulation and
+                    Contractor Audit under the Contract Labor (Regulation and
                     Abolition) Act (CLRA) is a systematic examination of
                     contractors' compliance with legal requirements and
                     regulations governing the employment of contract labor.

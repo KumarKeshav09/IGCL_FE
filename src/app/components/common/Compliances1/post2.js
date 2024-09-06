@@ -11,7 +11,7 @@ export default function CompliancesPost2() {
                   Ensuring Financial Security for Your Future with EPF
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
-                  <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
+                  <p className=" font-medium text-justify text-lg lg:text-xl">
                     The Employees' Provident Fund provides social security
                     benefits to Employees of establishments on which the
                     Employees’ Provident Fund and Miscellaneous Provisions Act
@@ -30,16 +30,12 @@ export default function CompliancesPost2() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
             <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+              <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 Applicability
               </h1>
-              <h3 className="text-xl mb-5 lg:text-nowrap font-light text-gray-800">
-                Empowering clients with innovative solutions and unparalleled
-                support.
-              </h3>
-              <div className="text-center mb-5">
+              <div className="text-center">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -73,16 +69,12 @@ export default function CompliancesPost2() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
             <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+              <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 What to Expect
               </h1>
-              <h3 className="text-xl mb-5 lg:text-nowrap font-light text-gray-800">
-                Empowering clients with innovative solutions and unparalleled
-                support.
-              </h3>
-              <div className="text-center mb-10">
+              <div className="text-center mb-4">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -93,7 +85,7 @@ export default function CompliancesPost2() {
             <div className="rounded-lg dark:bg-gray-800">
               <ul
                 role="list"
-                className="space-y-4 mt-8 text-gray-500 dark:text-gray-400"
+                className="space-y-4 text-gray-500 dark:text-gray-400"
               >
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg

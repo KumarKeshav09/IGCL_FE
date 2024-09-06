@@ -1,8 +1,8 @@
 /* hero  */
 
 .heroSection {
-  margin: 2rem 7rem;
-  padding: 4rem 0rem;
+  margin: 1rem 7rem;
+  padding: 1rem 0rem;
   display: flex;
 }
 
@@ -38,7 +38,6 @@
   text-align: center;
   font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 1rem;
 }
 
 .valueSection {
@@ -47,10 +46,26 @@
   gap: 1.5rem;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .valueSection {
+    display: flex;
+    height: 25rem;
+        overflow-x: auto;
+        padding: 10px 0;
+        scroll-behavior: smooth;
+  }
+  .eachBlock {
+    display: inline-block;
+        margin-right: 10px;
+        flex-shrink: 0;
+        width: 400px;
+        height: auto;
+        margin-bottom: 1rem;
+  }
+}
 
 .valueSectionOutline {
   margin: 1rem 7rem;
-  padding: 2rem 0rem;
 }
 
 .eachBlock {
@@ -90,10 +105,9 @@
 
 .missionSectionOutline {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto;
   margin: 1rem 7rem;
   column-gap: 2rem;
-  padding: 2rem 0rem;
 }
 
 .missionHead {
@@ -118,29 +132,24 @@
 
 .teamSection {
   margin: 1rem 7rem;
-  padding-top: 2rem;
+  padding-top: 0rem;
 }
 
 .teamInnerSection {
   display: flex;
-  margin-bottom: 1rem;
 }
 
 .teamInnerImage {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   border-radius: 0.25rem;
 }
 
 .teamInnerleft {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 40%;
 }
 
 .teamInnerright {
-  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -157,7 +166,7 @@
   }
   .missionSectionOutline {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     margin: 1rem 2rem;
     column-gap: 0.5rem;
     padding: 2rem 0rem;
@@ -206,7 +215,7 @@
   }
   .teamInnerImage {
     align-items: center;
-    width: 40%;
+    width: 100%;
     height: auto;
   }
   .heroSection {
@@ -220,5 +229,17 @@
 
   .heroSectionLeft {
     width: 100%;
+  }
+  .heroMain{
+    font-size:  1.875rem;
+  }
+  .despText{
+    font-size: 1rem;
+  }
+  .headMain{
+    font-size:  1.875rem;
+  }
+  .headText{
+    font-size:  1.875rem;
   }
 }

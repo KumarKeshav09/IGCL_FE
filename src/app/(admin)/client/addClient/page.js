@@ -4,12 +4,14 @@ import { useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { API_BASE_URL } from "../../../../../utils/constants";
+import 'react-toastify/dist/ReactToastify.css';
 import Cookies from "js-cookie";
 
-export default function addClient() {
+export default function AddTestiMonials() {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
-  const [image, setImage] = useState(null); // Use null for image state
+  const [image, setImage] = useState(null);
+  const [loading, setLoading] = useState(false); // Manage loading state
   const imageInputRef = useRef(null);
   const router = useRouter();
   const token = Cookies.get("token");
@@ -36,26 +38,78 @@ export default function addClient() {
     }
   };
 
+  const uploadImage = async (imageFile) => {
+    setLoading(true);
+
+    try {
+      // Ensure the file is valid
+      if (!imageFile || !["image/jpeg", "image/jpg", "image/png"].includes(imageFile.type)) {
+        throw new Error('Invalid image type. Please upload a JPEG or PNG file.');
+      }
+
+      // Create FormData
+      const formData = new FormData();
+      formData.append('pdf', imageFile);
+
+      const response = await fetch(`https://igcl-api.onrender.com/v1/policy/upload`, {
+        method: "POST",
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const errorBody = await response.text();
+        throw new Error(`HTTP error! Status: ${response.status}. Response: ${errorBody}`);
+      }
+
+      const resData = await response.json();
+
+      if (resData?.success) {
+        return { imageUrl: resData.imageUrl };
+      } else {
+        throw new Error(resData.error || 'An error occurred');
+      }
+    } catch (error) {
+      toast.error(`Error: ${error.message}`);
+      return { error: error.message };
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const submitForm = async () => {
     if (!name || !comment || !image) {
       toast.error("Please fill in all required fields.");
       return;
     }
 
-    const formData = new FormData();
-    formData.append("Name", name);
-    formData.append("Description", comment);
-    formData.append("image", image);
+    const uploadResult = await uploadImage(image);
+
+    if (uploadResult.error) {
+      return; // If image upload fails, exit early
+    }
+
+    const { imageUrl } = uploadResult;
+
+    const requestBody = {
+      Name: name,
+      Description: comment,
+      Image: imageUrl, // Assuming imageUrl is used in your form submission
+    };
 
     try {
-      const res = await fetch(`${API_BASE_URL}/client/add`, {
-        method: "POST",
+      const response = await fetch(`${API_BASE_URL}/client/add`, {
+        method: 'POST',
         headers: {
-          "Authorization": `Bearer ${token}`,
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
         },
-        body: formData,
+        body: JSON.stringify(requestBody),
       });
-      const data = await res.json();
+
+      const data = await response.json();
 
       if (data.success) {
         toast.success("Client Added");
@@ -113,7 +167,7 @@ export default function addClient() {
               value={comment}
               onChange={handleCommentChange}
               id="comment"
-              className=" mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder=""
               required
               rows={4}
@@ -137,7 +191,7 @@ export default function addClient() {
               required
             />
           </div>
-          {image ? (
+          {image && (
             <div className="flex flex-wrap">
               <div className="mr-4 mb-4">
                 <div className="ml-2 underline">
@@ -152,7 +206,7 @@ export default function addClient() {
                 />
               </div>
             </div>
-          ) : null}
+          )}
         </div>
       </form>
 
@@ -161,11 +215,11 @@ export default function addClient() {
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           type="button"
           onClick={submitForm}
+          disabled={loading} // Disable button while loading
         >
-          Submit
+          {loading ? "Submitting..." : "Submit"}
         </button>
       </div>
-      
     </section>
   );
 }

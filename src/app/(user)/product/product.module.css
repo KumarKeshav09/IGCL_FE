@@ -1,0 +1,12 @@
+.backgroundImg {
+    height: 40rem;
+    background-image: url('/images/image2.jpg');
+    background-size: cover; /* Scales the image to be fully visible */
+    background-repeat: no-repeat; /* Prevents image repetition */
+}
+
+@media screen and (max-width: 500px)  {
+    .backgroundImg{
+        display: none;
+    }
+}
