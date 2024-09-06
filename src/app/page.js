@@ -556,7 +556,7 @@ export default function Home() {
             <div className="-mx-3 ">
               <div className="px-3 pb-10">
                 <Slider {...clientssettings}>
-                  {listData?.data?.map((item) => (
+                  {/* {listData?.data?.map((item) => (
                     <div className="image-container">
                       <img
                         src={`https://igcl-api.onrender.com/uploads/` + `${item.Image}`}
@@ -564,7 +564,133 @@ export default function Home() {
                         className="cursor-pointer"
                       />
                     </div>
-                  ))}
+                  ))} */}
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC1.png`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC2.png`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC3.jpg`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC4.jpg`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC5.jpg`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC6.png`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC7.png`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC8.png`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC9.jpg`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC10.png`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC11.png`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC12.jpg`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC13.png`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC14.jpg`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC15.png`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC16.png`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC17.png`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
+                  <div className="image-container">
+                      <img
+                        src={`../../images/clientC18.jpg`}
+                        alt="Hover Image"
+                        className="cursor-pointer"
+                      />
+                  </div>
                 </Slider>
               </div>
             </div>
