@@ -65,8 +65,8 @@ const Testimonials = () => {
   console.log("listData",listData)
 
   return (
-    <div className="min-w-screen bgAlternate flex items-center justify-center md:py-3">
-      <div className="w-full  border-gray-200 px-5 py-5 md:py-3">
+    <div className="min-w-screen bgAlternate flex items-center justify-center px-5 md:py-3">
+      <div className="w-full  border-gray-200 md:px-10 py-5 md:py-3">
         <div className="w-full mx-auto">
           <div className="text-center max-w-xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-bold mb-2 text-gray-800">
@@ -86,8 +86,8 @@ const Testimonials = () => {
             {listData?.data?.map((item) => (
               <div className={`${styles.cardWidth} mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6`}>
                 <div className="w-full flex mb-4 items-center">
-                  <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                    <img src={item.Image} alt="Kenzie Edgar" />
+                  <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200 flex">
+                    <img src={`https://igcl-api.onrender.com/uploads/` + `${item.Image}`} alt="Kenzie Edgar" />
                   </div>
                   <div className="flex-grow pl-3">
                     <h6 className="font-bold text-sm uppercase text-gray-600">

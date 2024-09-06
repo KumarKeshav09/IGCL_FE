@@ -49,7 +49,7 @@ export default function AddTestiMonials() {
 
       // Create FormData
       const formData = new FormData();
-      formData.append('image', imageFile);
+      formData.append('pdf', imageFile);
 
       const response = await fetch(`https://igcl-api.onrender.com/v1/policy/upload`, {
         method: "POST",
@@ -96,11 +96,11 @@ export default function AddTestiMonials() {
     const requestBody = {
       Name: name,
       Message: comment,
-      ImageUrl: imageUrl, // Assuming imageUrl is used in your form submission
+      Image: imageUrl, // Assuming imageUrl is used in your form submission
     };
 
     try {
-      const response = await fetch(`${API_BASE_URL}/v1/testimonial/add`, {
+      const response = await fetch(`${API_BASE_URL}/testimonial/add`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="footerMain w-full">
       <div className="mx-auto w-full ">
-        <div className="footerPart1Main grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+        <div className="footerPart1Main grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-3">
           <div className="content-center">
             <a
               href=""
@@ -85,33 +85,6 @@ export default function Footer() {
               <li className="mb-4">
                 <a href="#" className="hover:underline">
                   Terms &amp; Conditions
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
-              Download
-            </h2>
-            <ul className="text-gray-800 dark:text-gray-800 font-medium">
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  iOS
-                </a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Android
-                </a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Windows
-                </a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  MacOS
                 </a>
               </li>
             </ul>

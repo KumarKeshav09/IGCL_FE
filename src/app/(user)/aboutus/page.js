@@ -296,7 +296,7 @@ export default function aboutUs() {
                   {listData?.data?.map((item) => (
                     <div className="image-container">
                       <img
-                        src={item.Image}
+                        src={`https://igcl-api.onrender.com/uploads/` + `${item.Image}`}
                         alt="Hover Image"
                         className="cursor-pointer"
                       />

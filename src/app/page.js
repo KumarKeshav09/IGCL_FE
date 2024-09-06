@@ -451,7 +451,7 @@ export default function Home() {
               </Link>
               <Link href='/services/1-detail#startup' className={styles.card}>
                 <img
-                  src="/images/image3.jpg"
+                  src="/images/Logo.jpg"
                   className={styles.image}
                 />
                 <div className={styles.overlay}>
@@ -468,8 +468,8 @@ export default function Home() {
       </div>
 
       {/* FAQ */}
-      <div className="min-w-screen  flex items-center justify-center md:py-2">
-        <div className="w-full border-gray-200 px-5 py-2 md:py-3 ">
+      <div className="min-w-screen  flex items-center justify-center px-5  md:py-2">
+        <div className="w-full border-gray-200 py-2 md:px-12 md:py-3 ">
           <div className="w-full mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-3xl md:text-4xl mb-2 font-bold text-gray-800">
@@ -538,8 +538,8 @@ export default function Home() {
 
 
       {/* Clients */}
-      <div className="min-w-screen  flex items-center justify-center md:py-2">
-        <div className="w-full border-gray-200 px-5 py-5 md:py-3 text-gray-800">
+      <div className="min-w-screen  flex items-center justify-center px-5 md:py-2">
+        <div className="w-full border-gray-200 md:px-10 py-5 md:py-3 text-gray-800">
           <div className="w-full max-w-screen mx-auto">
             <div className="text-center max-w-xl mx-auto">
               <h1 className="text-3xl md:text-4xl font-bold mb-2 text-gray-800">
@@ -559,7 +559,7 @@ export default function Home() {
                   {listData?.data?.map((item) => (
                     <div className="image-container">
                       <img
-                        src={item.Image}
+                        src={`https://igcl-api.onrender.com/uploads/` + `${item.Image}`}
                         alt="Hover Image"
                         className="cursor-pointer"
                       />
@@ -618,7 +618,7 @@ export default function Home() {
         </div>
         <div className={`${styles.forthSectionImg}`}>
           <img
-            src="../../../../images/contact_us.png"
+            src="../../../../images/contact.avif"
           />
         </div>
       </section>

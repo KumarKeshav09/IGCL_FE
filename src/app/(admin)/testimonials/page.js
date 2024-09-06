@@ -163,7 +163,7 @@ export default function TestiMonials() {
                   <td className="px-6 py-4">
                     <img
                       className="object-cover"
-                      src={item.Image}
+                      src={`https://igcl-api.onrender.com/uploads/` + `${item.Image}`}
                       width={100}
                       height={100}
                       alt="Testimonial"
