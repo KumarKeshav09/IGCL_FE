@@ -35,7 +35,7 @@ export default function CompliancesPost2() {
               <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 Applicability
               </h1>
-              <div className="text-center">
+              <div className="text-center mb-3">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -74,7 +74,7 @@ export default function CompliancesPost2() {
               <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 What to Expect
               </h1>
-              <div className="text-center mb-4">
+              <div className="text-center mb-6">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -234,7 +234,7 @@ export default function CompliancesPost2() {
         </section>
       </div>
 
-      
+
     </>
   );
 }

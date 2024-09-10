@@ -98,10 +98,13 @@ export default function Abstract() {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Policy Name
+                S. No.
               </th>
               <th scope="col" className="px-6 py-3">
-                PDF
+                Abstract Title
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Abstract PDF
               </th>
               <th scope="col" className="px-6 py-3">
                 Action
@@ -134,7 +137,7 @@ export default function Abstract() {
                 </td>
               </tr>
             ) : listData?.data?.length ? (
-              listData.data.map((item) => (
+              listData.data.map((item, index) => (
                 <tr
                   key={item._id}
                   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
@@ -143,12 +146,20 @@ export default function Abstract() {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    {item.PolicyId?.PolicyName} {/* Adjust field name if needed */}
+                    {index + 1} {/* Adjust field name if needed */}
+                  </td>
+                  <td
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  >
+                    {item.Title} {/* Adjust field name if needed */}
                   </td>
                   <td className="px-6 py-4">
                     {item.PDF ? (
                       <a
-                        href={item.PDF}
+                        href={`https://igcl-api.onrender.com/uploads/${item.PDF}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         download
                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                       >

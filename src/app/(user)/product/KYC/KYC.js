@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import Select from 'react-select'; // Ensure you have the react-select package installed
 import { API_BASE_URL } from '../../../../../utils/constants';
+import Cookies from 'js-cookie';
 
 const MyForm = () => {
+  const token = Cookies.get("UserId");
     const [FilteredData, setFilteredData] = useState([]);
     // Options for the select components
     const IndustryOptions = [
@@ -112,11 +114,25 @@ const MyForm = () => {
     // Handle form submission
     const submit = async () => {
         try {
-            // Fetch KYC data from the API
-            const response = await fetch(`${API_BASE_URL}/kyc/allKYC`); // Adjust the URL as needed
+            // Fetch KYC data from the primary API endpoint
+            const response = await fetch(`${API_BASE_URL}/kyc/allKYC`);
             const data = await response.json();
-            console.log(data)
-
+            console.log('Primary API Data:', data);
+    
+            // Verify data using the secondary API endpoint
+            const verificationResponse = await fetch(`${API_BASE_URL}/kycData/kycData`, {
+                method: 'POST',
+                headers: {
+                  "Authorization": `Bearer ${token}`,
+                  "Content-Type": "application/json", // Ensure the content type is set
+                },
+                body: "",
+              });;
+            const verificationData = await verificationResponse.json();
+            console.log('Verification API Data:', verificationData);
+    
+            // Optional: Use verification data for additional processing if needed
+    
             // Define the filtering criteria
             const minEmployeeCount = formValues.employeeCount ? parseInt(formValues.employeeCount, 10) : 0;
             const states = Array.isArray(formValues.statesOfOperation)
@@ -125,39 +141,38 @@ const MyForm = () => {
                     ? [formValues.statesOfOperation] // Handle single selection
                     : [];
             const typeOfIndustry = formValues.TypeOfIndustry;
-
-
+    
             // Filter data based on form values
             const filteredData = data.data.filter(row => {
                 const matchesEmployeeCount = row.EmployeeCount >= minEmployeeCount;
                 const matchesState = states.some(state => row.State.includes(state));
                 const matchesTypeOfIndustry = row.TypeOfIndustry.includes(typeOfIndustry);
-
+    
                 console.log({
                     row,
                     matchesEmployeeCount,
                     matchesState,
                     matchesTypeOfIndustry
                 });
-
+    
                 return matchesEmployeeCount && matchesState && matchesTypeOfIndustry;
             }).map(row => ({
                 actname: row.ActName,
                 complianceFrequency: row.ComplianceFrequency
             }));
-
-
-            console.log("filteredData", filteredData);
-
+    
+            console.log("Filtered Data:", filteredData);
+    
+            // Optional: Use verification data to cross-check or enhance the filtered data if needed
+    
             setFilteredData(filteredData);
-            console.log("FilteredData", FilteredData);
             setIsModalOpen(true);
-
+    
         } catch (error) {
-            console.error("Error fetching KYC data:", error);
+            console.error("Error during API calls:", error);
         }
     };
-
+    
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     // Function to close the modal

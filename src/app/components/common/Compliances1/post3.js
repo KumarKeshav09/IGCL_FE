@@ -4,7 +4,7 @@ export default function CompliancesPost3() {
       {/* overview */}
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
             <div className="">
               <div className="text-gray-500 sm:text-lg dark:text-gray-400">
                 <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
@@ -33,16 +33,12 @@ export default function CompliancesPost3() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
-            <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+        <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+          <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 Applicability
               </h1>
-              <h3 className="text-xl mb-5 lg:text-nowrap font-light text-gray-800">
-                Empowering clients with innovative solutions and unparalleled
-                support.
-              </h3>
-              <div className="text-center mb-5">
+              <div className="text-center">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
@@ -66,16 +62,12 @@ export default function CompliancesPost3() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
-            <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-4xl md:text-7xl font-bold mb-5 text-gray-800">
+        <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+          <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 What to Expect
               </h1>
-              <h3 className="text-xl mb-5 lg:text-nowrap font-light text-gray-800">
-                Empowering clients with innovative solutions and unparalleled
-                support.
-              </h3>
-              <div className="text-center mb-5">
+              <div className="text-center mb-3">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
                 <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
