@@ -84,6 +84,9 @@ export default function Policy() {
   return (
     <section>
       <div className="relative overflow-x-auto sm:rounded-lg">
+      <h1 className="text-2xl text-black underline mb-3 font-bold">
+          Notification
+        </h1>
         <div className="flex flex-col sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
           <div>
             <Link href={"resource/Policy/addPolicy"}>
@@ -91,7 +94,7 @@ export default function Policy() {
                 className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                 type="button"
               >
-                + Add Policy
+                + Add Notification
               </button>
             </Link>
           </div>
@@ -100,10 +103,7 @@ export default function Policy() {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Policy Name
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Judgment Title
+                S. No.
               </th>
               <th scope="col" className="px-6 py-3">
                 Notification Title
@@ -142,7 +142,7 @@ export default function Policy() {
                 </td>
               </tr>
             ) : listData?.data?.length ? (
-              listData.data.map((item) => (
+              listData.data.map((item,index) => (
                 <tr
                   key={item._id}
                   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
@@ -151,13 +151,14 @@ export default function Policy() {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    {item.PolicyName}
+                    {index + 1}
                   </td>
-                  <td className="px-6 py-4">{item.JudgmentTitle}</td>
-                  <td className="px-6 py-4">{item.NotificationTitle}</td>
+                  <td className="px-6 py-4">{item.Title}</td>
                   <td className="px-6 py-4">
                     <a
                       href={`https://igcl-api.onrender.com/uploads/` + `${item.PDF}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       download="Document.pdf"
                       className="text-blue-600 hover:underline"
                     >
@@ -195,7 +196,7 @@ export default function Policy() {
       <Pagination data={listData} pageNo={handlePageChange} pageVal={page} />
       <Popup
         isOpen={isPopupOpen}
-        title="Are you sure you want to delete this policy?"
+        title="Are you sure you want to delete this notification?"
         confirmLabel="Yes, I'm sure"
         cancelLabel="No, cancel"
         onConfirm={handleDelete}

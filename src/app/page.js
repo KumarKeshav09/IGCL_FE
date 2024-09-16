@@ -371,14 +371,14 @@ export default function Home() {
             <section className=" dark:bg-gray-900">
               <div className="py-8 whatWeDoRIght mx-auto max-w-screen-xl text-left lg:py-16 md:px-16">
                 <h1 className="mb-4 text-3xl text-gray-900 font-extrabold tracking-tight leading-none  md:text-4xl lg:text-6xl dark:text-white">
-                  Introducing Our Labor Law Consulting Company
+                  Expert Guidance in Compliance and Labor Law for Your Business
                 </h1>
                 <p className="mb-8 text-base text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
-                  IGCL India provides outstanding and unsurpassed service that, together, delivers premium values to our customers. Since then, IGCL INDIA has been diversified into multiple business domains hence words fall short to describe the enthusiasm and working profile of our corporation.
+                  IGCL INDIA is committed to providing outstanding and unsurpassed service in the field of Labour law and statutory compliance, consistently delivering premium value to our customers. Our dedication and expertise in this specialized domain define the enthusiasm and strong working profile of our corporation.
                 </p>
-                <p className="mb-8 mt-4 text-base text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
+                {/* <p className="mb-8 mt-4 text-base text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
                   At IGCL India, we believe in treating people the way they want to be treated, with friendliness, calmness, and respect. Our success is not only due to the quality of our work, It’s due to our attitude, our approach, and the way we treat our clients.
-                </p>
+                </p> */}
                 <div className="flex flex-col space-y-4 sm:flex-row  sm:space-y-0">
                   <Link
                     href="/aboutus"
@@ -566,130 +566,130 @@ export default function Home() {
                     </div>
                   ))} */}
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC1.png`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC1.png`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC2.png`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC2.png`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC3.jpg`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC3.jpg`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC4.jpg`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC4.jpg`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC5.jpg`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC5.jpg`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC6.png`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC6.png`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC7.png`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC7.png`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC8.png`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC8.png`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC9.jpg`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC9.jpg`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC10.png`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC10.png`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC11.png`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC11.png`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC12.jpg`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC12.jpg`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC13.png`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC13.png`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC14.jpg`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC14.jpg`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC15.png`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC15.png`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC16.png`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC16.png`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC17.png`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC17.png`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                   <div className="image-container">
-                      <img
-                        src={`../../images/clientC18.jpg`}
-                        alt="Hover Image"
-                        className="cursor-pointer"
-                      />
+                    <img
+                      src={`../../images/clientC18.jpg`}
+                      alt="Hover Image"
+                      className="cursor-pointer"
+                    />
                   </div>
                 </Slider>
               </div>
@@ -727,7 +727,7 @@ export default function Home() {
               </div>
               <div className={`${styles.forthBoxDisplayForm}`}>
                 <textarea
-                  rows="4"
+                  rows="2"
                   placeholder="Ask Your Question"
                   value={Message}
                   onChange={handleMessage}

@@ -1,43 +1,31 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Abstract from "../abstract/abstract";
 import Policy from "../Policy/Policy";
-import Notification from "../notification/notification";
 import Judgement from "../judgement/judgement";
-import styles from "./tabs.module.css"
+import styles from "./tabs.module.css";
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState("policy");
 
-  // Use this effect to initialize Flowbite if needed
   useEffect(() => {
-    import("flowbite").then((module) => {
-      const { initFlowbite } = module;
-      initFlowbite();
-    });
+    // Read the hash from the URL and set the active tab
+    const hash = window.location.hash.slice(1);
+    if (["abstract", "policy", "judgement"].includes(hash)) {
+      setActiveTab(hash);
+    }
   }, []);
 
-  // Handle tab change
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
+  // Update the URL hash when the tab changes
+  const handleTabChange = (tabId) => {
+    setActiveTab(tabId);
+    window.location.hash = `#${tabId}`;
   };
 
   return (
     <>
       <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
         <ul className={`${styles.WrapText} flex flex-wrap -mb-px text-sm font-medium text-center`} role="tablist">
-          <li className="me-2" role="presentation">
-            <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === "policy" ? "border-blue-500 text-blue-600" : "border-transparent text-gray-600 hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}
-              onClick={() => handleTabChange("policy")}
-              type="button"
-              role="tab"
-              aria-controls="policy"
-              aria-selected={activeTab === "policy"}
-            >
-              Policy
-            </button>
-          </li>
           <li className="me-2" role="presentation">
             <button
               className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === "abstract" ? "border-blue-500 text-blue-600" : "border-transparent text-gray-600 hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}
@@ -52,12 +40,12 @@ export default function Tabs() {
           </li>
           <li className="me-2" role="presentation">
             <button
-              className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === "notification" ? "border-blue-500 text-blue-600" : "border-transparent text-gray-600 hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}
-              onClick={() => handleTabChange("notification")}
+              className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === "policy" ? "border-blue-500 text-blue-600" : "border-transparent text-gray-600 hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}
+              onClick={() => handleTabChange("policy")}
               type="button"
               role="tab"
-              aria-controls="notification"
-              aria-selected={activeTab === "notification"}
+              aria-controls="policy"
+              aria-selected={activeTab === "policy"}
             >
               Notification
             </button>
@@ -78,34 +66,26 @@ export default function Tabs() {
       </div>
       <div>
         <div
-          className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${activeTab !== "policy" && "hidden"}`}
-          id="policy"
-          role="tabpanel"
-          aria-labelledby="profile-tab"
-        >
-          <Policy />
-        </div>
-        <div
-          className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${activeTab !== "abstract" && "hidden"}`}
+          className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${activeTab === "abstract" ? "block" : "hidden"}`}
           id="abstract"
           role="tabpanel"
-          aria-labelledby="dashboard-tab"
+          aria-labelledby="abstract-tab"
         >
           <Abstract />
         </div>
         <div
-          className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${activeTab !== "notification" && "hidden"}`}
-          id="notification"
+          className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${activeTab === "policy" ? "block" : "hidden"}`}
+          id="policy"
           role="tabpanel"
-          aria-labelledby="settings-tab"
+          aria-labelledby="policy-tab"
         >
-          <Notification />
+          <Policy />
         </div>
         <div
-          className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${activeTab !== "judgement" && "hidden"}`}
+          className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${activeTab === "judgement" ? "block" : "hidden"}`}
           id="judgement"
           role="tabpanel"
-          aria-labelledby="contacts-tab"
+          aria-labelledby="judgement-tab"
         >
           <Judgement />
         </div>

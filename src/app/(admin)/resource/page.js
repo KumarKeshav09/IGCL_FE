@@ -100,8 +100,8 @@ export default function Resource() {
           Resource
         </h1>
       </div>
-      {/* <Tabs /> */}
-      <Policy />
+      <Tabs />
+      {/* <Policy /> */}
     </section>
   );
 }

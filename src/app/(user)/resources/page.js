@@ -22,7 +22,7 @@ export default function Resources() {
       <div className={`mb-4 border-b border-gray-200 dark:border-gray-700`}>
 
         <ul
-          className={`${styles.navBar} pl-16 flex flex-wrap -mb-px text-sm font-medium text-center`}
+          className={`${styles.navBar} md:pl-24 flex flex-wrap -mb-px text-sm font-medium text-center`}
           id="default-tab"
           data-tabs-toggle="#default-tab-content"
           role="tablist"
@@ -70,7 +70,7 @@ export default function Resources() {
       </div>
       <div id="default-tab-content">
         <div
-          className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          className="hidden p-4 rounded-lg  dark:bg-gray-800"
           id="profile"
           role="tabpanel"
           aria-labelledby="profile-tab"
@@ -78,7 +78,7 @@ export default function Resources() {
             <Abstarcts />
         </div>
         <div
-          className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          className="hidden p-4 rounded-lg dark:bg-gray-800"
           id="dashboard"
           role="tabpanel"
           aria-labelledby="dashboard-tab"
@@ -86,7 +86,7 @@ export default function Resources() {
             <Judgements />
         </div>
         <div
-          className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          className="hidden p-4 rounded-lg dark:bg-gray-800"
           id="settings"
           role="tabpanel"
           aria-labelledby="settings-tab"

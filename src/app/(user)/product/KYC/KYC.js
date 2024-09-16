@@ -3,9 +3,13 @@
 import React, { useState } from 'react';
 import Select from 'react-select'; // Ensure you have the react-select package installed
 import { API_BASE_URL } from '../../../../../utils/constants';
+import Cookies from 'js-cookie';
 
 const MyForm = () => {
+    const token = Cookies.get("UserId");
     const [FilteredData, setFilteredData] = useState([]);
+    const [errors, setErrors] = useState({});
+    const [matchedStates, setMatchedStates] = useState([]); 
     // Options for the select components
     const IndustryOptions = [
         { value: "Manufacturing with power", label: "Manufacturing with power" },
@@ -20,8 +24,9 @@ const MyForm = () => {
         { value: "Contractor", label: "Contractor" },
         { value: "Logistic and Transport", label: "Logistic and Transport" },
     ];
-
+    
     const statesOptions = [
+        { value: "Whole India", label: "Whole India" },
         { value: "Andhra Pradesh", label: "Andhra Pradesh" },
         { value: "Arunachal Pradesh", label: "Arunachal Pradesh" },
         { value: "Assam", label: "Assam" },
@@ -109,13 +114,65 @@ const MyForm = () => {
         });
     };
 
+    const validateForm = () => {
+        const newErrors = {};
+        // Check required fields
+        if (!formValues.organizationName) newErrors.organizationName = 'Name of organization is required';
+        if (!formValues.date) newErrors.date = 'Date is required';
+        if (!formValues.TypeOfIndustry) newErrors.TypeOfIndustry = 'Type of Industry is required';
+        if (formValues.TypeOfIndustry === "Education Institute and NGO’s" && !formValues.gstinNumber) newErrors.gstinNumber = 'GSTIN Number is required';
+        if (!formValues.employeeCount) newErrors.employeeCount = 'Employee count is required';
+        if (!formValues.representativeName) newErrors.representativeName = 'Name of Representative is required';
+        if (!formValues.representativeDesignation) newErrors.representativeDesignation = 'Designation is required';
+        if (!formValues.representativeEmail) newErrors.representativeEmail = 'Email Address is required';
+        if (!formValues.representativeMobile) newErrors.representativeMobile = 'Mobile Number is required';
+
+        // Conditional checks
+        if(!formValues.isMultiState){
+            newErrors.statesOfOperation = 'States Of Operation is required';
+        } else {
+            if (formValues.isMultiState === 'true' && formValues.statesOfOperation.length === 0) {
+                newErrors.statesOfOperation = 'States Of Operation is required';
+            } else if (formValues.isMultiState === 'false' && !formValues.statesOfOperation) {
+                newErrors.statesOfOperation = 'State Of Operation is required';
+            }
+        }
+
+        if (formValues.TypeOfIndustry === 'Contractor') {
+            if (formValues.hasContractor === 'true') {
+                if (!formValues.numberOfContractors) newErrors.numberOfContractors = 'Total Number of Contractors is required';
+                if (!formValues.maxContractLabourEngaged) newErrors.maxContractLabourEngaged = 'Maximum Number of Contract Labour Engaged is required';
+            }
+            if (formValues.hasMigrantWorkersInContract === 'true' && !formValues.maxContractLabourInAnyContract) {
+                newErrors.maxContractLabourInAnyContract = 'Maximum Number of Contract Labour Engaged in any Contract is required';
+            }
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
     // Handle form submission
     const submit = async () => {
+        if (!validateForm()) return;
+
         try {
-            // Fetch KYC data from the API
-            const response = await fetch(`${API_BASE_URL}/kyc/allKYC`); // Adjust the URL as needed
+            // Fetch KYC data from the primary API endpoint
+            const response = await fetch(`${API_BASE_URL}/kyc/allKYC`);
             const data = await response.json();
-            console.log(data)
+            console.log('Primary API Data:', data);
+
+            // Verify data using the secondary API endpoint
+            const verificationResponse = await fetch(`${API_BASE_URL}/kycData/kycData`, {
+                method: 'POST',
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ /* data to be sent for verification */ }),
+            });
+            const verificationData = await verificationResponse.json();
+            console.log('Verification API Data:', verificationData);
 
             // Define the filtering criteria
             const minEmployeeCount = formValues.employeeCount ? parseInt(formValues.employeeCount, 10) : 0;
@@ -126,14 +183,13 @@ const MyForm = () => {
                     : [];
             const typeOfIndustry = formValues.TypeOfIndustry;
 
-
             // Filter data based on form values
             const filteredData = data.data.filter(row => {
                 const matchesEmployeeCount = row.EmployeeCount >= minEmployeeCount;
                 const matchesState = states.some(state => row.State.includes(state));
                 const matchesTypeOfIndustry = row.TypeOfIndustry.includes(typeOfIndustry);
 
-                console.log({
+                console.log("States", {
                     row,
                     matchesEmployeeCount,
                     matchesState,
@@ -143,18 +199,21 @@ const MyForm = () => {
                 return matchesEmployeeCount && matchesState && matchesTypeOfIndustry;
             }).map(row => ({
                 actname: row.ActName,
-                complianceFrequency: row.ComplianceFrequency
+                complianceFrequency: row.ComplianceFrequency,
+                state: (row.State + ",")
             }));
 
+            // Extract unique matched states
+            const uniqueStates = [...new Set(filteredData.flatMap(item => item.state))];
+            const matchedStatesString = uniqueStates.join(', ');
 
-            console.log("filteredData", filteredData);
-
+            // Update state with filtered data and matched states
             setFilteredData(filteredData);
-            console.log("FilteredData", FilteredData);
+            setMatchedStates(matchedStatesString);
             setIsModalOpen(true);
 
         } catch (error) {
-            console.error("Error fetching KYC data:", error);
+            console.error("Error during API calls:", error);
         }
     };
 
@@ -185,6 +244,7 @@ const MyForm = () => {
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
+                    {errors.organizationName && <div className="error text-red-500 mt-1">{errors.organizationName}</div>}
                 </div>
                 <div className="mb-5">
                     <label
@@ -202,6 +262,7 @@ const MyForm = () => {
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
+                    {errors.date && <div className="error text-red-500 mt-1">{errors.date}</div>}
                 </div>
                 <div className="mb-5">
                     <label
@@ -221,6 +282,7 @@ const MyForm = () => {
                         placeholder="Select One"
                         required
                     />
+                    {errors.TypeOfIndustry && <div className="error text-red-500 mt-1">{errors.TypeOfIndustry}</div>}
                 </div>
                 {formValues.TypeOfIndustry === "Education Institute and NGO’s" && (
                     <div className="mb-5">
@@ -238,6 +300,7 @@ const MyForm = () => {
                             onChange={handleChange}
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         />
+                        {errors.gstinNumber && <div className="error text-red-500 mt-1">{errors.gstinNumber}</div>}
                     </div>
                 )}
                 <div className="mb-5">
@@ -269,6 +332,7 @@ const MyForm = () => {
                     <label htmlFor="isMultiStateNo" className="ml-2 text-black">
                         No
                     </label>
+                    {errors.statesOfOperation && <div className="error text-red-500 mt-1">{errors.statesOfOperation}</div>}
                 </div>
                 {formValues.isMultiState === 'true' ? (
                     <div className="mb-5">
@@ -287,6 +351,7 @@ const MyForm = () => {
                             onChange={handleMultiSelectChange}
                             placeholder="Select States"
                         />
+                         {errors.statesOfOperation && <div className="error text-red-500 mt-1">{errors.statesOfOperation}</div>}
                     </div>
                 ) : (
                     <div className="mb-5">
@@ -306,8 +371,57 @@ const MyForm = () => {
                             onChange={handleSelectChange}
                             placeholder="Select State"
                         />
+                         {errors.statesOfOperation && <div className="error text-red-500 mt-1">{errors.statesOfOperation}</div>}
                     </div>
                 )}
+                <div className="mb-5">
+                    <label
+                        htmlFor="hasMigrantWorkers"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                        Do you have Five or More than Five Inter-state Migrant Workers in your establishment?
+                    </label>
+                    <input
+                        type="radio"
+                        name="hasMigrantWorkers"
+                        id="hasMigrantWorkersYes"
+                        value="true"
+                        checked={formValues.hasMigrantWorkers === 'true'}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="hasMigrantWorkersYes" className="mr-3 ml-2 text-black">
+                        Yes
+                    </label>
+                    <input
+                        type="radio"
+                        name="hasMigrantWorkers"
+                        id="hasMigrantWorkersNo"
+                        value="false"
+                        checked={formValues.hasMigrantWorkers === 'false'}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="hasMigrantWorkersNo" className="ml-2 text-black">
+                        No
+                    </label>
+                </div>
+                <div className="mb-5">
+                    <label
+                        htmlFor="employeeCount"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                        Employee count
+                    </label>
+                    <input
+                        type="number"
+                        id="employeeCount"
+                        name="employeeCount"
+                        value={formValues.employeeCount}
+                        onChange={handleChange}
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required
+                    />
+                    {errors.employeeCount && <div className="error text-red-500 mt-1">{errors.employeeCount}</div>}
+                </div>
                 {formValues.TypeOfIndustry === "Contractor" && (
                     <>
                         <div className="mb-5">
@@ -340,93 +454,6 @@ const MyForm = () => {
                                 No
                             </label>
                         </div>
-                        {formValues.hasContractor === 'true' && (
-                            <>
-                                <div className="mb-5">
-                                    <label
-                                        htmlFor="maxContractLabourEngaged"
-                                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                    >
-                                        Maximum Number of Contract Labour Engaged in any Contractor
-                                    </label>
-                                    <input
-                                        type="number"
-                                        id="maxContractLabourEngaged"
-                                        name="maxContractLabourEngaged"
-                                        value={formValues.maxContractLabourEngaged}
-                                        onChange={handleChange}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    />
-                                </div>
-                            </>
-                        )}
-                    </>
-                )}
-                <div className="mb-5">
-                    <label
-                        htmlFor="numberOfContractors"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                        Total Number of Contractors Engaged in Your Establishment
-                    </label>
-                    <input
-                        type="number"
-                        id="numberOfContractors"
-                        name="numberOfContractors"
-                        value={formValues.numberOfContractors}
-                        onChange={handleChange}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    />
-                </div>
-                <div className="mb-5">
-                    <label
-                        htmlFor="employeeCount"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                        Employee count
-                    </label>
-                    <input
-                        type="number"
-                        id="employeeCount"
-                        name="employeeCount"
-                        value={formValues.employeeCount}
-                        onChange={handleChange}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        required
-                    />
-                </div>
-                <div className="mb-5">
-                    <label
-                        htmlFor="hasMigrantWorkers"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                        Do you have Five or More than Five Inter-state Migrant Workers in your establishment?
-                    </label>
-                    <input
-                        type="radio"
-                        name="hasMigrantWorkers"
-                        id="hasMigrantWorkersYes"
-                        value="true"
-                        checked={formValues.hasMigrantWorkers === 'true'}
-                        onChange={handleChange}
-                    />
-                    <label htmlFor="hasMigrantWorkersYes" className="mr-3 ml-2 text-black">
-                        Yes
-                    </label>
-                    <input
-                        type="radio"
-                        name="hasMigrantWorkers"
-                        id="hasMigrantWorkersNo"
-                        value="false"
-                        checked={formValues.hasMigrantWorkers === 'false'}
-                        onChange={handleChange}
-                    />
-                    <label htmlFor="hasMigrantWorkersNo" className="ml-2 text-black">
-                        No
-                    </label>
-                </div>
-                {formValues.TypeOfIndustry === "Contractor" && (
-                    <>
                         <div className="mb-5">
                             <label
                                 htmlFor="maxContractLabourInAnyContract"
@@ -442,6 +469,7 @@ const MyForm = () => {
                                 onChange={handleChange}
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             />
+                            {errors.maxContractLabourEngaged && <div className="error text-red-500 mt-1">{errors.maxContractLabourEngaged}</div>}
                         </div>
 
                         <div className="mb-5">
@@ -473,7 +501,46 @@ const MyForm = () => {
                             <label htmlFor="hasMigrantWorkersInContractNo" className="ml-2 text-black">
                                 No
                             </label>
+                            {errors.maxContractLabourInAnyContract && <div className="error text-red-500 mt-1">{errors.maxContractLabourInAnyContract}</div>}
                         </div>
+                        {formValues.hasContractor === 'true' && (
+                            <>
+                                <div className="mb-5">
+                                    <label
+                                        htmlFor="numberOfContractors"
+                                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                    >
+                                        Total Number of Contractors Engaged in Your Establishment
+                                    </label>
+                                    <input
+                                        type="number"
+                                        id="numberOfContractors"
+                                        name="numberOfContractors"
+                                        value={formValues.numberOfContractors}
+                                        onChange={handleChange}
+                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    />
+                                     {errors.numberOfContractors && <div className="error text-red-500 mt-1">{errors.numberOfContractors}</div>}
+                                </div>
+                                <div className="mb-5">
+                                    <label
+                                        htmlFor="maxContractLabourEngaged"
+                                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                    >
+                                        Maximum Number of Contract Labour Engaged in any Contractor
+                                    </label>
+                                    <input
+                                        type="number"
+                                        id="maxContractLabourEngaged"
+                                        name="maxContractLabourEngaged"
+                                        value={formValues.maxContractLabourEngaged}
+                                        onChange={handleChange}
+                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    />
+                                      {errors.maxContractLabourInAnyContract && <div className="error text-red-500 mt-1">{errors.maxContractLabourInAnyContract}</div>}
+                                </div>
+                            </>
+                        )}
                     </>
                 )}
                 <div className="mb-5">
@@ -492,6 +559,7 @@ const MyForm = () => {
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
+                    {errors.representativeName && <div className="error text-red-500 mt-1">{errors.representativeName}</div>}
                 </div>
                 <div className="mb-5">
                     <label
@@ -509,6 +577,7 @@ const MyForm = () => {
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
+                    {errors.representativeDesignation && <div className="error text-red-500 mt-1">{errors.representativeDesignation}</div>}
                 </div>
                 <div className="mb-5">
                     <label
@@ -526,6 +595,7 @@ const MyForm = () => {
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
+                    {errors.representativeEmail && <div className="error text-red-500 mt-1">{errors.representativeEmail}</div>}
                 </div>
                 <div className="mb-5">
                     <label
@@ -543,6 +613,7 @@ const MyForm = () => {
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     />
+                    {errors.representativeMobile && <div className="error text-red-500 mt-1">{errors.representativeMobile}</div>}
                 </div>
                 <div className="mb-5">
                     <label
@@ -578,14 +649,16 @@ const MyForm = () => {
                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">S. No.</th>
                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Act Name</th>
                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Compliance Frequency</th>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">State</th>
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {FilteredData.map((item, key) => (
                                     <tr key={key}>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{key + 1}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.actname}</td>
+                                        <td className="px-8 py-4 text-wrap text-sm font-medium text-gray-900">{item.actname}</td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.complianceFrequency}</td>
+                                        <td className="px-8 py-4 text-wrap text-sm text-gray-500">{item.state}</td>
                                     </tr>
                                 ))}
                             </tbody>

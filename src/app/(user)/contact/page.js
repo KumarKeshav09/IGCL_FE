@@ -387,7 +387,7 @@ export default function Contact() {
               </div>
               <div className={`${styles.forthBoxDisplayForm}`}>
                 <textarea
-                  rows="4"
+                  rows="2"
                   placeholder="Ask Your Question"
                   value={Message}
                   onChange={handleMessage}

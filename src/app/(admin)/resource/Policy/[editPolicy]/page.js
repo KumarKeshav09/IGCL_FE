@@ -8,11 +8,7 @@ import { API_BASE_URL } from "../../../../../../utils/constants";
 import Cookies from "js-cookie";
 
 export default function EditPolicy({ params }) {
-  const [policyName, setPolicyName] = useState("");
-  const [judgmentTitle, setJudgmentTitle] = useState("");
-  const [judgmentDescription, setJudgmentDescription] = useState("");
   const [notificationTitle, setNotificationTitle] = useState("");
-  const [notificationDescription, setNotificationDescription] = useState("");
   const [pdf, setPdf] = useState(null); // State to handle PDF upload
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -30,11 +26,7 @@ export default function EditPolicy({ params }) {
         const data = await res.json();
         if (data.success) {
           const policy = data.data;
-          setPolicyName(policy.PolicyName);
-          setJudgmentTitle(policy.JudgmentTitle);
-          setJudgmentDescription(policy.JudgmentDescription);
-          setNotificationTitle(policy.NotificationTitle);
-          setNotificationDescription(policy.NotificationDescription);
+          setNotificationTitle(policy.Title);
           setPdf(policy.PDF);
         } else {
           toast.error(data.errMessage || "Failed to fetch policy details");
@@ -45,7 +37,7 @@ export default function EditPolicy({ params }) {
     };
 
     fetchPolicyDetails();
-  }, [policyId, token]);
+  }, [token]);
 
   const uploadPDF = async (pdfFile) => {
     setLoading(true);
@@ -103,17 +95,13 @@ export default function EditPolicy({ params }) {
   };
 
   const submitForm = async () => {
-    if (!policyName || !judgmentTitle || !judgmentDescription || !notificationTitle || !notificationDescription) {
+    if (!notificationTitle || !pdf) {
       toast.error("Please fill in all required fields.");
       return;
     }
 
     const requestBody = {
-      PolicyName: policyName,
-      JudgmentTitle: judgmentTitle,
-      JudgmentDescription: judgmentDescription,
-      NotificationTitle: notificationTitle,
-      NotificationDescription: notificationDescription,
+      Title: notificationTitle,
       PDF: pdf, // Include the PDF URL or path
     };
 
@@ -132,7 +120,7 @@ export default function EditPolicy({ params }) {
       console.log("data", data);
       if (data.success) {
         toast.success(data.message || "Policy updated successfully");
-        router.push("/resource");
+        router.push("/resource#policy");
       } else {
         toast.error(data.errMessage || "Failed to update policy");
       }
@@ -147,9 +135,9 @@ export default function EditPolicy({ params }) {
   return (
     <section>
       <h1 className="text-2xl text-black underline mb-3 font-bold">
-        Update Your Policy Details
+        Update Your Notification Details
       </h1>
-      <Link href="/resource">
+      <Link href="/resource#policy">
         <div className="mb-5 mt-5">
           <button
             className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
@@ -166,15 +154,15 @@ export default function EditPolicy({ params }) {
               htmlFor="policyName"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
             >
-              Policy Name
+              Notification Title
             </label>
             <input
               type="text"
-              value={policyName}
-              onChange={(e) => setPolicyName(e.target.value)}
+              value={notificationTitle}
+              onChange={(e) => setNotificationTitle(e.target.value)}
               id="policyName"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Policy Name"
+              placeholder="Notification Title"
               required
             />
           </div>
@@ -183,7 +171,7 @@ export default function EditPolicy({ params }) {
               htmlFor="pdf"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
             >
-              Abstract PDF
+              Notification PDF
             </label>
             <input
               type="file"
@@ -191,72 +179,6 @@ export default function EditPolicy({ params }) {
               onChange={handlePdfChange}
               id="pdf"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="judgmentTitle"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
-            >
-              Judgment Title
-            </label>
-            <input
-              type="text"
-              value={judgmentTitle}
-              onChange={(e) => setJudgmentTitle(e.target.value)}
-              id="judgmentTitle"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Judgment Title"
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="judgmentDescription"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
-            >
-              Judgment Description
-            </label>
-            <textarea
-              value={judgmentDescription}
-              onChange={(e) => setJudgmentDescription(e.target.value)}
-              id="judgmentDescription"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Judgment Description"
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="notificationTitle"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
-            >
-              Notification Title
-            </label>
-            <input
-              type="text"
-              value={notificationTitle}
-              onChange={(e) => setNotificationTitle(e.target.value)}
-              id="notificationTitle"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Notification Title"
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="notificationDescription"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
-            >
-              Notification Description
-            </label>
-            <textarea
-              value={notificationDescription}
-              onChange={(e) => setNotificationDescription(e.target.value)}
-              id="notificationDescription"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Notification Description"
               required
             />
           </div>
