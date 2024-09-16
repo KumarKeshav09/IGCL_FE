@@ -75,7 +75,6 @@ export default function EditFaq({ params }) {
         toast.error(data.errMessage || "Failed to update FAQ");
       }
     } catch (error) {
-      console.log(error)
       toast.error("An error occurred while updating the FAQ");
     }
   };

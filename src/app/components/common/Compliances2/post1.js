@@ -1,3 +1,5 @@
+import { Accordion } from "flowbite-react";
+
 export default function CompliancesPost1() {
   return (
     <>
@@ -33,8 +35,8 @@ export default function CompliancesPost1() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-        <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
-          <div className="text-center max-w-xl mx-auto">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 Applicability
               </h1>
@@ -73,8 +75,8 @@ export default function CompliancesPost1() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-        <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
-          <div className="text-center max-w-xl mx-auto">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 What to Expect
               </h1>
@@ -223,7 +225,112 @@ export default function CompliancesPost1() {
         </section>
       </div>
 
-      
+      <div>
+        <section className="bg-white border-b dark:bg-gray-900">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
+                FAQ
+              </h1>
+              <div className="text-center mb-6">
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+              </div>
+            </div>
+            <div className="rounded-lg dark:bg-gray-800">
+              <Accordion
+                collapseAll
+                className="border-none border-gray-800"
+              >
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      What are the key compliance requirements under these laws?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        <ul>
+                          <li><strong>Registration:</strong> Establishments must be registered with the local authorities or relevant departments.</li>
+                          <li><strong>Working Hours:</strong> Adherence to prescribed working hours, overtime rules, and rest periods.</li>
+                          <li><strong>Leave Policies:</strong> Compliance with statutory leave entitlements such as casual leave, sick leave, and annual leave.</li>
+                          <li><strong>Wages:</strong> Payment of minimum wages, timely salary payments, and maintenance of wage records.</li>
+                          <li><strong>Health and Safety:</strong> Ensuring a safe and healthy working environment, including provisions for sanitation and first aid.</li>
+                        </ul>
+
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      How should an establishment comply with the working hours and overtime regulations?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        Establishments must follow state-specific regulations regarding working hours, which generally include limits on daily and weekly working hours and mandatory rest periods. Overtime regulations also require employers to compensate employees for any work beyond the standard working hours at rates specified by law. Employers should maintain accurate records of working hours and overtime.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      What are the consequences of non-compliance with Shops and Commercial Establishments laws?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        Non-compliance can result in various penalties, including fines, legal actions, and orders to rectify the violations. Establishments may also face inspections and audits by labor authorities, and persistent non-compliance can lead to suspension or cancellation of registration. To avoid these issues, it is important for employers to stay updated with state-specific regulations and ensure timely compliance.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      What are the mandatory holidays for employees?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        Employees are entitled to a weekly day off. In addition, national holidays like Republic Day, Independence Day, and Gandhi Jayanti, along with other state-specific holidays, must be provided.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+              </Accordion>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
     </>
   );
 }

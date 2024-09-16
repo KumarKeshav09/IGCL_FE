@@ -19,19 +19,15 @@ export default function Contact() {
   const [Mobile, setMobile] = useState();
 
   const handleName = useCallback((value) => {
-    console.log("value", value.target.value);
     setName(() => value.target.value);
   }, []);
   const handleEmail = useCallback((value) => {
-    console.log("value", value.target.value);
     setEmail(() => value.target.value);
   }, []);
   const handleMobile = useCallback((value) => {
-    console.log("value", value.target.value);
     setMobile(() => value.target.value);
   }, []);
   const handleMessage = useCallback((value) => {
-    console.log("value", value.target.value);
     setMessage(() => value.target.value);
   }, []);
   const handleSubmit = async (e) => {
@@ -74,7 +70,6 @@ export default function Contact() {
       });
       const resData = await res.json();
 
-      console.log("resData", resData);
 
       if (resData?.success) {
         toast.success("Question is successfully sent!");
@@ -89,7 +84,6 @@ export default function Contact() {
       }
     } catch (error) {
       toast.error("someting went wrong");
-      console.log("error message ", error);
     }
   };
   return (

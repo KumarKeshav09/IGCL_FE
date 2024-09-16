@@ -82,7 +82,6 @@ export default function EditAbstract({ params }) {
     if (file && file.type === 'application/pdf') {
       const result = await uploadPDF(file);
       if (result.successMessage) {
-        console.log('Upload successful:', result.successMessage.imageUrl);
         setPdf(result.successMessage.imageUrl); // Save the URL or path returned by the upload
       } else {
         console.error('Upload error:', result.errMessage);

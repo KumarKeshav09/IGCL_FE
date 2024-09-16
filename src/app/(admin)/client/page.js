@@ -45,7 +45,6 @@ export default function Clients() {
   const handleDelete = async () => {
     try {
       const token = Cookies.get("token");
-      console.log('token',token)
       const response = await fetch(`${API_BASE_URL}/client/deleteClient/${deleteId}`, {
         method: 'DELETE',
         headers: {

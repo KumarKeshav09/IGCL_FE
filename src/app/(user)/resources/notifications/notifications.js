@@ -29,7 +29,6 @@ export default function Notifications() {
     try {
       const res = await fetch(`${API_BASE_URL}/policy/allPolicy?limit=${totalCount}`);
       const data = await res.json();
-      console.log("API response:", data); // Log the full response
       if (data && data.data) {
         setListData(data.data);
         setTotalCount(data.totalCount);

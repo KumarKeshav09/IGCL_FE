@@ -62,7 +62,6 @@ const Testimonials = () => {
     }
   };
 
-  console.log("listData",listData)
 
   return (
     <div className="min-w-screen bgAlternate flex items-center justify-center px-5 md:py-3">

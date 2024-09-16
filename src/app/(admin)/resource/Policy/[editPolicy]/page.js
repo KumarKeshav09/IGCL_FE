@@ -84,7 +84,6 @@ export default function EditPolicy({ params }) {
     if (file && file.type === 'application/pdf') {
       const result = await uploadPDF(file);
       if (result.successMessage) {
-        console.log('Upload successful:', result.successMessage.imageUrl);
         setPdf(result.successMessage.imageUrl); // Save the URL or path returned by the upload
       } else {
         console.error('Upload error:', result.errMessage);
@@ -117,7 +116,6 @@ export default function EditPolicy({ params }) {
       });
 
       const data = await res.json();
-      console.log("data", data);
       if (data.success) {
         toast.success(data.message || "Policy updated successfully");
         router.push("/resource#policy");
