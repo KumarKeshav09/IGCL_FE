@@ -1,3 +1,5 @@
+import { Accordion } from "flowbite-react";
+
 export default function CompliancesPost4() {
   return (
     <>
@@ -38,8 +40,8 @@ export default function CompliancesPost4() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-        <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
-          <div className="text-center max-w-xl mx-auto">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 Applicability
               </h1>
@@ -89,8 +91,8 @@ export default function CompliancesPost4() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-        <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
-          <div className="text-center max-w-xl mx-auto">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 What to Expect
               </h1>
@@ -263,6 +265,119 @@ export default function CompliancesPost4() {
                   </span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section className="bg-white border-b dark:bg-gray-900">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
+                FAQ
+              </h1>
+              <div className="text-center mb-6">
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+              </div>
+            </div>
+            <div className="rounded-lg dark:bg-gray-800">
+              <Accordion
+                collapseAll
+                className="border-none border-gray-800"
+              >
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      What are the key responsibilities of an employer under the POSH Act?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        <ul>
+                          <li>Employers must establish an Internal Committee (IC) at every office or branch with 10 or more employees.</li>
+                          <li>Employers should provide a safe working environment, including safety from third parties.</li>
+                          <li>Regularly conduct workshops and awareness programs to sensitize employees about the provisions of the Act.</li>
+                          <li>Display the consequences of sexual harassment at conspicuous places in the workplace.</li>
+                          <li>Assist in the filing of a police complaint, if the complainant desires, in cases of a criminal offence.</li>
+                          <li>Ensure timely submission of the annual report by the Internal Committee to the District Officer.</li>
+                        </ul>
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      What is the composition of the Internal Committee (IC)?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        <ul>
+                          <li>The IC must include a Presiding Officer (a senior woman employee), at least two members committed to the cause of women or who have experience in social work or legal knowledge, and one external member from an NGO or an association committed to the cause of women or familiar with issues relating to sexual harassment.</li>
+                          <li>At least half of the IC members should be women.</li>
+                        </ul>
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      What is the procedure for filing a complaint under POSH?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        <ul>
+                          <li>A written complaint should be filed by the aggrieved woman within three months of the incident.</li>
+                          <li>The complaint can also be filed by a legal heir or representative in case of the complainant's inability to do so.</li>
+                          <li>The IC may allow a time extension if there are valid reasons.</li>
+                        </ul>
+
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      Can the Internal Committee’s decision be appealed?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        Yes, either party can appeal the decision of the IC within 90 days of the final report to the appropriate court or tribunal.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+              </Accordion>
             </div>
           </div>
         </section>

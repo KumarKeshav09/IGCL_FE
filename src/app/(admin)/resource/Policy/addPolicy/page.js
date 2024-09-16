@@ -65,7 +65,6 @@ export default function AddPolicy() {
     if (file && file.type === 'application/pdf') {
       const result = await uploadPDF(file, setLoading);
       if (result.successMessage) {
-        console.log('Upload successful:', result.successMessage.imageUrl);
         setPdf(result.successMessage.imageUrl)
       } else {
         console.error('Upload error:', result.errMessage);
@@ -104,7 +103,6 @@ export default function AddPolicy() {
 
         // Handle response
         const data = await response.json();
-        console.log("data", data);
         if (data.success) {
             router.push("/resource#policy");
             toast.success(data.message || "Policy added successfully");

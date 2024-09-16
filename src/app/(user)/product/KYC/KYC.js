@@ -160,7 +160,6 @@ const MyForm = () => {
             // Fetch KYC data from the primary API endpoint
             const response = await fetch(`${API_BASE_URL}/kyc/allKYC`);
             const data = await response.json();
-            console.log('Primary API Data:', data);
 
             // Verify data using the secondary API endpoint
             const verificationResponse = await fetch(`${API_BASE_URL}/kycData/kycData`, {
@@ -172,7 +171,6 @@ const MyForm = () => {
                 body: JSON.stringify({ /* data to be sent for verification */ }),
             });
             const verificationData = await verificationResponse.json();
-            console.log('Verification API Data:', verificationData);
 
             // Define the filtering criteria
             const minEmployeeCount = formValues.employeeCount ? parseInt(formValues.employeeCount, 10) : 0;
@@ -188,14 +186,6 @@ const MyForm = () => {
                 const matchesEmployeeCount = row.EmployeeCount >= minEmployeeCount;
                 const matchesState = states.some(state => row.State.includes(state));
                 const matchesTypeOfIndustry = row.TypeOfIndustry.includes(typeOfIndustry);
-
-                console.log("States", {
-                    row,
-                    matchesEmployeeCount,
-                    matchesState,
-                    matchesTypeOfIndustry
-                });
-
                 return matchesEmployeeCount && matchesState && matchesTypeOfIndustry;
             }).map(row => ({
                 actname: row.ActName,

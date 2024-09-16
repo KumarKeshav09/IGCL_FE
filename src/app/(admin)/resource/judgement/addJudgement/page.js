@@ -65,7 +65,6 @@ export default function AddJudgement() {
     if (file && file.type === 'application/pdf') {
       const result = await uploadPDF(file, setLoading);
       if (result.successMessage) {
-        console.log('Upload successful:', result.successMessage.imageUrl);
         setPdf(result.successMessage.imageUrl);
       } else {
         console.error('Upload error:', result.errMessage);
@@ -97,7 +96,6 @@ export default function AddJudgement() {
       });
 
       const data = await response.json();
-      console.log("data", data);
       if (data.success) {
         router.push("/resource#judgement");
         toast.success(data.message || "Judgement added successfully");

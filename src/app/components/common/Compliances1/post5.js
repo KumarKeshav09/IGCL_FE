@@ -1,3 +1,5 @@
+import { Accordion } from "flowbite-react";
+
 export default function CompliancesPost5() {
   return (
     <>
@@ -272,6 +274,104 @@ export default function CompliancesPost5() {
                   </span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section className="bg-white border-b dark:bg-gray-900">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
+                FAQ
+              </h1>
+              <div className="text-center mb-6">
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+              </div>
+            </div>
+            <div className="rounded-lg dark:bg-gray-800">
+              <Accordion
+                collapseAll
+                className="border-none border-gray-800"
+              >
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      How is Gratuity Calculated?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      Gratuity is typically calculated using the formula: Gratuity = (Last Drawn Salary × 15/26) × Number of Years of Service. Number of Years Worked​ Here, the last drawn salary includes basic salary plus dearness allowance, and the number of years worked is rounded up to the nearest whole year.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      What is the Maximum Limit for Gratuity Payment?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      The maximum limit for gratuity payment under the Act is ₹20 lakhs as per the latest amendment. Any amount above this is considered taxable.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      When is Gratuity Payable?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      Gratuity is payable when an employee retires, resigns, or is terminated after rendering continuous service for five years or more. It is also payable in cases of death or disablement due to an accident or disease, without the need for the five-year requirement.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      Is Gratuity Taxable?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      Gratuity received by an employee on retirement or resignation is exempt from tax up to a limit of ₹20 lakhs. Any amount exceeding this limit is taxable as per the Income Tax Act.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+              </Accordion>
             </div>
           </div>
         </section>

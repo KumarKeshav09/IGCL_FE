@@ -29,7 +29,6 @@ export default function Abstarcts() {
     try {
       const res = await fetch(`${API_BASE_URL}/abstract/allAbstract?limit=1000`);
       const data = await res.json();
-      console.log("API response:", data);
       if (data && data.data) {
         setListData(data.data);
         if (data.data.length > 0) {

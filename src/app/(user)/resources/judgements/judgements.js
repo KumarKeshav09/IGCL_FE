@@ -28,7 +28,6 @@ export default function Judgements() {
     try {
       const res = await fetch(`${API_BASE_URL}/judgement/allJudgement?limit=1000`);
       const data = await res.json();
-      console.log("API response:", data); // Log the full response
       if (data && data.data) {
         setListData(data.data);
         if (data.data.length > 0) {

@@ -1,3 +1,5 @@
+import { Accordion } from "flowbite-react";
+
 export default function CompliancesPost3() {
   return (
     <>
@@ -33,8 +35,8 @@ export default function CompliancesPost3() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-        <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
-          <div className="text-center max-w-xl mx-auto">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 Applicability
               </h1>
@@ -62,8 +64,8 @@ export default function CompliancesPost3() {
 
       <div>
         <section className="bg-white border-b dark:bg-gray-900">
-        <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
-          <div className="text-center max-w-xl mx-auto">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
               <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
                 What to Expect
               </h1>
@@ -254,7 +256,106 @@ export default function CompliancesPost3() {
         </section>
       </div>
 
-      
+      <div>
+        <section className="bg-white border-b dark:bg-gray-900">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
+                FAQ
+              </h1>
+              <div className="text-center mb-6">
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+              </div>
+            </div>
+            <div className="rounded-lg dark:bg-gray-800">
+              <Accordion
+                collapseAll
+                className="border-none border-gray-800"
+              >
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      What are the contributions under the ESIC Act?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        Employee Contribution: The employee contributes 0.75% of their wages.
+                        Employer Contribution: The employer contributes 3.25% of the employee's wages.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      What are the benefits provided under the ESI Act?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        Benefits under the ESI Act include medical care for the insured person and their dependents, cash benefits for sickness, maternity benefits, disability benefits, and funeral expenses. It also provides compensation for loss of wages due to illness or injury and financial support in case of death.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      How can employees and employers file claims or access ESI services?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        Employees and employers can access ESI services through local ESIC offices. Claims can be filed for medical treatment, sickness benefits, maternity benefits, and other entitlements at designated ESI dispensaries or hospitals. Employers are required to maintain records and submit returns regularly to the ESIC, ensuring that employees can avail themselves of benefits without administrative hassles.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      What are the penalties for non-compliance with the ESIC Act?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                        Employers who fail to comply with the provisions of the ESIC Act, such as late payment or non-payment of contributions, can face penalties, including fines and imprisonment. Additionally, interest on delayed payments is also levied.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+              </Accordion>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
     </>
   );
 }

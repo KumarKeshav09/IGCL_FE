@@ -1,3 +1,5 @@
+import { Accordion } from "flowbite-react";
+
 export default function CompliancesPost2() {
   return (
     <>
@@ -206,6 +208,104 @@ export default function CompliancesPost2() {
                   </span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section className="bg-white border-b dark:bg-gray-900">
+          <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
+            <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-4xl md:text-7xl font-bold text-gray-800">
+                FAQ
+              </h1>
+              <div className="text-center mb-6">
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+              </div>
+            </div>
+            <div className="rounded-lg dark:bg-gray-800">
+              <Accordion
+                collapseAll
+                className="border-none border-gray-800"
+              >
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      Why should employers invest in an HR audit?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      Employers invest in HR audits to ensure compliance with labor laws, reduce legal risks, improve HR practices, and enhance overall organizational efficiency.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                       What are the key benefits of an HR audit?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      Key benefits include identifying compliance gaps, mitigating legal risks, optimizing HR processes, enhancing employee satisfaction, and aligning HR practices with organizational goals.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      What areas are typically reviewed during an HR audit?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      Areas often reviewed include recruitment and hiring practices, employee records, compensation and benefits, compliance with labor laws, performance management, and employee relations.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+                <Accordion.Panel className=" border border-b border-gray-200">
+                  <section className=" border-b border-gray-200">
+                    <Accordion.Title
+                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      Can an HR audit help with compliance issues?
+                    </Accordion.Title>
+                    <Accordion.Content
+                      className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    >
+                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      Yes, an HR audit helps identify and address compliance issues, ensuring that the organization adheres to legal and regulatory requirements, thereby reducing the risk of legal disputes and penalties.
+                      </p>
+                    </Accordion.Content>
+                  </section>
+                </Accordion.Panel>
+              </Accordion>
             </div>
           </div>
         </section>
