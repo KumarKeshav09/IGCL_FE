@@ -116,18 +116,18 @@ const OtpLogin = ({ onSignUpSuccess }) => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900">
-      <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+    <div className="flex justify-center items-center bg-white dark:bg-gray-900">
+      <div className="bg-white dark:bg-gray-800 p-8  w-full max-w-md">
         <div className="flex mb-4">
           <button
             onClick={() => setIsSignUp(true)}
-            className={`px-4 py-2 rounded-t-lg ${isSignUp ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`px-4 py-2  ${isSignUp ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}
           >
             Sign Up
           </button>
           <button
             onClick={() => setIsSignUp(false)}
-            className={`px-4 py-2 rounded-t-lg ${!isSignUp ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`px-4 py-2  ${!isSignUp ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}
           >
             Login
           </button>

@@ -52,18 +52,18 @@ export default function Notifications() {
 
   return (
     <main>
-      <div className="md:flex">
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <div className="md:px-24">
+        <table className="w-full border text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 border">
                 S. No.
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 border">
                 Notification Title
               </th>
-              <th scope="col" className="px-6 py-3">
-                PDF Link
+              <th scope="col" className="px-6 py-3 border">
+                PDF
               </th>
             </tr>
           </thead>
@@ -100,13 +100,13 @@ export default function Notifications() {
                 >
                   <td
                     scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 border font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
                     {/* Display serial number (index + 1) */}
                     {index + 1}
                   </td>
-                  <td className="px-6 py-4 text-black">{item.Title}</td>
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-4 border text-black">{item.Title}</td>
+                  <td className="px-6 py-4 border">
                     <a
                       href={`https://igcl-api.onrender.com/uploads/${item.PDF}`}
                       target="_blank"

@@ -14,7 +14,8 @@ export const config = {
     "/resource/Policy/:path*",
     "/resource/notification/:path*",
     "/resource/judgement/:path*",
-    "/resource/abstract/:path*"
+    "/resource/abstract/:path*",
+    "/kycadmin/:path*"
   ],
 };
 

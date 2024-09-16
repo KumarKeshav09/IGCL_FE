@@ -376,9 +376,9 @@ export default function Home() {
                 <p className="mb-8 text-base text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
                   IGCL INDIA is committed to providing outstanding and unsurpassed service in the field of Labour law and statutory compliance, consistently delivering premium value to our customers. Our dedication and expertise in this specialized domain define the enthusiasm and strong working profile of our corporation.
                 </p>
-                <p className="mb-8 mt-4 text-base text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
+                {/* <p className="mb-8 mt-4 text-base text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
                   At IGCL India, we believe in treating people the way they want to be treated, with friendliness, calmness, and respect. Our success is not only due to the quality of our work, It’s due to our attitude, our approach, and the way we treat our clients.
-                </p>
+                </p> */}
                 <div className="flex flex-col space-y-4 sm:flex-row  sm:space-y-0">
                   <Link
                     href="/aboutus"
@@ -727,7 +727,7 @@ export default function Home() {
               </div>
               <div className={`${styles.forthBoxDisplayForm}`}>
                 <textarea
-                  rows="4"
+                  rows="2"
                   placeholder="Ask Your Question"
                   value={Message}
                   onChange={handleMessage}
