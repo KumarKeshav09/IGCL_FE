@@ -15,7 +15,8 @@ export const config = {
     "/resource/notification/:path*",
     "/resource/judgement/:path*",
     "/resource/abstract/:path*",
-    "/kycadmin/:path*"
+    "/kycadmin/:path*",
+    "/resource/laborcodes/:path*"
   ],
 };
 

@@ -10,9 +10,7 @@ export default function CompliancesPost6() {
             <div className="">
               <div className="text-gray-500 sm:text-lg dark:text-gray-400">
                 <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
-                  Powering innovation at{" "}
-                  <span className="font-extrabold">200,000+</span> companies
-                  worldwide
+                  Effortless PT and LWF Compliance Solutions!
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
@@ -87,19 +85,16 @@ export default function CompliancesPost6() {
               >
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Professional Tax (PT) registration assistance
@@ -107,19 +102,16 @@ export default function CompliancesPost6() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     PT calculation and deduction guidance
@@ -127,19 +119,16 @@ export default function CompliancesPost6() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     PT filing and compliance support
@@ -147,19 +136,16 @@ export default function CompliancesPost6() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Labor Welfare Fund (LWF) registration facilitation
@@ -167,19 +153,16 @@ export default function CompliancesPost6() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     LWF contribution calculation assistance
@@ -187,19 +170,16 @@ export default function CompliancesPost6() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     LWF compliance advisory services
@@ -234,7 +214,7 @@ export default function CompliancesPost6() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       How is Professional Tax calculated?
@@ -243,7 +223,7 @@ export default function CompliancesPost6() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                         Professional Tax is calculated based on salary slabs predefined by the respective state governments. Employers must refer to the state's tax slabs to determine the amount to deduct.
                       </p>
                     </Accordion.Content>
@@ -252,7 +232,7 @@ export default function CompliancesPost6() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       What are the penalties for non-compliance with Professional Tax regulations?
@@ -261,7 +241,7 @@ export default function CompliancesPost6() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                         Penalties for non-compliance with PT regulations can include fines, interest on delayed payments, and legal actions. The exact penalties vary by state and can be significant. Employers are advised to stay updated with state-specific PT rules to avoid such issues.
 
                       </p>
@@ -271,7 +251,7 @@ export default function CompliancesPost6() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       How are LWF contributions calculated?
@@ -280,7 +260,7 @@ export default function CompliancesPost6() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                         LWF contributions are usually a fixed amount, predetermined by state regulations. Employers contribute on behalf of both the employee and the employer, based on the rates specified by the state.
                       </p>
                     </Accordion.Content>
@@ -289,7 +269,7 @@ export default function CompliancesPost6() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       What are the penalties for non-compliance with LWF contributions?
@@ -298,7 +278,7 @@ export default function CompliancesPost6() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                         Penalties for non-compliance with LWF contributions include fines and, in some cases, imprisonment. Interest may also be charged on late payments.
                       </p>
                     </Accordion.Content>

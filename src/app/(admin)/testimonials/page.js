@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
-import { API_BASE_URL } from "../../../../utils/constants";
-import 'react-toastify/dist/ReactToastify.css'; 
+import { API_BASE_URL, IMAGE_VIEW_URL } from "../../../../utils/constants";
+import 'react-toastify/dist/ReactToastify.css';
 import Cookies from "js-cookie";
 
 
@@ -134,54 +134,26 @@ export default function TestiMonials() {
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                <th scope="col" className="px-6 py-3">
-                  Name
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Image
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Comment
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Action
-                </th>
+                <th scope="col" className="px-6 py-3">Name</th>
+                <th scope="col" className="px-6 py-3">Designation</th>
+                <th scope="col" className="px-6 py-3 text-nowrap">Company Name</th>
+                <th scope="col" className="px-6 py-3">Comment</th>
+                <th scope="col" className="px-6 py-3">Action</th>
               </tr>
             </thead>
             <tbody>
               {listData?.data?.map((item) => (
-                <tr
-                  key={item._id}
-                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-                >
-                  <td
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    {item.Name}
-                  </td>
-                  <td className="px-6 py-4">
-                    <img
-                      className="object-cover"
-                      src={`https://igcl-api.onrender.com/uploads/` + `${item.Image}`}
-                      width={100}
-                      height={100}
-                      alt="Testimonial"
-                    />
-                  </td>
+                <tr key={item._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                  <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{item.Name}</td>
+                  <td className="px-6 py-4">{item.Designation}</td>
+                  <td className="px-6 py-4">{item.CompanyName}</td>
                   <td className="px-6 py-4">{item.Message}</td>
                   <td className="px-6 py-4">
                     <div className="flex items-center space-x-2">
-                      <Link
-                        href={`/testimonials/${item._id}`}
-                        className="font-medium text-blue-600 text-lg dark:text-blue-500 hover:underline"
-                      >
+                      <Link href={`/testimonials/${item._id}`} className="font-medium text-blue-600 text-lg dark:text-blue-500 hover:underline">
                         <i className="bi bi-pencil-square"></i>
                       </Link>
-                      <button
-                        onClick={() => deleteTestimonialModal(item._id)}
-                        className="font-medium text-red-600 text-lg dark:text-red-500 hover:underline"
-                      >
+                      <button onClick={() => deleteTestimonialModal(item._id)} className="font-medium text-red-600 text-lg dark:text-red-500 hover:underline">
                         <i className="bi bi-trash-fill"></i>
                       </button>
                     </div>
@@ -190,6 +162,7 @@ export default function TestiMonials() {
               ))}
             </tbody>
           </table>
+
         )}
       </div>
       <Pagination data={listData} pageNo={handlePageChange} pageVal={page} />

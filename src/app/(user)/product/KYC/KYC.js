@@ -141,10 +141,10 @@ const MyForm = () => {
         if (formValues.TypeOfIndustry === 'Contractor') {
             if (formValues.hasContractor === 'true') {
                 if (!formValues.numberOfContractors) newErrors.numberOfContractors = 'Total Number of Contractors is required';
-                if (!formValues.maxContractLabourEngaged) newErrors.maxContractLabourEngaged = 'Maximum Number of Contract Labour Engaged is required';
+                if (!formValues.maxContractLabourEngaged) newErrors.maxContractLabourEngaged = 'Maximum Number of Contract Labor Engaged is required';
             }
             if (formValues.hasMigrantWorkersInContract === 'true' && !formValues.maxContractLabourInAnyContract) {
-                newErrors.maxContractLabourInAnyContract = 'Maximum Number of Contract Labour Engaged in any Contract is required';
+                newErrors.maxContractLabourInAnyContract = 'Maximum Number of Contract Labor Engaged in any Contract is required';
             }
         }
 
@@ -449,7 +449,7 @@ const MyForm = () => {
                                 htmlFor="maxContractLabourInAnyContract"
                                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                                Maximum Number of Contract Labour Engaged in any Contract
+                                Maximum Number of Contract Labor Engaged in any Contract
                             </label>
                             <input
                                 type="number"
@@ -517,7 +517,7 @@ const MyForm = () => {
                                         htmlFor="maxContractLabourEngaged"
                                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                     >
-                                        Maximum Number of Contract Labour Engaged in any Contractor
+                                        Maximum Number of Contract Labor Engaged in any Contractor
                                     </label>
                                     <input
                                         type="number"

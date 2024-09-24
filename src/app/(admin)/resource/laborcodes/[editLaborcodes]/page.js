@@ -7,18 +7,18 @@ import 'react-toastify/dist/ReactToastify.css';
 import { API_BASE_URL, IMAGE_BASE_URL } from "../../../../../../utils/constants";
 import Cookies from "js-cookie";
 
-export default function EditPolicy({ params }) {
+export default function EditLabor({ params }) {
   const [notificationTitle, setNotificationTitle] = useState("");
   const [pdf, setPdf] = useState(null); // State to handle PDF upload
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const policyId = params?.editPolicy; // Adjusted to match the parameter name for policy
+  const policyId = params?.editLaborcodes; 
   const token = Cookies.get("token");
 
   useEffect(() => {
     const fetchPolicyDetails = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/policy/PolicyById/${policyId}`, {
+        const res = await fetch(`${API_BASE_URL}/labourCode/LabourCodeById/${policyId}`, {
           headers: {
             "Authorization": `Bearer ${token}`,
           },
@@ -106,7 +106,7 @@ export default function EditPolicy({ params }) {
 
     try {
       setLoading(true); // Set loading state to true when starting submission
-      const res = await fetch(`${API_BASE_URL}/policy/updatePolicy/${policyId}`, {
+      const res = await fetch(`${API_BASE_URL}/labourCode/updateLabourCode/${policyId}`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -118,7 +118,7 @@ export default function EditPolicy({ params }) {
       const data = await res.json();
       if (data.success) {
         toast.success(data.message || "Policy updated successfully");
-        router.push("/resource#policy");
+        router.push("/resource#laborcodes");
       } else {
         toast.error(data.errMessage || "Failed to update policy");
       }
@@ -133,9 +133,9 @@ export default function EditPolicy({ params }) {
   return (
     <section>
       <h1 className="text-2xl text-black underline mb-3 font-bold">
-        Update Your Notification Details
+        Update Your Labor Code Details
       </h1>
-      <Link href="/resource#policy">
+      <Link href="/resource#laborcodes">
         <div className="mb-5 mt-5">
           <button
             className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
@@ -152,7 +152,7 @@ export default function EditPolicy({ params }) {
               htmlFor="policyName"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
             >
-              Notification Title
+              Labor Code Title
             </label>
             <input
               type="text"
@@ -160,7 +160,7 @@ export default function EditPolicy({ params }) {
               onChange={(e) => setNotificationTitle(e.target.value)}
               id="policyName"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Notification Title"
+              placeholder="Labor Code Title"
               required
             />
           </div>
@@ -169,7 +169,7 @@ export default function EditPolicy({ params }) {
               htmlFor="pdf"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
             >
-              Notification PDF
+              Labor Code PDF
             </label>
             <input
               type="file"

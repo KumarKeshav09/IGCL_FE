@@ -4,14 +4,15 @@ import Abstract from "../abstract/abstract";
 import Policy from "../Policy/Policy";
 import Judgement from "../judgement/judgement";
 import styles from "./tabs.module.css";
+import Labor from "../laborcodes/Labor";
 
 export default function Tabs() {
-  const [activeTab, setActiveTab] = useState("policy");
+  const [activeTab, setActiveTab] = useState("abstract");
 
   useEffect(() => {
     // Read the hash from the URL and set the active tab
     const hash = window.location.hash.slice(1);
-    if (["abstract", "policy", "judgement"].includes(hash)) {
+    if (["abstract", "policy", "judgement","laborcodes"].includes(hash)) {
       setActiveTab(hash);
     }
   }, []);
@@ -62,6 +63,18 @@ export default function Tabs() {
               Judgement
             </button>
           </li>
+          <li className="me-2" role="presentation">
+            <button
+              className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === "laborcodes" ? "border-blue-500 text-blue-600" : "border-transparent text-gray-600 hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"}`}
+              onClick={() => handleTabChange("laborcodes")}
+              type="button"
+              role="tab"
+              aria-controls="laborcodes"
+              aria-selected={activeTab === "laborcodes"}
+            >
+              Labor Codes
+            </button>
+          </li>
         </ul>
       </div>
       <div>
@@ -88,6 +101,14 @@ export default function Tabs() {
           aria-labelledby="judgement-tab"
         >
           <Judgement />
+        </div>
+        <div
+          className={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${activeTab === "laborcodes" ? "block" : "hidden"}`}
+          id="laborcodes"
+          role="tabpanel"
+          aria-labelledby="laborcodes-tab"
+        >
+          <Labor />
         </div>
       </div>
     </>

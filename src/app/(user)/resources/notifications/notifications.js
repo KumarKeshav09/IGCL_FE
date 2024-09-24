@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { API_BASE_URL } from "../../../../../utils/constants";
+import { API_BASE_URL, IMAGE_VIEW_URL } from "../../../../../utils/constants";
 import { toast } from "react-toastify";
 import styles from "../resources.module.css";
 
@@ -107,7 +107,7 @@ export default function Notifications() {
                   <td className="px-6 py-4 border text-black">{item.Title}</td>
                   <td className="px-6 py-4 border">
                     <a
-                      href={`https://igcl-api.onrender.com/uploads/${item.PDF}`}
+                      href={`${IMAGE_VIEW_URL}${item.PDF}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       download="Document.pdf"

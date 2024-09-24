@@ -8,9 +8,9 @@ import { Accordion } from "flowbite-react";
 import Footer from "./components/common/footer";
 // import { initFlowbite } from "flowbite";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./services.module.css";
-import { API_BASE_URL } from "../../utils/constants";
+import { API_BASE_URL, IMAGE_VIEW_URL } from "../../utils/constants";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Testimonials from "./components/common/Testimonials/testimonials";
@@ -202,6 +202,31 @@ export default function Home() {
       console.log("error message ", error);
     }
   };
+
+  const boxRef = useRef(null);
+
+    useEffect(() => {
+        const scrollBox = boxRef.current;
+        let scrollInterval;
+
+        const autoScroll = () => {
+            if (scrollBox) {
+                scrollBox.scrollBy({
+                    left: 300, // Adjust the scroll amount as needed
+                    behavior: 'smooth'
+                });
+
+                // Reset scroll if it reaches the end
+                if (scrollBox.scrollLeft + scrollBox.clientWidth >= scrollBox.scrollWidth) {
+                    scrollBox.scrollLeft = 0;
+                }
+            }
+        };
+
+        scrollInterval = setInterval(autoScroll, 3000); // Change slides every 3 seconds
+
+        return () => clearInterval(scrollInterval);
+    }, []);
   return (
     <main className="">
       <Navbar />
@@ -374,7 +399,7 @@ export default function Home() {
                   Expert Guidance in Compliance and Labor Law for Your Business
                 </h1>
                 <p className="mb-8 text-base text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
-                  IGCL INDIA is committed to providing outstanding and unsurpassed service in the field of Labour law and statutory compliance, consistently delivering premium value to our customers. Our dedication and expertise in this specialized domain define the enthusiasm and strong working profile of our corporation.
+                  IGCL INDIA is committed to providing outstanding and unsurpassed service in the field of Labor law and statutory compliance, consistently delivering premium value to our customers. Our dedication and expertise in this specialized domain define the enthusiasm and strong working profile of our corporation.
                 </p>
                 {/* <p className="mb-8 mt-4 text-base text-justify font-normal text-gray-900 lg:text-xl  dark:text-gray-400">
                   At IGCL India, we believe in treating people the way they want to be treated, with friendliness, calmness, and respect. Our success is not only due to the quality of our work, It’s due to our attitude, our approach, and the way we treat our clients.
@@ -409,7 +434,7 @@ export default function Home() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className={styles.BoxContainer}>
+            <div className={styles.BoxContainer} ref={boxRef}>
               <Link href='/services/1-detail#profile' className={styles.card}>
                 <img
                   src="/images/image1.jpg"
@@ -417,9 +442,8 @@ export default function Home() {
                 />
                 <div className={styles.overlay}>
                   <div className={styles.text}>
-                    <h3 className={styles.textNum}>01-</h3>
                     <h3 className={styles.textDesp}>Statutory Compliances </h3>
-                    <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labor Law Compliance</p>
+                    <p className={styles.textSecret}>Compliance with labor, taxation, and environmental laws is key to responsible business.</p>
                   </div>
                 </div>
               </Link>
@@ -430,9 +454,8 @@ export default function Home() {
                 />
                 <div className={styles.overlay}>
                   <div className={styles.text}>
-                    <h3 className={styles.textNum}>02-</h3>
                     <h3 className={styles.textDesp}>Establishment Compliances</h3>
-                    <p className={styles.textSecret}>Driving Sustainable Development Through Comprehensive ESG Strategies</p>
+                    <p className={styles.textSecret}>Meeting legal requirements for permits, licenses, and safety standards in business operations.</p>
                   </div>
                 </div>
               </Link>
@@ -443,9 +466,8 @@ export default function Home() {
                 />
                 <div className={styles.overlay}>
                   <div className={styles.text}>
-                    <div><h3 className={styles.textNum}>03-</h3></div>
                     <div><h3 className={styles.textDesp}>Labor Law Audit and Assessment</h3></div>
-                    <p className={styles.textSecret}>Enhancing Organizational Skills Through Tailored Training and Expert Consultancy</p>
+                    <p className={styles.textSecret}>Evaluating compliance with labor regulations to ensure fair practices in wages, benefits, and safety.</p>
                   </div>
                 </div>
               </Link>
@@ -456,9 +478,8 @@ export default function Home() {
                 />
                 <div className={styles.overlay}>
                   <div className={styles.text}>
-                    <h3 className={styles.textNum}>04-</h3>
                     <h3 className={styles.textDesp}>Solutions for Startups </h3>
-                    <p className={styles.textSecret}>Providing Comprehensive Staffing Solutions for Optimal Workforce Management</p>
+                    <p className={styles.textSecret}>Comprehensive support for startups in planning, compliance and marketing to fuel growth.</p>
                   </div>
                 </div>
               </Link>
@@ -511,7 +532,7 @@ export default function Home() {
                       <section className=" border-b border-gray-200">
                         <Accordion.Title
                           className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
-                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
+                    focus:bg-transparent   focus:ring-grey-0 focus:ring-0 text-justify"
                         >
                           {item.Question}
                         </Accordion.Title>
@@ -519,7 +540,7 @@ export default function Home() {
                           className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                         >
-                          <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                          <p className=" mb-2 text-gray-800 dark:text-gray-800 text-justify ">
                             {item.Answer}
                           </p>
                         </Accordion.Content>
@@ -559,7 +580,7 @@ export default function Home() {
                   {/* {listData?.data?.map((item) => (
                     <div className="image-container">
                       <img
-                        src={`https://igcl-api.onrender.com/uploads/` + `${item.Image}`}
+                        src={`${IMAGE_VIEW_URL}` + `${item.Image}`}
                         alt="Hover Image"
                         className="cursor-pointer"
                       />

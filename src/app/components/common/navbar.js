@@ -87,7 +87,7 @@ export default function Navbar() {
                       <Link href='/services/1-detail#dashboard' className="block px-4 py-2 text-nowrap hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Establishment Compliances</Link>
                     </li>
                     <li>
-                      <Link href='/services/1-detail#settings' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Labour Law Audit and Assessment</Link>
+                      <Link href='/services/1-detail#settings' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Labor Law Audit and Assessment</Link>
                     </li>
                     <li>
                       <Link href='/services/1-detail#startup' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Solutions for Startups</Link>
@@ -95,8 +95,11 @@ export default function Navbar() {
                   </ul>
                 </div>
               </li>
-              <li>
+              <li className="relative">
                 <Link
+                  id="dropdownHoverButtonResource"
+                  data-dropdown-toggle="dropdownHoverResouce"
+                  data-dropdown-trigger="hover"
                   href="/resources"
                   className={`${pathname == "/resources"
                       ? "block text-lg py-2 px-3 bg-blue-700 rounded md:bg-transparent hover:text-black text-black md:text-blue-700 md:p-0 dark:text-white md:dark:text-white"
@@ -105,6 +108,22 @@ export default function Navbar() {
                 >
                   Resources
                 </Link>
+                <div id="dropdownHoverResouce" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto dark:bg-gray-700">
+                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButtonResource">
+                    <li>
+                      <Link href='/resources#profile' className="block px-4 py-2 text-nowrap hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Abstarct</Link>
+                    </li>
+                    <li>
+                      <Link href='/resources#dashboard' className="block px-4 py-2 text-nowrap hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Judgement</Link>
+                    </li>
+                    <li>
+                      <Link href='/resources#settings' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Notification</Link>
+                    </li>
+                    <li>
+                      <Link href='/resources#code' className="block px-4 py-2 text-nowrap hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Labor Codes</Link>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li>
                 <Link

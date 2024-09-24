@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Footer from "../../components/common/footer";
 // import { initFlowbite } from "flowbite";
 import { useEffect } from "react";
-import styles from "../../services.module.css";
+import styles from "./servicein.module.css";
 
 
 export default function Services() {
@@ -45,9 +45,8 @@ export default function Services() {
                                 />
                                 <div className={styles.overlay}>
                                     <div className={styles.text}>
-                                        <h3 className={styles.textNum}>01-</h3>
                                         <h3 className={styles.textDesp}>Statutory Compliances </h3>
-                                        <p className={styles.textSecret}>Navigating Legal Requirements for Effective Labor Law Compliance</p>
+                                        <p className={styles.textSecret}>Compliance with labor, taxation, and environmental laws is key to responsible business.</p>
                                     </div>
                                 </div>
                             </Link>
@@ -58,9 +57,8 @@ export default function Services() {
                                 />
                                 <div className={styles.overlay}>
                                     <div className={styles.text}>
-                                        <h3 className={styles.textNum}>02-</h3>
                                         <h3 className={styles.textDesp}>Establishment Compliances</h3>
-                                        <p className={styles.textSecret}>Driving Sustainable Development Through Comprehensive ESG Strategies</p>
+                                        <p className={styles.textSecret}>Meeting legal requirements for permits, licenses, and safety standards in business operations.</p>
                                     </div>
                                 </div>
                             </Link>
@@ -71,9 +69,8 @@ export default function Services() {
                                 />
                                 <div className={styles.overlay}>
                                     <div className={styles.text}>
-                                        <div><h3 className={styles.textNum}>03-</h3></div>
                                         <div><h3 className={styles.textDesp}>Labor Law Audit and Assessment</h3></div>
-                                        <p className={styles.textSecret}>Enhancing Organizational Skills Through Tailored Training and Expert Consultancy</p>
+                                        <p className={styles.textSecret}>Evaluating compliance with labor regulations to ensure fair practices in wages, benefits, and safety.</p>
                                     </div>
                                 </div>
                             </Link>
@@ -84,9 +81,8 @@ export default function Services() {
                                 />
                                 <div className={styles.overlay}>
                                     <div className={styles.text}>
-                                        <h3 className={styles.textNum}>04-</h3>
                                         <h3 className={styles.textDesp}>Solutions for Startups </h3>
-                                        <p className={styles.textSecret}>Providing Comprehensive Staffing Solutions for Optimal Workforce Management</p>
+                                        <p className={styles.textSecret}>Comprehensive support for startups in planning, compliance and marketing to fuel growth.</p>
                                     </div>
                                 </div>
                             </Link>

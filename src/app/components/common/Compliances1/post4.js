@@ -82,19 +82,16 @@ export default function CompliancesPost4() {
               >
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Providing day-to-day consultancy on matters pertaining to
@@ -103,19 +100,16 @@ export default function CompliancesPost4() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance in the calculation of the accurate amount of
@@ -124,19 +118,16 @@ export default function CompliancesPost4() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Preparation & Submission of Annual returns as prescribed
@@ -145,19 +136,16 @@ export default function CompliancesPost4() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Replying / Satisfying Show Cause Notices issued by the
@@ -166,19 +154,16 @@ export default function CompliancesPost4() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assistance to establishments at the time of inspection.{" "}
@@ -186,19 +171,16 @@ export default function CompliancesPost4() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Representing establishments at the inquiries conducted by
@@ -234,7 +216,7 @@ export default function CompliancesPost4() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       When is the bonus payable to employees?
@@ -243,7 +225,7 @@ export default function CompliancesPost4() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                         Bonuses are typically payable within 8 months from the end of the accounting year. For instance, if the accounting year ends on March 31, the bonus should be paid by November 30 of the same year. Employers are required to make the payment within this time frame to comply with the Act.
                       </p>
                     </Accordion.Content>
@@ -252,7 +234,7 @@ export default function CompliancesPost4() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       Can a bonus be paid in instalments?
@@ -261,7 +243,7 @@ export default function CompliancesPost4() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                         Yes, the bonus can be paid in instalments if agreed upon between the employer and employees. However, the total amount must be paid within the stipulated time frame.
                       </p>
                     </Accordion.Content>
@@ -270,7 +252,7 @@ export default function CompliancesPost4() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       Are newly established companies required to pay a bonus?
@@ -279,7 +261,7 @@ export default function CompliancesPost4() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                         Newly established companies are required to pay a bonus after they have been in operation for at least five years. However, during the initial five years, if the company has earned a profit, it must pay the minimum bonus.
                       </p>
                     </Accordion.Content>
@@ -288,7 +270,7 @@ export default function CompliancesPost4() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       What is the basis for calculating the bonus—Minimum Wages or Basic Salary?
@@ -297,7 +279,7 @@ export default function CompliancesPost4() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                         The bonus is calculated on the higher of the two: Minimum Wages or Basic Salary. If the Basic Salary is higher than the Minimum Wages, the bonus is calculated on the Basic Salary, and vice versa.
                       </p>
                     </Accordion.Content>

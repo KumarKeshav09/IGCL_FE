@@ -5,9 +5,10 @@ import { API_BASE_URL, IMAGE_VIEW_URL } from "../../../../../utils/constants";
 import { toast } from "react-toastify";
 import styles from "../resources.module.css";
 
-export default function Judgements() {
+export default function Labor() {
   const [activeTab, setActiveTab] = useState(null); // Initialize with null
   const [listData, setListData] = useState([]);
+  const [totalCount, setTotalCount] = useState();
   const [loading, setLoading] = useState(false); // Add loading state
   const [error, setError] = useState(null); // Add error state
 
@@ -26,10 +27,11 @@ export default function Judgements() {
   const getAllPolicies = async () => {
     setLoading(true); // Start loading
     try {
-      const res = await fetch(`${API_BASE_URL}/judgement/allJudgement?limit=1000`);
+      const res = await fetch(`${API_BASE_URL}/labourCode/allLabourCode?limit=${totalCount}`);
       const data = await res.json();
       if (data && data.data) {
         setListData(data.data);
+        setTotalCount(data.totalCount);
         if (data.data.length > 0) {
           setActiveTab(data.data[0]._id); // Set the first policy's ID as active
         }
@@ -50,14 +52,14 @@ export default function Judgements() {
   return (
     <main>
       <div className="md:px-24">
-        <table className=" w-full border text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <table className="w-full border text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3 border">
                 S. No.
               </th>
               <th scope="col" className="px-6 py-3 border">
-                Judgement Title
+                Labor Code Title
               </th>
               <th scope="col" className="px-6 py-3 border">
                 PDF
@@ -89,7 +91,7 @@ export default function Judgements() {
                   </div>
                 </td>
               </tr>
-            ) : listData ? (
+            ) : listData.length > 0 ? (
               listData.map((item, index) => (
                 <tr
                   key={item._id}
@@ -97,30 +99,22 @@ export default function Judgements() {
                 >
                   <td
                     scope="row"
-                    className="px-6 py-4 font-medium border text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 border font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    {index + 1} {/* Adjust field name if needed */}
+                    {/* Display serial number (index + 1) */}
+                    {index + 1}
                   </td>
-                  <td
-                    scope="row"
-                    className="px-6 py-4 font-medium border text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    {item.Title} {/* Adjust field name if needed */}
-                  </td>
+                  <td className="px-6 py-4 border text-black">{item.Title}</td>
                   <td className="px-6 py-4 border">
-                    {item.PDF ? (
-                      <a
+                    <a
                       href={`${IMAGE_VIEW_URL}${item.PDF}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        download
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                      >
-                        Download PDF
-                      </a>
-                    ) : (
-                      <span>No PDF available</span>
-                    )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download="Document.pdf"
+                      className="text-blue-600 hover:underline"
+                    >
+                      Download PDF
+                    </a>
                   </td>
                 </tr>
               ))
