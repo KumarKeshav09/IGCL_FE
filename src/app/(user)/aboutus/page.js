@@ -5,10 +5,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 // import { initFlowbite } from "flowbite";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Footer from "@/app/components/common/footer";
 import Testimonials from "@/app/components/common/Testimonials/testimonials";
-import { API_BASE_URL } from "../../../../utils/constants";
+import { API_BASE_URL, IMAGE_VIEW_URL } from "../../../../utils/constants";
 import { toast } from "react-toastify";
 import VisionMission from "@/app/components/common/Mission/mission";
 
@@ -76,6 +76,31 @@ export default function aboutUs() {
     ],
   };
 
+  const boxRef = useRef(null);
+
+    useEffect(() => {
+        const scrollBox = boxRef.current;
+        let scrollInterval;
+
+        const autoScroll = () => {
+            if (scrollBox) {
+                scrollBox.scrollBy({
+                    left: 400, // Adjust the scroll amount as needed
+                    behavior: 'smooth'
+                });
+
+                // Reset scroll if it reaches the end
+                if (scrollBox.scrollLeft + scrollBox.clientWidth >= scrollBox.scrollWidth) {
+                    scrollBox.scrollLeft = 0;
+                }
+            }
+        };
+
+        scrollInterval = setInterval(autoScroll, 3000); // Change slides every 3 seconds
+
+        return () => clearInterval(scrollInterval);
+    }, []);
+
   return (
     <>
       <Navbar />
@@ -118,7 +143,7 @@ export default function aboutUs() {
           <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
         </div>
-        <div className={`${styles.valueSection}`}>
+        <div className={`${styles.valueSection}`} ref={boxRef}>
           <div className={`${styles.eachBlock}`}>
             <img className={`${styles.imageBefore}`} src="../../images/people-roof1.png" width={60} height={60} />
             <img className={`${styles.imageAfter}`} src="../../images/people-roof-W.png" width={60} height={60} />
@@ -186,25 +211,6 @@ export default function aboutUs() {
       </div>
       <hr />
 
-      {/* mission and vision  */}
-      {/* <div className={`${styles.missionSectionOutline}`}>
-        <div className="mt-4">
-          <h1 className={`${styles.missionHead}`}>Our Mission</h1>
-          <p className={`${styles.missiondesp} text-justify`}>
-            Led by energetic and experienced professionals, we use a dedicated
-            business approach to produce innovative and strategic, yet
-            affordable, solutions and result oriented service which helps
-            clients to accomplish their venturesome goals with optimized costs.
-          </p>
-        </div>
-        <div className="mt-4">
-          <h1 className={`${styles.missionHead}`}>Our Vision</h1>
-          <p className={`${styles.missiondesp} text-justify`}>
-            To be recognized as a key provider of strategic consulting for the
-            development and execution of growth strategies across the world.
-          </p>
-        </div>
-      </div> */}
       <div className={`${styles.missionSectionOutline}`}>
         <VisionMission />
       </div>
@@ -230,6 +236,7 @@ export default function aboutUs() {
           </div>
           <div className="w-[100%] md:w-[60%] lg:w-[80%] p-4 text-black lg:content-center">
             <h1 className={`${styles.heroMain}`}>Dr Vijay Vyas</h1>
+            <p>Director - Corporate Alliance </p>
             <p className={`${styles.despText} text-justify`}>
               Welcome to Innovative Governance Corporation Limited (IGCL INDIA),
               where we specialize in navigating the complex terrain of labor law
@@ -256,6 +263,7 @@ export default function aboutUs() {
           </div>
           <div className="w-[100%] md:w-[60%] lg:w-[80%] p-4 text-black lg:content-center">
             <h1 className={`${styles.heroMain}`}>Nitesh Choudhary</h1>
+            <p>Director - Operations</p>
             <p className={`${styles.despText} text-justify`}>
               Progress for me has never been a dream. It has always been a
               distant reality and once one milestone is achieved, there is
@@ -296,7 +304,7 @@ export default function aboutUs() {
                   {listData?.data?.map((item) => (
                     <div className="image-container">
                       <img
-                        src={`https://igcl-api.onrender.com/uploads/` + `${item.Image}`}
+                        src={`${IMAGE_VIEW_URL}` + `${item.Image}`}
                         alt="Hover Image"
                         className="cursor-pointer"
                       />

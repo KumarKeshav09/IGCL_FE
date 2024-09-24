@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
-import { API_BASE_URL } from "../../../../../utils/constants";
+import { API_BASE_URL, IMAGE_BASE_URL, IMAGE_VIEW_URL } from "../../../../../utils/constants";
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from "js-cookie";
 
@@ -78,7 +78,7 @@ export default function EditClient({ params }) {
       const formData = new FormData();
       formData.append('pdf', imageFile); // Fixed form data key to 'image'
 
-      const response = await fetch(`https://igcl-api.onrender.com/v1/policy/upload`, {
+      const response = await fetch(`${IMAGE_BASE_URL}`, {
         method: "POST",
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -245,7 +245,7 @@ export default function EditClient({ params }) {
                   <h3>Current Image</h3>
                 </div>
                 <img
-                  src={`https://igcl-api.onrender.com/uploads/` + currentImage}
+                  src={`${IMAGE_VIEW_URL}` + currentImage}
                   alt="Current preview"
                   className="object-cover m-2 mt-5 border border-black rounded-lg"
                   width={200}

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { API_BASE_URL } from "../../../../../utils/constants";
+import { API_BASE_URL, IMAGE_VIEW_URL } from "../../../../../utils/constants";
 import styles from "../resources.module.css";
 
 export default function Abstarcts() {
@@ -116,7 +116,7 @@ export default function Abstarcts() {
                   <td className="px-6 py-4 border">
                     {item.PDF ? (
                       <a
-                      href={`https://igcl-api.onrender.com/uploads/${item.PDF}`}
+                      href={`${IMAGE_VIEW_URL}${item.PDF}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         download

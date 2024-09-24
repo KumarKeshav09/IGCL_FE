@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { API_BASE_URL, IMAGE_VIEW_URL } from "../../../../../utils/constants";
 import Cookies from "js-cookie";
 
-export default function Judgement() {
+export default function Labor() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [listData, setListData] = useState(null);
   const [deleteId, setDeleteId] = useState(null);
@@ -16,22 +16,27 @@ export default function Judgement() {
   const [loading, setLoading] = useState(false);
   const token = Cookies.get("token");
 
+
   useEffect(() => {
-    getAllJudgements();
+    import("flowbite").then((module) => {
+      const { initFlowbite } = module;
+      initFlowbite();
+    });
+    getAllPolicies();
   }, [page]);
 
-  const getAllJudgements = async () => {
+  const getAllPolicies = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/judgement/allJudgement?page=${page}&limit=10`);
+      const res = await fetch(`${API_BASE_URL}/labourCode/allLabourCode?page=${page}&limit=10`);
       const data = await res.json();
       if (data.success) {
         setListData(data);
       } else {
-        toast.error(data.errMessage || "Failed to fetch judgements");
+        toast.error(data.errMessage || "Failed to fetch policies");
       }
     } catch (error) {
-      toast.error("An error occurred while fetching judgements");
+      toast.error("An error occurred while fetching policies");
     } finally {
       setLoading(false);
     }
@@ -40,7 +45,7 @@ export default function Judgement() {
   const handleDelete = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${API_BASE_URL}/judgement/deleteJudgement/${deleteId}`, {
+      const res = await fetch(`${API_BASE_URL}/labourCode/deleteLabourCode/${deleteId}`, {
         method: 'DELETE',
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -48,15 +53,15 @@ export default function Judgement() {
       });
       const data = await res.json();
       if (data.success) {
-        getAllJudgements();
+        getAllPolicies();
         setDeleteId(null);
         setIsPopupOpen(false);
-        toast.success(data.message || "Judgement deleted successfully");
+        toast.success(data.message || "Policy deleted successfully");
       } else {
-        toast.error(data.errMessage || "Failed to delete judgement");
+        toast.error(data.errMessage || "Failed to delete policy");
       }
     } catch (error) {
-      toast.error("An error occurred while deleting the judgement");
+      toast.error("An error occurred while deleting the policy");
     } finally {
       setLoading(false);
     }
@@ -66,7 +71,7 @@ export default function Judgement() {
     setPage(newPage);
   };
 
-  const deleteJudgementModal = (id) => {
+  const deletePolicyModal = (id) => {
     setDeleteId(id);
     setIsPopupOpen(true);
   };
@@ -80,16 +85,16 @@ export default function Judgement() {
     <section>
       <div className="relative overflow-x-auto sm:rounded-lg">
         <h1 className="text-2xl text-black underline mb-3 font-bold">
-          Judgement
+          Labor Codes
         </h1>
         <div className="flex flex-col sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
           <div>
-            <Link href="/resource/judgement/addJudgement">
+            <Link href={"resource/laborcodes/addLabor"}>
               <button
                 className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                 type="button"
               >
-                + Add Judgement
+                + Add Labor Code
               </button>
             </Link>
           </div>
@@ -101,10 +106,10 @@ export default function Judgement() {
                 S. No.
               </th>
               <th scope="col" className="px-6 py-3">
-                Judgement Title
+                Labor Code Title
               </th>
               <th scope="col" className="px-6 py-3">
-                Judgement PDF
+                PDF Link
               </th>
               <th scope="col" className="px-6 py-3">
                 Action
@@ -114,7 +119,7 @@ export default function Judgement() {
           <tbody>
             {loading ? (
               <tr>
-                <td colSpan="4" className="text-center py-4">
+                <td colSpan="5" className="text-center py-4">
                   <div role="status" className="flex justify-center items-center">
                     <svg
                       aria-hidden="true"
@@ -146,40 +151,31 @@ export default function Judgement() {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    {index + 1} {/* Adjust field name if needed */}
+                    {index + 1}
                   </td>
-                  <td
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    {item.Title} {/* Adjust field name if needed */}
-                  </td>
+                  <td className="px-6 py-4">{item.Title}</td>
                   <td className="px-6 py-4">
-                    {item.PDF ? (
-                      <a
-                        href={`${IMAGE_VIEW_URL}${item.PDF}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        download
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                      >
-                        Download PDF
-                      </a>
-                    ) : (
-                      <span>No PDF available</span>
-                    )}
+                    <a
+                      href={`${IMAGE_VIEW_URL}` + `${item.PDF}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download="Document.pdf"
+                      className="text-blue-600 hover:underline"
+                    >
+                      Download PDF
+                    </a>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center space-x-2">
                       <Link
-                        href={`/resource/judgement/${item._id}`}
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        href={`/resource/laborcodes/${item._id}`}
+                        className="font-medium text-blue-600 text-lg dark:text-blue-500 hover:underline"
                       >
                         <i className="bi bi-pencil-square"></i>
                       </Link>
                       <button
-                        onClick={() => deleteJudgementModal(item._id)}
-                        className="font-medium text-red-600 dark:text-red-500 hover:underline"
+                        onClick={() => deletePolicyModal(item._id)}
+                        className="font-medium text-red-600 text-lg dark:text-red-500 hover:underline"
                       >
                         <i className="bi bi-trash-fill"></i>
                       </button>
@@ -189,7 +185,7 @@ export default function Judgement() {
               ))
             ) : (
               <tr>
-                <td colSpan="4" className="text-center py-4">
+                <td colSpan="5" className="text-center py-4">
                   No data available
                 </td>
               </tr>
@@ -200,7 +196,7 @@ export default function Judgement() {
       <Pagination data={listData} pageNo={handlePageChange} pageVal={page} />
       <Popup
         isOpen={isPopupOpen}
-        title="Are you sure you want to delete this judgement?"
+        title="Are you sure you want to delete this labor code?"
         confirmLabel="Yes, I'm sure"
         cancelLabel="No, cancel"
         onConfirm={handleDelete}
@@ -208,4 +204,5 @@ export default function Judgement() {
       />
     </section>
   );
+
 }

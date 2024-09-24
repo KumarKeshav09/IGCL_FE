@@ -1,45 +1,24 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
-import 'react-toastify/dist/ReactToastify.css'; 
+import 'react-toastify/dist/ReactToastify.css';
 import { API_BASE_URL, IMAGE_BASE_URL } from "../../../../../../utils/constants";
 import Cookies from "js-cookie";
 
-export default function EditPolicy({ params }) {
+export default function AddLabor() {
   const [notificationTitle, setNotificationTitle] = useState("");
-  const [pdf, setPdf] = useState(null); // State to handle PDF upload
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const [pdf, setPdf] = useState(null);
   const router = useRouter();
-  const policyId = params?.editPolicy; // Adjusted to match the parameter name for policy
   const token = Cookies.get("token");
 
-  useEffect(() => {
-    const fetchPolicyDetails = async () => {
-      try {
-        const res = await fetch(`${API_BASE_URL}/policy/PolicyById/${policyId}`, {
-          headers: {
-            "Authorization": `Bearer ${token}`,
-          },
-        });
-        const data = await res.json();
-        if (data.success) {
-          const policy = data.data;
-          setNotificationTitle(policy.Title);
-          setPdf(policy.PDF);
-        } else {
-          toast.error(data.errMessage || "Failed to fetch policy details");
-        }
-      } catch (error) {
-        toast.error("An error occurred while fetching policy details");
-      }
-    };
+  const handleNotificationTitleChange = (e) => {
+    setNotificationTitle(e.target.value);
+  };
 
-    fetchPolicyDetails();
-  }, [token]);
-
-  const uploadPDF = async (pdfFile) => {
+  const uploadPDF = async (pdfFile, setLoading = () => { }) => {
     setLoading(true);
 
     try {
@@ -50,7 +29,7 @@ export default function EditPolicy({ params }) {
 
       // Create a FormData object
       const formData = new FormData();
-      formData.append('pdf', pdfFile);
+      formData.append('pdf', pdfFile); 
 
       const response = await fetch(`${IMAGE_BASE_URL}`, {
         method: "POST",
@@ -72,7 +51,9 @@ export default function EditPolicy({ params }) {
         return { errMessage: resData.error || 'An error occurred' };
       }
     } catch (error) {
-      toast.error(`Error: ${error.message}`);
+      if (typeof toast !== 'undefined') {
+        toast.error(`Error: ${error.message}`);
+      }
       return { errMessage: error.message || 'Unknown error occurred' };
     } finally {
       setLoading(false);
@@ -82,9 +63,9 @@ export default function EditPolicy({ params }) {
   const handlePdfChange = async (event) => {
     const file = event.target.files[0];
     if (file && file.type === 'application/pdf') {
-      const result = await uploadPDF(file);
+      const result = await uploadPDF(file, setLoading);
       if (result.successMessage) {
-        setPdf(result.successMessage.imageUrl); // Save the URL or path returned by the upload
+        setPdf(result.successMessage.imageUrl)
       } else {
         console.error('Upload error:', result.errMessage);
       }
@@ -93,49 +74,54 @@ export default function EditPolicy({ params }) {
     }
   };
 
+
+
+
   const submitForm = async () => {
-    if (!notificationTitle || !pdf) {
-      toast.error("Please fill in all required fields.");
-      return;
+    // Validate required fields
+    if ( !notificationTitle || !pdf) {
+        toast.error('Please fill in all required fields.');
+        return;
     }
 
+    // Create JSON object
     const requestBody = {
-      Title: notificationTitle,
-      PDF: pdf, // Include the PDF URL or path
+        Title: notificationTitle,
+        PDF: pdf  
     };
 
     try {
-      setLoading(true); // Set loading state to true when starting submission
-      const res = await fetch(`${API_BASE_URL}/policy/updatePolicy/${policyId}`, {
-        method: 'PATCH',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestBody),
-      });
+        // Send POST request
+        const response = await fetch(`${API_BASE_URL}/labourCode/add`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestBody),
+        });
 
-      const data = await res.json();
-      if (data.success) {
-        toast.success(data.message || "Policy updated successfully");
-        router.push("/resource#policy");
-      } else {
-        toast.error(data.errMessage || "Failed to update policy");
-      }
+        // Handle response
+        const data = await response.json();
+        if (data.success) {
+            router.push("/resource#laborcodes");
+            toast.success(data.message || "Policy added successfully");
+        } else {
+            toast.error(data.errMessage || "Failed to add policy");
+        }
     } catch (error) {
-      console.error(error);
-      toast.error("An error occurred while updating the policy");
-    } finally {
-      setLoading(false); // Reset loading state after completion
+        console.error(error);
+        toast.error("An error occurred while adding the policy");
     }
-  };
+};
+
 
   return (
     <section>
       <h1 className="text-2xl text-black underline mb-3 font-bold">
-        Update Your Notification Details
+        Add Your Labor Code Details
       </h1>
-      <Link href="/resource#policy">
+      <Link href="/resource#laborcodes">
         <div className="mb-5 mt-5">
           <button
             className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
@@ -152,15 +138,15 @@ export default function EditPolicy({ params }) {
               htmlFor="policyName"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
             >
-              Notification Title
+              Labor Codes Title
             </label>
             <input
               type="text"
               value={notificationTitle}
-              onChange={(e) => setNotificationTitle(e.target.value)}
+              onChange={handleNotificationTitleChange}
               id="policyName"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Notification Title"
+              placeholder="Labor Code Title"
               required
             />
           </div>
@@ -169,7 +155,7 @@ export default function EditPolicy({ params }) {
               htmlFor="pdf"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
             >
-              Notification PDF
+              Labor Code PDF
             </label>
             <input
               type="file"
@@ -182,14 +168,14 @@ export default function EditPolicy({ params }) {
           </div>
         </div>
       </form>
+
       <div>
         <button
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           type="button"
           onClick={submitForm}
-          disabled={loading} // Disable button when loading
         >
-          {loading ? "Updating..." : "Update"}
+          Submit
         </button>
       </div>
     </section>

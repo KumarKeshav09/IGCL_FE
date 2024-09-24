@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
 import 'react-toastify/dist/ReactToastify.css';
-import { API_BASE_URL } from "../../../../../utils/constants";
+import { API_BASE_URL, IMAGE_VIEW_URL } from "../../../../../utils/constants";
 import Cookies from "js-cookie";
 
 export default function Abstract() {
@@ -157,7 +157,7 @@ export default function Abstract() {
                   <td className="px-6 py-4">
                     {item.PDF ? (
                       <a
-                        href={`https://igcl-api.onrender.com/uploads/${item.PDF}`}
+                        href={`${IMAGE_VIEW_URL}${item.PDF}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         download

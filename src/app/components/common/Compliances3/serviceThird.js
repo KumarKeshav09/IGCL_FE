@@ -14,7 +14,7 @@ const Compliances3 = () => {
   return (
     <div className="md:flex">
       {/* Sidebar */}
-      <ul className="flex-column space-y space-y-4 text-nowrap text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
+      <ul className="flex-column space-y space-y-4 text-nowrap text-base font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
         <li>
           <button
             onClick={() => handleTabChange("profile")}

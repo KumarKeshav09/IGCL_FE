@@ -57,19 +57,16 @@ export default function CompliancesPost3() {
               >
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Comprehensive review of contractor agreements, ensuring
@@ -78,19 +75,16 @@ export default function CompliancesPost3() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Verification of contractor registration and licensing status
@@ -99,19 +93,16 @@ export default function CompliancesPost3() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Evaluation of contractor practices related to wages, working
@@ -121,19 +112,16 @@ export default function CompliancesPost3() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Examination of contractor's provision of amenities and
@@ -143,19 +131,16 @@ export default function CompliancesPost3() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-[1.5rem] h-7"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Assessment of contractor's compliance with record-keeping
@@ -165,19 +150,16 @@ export default function CompliancesPost3() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Identification of any instances of non-compliance or
@@ -186,19 +168,16 @@ export default function CompliancesPost3() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     OVerification of contractor's adherence to provisions
@@ -208,19 +187,16 @@ export default function CompliancesPost3() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Evaluation of contractor's implementation of grievance
@@ -230,19 +206,16 @@ export default function CompliancesPost3() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-[1.4rem] h-7"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Provision of detailed audit reports outlining findings,
@@ -252,19 +225,16 @@ export default function CompliancesPost3() {
                 </li>
                 <li className="flex space-x-2 rtl:space-x-reverse items-center">
                   <svg
-                    className="w-3.5 h-3.5 me-2 text-green-400 dark:text-green-500"
-                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 16 12"
+                    viewBox="0 0 16 16"
+                    id="Star"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5.917 5.724 10.5 15 1.5"
-                    />
+                      fill="#3f51b5"
+                      d="M13.62 7.82a1.21 1.21 0 0 0 .32-1.27 1.22 1.22 0 0 0-1-.84l-2.52-.37a.23.23 0 0 1-.18-.13L9.11 2.92a1.24 1.24 0 0 0-2.22 0L5.76 5.21a.23.23 0 0 1-.18.13l-2.52.37a1.22 1.22 0 0 0-1 .84 1.21 1.21 0 0 0 .32 1.27L4.2 9.59a.29.29 0 0 1 .07.22l-.43 2.51a1.23 1.23 0 0 0 1.79 1.3l2.26-1.18a.22.22 0 0 1 .22 0l2.26 1.18a1.18 1.18 0 0 0 .57.15 1.24 1.24 0 0 0 1.22-1.45l-.43-2.51a.26.26 0 0 1 .07-.21ZM11.1 8.88a1.24 1.24 0 0 0-.35 1.1l.43 2.51a.23.23 0 0 1-.1.23.22.22 0 0 1-.25 0l-2.25-1.17a1.27 1.27 0 0 0-1.16 0l-2.25 1.19a.22.22 0 0 1-.25 0 .23.23 0 0 1-.1-.23L5.25 10a1.24 1.24 0 0 0-.35-1.1L3.07 7.1A.25.25 0 0 1 3 6.86a.24.24 0 0 1 .2-.17l2.52-.36a1.24 1.24 0 0 0 .93-.68l1.14-2.28a.23.23 0 0 1 .42 0l1.13 2.28a1.24 1.24 0 0 0 .93.68l2.52.36a.24.24 0 0 1 .2.17.25.25 0 0 1-.06.24Z"
+                      className="color231f20 svgShape"
+                    ></path>
                   </svg>
                   <span className="leading-tight text-justify text-lg lg:text-xl">
                     Ongoing support and guidance to organizations in
@@ -301,7 +271,7 @@ export default function CompliancesPost3() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       Why do employers conduct contractor audits under the CLRA Act?
@@ -310,7 +280,7 @@ export default function CompliancesPost3() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                       Employers conduct contractor audits to ensure compliance with the CLRA Act, verify that contractors are adhering to legal obligations, and prevent potential legal issues or penalties.
                       </p>
                     </Accordion.Content>
@@ -319,7 +289,7 @@ export default function CompliancesPost3() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       What are the key areas assessed during a contractor audit?
@@ -328,7 +298,7 @@ export default function CompliancesPost3() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                       Audits typically focus on the contractor's adherence to statutory provisions, payment of wages, working conditions, safety measures, and maintenance of records as per the CLRA Act.
                       </p>
                     </Accordion.Content>
@@ -337,7 +307,7 @@ export default function CompliancesPost3() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       How does a contractor audit impact the relationship between employers and contractors?
@@ -346,7 +316,7 @@ export default function CompliancesPost3() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                       A well-conducted audit can strengthen the relationship by ensuring transparency and adherence to legal requirements. It helps in identifying and resolving issues early, fostering a cooperative working environment.
                       </p>
                     </Accordion.Content>
@@ -355,7 +325,7 @@ export default function CompliancesPost3() {
                 <Accordion.Panel className=" border border-b border-gray-200">
                   <section className=" border-b border-gray-200">
                     <Accordion.Title
-                      className="border-none  text-base font-normal text-gray-900 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
+                      className="border-none  text-base font-normal text-gray-500 lg:text-xl  dark:text-gray-400 bg-transparent hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
                       What impact do contractor audits have on reducing financial and legal risks for businesses?
@@ -364,7 +334,7 @@ export default function CompliancesPost3() {
                       className="border-none text-base  font-normal text-gray-900 lg:text-xl dark:text-gray-400 hover:bg-transparent
                     focus:bg-transparent   focus:ring-grey-0 focus:ring-0"
                     >
-                      <p className=" mb-2 text-gray-800 dark:text-gray-800 ">
+                      <p className=" mb-2 text-gray-500 dark:text-gray-800 text-justify ">
                       Contractor audits help identify and rectify potential compliance issues before they escalate into legal disputes or financial penalties. By proactively addressing these issues, businesses can reduce their exposure to costly lawsuits, fines, and other financial liabilities associated with non-compliance.
                       </p>
                     </Accordion.Content>

@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./testimonial.module.css"
 import { API_BASE_URL } from "../../../../../utils/constants";
+import { toast } from "react-toastify";
 
 
 const settings = {
@@ -84,15 +85,12 @@ const Testimonials = () => {
             <Slider {...settings} >
             {listData?.data?.map((item) => (
               <div className={`${styles.cardWidth} mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6`}>
-                <div className="w-full flex mb-4 items-center">
-                  <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200 flex">
-                    {/* <img src={`https://igcl-api.onrender.com/uploads/` + `${item.Image}`} alt="Kenzie Edgar" /> */}
-                    <img src={`../../../images/person1.jpg`} alt="Kenzie Edgar" />
-                  </div>
+                <div className="w-full flex mb-2 items-center">
                   <div className="flex-grow pl-3">
                     <h6 className="font-bold text-sm uppercase text-gray-600">
                       {item.Name}
                     </h6>
+                    <p>{item.Designation} - {item.CompanyName} </p>
                   </div>
                 </div>
                 <div className="w-full">

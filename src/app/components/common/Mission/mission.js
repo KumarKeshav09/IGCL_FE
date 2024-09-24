@@ -9,13 +9,13 @@ const VisionMission = () => {
         {
             heading: "Our Vision",
             content:
-                "To be recognized as a key provider of strategic consulting for the development and execution of growth strategies across the world.",
+                "To be recognized as a premier provider of strategic consulting, driving the development and execution of transformative growth strategies that empower businesses to thrive on a global scale.",
         },
         {
             heading: "Our Mission",
             content:
                 "Led by energetic and experienced professionals, we use a dedicated business approach to produce innovative and strategic, yet affordable, solutions and result oriented service which helps clients to accomplish their venturesome goals with optimized costs.",
-    },
+        },
     ]);
     return (
         <div
@@ -33,7 +33,7 @@ const VisionMission = () => {
                                 {item?.heading}
                             </h3>
 
-                            <p className="m-4 text-left text-black text-md font-semibold text-justify">
+                            <p className="m-4 text-gray-500 text-primary md:text-xl text-justify">
                                 {item?.content}
                             </p>
                         </div>

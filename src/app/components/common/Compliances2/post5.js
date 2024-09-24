@@ -8,11 +8,11 @@ export default function CompliancesPost5() {
             <div className="">
               <div className="text-gray-500 sm:text-lg dark:text-gray-400">
                 <h2 className="mb-4 text-4xl tracking-tight md:text-7xl font-bold mb-5 text-gray-800">
-                  Other Labour Law Compliances
+                  Other Labor Law Compliances
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-2">
                   <p className="mb-4 font-medium text-justify text-lg lg:text-xl">
-                    Labour Law Compliances are regulations governing labor relations and workplace practices, ensuring fair treatment and legal standards adherence. Covering areas such as wages, working conditions, and safety, they protect the rights of both employers and employees. Adherence to these compliances is crucial for organizations to mitigate legal risks, uphold employee welfare, and foster a productive work environment.
+                    Labor Law Compliances are regulations governing labor relations and workplace practices, ensuring fair treatment and legal standards adherence. Covering areas such as wages, working conditions, and safety, they protect the rights of both employers and employees. Adherence to these compliances is crucial for organizations to mitigate legal risks, uphold employee welfare, and foster a productive work environment.
                   </p>
                 </div>
                 <div className="rounded-lg dark:bg-gray-800">

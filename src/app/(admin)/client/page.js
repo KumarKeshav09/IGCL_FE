@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Pagination from "@/app/components/common/pagination";
 import Popup from "@/app/components/common/popup";
-import { API_BASE_URL } from "../../../../utils/constants";
+import { API_BASE_URL, IMAGE_VIEW_URL } from "../../../../utils/constants";
 import Cookies from "js-cookie";
 
 export default function Clients() {
@@ -158,7 +158,7 @@ export default function Clients() {
                     <td className="px-6 py-4">
                       <img
                         className="imageCircle"
-                        src={`https://igcl-api.onrender.com/uploads/` + `${item.Image}`}
+                        src={`${IMAGE_VIEW_URL}` + `${item.Image}`}
                         width={100}
                         height={100}
                       />
