@@ -162,7 +162,7 @@
 
     .overlay:hover .textSecret {
         display: block;
-        font-size: 10px;
+        font-size: 1rem;
     }
 
     .textNum {
@@ -190,7 +190,7 @@
 
     .overlay:hover .textSecret {
         display: block;
-        font-size: 8px;
+        font-size: 1rem;
         bottom: 1rem;
     }
 
@@ -216,7 +216,7 @@
 
     .overlay:hover .textSecret {
         display: block;
-        font-size: 7px;
+        font-size: 1rem;
         bottom: 1rem;
     }
 

@@ -90,7 +90,7 @@ const Testimonials = () => {
                     <h6 className="font-bold text-sm uppercase text-gray-600">
                       {item.Name}
                     </h6>
-                    <p>{item.Designation} - {item.CompanyName} </p>
+                    <p className="text-sm">{item.Designation} - {item.CompanyName} </p>
                   </div>
                 </div>
                 <div className="w-full">
