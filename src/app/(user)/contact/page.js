@@ -157,13 +157,14 @@ export default function Contact() {
                     </h6>
                   </div>
                   <hr />
+                  <h3 className="mt-4 text-md font-semibold leading-8 md:text-start text-center text-indigo-600 hover:text-black cursor-pointer">
+                    F-130, First Floor, Cine Star Central Spine, Vidhyadhar Nagar, Jaipur-302039, Rajasthan (India)
+                  </h3>
                 </div>
               </div>
 
 
-              <h3 className="mt-4 text-md font-semibold leading-8 md:text-start text-center text-indigo-600 hover:text-black cursor-pointer">
-                F-130, First Floor, Cine Star Central Spine, Vidhyadhar Nagar, Jaipur-302039, Rajasthan (India)
-              </h3>
+
 
             </div>
             <div className="mb-8 mx-8 mt-4 text-center text-black contactDetail">
@@ -195,11 +196,12 @@ export default function Contact() {
                     </h6>
                   </div>
                   <hr />
+                  <h3 className="mt-4 text-indigo-600 hover:text-black text-md font-semibold leading-8 md:text-start text-center cursor-pointer">
+                    A-611, Vaishali Utsav, Gandhi Path (W), Vaishali Nagar, Jaipur-302021, Rajasthan (India)
+                  </h3>
                 </div>
               </div>
-              <h3 className="mt-4 text-indigo-600 hover:text-black text-md font-semibold leading-8 md:text-start text-center cursor-pointer">
-                A-611, Vaishali Utsav, Gandhi Path (W), Vaishali Nagar, Jaipur-302021, Rajasthan (India)
-              </h3>
+
             </div>
             <div className="mb-8 mx-8 mt-4 text-center  text-black contactDetail">
               <div className="flex">
@@ -224,12 +226,13 @@ export default function Contact() {
                     </h6>
                   </div>
                   <hr />
+                  <h3 className="mt-4 text-indigo-600 hover:text-black text-md font-semibold leading-8 md:text-start text-center cursor-pointer">
+                    info@igclindia.com
+                  </h3>
 
                 </div>
               </div>
-              <h3 className="mt-4 text-indigo-600 hover:text-black text-md font-semibold leading-8 md:text-start text-center cursor-pointer">
-                info@igclindia.com
-              </h3>
+
             </div>
             <div className="mb-8 mx-8 mt-4 text-center text-black contactDetail">
               <div className="flex">
@@ -255,12 +258,13 @@ export default function Contact() {
                     </h6>
                   </div>
                   <hr />
+                  <h3 className="mt-4 text-md text-indigo-600 hover:text-black font-semibold leading-8 md:text-start text-center cursor-pointer">
+                    +919460733333, +919314046269
+                  </h3>
 
                 </div>
               </div>
-              <h3 className="mt-4 text-md text-indigo-600 hover:text-black font-semibold leading-8 md:text-start text-center cursor-pointer">
-                +919460733333, +919314046269
-              </h3>
+
             </div>
             {/* <div className="ml-4 mt-4">
                 <Link href="https://maps.app.goo.gl/tzzUFEkv4FgsA5MR9" target="_blank">
