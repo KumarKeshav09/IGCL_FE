@@ -1,3 +1,21 @@
-.cardWidth{
-    width: 90% !important;
+.cardWidth {
+    width: 95% !important;
+    height: 200px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  @media (max-width: 1440px) {
+    .cardWidth{
+        height: 260px; 
+
+    }
+}
+@media (max-width: 430px) {
+    .cardWidth{
+        height: 280px; 
+
+    }
 }

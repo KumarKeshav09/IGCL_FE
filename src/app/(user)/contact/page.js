@@ -104,255 +104,177 @@ export default function Contact() {
         <section className="bg-white dark:bg-gray-900">
           <div className="pt-8 px-4 mx-auto max-w-screen-xl lg:pt-16 lg:px-6">
             <div className="">
-              <div className=" text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 className="text-2xl text-justify tracking-tight font-semibold text-gray-900 dark:text-white">
-                For inquiries, please contact us. Alternatively, if you prefer to reach us by phone, you can find a nearby office location.
-                </h2>
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  <p className="mb-4 font-medium">
-                    Track work across the enterprise through an open,
-                    collaborative platform. Link issues across Jira and ingest
-                    data from other software development tools, so your IT
-                    support and operations teams have richer contextual
-                    information to rapidly respond to requests, incidents, and
-                    changes.
-                  </p>
-                  <p className="mb-4 font-medium">
-                    Deliver great service experiences fast - without the
-                    complexity of traditional ITSM solutions.Accelerate critical
-                    development work, eliminate toil, and deploy changes with
-                    ease.
-                  </p>
-                </div> */}
+              <div className="text-center max-w-xl mx-auto">
+                <h1 className="text-3xl md:text-4xl font-bold mb-2 text-gray-800">
+                  Contact Us
+                </h1>
+                <div className="text-center mb-5">
+                  <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                  <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                  <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                  <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                  <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                </div>
               </div>
             </div>
           </div>
-          {/* <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-12 lg:px-6">
-            <div className=" grid grid-cols-1 md:grid-cols-3 md:border-indigo-600 border-white px-10 py-6">
-              <div className="mb-8 mx-8 flex text-black contactDetail">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="size-10"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                  />
-                </svg>
-
-                <div className="ml-4">
-                  <div className="flex justify-center">
-                    <h6 className="text-gray-700  ml-3 text-md font-medium leading-5 pb-3 md:text-start text-center">
-                      Address
-                    </h6>
-                  </div>
-                  <hr />
-                  <h3 className="mt-4 text-xl font-semibold leading-8 md:text-start text-center">
-                    Taman Tower Jaipur, Rajasthan
-                  </h3>
-                </div>
-              </div>
-              <div className="mb-8 mx-8 flex text-black contactDetail">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="size-10"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                  />
-                </svg>
-                <div className="ml-4">
-                  <div className="flex justify-center">
-                    <h6 className="text-gray-700 ml-3 text-md font-medium leading-5 pb-3 md:text-start text-center">
-                      Email Address
-                    </h6>
-                  </div>
-                  <hr />
-                  <h3 className="mt-4 text-xl font-semibold leading-8 md:text-start text-center">
-                    pagedone@gmail.com
-                  </h3>
-                </div>
-              </div>
-              <div className="mb-8 mx-8 flex text-black contactDetail">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="size-10 "
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
-                  />
-                </svg>
-
-                <div className="ml-4">
-                  <div className="flex justify-center">
-                    <h6 className="text-gray-700 ml-3 text-md font-medium leading-5 pb-3 md:text-start text-center">
-                      Phone Number
-                    </h6>
-                  </div>
-                  <hr />
-                  <h3 className="mt-4 text-xl font-semibold leading-8 md:text-start text-center">
-                    +918723565354
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </section>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-2 px-2 py-2 md:p-8">
         <div className="">
-          <iframe className="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.0552144790804!2d75.77863037597295!3d26.96515075783419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3cddab37c43%3A0x2d77769bd35ce17f!2sIGCL%20India!5e0!3m2!1sen!2sin!4v1722684446948!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+
+          <iframe className="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.215543683814!2d75.68789117597113!3d26.8966536607795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4be3b44bc21d%3A0x868c76019d26c676!2sVaishali%20Utsav!5e0!3m2!1sen!2sin!4v1727677114729!5m2!1sen!2sin" allowfullscreen=""></iframe>
         </div>
         <div className="py-8 px-4 mx-auto max-w-screen-xl content-center lg:py-12 lg:px-6">
-          <div className=" grid grid-cols-1 md:grid-cols-2 md:border-indigo-600 border-white md:px-10 md:py-6 justify-items-center">
-            <div className="mb-8 mx-8 mt-4 flex text-black contactDetail">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-20"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                />
-              </svg>
+          <div className=" grid grid-cols-1 md:grid-cols-2 md:border-indigo-600 border-white px-4 py-6">
+            <div className="mb-8 mx-8 mt-4 text-center text-black contactDetail">
+              <div className="flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="size-8"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                  />
+                </svg>
 
-              <div className="ml-4">
-                <div className="flex justify-center">
-                  <h6 className="text-gray-700  ml-3 text-lg font-medium leading-5 pb-3 md:text-start text-center">
-                    Registered Office (INDIA)
-                  </h6>
+                <div className="ml-4 w-full">
+                  <div className="flex justify-center">
+                    <h6 className="text-gray-700  ml-3 text-xl font-bold leading-5 pb-3 md:text-start text-center">
+                      Registered Office (INDIA)
+                    </h6>
+                  </div>
+                  <hr />
                 </div>
-                <hr />
-                <h3 className="mt-4 text-base font-semibold leading-8 md:text-start text-center">
+              </div>
+
+
+              <h3 className="mt-4 text-md font-semibold leading-8 md:text-start text-center text-indigo-600 hover:text-black cursor-pointer">
                 F-130, First Floor, Cine Star Central Spine, Vidhyadhar Nagar, Jaipur-302039, Rajasthan (India)
-                </h3>
-              </div>
-            </div>
-            <div className="mb-8 mx-8 mt-4 flex text-black contactDetail">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-20"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                />
-              </svg>
+              </h3>
 
-              <div className="ml-4">
-                <div className="flex justify-center">
-                  <h6 className="text-gray-700  ml-3 text-lg font-medium leading-5 pb-3 md:text-start text-center">
-                  Corporate Office (INDIA)
-                  </h6>
+            </div>
+            <div className="mb-8 mx-8 mt-4 text-center text-black contactDetail">
+              <div className="flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="size-8"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                  />
+                </svg>
+
+                <div className="ml-4 w-full">
+                  <div className="flex justify-center">
+                    <h6 className="text-gray-700  ml-3 text-xl font-bold leading-5 pb-3 md:text-start text-center">
+                      Corporate Office (INDIA)
+                    </h6>
+                  </div>
+                  <hr />
                 </div>
-                <hr />
-                <h3 className="mt-4 text-base font-semibold leading-8 md:text-start text-center">
+              </div>
+              <h3 className="mt-4 text-indigo-600 hover:text-black text-md font-semibold leading-8 md:text-start text-center cursor-pointer">
                 A-611, Vaishali Utsav, Gandhi Path (W), Vaishali Nagar, Jaipur-302021, Rajasthan (India)
-                </h3>
-              </div>
+              </h3>
             </div>
-            
-            <div className="mb-8 mx-8 mt-4 flex text-black contactDetail">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-10"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                />
-              </svg>
-              <div className="ml-4">
-                <div className="flex justify-center">
-                  <h6 className="text-gray-700 ml-3 text-md font-medium leading-5 pb-3 md:text-start text-center">
-                    Email Address
-                  </h6>
-                </div>
-                <hr />
-                <h3 className="mt-4 text-xl font-semibold leading-8 md:text-start text-center">
-                  info@igclindia.com
-                </h3>
-              </div>
-            </div>
-            <div className="mb-8 mx-8 mt-4 flex text-black contactDetail">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-10 "
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
-                />
-              </svg>
+            <div className="mb-8 mx-8 mt-4 text-center  text-black contactDetail">
+              <div className="flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="size-8"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                  />
+                </svg>
+                <div className="ml-4 w-full">
+                  <div className="flex justify-center">
+                    <h6 className="text-gray-700 ml-3 text-xl font-bold leading-5 pb-3 md:text-start text-center">
+                      Email Address
+                    </h6>
+                  </div>
+                  <hr />
 
-              <div className="ml-4 w-full">
-                <div className="flex justify-center">
-                  <h6 className="text-gray-700 ml-3 text-md font-medium leading-5 pb-3 md:text-start text-center">
-                    Phone Number
-                  </h6>
                 </div>
-                <hr />
-                <h3 className="mt-4 text-xl font-semibold leading-8 md:text-start text-center">
-                  +919460733333, +919314046269
-                </h3>
               </div>
+              <h3 className="mt-4 text-indigo-600 hover:text-black text-md font-semibold leading-8 md:text-start text-center cursor-pointer">
+                info@igclindia.com
+              </h3>
             </div>
+            <div className="mb-8 mx-8 mt-4 text-center text-black contactDetail">
+              <div className="flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="size-8 "
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                  />
+                </svg>
+
+                <div className="ml-4 w-full">
+                  <div className="flex justify-center">
+                    <h6 className="text-gray-700  ml-3 text-xl font-bold leading-5 pb-3 md:text-start text-center">
+                      Phone Number
+                    </h6>
+                  </div>
+                  <hr />
+
+                </div>
+              </div>
+              <h3 className="mt-4 text-md text-indigo-600 hover:text-black font-semibold leading-8 md:text-start text-center cursor-pointer">
+                +919460733333, +919314046269
+              </h3>
+            </div>
+            {/* <div className="ml-4 mt-4">
+                <Link href="https://maps.app.goo.gl/tzzUFEkv4FgsA5MR9" target="_blank">
+                  <div className="flex justify-center">
+                    <h6 className="mt-4 text-xl font-semibold text-black leading-8 md:text-start text-center contactDetail ">
+                      Get Direction <i className="bi bi-arrow-right"></i>
+                    </h6>
+                  </div>
+                </Link>
+                </div> */}
           </div>
         </div>
       </div>
+
 
       <section className={`${styles.forthSection} flex`}>
         <div className={`${styles.forthSectionInner}`}>

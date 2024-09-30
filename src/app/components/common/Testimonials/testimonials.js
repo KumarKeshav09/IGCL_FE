@@ -82,27 +82,28 @@ const Testimonials = () => {
           </div>
           <div className="-mx-3">
             <div className="px-5 md:px-16">
-            <Slider {...settings} >
-            {listData?.data?.map((item) => (
-              <div className={`${styles.cardWidth} mx-auto bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6`}>
-                <div className="w-full flex mb-2 items-center">
-                  <div className="flex-grow pl-3">
-                    <h6 className="font-bold text-sm uppercase text-gray-600">
-                      {item.Name}
-                    </h6>
-                    <p className="text-sm">{item.Designation} - {item.CompanyName} </p>
+              <Slider {...settings}>
+                {listData?.data?.map((item) => (
+                  <div className={`${styles.cardWidth} mx-auto  bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6`}>
+                    <div className="w-full flex mb-2 items-center">
+                      <div className="flex-grow pl-3">
+                        <h6 className="font-bold text-sm uppercase text-gray-600">
+                          {item.Name}
+                        </h6>
+                        <p className="text-sm">{item.Designation} - {item.CompanyName}</p>
+                      </div>
+                    </div>
+                    <div className="w-full flex-grow flex items-center justify-center">
+                      <p className="text-sm leading-tight text-justify">
+                        <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
+                        {item.Message}
+                        <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="w-full">
-                  <p className="text-sm leading-tight text-justify">
-                    <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
-                    {item.Message}
-                    <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
-                  </p>
-                </div>
-              </div>
-            ))}
-            </Slider>
+                ))}
+              </Slider>
+
             </div>
           </div>
         </div>
