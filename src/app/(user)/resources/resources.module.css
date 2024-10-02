@@ -1,13 +1,26 @@
-.sideBarWidth{
-    height: 60rem;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    width: 20%;
+@media screen and (max-width: 700px) {
+    .scrollContainer {
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+        display: flex;
+        /* Align children in a row */
+        white-space: nowrap;
+        /* Prevent wrapping */
+        scroll-behavior: smooth;
+    }
+
+    .navBar {
+        display: flex;
+        /* Align the tab items in a row */
+    }
+
+    .scrollButton {
+        display: inline-block !important;
+        /* Hide buttons when screen width is less than 700px */
+    }
 }
 
-@media screen and (max-width: 768px) {
-    .sideBarWidth{
-        height: 20rem;
-        width: 90%;
-    }
+
+.scrollButton {
+    display: none;
 }

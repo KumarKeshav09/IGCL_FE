@@ -1,8 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import styles from "../services/[servicesDetail]/servicedetails.module.css";
 import Abstarcts from "./abstracts/abstarcts";
 import Judgements from "./judgements/judgements";
@@ -13,24 +11,22 @@ import Labor from "./labor/labor";
 
 export default function Resources() {
   const [activeTab, setActiveTab] = useState("profile");
+  const tabListRef = useRef(null);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
-    if (["profile", "dashboard", "settings","code"].includes(hash)) {
+    if (["profile", "dashboard", "settings", "code"].includes(hash)) {
       setActiveTab(hash);
     }
-    
+
     const handleHashChange = () => {
       const newHash = window.location.hash.slice(1);
-      if (["profile", "dashboard", "settings"].includes(newHash)) {
+      if (["profile", "dashboard", "settings", "code"].includes(newHash)) {
         setActiveTab(newHash);
       }
     };
 
-    // Add event listener for hash change
     window.addEventListener("hashchange", handleHashChange);
-
-    // Cleanup listener on unmount
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
     };
@@ -41,72 +37,63 @@ export default function Resources() {
     window.history.pushState(null, "", `#${tabId}`);
   };
 
+  const scrollLeft = () => {
+    if (tabListRef.current) {
+      tabListRef.current.scrollBy({
+        left: -200,
+        behavior: 'smooth', // Smooth scrolling
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (tabListRef.current) {
+      tabListRef.current.scrollBy({
+        left: 200,
+        behavior: 'smooth', // Smooth scrolling
+      });
+    }
+  };
+
   return (
     <main>
       <Navbar />
-      <div className={`mb-4 border-b border-gray-200 dark:border-gray-700`}>
-        <ul
-          className={`${styles.navBar} md:pl-24 flex flex-wrap -mb-px text-sm font-medium text-center`}
-          id="default-tab"
-          role="tablist"
-        >
-          <li className="me-2" role="presentation">
-            <Link href="/resources#profile" passHref>
-              <button
-                onClick={() => handleTabChange("profile")}
-                className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === "profile" ? "text-indigo-500" : "hover:text-indigo-500 text-black"}`}
-                id="profile-tab"
-                role="tab"
-                aria-controls="profile"
-                aria-selected={activeTab === "profile"}
-              >
-                Abstarct
-              </button>
-            </Link>
-          </li>
-          <li className="me-2" role="presentation">
-            <Link href="/resources#dashboard" passHref>
-              <button
-                onClick={() => handleTabChange("dashboard")}
-                className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === "dashboard" ? "text-indigo-500" : "hover:text-indigo-500 text-black"}`}
-                id="dashboard-tab"
-                role="tab"
-                aria-controls="dashboard"
-                aria-selected={activeTab === "dashboard"}
-              >
-                Judgement
-              </button>
-            </Link>
-          </li>
-          <li className="me-2" role="presentation">
-            <Link href="/resources#settings" passHref>
-              <button
-                onClick={() => handleTabChange("settings")}
-                className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === "settings" ? "text-indigo-500" : "hover:text-indigo-500 text-black"}`}
-                id="settings-tab"
-                role="tab"
-                aria-controls="settings"
-                aria-selected={activeTab === "settings"}
-              >
-                Notification
-              </button>
-            </Link>
-          </li>
-          <li className="me-2" role="presentation">
-            <Link href="/resources#code" passHref>
-              <button
-                onClick={() => handleTabChange("code")}
-                className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === "code" ? "text-indigo-500" : "hover:text-indigo-500 text-black"}`}
-                id="code-tab"
-                role="tab"
-                aria-controls="code"
-                aria-selected={activeTab === "code"}
-              >
-                Labor Code
-              </button>
-            </Link>
-          </li>
-        </ul>
+      <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
+        <div className="flex items-center md:ml-24">
+          <button onClick={scrollLeft} className={`mx-2 text-black ${styles.scrollButton}`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-left-circle-fill text-indigo-500" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+            </svg>
+          </button>
+          <div className={`overflow-x-auto ${styles.scrollContainer}`} ref={tabListRef}>
+            <ul className={`${styles.navBar} flex`} role="tablist">
+              {["profile", "dashboard", "settings", "code"].map((tab) => (
+                <li className="me-2" role="presentation" key={tab}>
+                  <Link href={`/resources#${tab}`} passHref>
+                    <button
+                      onClick={() => handleTabChange(tab)}
+                      className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === tab ? "text-indigo-500" : "hover:text-indigo-500 text-black"}`}
+                      id={`${tab}-tab`}
+                      role="tab"
+                      aria-controls={tab}
+                      aria-selected={activeTab === tab}
+                    >
+                      {tab === "profile" && "Abstarct"}
+                      {tab === "dashboard" && "Judgement"}
+                      {tab === "settings" && "Notification"}
+                      {tab === "code" && "Labor Code"}
+                    </button>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <button onClick={scrollRight} className={`mx-2  text-black ${styles.scrollButton}`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-right-circle-fill text-indigo-500" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+            </svg>
+          </button>
+        </div>
       </div>
       <div id="default-tab-content">
         <div
