@@ -1,7 +1,26 @@
 @media screen and (max-width: 700px) {
-    .navBar{
-        overflow-x: scroll;
-        flex-wrap: nowrap !important;
-        text-wrap: nowrap;
+    .scrollContainer {
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+        display: flex;
+        /* Align children in a row */
+        white-space: nowrap;
+        /* Prevent wrapping */
+        scroll-behavior: smooth;
     }
+
+    .navBar {
+        display: flex;
+        /* Align the tab items in a row */
+    }
+
+    .scrollButton {
+        display: inline-block !important;
+        /* Hide buttons when screen width is less than 700px */
+    }
+}
+
+
+.scrollButton {
+    display: none;
 }
