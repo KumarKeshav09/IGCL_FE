@@ -111,7 +111,7 @@ export default function aboutUs() {
       </div> */}
       <div className={`${styles.heroSection}`}>
         <div className={`${styles.heroSectionLeft} md:pr-10 `}>
-          <h1 className={`${styles.heroMain}`}>About ICGL</h1>
+          <h1 className={`${styles.heroMain}`}>About IGCL</h1>
           <p className={`${styles.despText} text-justify`}>
             Innovative Governance Corporation Limited (IGCL INDIA) is a public
             limited corporation, set up under “The Companies Act 2013” of the
