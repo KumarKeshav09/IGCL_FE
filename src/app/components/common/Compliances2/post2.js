@@ -50,7 +50,7 @@ export default function CompliancesPost2() {
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
               </div>
             </div>
-            <div className=" rounded-lg dark:bg-gray-800">
+            <div className=" p-4  rounded-lg md:p-8 dark:bg-gray-800">
               <ul className="list-disc mt-8 text-gray-500 text-justify text-lg lg:text-xl">
                 <li>
                   Factory compliances are applicable to all establishments
