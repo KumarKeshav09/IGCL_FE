@@ -53,7 +53,7 @@ export default function Judgements() {
         <table className=" w-full border text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" className="px-6 py-3 border">
+              <th scope="col" className="px-6 py-3 md:w-24 border">
                 S. No.
               </th>
               <th scope="col" className="px-6 py-3 border">
