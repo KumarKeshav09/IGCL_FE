@@ -78,28 +78,31 @@ export default function aboutUs() {
 
   const boxRef = useRef(null);
 
-    useEffect(() => {
-        const scrollBox = boxRef.current;
-        let scrollInterval;
+  useEffect(() => {
+    const scrollBox = boxRef.current;
+    let scrollInterval;
 
-        const autoScroll = () => {
-            if (scrollBox) {
-                scrollBox.scrollBy({
-                    left: 400, // Adjust the scroll amount as needed
-                    behavior: 'smooth'
-                });
+    const autoScroll = () => {
+      if (scrollBox) {
+        scrollBox.scrollBy({
+          left: 400, // Adjust the scroll amount as needed
+          behavior: "smooth",
+        });
 
-                // Reset scroll if it reaches the end
-                if (scrollBox.scrollLeft + scrollBox.clientWidth >= scrollBox.scrollWidth) {
-                    scrollBox.scrollLeft = 0;
-                }
-            }
-        };
+        // Reset scroll if it reaches the end
+        if (
+          scrollBox.scrollLeft + scrollBox.clientWidth >=
+          scrollBox.scrollWidth
+        ) {
+          scrollBox.scrollLeft = 0;
+        }
+      }
+    };
 
-        scrollInterval = setInterval(autoScroll, 3000); // Change slides every 3 seconds
+    scrollInterval = setInterval(autoScroll, 3000); // Change slides every 3 seconds
 
-        return () => clearInterval(scrollInterval);
-    }, []);
+    return () => clearInterval(scrollInterval);
+  }, []);
 
   return (
     <>
@@ -145,8 +148,18 @@ export default function aboutUs() {
         </div>
         <div className={`${styles.valueSection}`} ref={boxRef}>
           <div className={`${styles.eachBlock}`}>
-            <img className={`${styles.imageBefore}`} src="../../images/people-roof1.png" width={60} height={60} />
-            <img className={`${styles.imageAfter}`} src="../../images/people-roof-W.png" width={60} height={60} />
+            <img
+              className={`${styles.imageBefore}`}
+              src="../../images/people-roof1.png"
+              width={60}
+              height={60}
+            />
+            <img
+              className={`${styles.imageAfter}`}
+              src="../../images/people-roof-W.png"
+              width={60}
+              height={60}
+            />
             <h1 className={`${styles.headText} mt-2`}>Family</h1>
             <p className={`${styles.despText} text-justify `}>
               Our strength lies in the diverse network of peers, mentors, and
@@ -156,8 +169,18 @@ export default function aboutUs() {
             </p>
           </div>
           <div className={`${styles.eachBlock}`}>
-            <img className={`${styles.imageBefore}`} src="../../images/bulb1.png" width={60} height={60} />
-            <img className={`${styles.imageAfter}`} src="../../images/bulb-W.png" width={60} height={60} />
+            <img
+              className={`${styles.imageBefore}`}
+              src="../../images/bulb1.png"
+              width={60}
+              height={60}
+            />
+            <img
+              className={`${styles.imageAfter}`}
+              src="../../images/bulb-W.png"
+              width={60}
+              height={60}
+            />
             <h1 className={`${styles.headText} mt-2`}>Innovation</h1>
             <p className={`${styles.despText} text-justify`}>
               We embrace new approaches to enhance effectiveness and efficiency.
@@ -166,8 +189,18 @@ export default function aboutUs() {
             </p>
           </div>
           <div className={`${styles.eachBlock}`}>
-            <img className={`${styles.imageBefore}`} src="../../images/store-buyer1.png" width={60} height={60} />
-            <img className={`${styles.imageAfter}`} src="../../images/store-buyer-W.png" width={60} height={60} />
+            <img
+              className={`${styles.imageBefore}`}
+              src="../../images/store-buyer1.png"
+              width={60}
+              height={60}
+            />
+            <img
+              className={`${styles.imageAfter}`}
+              src="../../images/store-buyer-W.png"
+              width={60}
+              height={60}
+            />
             <h1 className={`${styles.headText} mt-2`}>Ownership</h1>
             <p className={`${styles.despText} text-justify`}>
               We take initiative and embrace responsibility for our projects.
@@ -176,8 +209,18 @@ export default function aboutUs() {
             </p>
           </div>
           <div className={`${styles.eachBlock}`}>
-            <img className={`${styles.imageBefore}`} src="../../images/customer1.png" width={60} height={60} />
-            <img className={`${styles.imageAfter}`} src="../../images/customer-W.png" width={60} height={60} />
+            <img
+              className={`${styles.imageBefore}`}
+              src="../../images/customer1.png"
+              width={60}
+              height={60}
+            />
+            <img
+              className={`${styles.imageAfter}`}
+              src="../../images/customer-W.png"
+              width={60}
+              height={60}
+            />
             <h1 className={`${styles.headText} mt-2`}>Happy Customer</h1>
             <p className={`${styles.despText} text-justify`}>
               Our customers are assured about the confidentiality and uniqueness
@@ -187,8 +230,18 @@ export default function aboutUs() {
             </p>
           </div>
           <div className={`${styles.eachBlock}`}>
-            <img className={`${styles.imageBefore}`} src="../../images/talent1.png" width={60} height={60} />
-            <img className={`${styles.imageAfter}`} src="../../images/talent-W.png" width={60} height={60} />
+            <img
+              className={`${styles.imageBefore}`}
+              src="../../images/talent1.png"
+              width={60}
+              height={60}
+            />
+            <img
+              className={`${styles.imageAfter}`}
+              src="../../images/talent-W.png"
+              width={60}
+              height={60}
+            />
             <h1 className={`${styles.headText} mt-2`}>Success</h1>
             <p className={`${styles.despText} text-justify`}>
               We are committed to ensuring that our advice and recommendations
@@ -197,8 +250,18 @@ export default function aboutUs() {
             </p>
           </div>
           <div className={`${styles.eachBlock}`}>
-            <img className={`${styles.imageBefore}`} src="../../images/trust-alt1.png" width={60} height={60} />
-            <img className={`${styles.imageAfter}`} src="../../images/trust-alt-W.png" width={60} height={60} />
+            <img
+              className={`${styles.imageBefore}`}
+              src="../../images/trust-alt1.png"
+              width={60}
+              height={60}
+            />
+            <img
+              className={`${styles.imageAfter}`}
+              src="../../images/trust-alt-W.png"
+              width={60}
+              height={60}
+            />
             <h1 className={`${styles.headText} mt-2`}>Trust</h1>
             <p className={`${styles.despText} text-justify`}>
               Our customers are the heart of all we do; we strive to deliver the
@@ -207,7 +270,6 @@ export default function aboutUs() {
             </p>
           </div>
         </div>
-
       </div>
       <hr />
 
@@ -218,40 +280,13 @@ export default function aboutUs() {
 
       {/* team  */}
       <div className={`${styles.teamSection}`}>
-        <h1 className={`${styles.headMain}`}>Leadership</h1>
+        <h1 className={`${styles.headMain}`}>Director Message</h1>
         <div className="text-center mb-2">
           <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
           <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
-        </div>
-        <div className={`${styles.teamInnerSection}`}>
-          <div className="w-[100%] md:w-[40%] lg:w-[20%] p-4">
-            <img
-              src="../../images/vijay.jpg"
-              alt="Description of the image"
-              className={`${styles.teamInnerImage}`}
-            />
-          </div>
-          <div className="w-[100%] md:w-[60%] lg:w-[80%] p-4 text-black lg:content-center">
-            <h1 className={`${styles.heroMain}`}>Dr Vijay Vyas</h1>
-            <p>Director - Corporate Alliance </p>
-            <p className={`${styles.despText} text-justify`}>
-              Welcome to Innovative Governance Corporation Limited (IGCL INDIA),
-              where we specialize in navigating the complex terrain of labor law
-              with precision and expertise. As the Director of this esteemed
-              consultancy, I am proud to lead a team dedicated to providing
-              unparalleled support and guidance to businesses across industries.
-              Our mission is to empower organizations with the knowledge and
-              strategies needed to thrive while upholding the highest standards
-              of legal compliance. At IGCL INDIA, we believe that proactive
-              compliance not only mitigates risk but also fosters a culture of
-              fairness and respect in the workplace. It is our privilege to
-              serve as your trusted advisors, providing clarity and peace of
-              mind in the complex world of labor law.
-            </p>
-          </div>
         </div>
         <div className={`${styles.teamInnerSection}`}>
           <div className="w-[100%] md:w-[40%] lg:w-[20%] p-4">
@@ -263,7 +298,6 @@ export default function aboutUs() {
           </div>
           <div className="w-[100%] md:w-[60%] lg:w-[80%] p-4 text-black lg:content-center">
             <h1 className={`${styles.heroMain}`}>Nitesh Choudhary</h1>
-            <p>Director - Operations</p>
             <p className={`${styles.despText} text-justify`}>
               Progress for me has never been a dream. It has always been a
               distant reality and once one milestone is achieved, there is
@@ -276,6 +310,29 @@ export default function aboutUs() {
               services. The journey of IGCL is never-ending. But with the
               support of my team and clients, I am confident that the company
               will continue to scale milestones of excellence for years to come.
+            </p>
+          </div>
+        </div>
+        <div className={`${styles.teamInnerSection}`}>
+          <div className="w-[100%] md:w-[40%] lg:w-[20%] p-4">
+            <img
+              src="../../images/Sanju.jpeg"
+              alt="Description of the image"
+              className={`${styles.teamInnerImage}`}
+            />
+          </div>
+          <div className="w-[100%] md:w-[60%] lg:w-[80%] p-4 md:my-4 text-black lg:content-center">
+            <h1 className={`${styles.heroMain}`}>Sanju</h1>
+            <p className={`${styles.despText} text-justify`}>
+              Welcome to Innovative Governance Corporation Limited (IGCL INDIA),
+              where we specialize in navigating the complex terrain of labor law
+              with precision and expertise. Our mission is to empower organizations
+              with the knowledge and strategies needed to thrive while upholding
+              the highest standards of legal compliance. At IGCL INDIA, we
+              believe that proactive compliance not only mitigates risk but also
+              fosters a culture of fairness and respect in the workplace. It is
+              our privilege to serve as your trusted advisors, offering clarity
+              and peace of mind in the complex world of labor law.
             </p>
           </div>
         </div>
