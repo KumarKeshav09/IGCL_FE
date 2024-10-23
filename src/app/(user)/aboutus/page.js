@@ -280,7 +280,7 @@ export default function aboutUs() {
 
       {/* team  */}
       <div className={`${styles.teamSection}`}>
-        <h1 className={`${styles.headMain}`}>Director Message</h1>
+        <h1 className={`${styles.headMain}`}>Director&apos;s Message</h1>
         <div className="text-center mb-2">
           <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
           <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
