@@ -24,7 +24,7 @@ export default function Navbar() {
       <nav className={`h-32 ${isHomeActive ? 'bg-gray-100 dark:bg-gray-800' : 'bg-gray-200 dark:bg-gray-900'} w-full relative z-50 top-0 start-0`}>
         <div className={`${styles.navMain} max-w-screen flex flex-wrap items-center justify-between mx-auto py-4 md:px-28`}>
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="/images/logoWithoutBg.png" className="h-24" alt="IGCl Logo" />
+            <img src="../../images/logoWithoutBg.png" className="h-24" alt="IGCl Logo" />
           </Link>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
