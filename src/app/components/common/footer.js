@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -10,15 +11,19 @@ export default function Footer() {
               href=""
               className="mb-4 flex items-center space-x-3 rtl:space-x-reverse"
             >
-              <img
-                src="../../images/logoWithoutBg.png"
-                className="h-28"
+              <Image
+                src="/images/logoWithoutBg.png"
                 alt="igcl Logo"
+                width={112}
+                height={112}
               />
             </a>
             <div>
               <p className="text-black text-justify">
-                IGCL INDIA: Dedicated to excellence in Labor law and statutory compliance, we consistently deliver unparalleled service and value, driven by our expertise and commitment to our clients' success.
+                IGCL INDIA: Dedicated to excellence in Labor law and statutory
+                compliance, we consistently deliver unparalleled service and
+                value, driven by our expertise and commitment to our clients'
+                success.
               </p>
             </div>
           </div>
@@ -63,14 +68,10 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="mb-4">
-                  <p>
-                    Phone : +919460733333, +919314046269
-                  </p>
+                  <p>Phone : +919460733333, +919314046269</p>
                 </li>
                 <li className="mb-4">
-                  <p >
-                    Email : info@igclindia.com
-                  </p>
+                  <p>Email : info@igclindia.com</p>
                 </li>
               </ul>
               <div className="flex mt-6  md:mt-0 space-x-5 rtl:space-x-reverse">
