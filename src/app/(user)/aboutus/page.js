@@ -85,7 +85,7 @@ export default function aboutUs() {
     const autoScroll = () => {
       if (scrollBox) {
         scrollBox.scrollBy({
-          left: 400, // Adjust the scroll amount as needed
+          left: 430, // Adjust the scroll amount as needed
           behavior: "smooth",
         });
 
