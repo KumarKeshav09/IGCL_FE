@@ -164,6 +164,10 @@
     }
 }
 
+.forthBoxText{
+    color: white;
+}
+
 @media screen and (max-width: 494px) {
     .card {
         margin-bottom: 1rem;

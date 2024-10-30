@@ -32,14 +32,14 @@ export default function Product() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 px-2 md:px-24">
                     <div className={`${styles.backgroundImg}`}>
-                        <h1 className="text-5xl px-6 py-4 font-semibold">Know Your Compliance</h1>
+                        <h1 className="text-5xl px-6 py-4 font-semibold text-white">Know Your Compliance</h1>
                     </div>
                     <div className="border border-blue bg-indigo-500 px-7 md:px-20 py-6 flex flex-col">
                         <div className="flex-grow">
-                            <h1 className="text-3xl  md:text-4xl font-medium mb-3">Welcome to Know Your Compliance</h1>
+                            <h1 className="text-3xl  md:text-4xl font-medium mb-3 text-white">Welcome to Know Your Compliance</h1>
                             <ul className="list-disc text-base md:text-lg mb-4">
-                                <li className="text-base md:text-xl font-medium mb-3 text-justify">Your go-to tool for effortlessly navigating the complex landscape of labour laws applicable to your establishment. Whether you're a small startup or a large enterprise, ensuring compliance with labour regulations is crucial to maintaining a legal and ethical workplace.</li>
-                                <li className="text-base md:text-xl font-medium mb-3 text-justify">Our intuitive platform simplifies this process by helping you identify the specific labour laws that apply to your business based on your industry, location, and workforce size. With Know Your Compliance, you can stay updated with the latest legal requirements, minimize risk, and focus on what matters most—growing your business.</li>
+                                <li className="text-base md:text-xl font-medium mb-3 text-justify text-white">Your go-to tool for effortlessly navigating the complex landscape of labour laws applicable to your establishment. Whether you're a small startup or a large enterprise, ensuring compliance with labour regulations is crucial to maintaining a legal and ethical workplace.</li>
+                                <li className="text-base md:text-xl font-medium mb-3 text-justify text-white">Our intuitive platform simplifies this process by helping you identify the specific labour laws that apply to your business based on your industry, location, and workforce size. With Know Your Compliance, you can stay updated with the latest legal requirements, minimize risk, and focus on what matters most—growing your business.</li>
                             </ul>
                         </div>
                         <div className="flex justify-end mt-auto">
