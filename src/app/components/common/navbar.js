@@ -36,7 +36,7 @@ export default function Navbar() {
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <Image
+            <img
               src="/images/logoWithoutBg.png"
               alt="igcl Logo"
               width={112}
