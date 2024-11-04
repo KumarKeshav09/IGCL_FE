@@ -37,7 +37,7 @@ export default function Navbar() {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
-              src="/images/logoWithoutBg.png"
+              src="/images/logoWIthoutBg.png"
               alt="igcl Logo"
               width={112}
               height={112}

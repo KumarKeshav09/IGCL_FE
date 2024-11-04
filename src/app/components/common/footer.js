@@ -11,8 +11,8 @@ export default function Footer() {
               href=""
               className="mb-4 flex items-center space-x-3 rtl:space-x-reverse"
             >
-              <Image
-                src="/images/logoWithoutBg.png"
+              <img
+                src="/images/logoWIthoutBg.png"
                 alt="igcl Logo"
                 width={112}
                 height={112}
