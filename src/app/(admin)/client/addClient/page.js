@@ -4,13 +4,14 @@ import { useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { API_BASE_URL, IMAGE_BASE_URL } from "../../../../../utils/constants";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import Cookies from "js-cookie";
 
 export default function AddTestiMonials() {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [image, setImage] = useState(null);
+  const [imageUpload, setImageUpload] = useState(null);
   const [loading, setLoading] = useState(false); // Manage loading state
   const imageInputRef = useRef(null);
   const router = useRouter();
@@ -24,52 +25,45 @@ export default function AddTestiMonials() {
     setComment(e.target.value);
   };
 
-  const handleImageInputChange = (e) => {
-    const file = e.target.files[0];
-    const acceptedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
-
-    if (file && acceptedFileTypes.includes(file.type)) {
-      setImage(file);
-    } else {
-      toast.error("Invalid image type. Please upload only JPEG or PNG files.");
-      if (imageInputRef.current) {
-        imageInputRef.current.value = "";
-      }
-    }
-  };
-
   const uploadImage = async (imageFile) => {
     setLoading(true);
 
     try {
       // Ensure the file is valid
-      if (!imageFile || !["image/jpeg", "image/jpg", "image/png"].includes(imageFile.type)) {
-        throw new Error('Invalid image type. Please upload a JPEG or PNG file.');
+      if (
+        !imageFile ||
+        !["image/jpeg", "image/jpg", "image/png"].includes(imageFile.type)
+      ) {
+        throw new Error(
+          "Invalid image type. Please upload a JPEG or PNG file."
+        );
       }
 
       // Create FormData
       const formData = new FormData();
-      formData.append('pdf', imageFile);
+      formData.append("pdf", imageFile);
 
       const response = await fetch(`${IMAGE_BASE_URL}`, {
         method: "POST",
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: formData,
       });
 
       if (!response.ok) {
         const errorBody = await response.text();
-        throw new Error(`HTTP error! Status: ${response.status}. Response: ${errorBody}`);
+        throw new Error(
+          `HTTP error! Status: ${response.status}. Response: ${errorBody}`
+        );
       }
 
       const resData = await response.json();
 
       if (resData?.success) {
-        return { imageUrl: resData.imageUrl };
+        setImageUpload(resData.imageUrl);
       } else {
-        throw new Error(resData.error || 'An error occurred');
+        throw new Error(resData.error || "An error occurred");
       }
     } catch (error) {
       toast.error(`Error: ${error.message}`);
@@ -79,32 +73,40 @@ export default function AddTestiMonials() {
     }
   };
 
+  const handleImageInputChange = async (e) => {
+    const file = e.target.files[0];
+    const acceptedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
+
+    if (file && acceptedFileTypes.includes(file.type)) {
+      setImage(file);
+      await uploadImage(file)
+    } else {
+      toast.error("Invalid image type. Please upload only JPEG or PNG files.");
+      if (imageInputRef.current) {
+        imageInputRef.current.value = "";
+      }
+    }
+  };
+
+
   const submitForm = async () => {
     if (!name || !comment || !image) {
       toast.error("Please fill in all required fields.");
       return;
     }
 
-    const uploadResult = await uploadImage(image);
-
-    if (uploadResult.error) {
-      return; // If image upload fails, exit early
-    }
-
-    const { imageUrl } = uploadResult;
-
     const requestBody = {
       Name: name,
       Description: comment,
-      Image: imageUrl, // Assuming imageUrl is used in your form submission
+      Image: imageUpload, 
     };
 
     try {
       const response = await fetch(`${API_BASE_URL}/client/add`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify(requestBody),
       });
@@ -122,6 +124,31 @@ export default function AddTestiMonials() {
     }
   };
 
+  // const submitForm = async () => {
+  //   // const uploadResult = await uploadImage(image);
+
+  //   // if (uploadResult.error) {
+  //   //   return;
+  //   // }
+
+  //   // const { imageUrl } = uploadResult;
+  //   const requestBody = new URLSearchParams();
+  //   requestBody.append("Name", "name");
+  //   requestBody.append("Image", "1730721150802-clientC16.png");
+  //   requestBody.append("Description", "comment");
+
+  //   fetch("https://igrf.igclindia.com/v1/client/add", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/x-www-form-urlencoded",
+  //       "Authorization": `Bearer ${token}`,
+  //     },
+  //     body: requestBody.toString(),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => console.log("Response:", data))
+  //     .catch((error) => console.error("Error:", error));
+  // };
   return (
     <section>
       <h1 className="text-2xl text-black underline mb-3 font-bold">
