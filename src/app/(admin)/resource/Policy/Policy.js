@@ -153,7 +153,7 @@ export default function Policy() {
                   >
                     {index + 1}
                   </td>
-                  <td className="px-6 py-4">{item.Title}</td>
+                  <td className="px-6 py-4  text-gray-900">{item.Title}</td>
                   <td className="px-6 py-4">
                     <a
                       href={`${IMAGE_VIEW_URL}` + `${item.PDF}`}

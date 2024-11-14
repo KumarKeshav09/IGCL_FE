@@ -9,7 +9,7 @@ import Cookies from "js-cookie";
 
 export default function AddPolicy() {
   const [notificationTitle, setNotificationTitle] = useState("");
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false); // Track loading state
   const [pdf, setPdf] = useState(null);
   const router = useRouter();
   const token = Cookies.get("token");
@@ -18,7 +18,7 @@ export default function AddPolicy() {
     setNotificationTitle(e.target.value);
   };
 
-  const uploadPDF = async (pdfFile, setLoading = () => { }) => {
+  const uploadPDF = async (pdfFile, setLoading = () => {}) => {
     setLoading(true);
 
     try {
@@ -29,7 +29,7 @@ export default function AddPolicy() {
 
       // Create a FormData object
       const formData = new FormData();
-      formData.append('pdf', pdfFile); 
+      formData.append('pdf', pdfFile);
 
       const response = await fetch(`${IMAGE_BASE_URL}`, {
         method: "POST",
@@ -38,7 +38,6 @@ export default function AddPolicy() {
 
       // Check if the response status is OK
       if (!response.ok) {
-        // Read response body to get detailed error message
         const errorBody = await response.text();
         throw new Error(`HTTP error! Status: ${response.status}. Response: ${errorBody}`);
       }
@@ -51,9 +50,7 @@ export default function AddPolicy() {
         return { errMessage: resData.error || 'An error occurred' };
       }
     } catch (error) {
-      if (typeof toast !== 'undefined') {
-        toast.error(`Error: ${error.message}`);
-      }
+      toast.error(`Error: ${error.message}`);
       return { errMessage: error.message || 'Unknown error occurred' };
     } finally {
       setLoading(false);
@@ -65,7 +62,7 @@ export default function AddPolicy() {
     if (file && file.type === 'application/pdf') {
       const result = await uploadPDF(file, setLoading);
       if (result.successMessage) {
-        setPdf(result.successMessage.imageUrl)
+        setPdf(result.successMessage.imageUrl); // Store the PDF URL after successful upload
       } else {
         console.error('Upload error:', result.errMessage);
       }
@@ -74,47 +71,43 @@ export default function AddPolicy() {
     }
   };
 
-
-
-
   const submitForm = async () => {
     // Validate required fields
-    if ( !notificationTitle || !pdf) {
-        toast.error('Please fill in all required fields.');
-        return;
+    if (!notificationTitle || !pdf) {
+      toast.error('Please fill in all required fields.');
+      return;
     }
 
     // Create JSON object
     const requestBody = {
-        Title: notificationTitle,
-        PDF: pdf  
+      Title: notificationTitle,
+      PDF: pdf
     };
 
     try {
-        // Send POST request
-        const response = await fetch(`${API_BASE_URL}/policy/add`, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(requestBody),
-        });
+      // Send POST request
+      const response = await fetch(`${API_BASE_URL}/policy/add`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+      });
 
-        // Handle response
-        const data = await response.json();
-        if (data.success) {
-            router.push("/resource#policy");
-            toast.success(data.message || "Policy added successfully");
-        } else {
-            toast.error(data.errMessage || "Failed to add policy");
-        }
+      // Handle response
+      const data = await response.json();
+      if (data.success) {
+        router.push("/resource#policy");
+        toast.success(data.message || "Policy added successfully");
+      } else {
+        toast.error(data.errMessage || "Failed to add policy");
+      }
     } catch (error) {
-        console.error(error);
-        toast.error("An error occurred while adding the policy");
+      console.error(error);
+      toast.error("An error occurred while adding the policy");
     }
-};
-
+  };
 
   return (
     <section>
@@ -174,8 +167,9 @@ export default function AddPolicy() {
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           type="button"
           onClick={submitForm}
+          disabled={loading} // Disable the button when loading is true
         >
-          Submit
+          {loading ? 'Uploading...' : 'Submit'} {/* Change button text while uploading */}
         </button>
       </div>
     </section>

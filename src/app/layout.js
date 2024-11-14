@@ -16,6 +16,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link
+          href="/images/logoWIthoutBg.png"
+          rel="icon"
+          type="image/x-icon"
+        />
+        <link
           href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
           rel="stylesheet"
         />

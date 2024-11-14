@@ -1,4 +1,5 @@
 // components/Modal.js
+"use client"
 import React, { useState } from 'react';
 import styles from './Modal.module.css'; // Update or remove this if not needed
 import MyForm from '../KYC/KYC';
@@ -6,6 +7,7 @@ import OtpLogin from "../OtpLogin/otplogin"; // Ensure the correct import path
 
 const Modal = ({ isOpen, onClose }) => {
     const [accepted, setAccepted] = useState(false);
+    const [isModalOpen, setModalOpen] = useState(false);
 
     const handleClose = () => {
         // Reset the accepted state when closing
@@ -18,6 +20,11 @@ const Modal = ({ isOpen, onClose }) => {
     };
 
     if (!isOpen) return null;
+
+    
+
+    const openModal = () => setModalOpen(true);
+    const closeModal = () => setModalOpen(false);
 
     return (
         <div

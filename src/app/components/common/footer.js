@@ -68,7 +68,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="mb-4">
-                  <p>Phone : +919460733333, +919314046269</p>
+                  <p>Phone : +91-93140-46269, 0141-6765462</p>
                 </li>
                 <li className="mb-4">
                   <p>Email : info@igclindia.com</p>
