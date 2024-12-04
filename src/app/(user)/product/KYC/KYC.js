@@ -5,11 +5,10 @@ import Select from "react-select"; // Ensure you have the react-select package i
 import { API_BASE_URL } from "../../../../../utils/constants";
 import Cookies from "js-cookie";
 import Modal from "../Result/result";
+import LoadingScreen from "@/app/components/common/Loading";
 
 const MyForm = () => {
   const token = Cookies.get("UserId");
-  const [FilteredData, setFilteredData] = useState([]);
-  const [kycDataList, setKycData] = useState([]);
   const [errors, setErrors] = useState({});
   const [matchedStates, setMatchedStates] = useState([]);
   // Options for the select components
@@ -34,7 +33,7 @@ const MyForm = () => {
   ];
 
   const statesOptions = [
-    { value: "Whole India", label: "Whole India" },
+    { value: "Central", label: "Central" },
     { value: "Andhra Pradesh", label: "Andhra Pradesh" },
     { value: "Arunachal Pradesh", label: "Arunachal Pradesh" },
     { value: "Assam", label: "Assam" },
@@ -203,8 +202,18 @@ const MyForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const [isLoading, setIsLoading] = useState(false); 
+  const [openModalLoading, setModalOpenLoading] = useState(false);
+  const [openModalResult, setIsModalOpenResult] = useState(false);
+  const [FilteredData, setFilteredData] = useState([]); // Assuming FilteredData is an array
+  const [kycDataList, setKycDataList] = useState([]); // Assuming kycDataList is an array
+
+
   // Handle form submission
   const submit = async () => {
+    setIsLoading(true); // Set loading to true at the beginning
+    setModalOpenLoading(true); // Show loading modal
+
     // if (!validateForm()) return;
 
     const kycData = {
@@ -239,7 +248,7 @@ const MyForm = () => {
   //     "IsDeleted": false
   // }
 
-    setKycData(kycData);
+  setKycDataList(kycData);
 
     try {
       const verificationResponse = await fetch(
@@ -271,41 +280,26 @@ const MyForm = () => {
       const resultData = await response.json();
       console.log("resultData ---->", resultData);
       setFilteredData(resultData?.matchingKyc);
-      console.log("resultData ---->", resultData.matchingKyc);
+      setIsLoading(false)
     } catch (error) {
       console.error("Error during API calls:", error);
     }
   };
 
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [isModalOpenResult, setIsModalOpenResult] = useState(false);
-  const [isLoading, setIsLoading] = useState(true); // Loading state
-
-  // Open modal
-  const openModalResult = () => setIsModalOpenResult(true);
-
-  // Check if both FilteredData and kycDataList are populated
-  const isDataReady = Array.isArray(FilteredData) && FilteredData.length > 0;
-
   // Open modal only when data is ready
   useEffect(() => {
-    // Simulate loading process
-    if (FilteredData && kycDataList) {
-      setIsLoading(false); // Data is ready, stop loading
+    if (!isLoading) {
+      if (FilteredData && FilteredData.length > 0) {
+        setIsModalOpenResult(true); // Open the result modal when data is ready
+      } else {
+        setIsModalOpenResult(false); // Close the result modal if no data
+      }
     }
+  }, [isLoading, FilteredData]); // Re-run whenever isLoading or FilteredData changes
 
-    if (isDataReady) {
-      setIsModalOpenResult(true); // Open modal when data is available
-    } else {
-      setIsModalOpenResult(false); // Close modal if data is not ready
-    }
-  }, [FilteredData, kycDataList]); // Dependency on both data lists
-
-  // Close modal function
-  const closeModalResult = () => {
-    setIsModalOpenResult(false); // Function to close modal
-  };
-
+  // Close modal functions
+  const closeModalLoading = () => setModalOpenLoading(false);
+  const closeModalResult = () => setIsModalOpenResult(false);
   return (
     <>
       <form className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
@@ -569,7 +563,8 @@ const MyForm = () => {
                     htmlFor="maxContractLabourEngaged"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Maximum Number of Contract Labor Engaged in any Contractor
+                    Maximum Number of Contract labour Engaged through any
+                    Contractor
                   </label>
                   <input
                     type="number"
@@ -907,7 +902,6 @@ const MyForm = () => {
 
       <button
         onClick={() => {
-          openModalResult();
           submit();
         }}
         data-modal-target="default-modal"
@@ -916,9 +910,9 @@ const MyForm = () => {
         popovertarget="my-popover"
         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
-        Search
+        Submit
       </button>
-      <div
+      {/* <div
         id="default-modal"
         tabindex="-1"
         aria-hidden="true"
@@ -966,22 +960,27 @@ const MyForm = () => {
             <p className="text-gray-500">No data found.</p>
           )
         ) : null}
-      </div>
+      </div> */}
       <div>
-        {isLoading ? (
-          <div className="loading-spinner">
-            <span>Loading...</span>
-          </div>
-        ) : (
-          isDataReady && (
-            <Modal
-              isOpen={isModalOpenResult}
-              onClose={closeModalResult}
-              data={FilteredData}
-              kyc={kycDataList}
-            />
-          )
-        )}
+      {isLoading ? (
+        <>
+        <LoadingScreen
+          isOpen={openModalLoading}
+          onClose={closeModalLoading}
+        />
+        <h1>{console.log("isloadingUp ----->", isLoading)}</h1>
+        </>
+      ) : (
+        <>
+          <Modal
+            isOpen={openModalResult}
+            onClose={closeModalResult}
+            data={FilteredData}
+            kyc={kycDataList}
+          />
+          <h1>{console.log("isloadingUp ----->", isLoading)}</h1>
+          </>
+      )}
       </div>
     </>
   );

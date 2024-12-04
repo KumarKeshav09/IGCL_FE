@@ -1,4 +1,5 @@
 "use client";
+import LoadingScreen from "@/app/components/common/Loading";
 import React, { useState } from "react";
 
 const Modal = ({ isOpen, onClose, data, kyc }) => {
@@ -34,16 +35,23 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
       >
         <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
           <div className="flex items-center justify-between p-4 md:p-5 mx-10 rounded-t dark:border-gray-600">
-            <h1 className="text-black text-4xl font-semibold">
-              Know Your Compliance
-            </h1>
+            <div>
+              <h1 className="text-black text-4xl font-semibold">
+                Know Your Compliance
+              </h1>
+              <p className="text-gray-900 w-3/5">
+                Your go-to tool for effortlessly navigating the complex
+                landscape of labour laws applicable to your establishment.
+              </p>
+            </div>
             <img src="/images/logoWIthoutBg.png" className="w-32 h-32" />
           </div>
           <div className="border-b"></div>
-          <marquee className="bg-indigo-500">
-            Thank you for choosing Know Your Compliance. We’re here to help you
-            stay compliant and focus on what matters most—your business!
-          </marquee>
+          <div className=" text-black font-semibold text-xl pt-6 px-14">
+            <span className="text-gray-500 text-3xl">" </span>Thank you for choosing Know Your Compliance. We’re here to help you
+            stay compliant and focus on what matters most your business! <span className="text-gray-500 text-3xl">"</span>
+          </div>
+
           <div className="p-4 md:p-5 space-y-4">
             {/* Check if there is no data */}
             {isNoDataAvailable ? (
@@ -73,7 +81,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                             <td className="border border-gray-300 p-2">
                               {new Date(
                                 kyc.DateOfCommenceMent
-                              ).toLocaleDateString()}
+                              ).toLocaleDateString("en-IN")}
                             </td>
                           </tr>
                           <tr>
@@ -97,7 +105,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                               State Of Operations
                             </th>
                             <td className="border border-gray-300 p-2">
-                              {kyc.StateOfOperations.join(', ')}
+                              {kyc.StateOfOperations.join(", ")}
                             </td>
                           </tr>
                           <tr>
@@ -130,7 +138,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                             Compliance Frequency
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-60 ">
-                            State
+                            Remark
                           </th>
                         </tr>
                       </thead>
@@ -147,8 +155,10 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                               {item.ComplianceFrequency}
                             </td>
                             <td className="px-8 py-4 text-sm text-gray-500">
-                            {console.log(item.State)}
-                            {item.State.join(', ')} 
+                              {console.log(item.State)}
+                              {item.remark == "This Law valid for "
+                                ? "-"
+                                : item.remark}
                             </td>
                           </tr>
                         ))}
