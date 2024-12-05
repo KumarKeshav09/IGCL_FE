@@ -1,8 +1,24 @@
 "use client";
 import LoadingScreen from "@/app/components/common/Loading";
-import React, { useState } from "react";
+// import html2pdf from "html2pdf.js";
+import React, { useRef, useState } from "react";
 
 const Modal = ({ isOpen, onClose, data, kyc }) => {
+  // const contentRef = useRef();
+  // const handleDownload = () => {
+  //   if (typeof window !== "undefined") {
+  //     const element = contentRef.current;
+
+  //     var opt = {
+  //       image: { type: "jpeg", quality: 0.98 },
+  //       html2canvas: { scale: 2 },
+  //       jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+  //     };
+  //     if (data) {
+  //       html2pdf().from(element).set(opt).save("download.pdf");
+  //     }
+  //   }
+  // };
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleClose = () => {
@@ -21,6 +37,10 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
   const isNoDataAvailable =
     (!kyc || Object.keys(kyc).length === 0) && (!data || data.length === 0);
 
+  // useEffect(() => {
+  //   handleDownload();
+  // }, []);
+
   return (
     <div
       onClick={handleClose}
@@ -33,7 +53,10 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
         className="relative p-4 w-full max-w-7xl max-h-full"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+        <div
+          ref={contentRef}
+          className="relative bg-white rounded-lg shadow dark:bg-gray-700"
+        >
           <div className="flex items-center justify-between p-4 md:p-5 mx-10 rounded-t dark:border-gray-600">
             <div>
               <h1 className="text-black text-4xl font-semibold">
@@ -48,8 +71,10 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
           </div>
           <div className="border-b"></div>
           <div className=" text-black font-semibold text-xl pt-6 px-14">
-            <span className="text-gray-500 text-3xl">" </span>Thank you for choosing Know Your Compliance. We’re here to help you
-            stay compliant and focus on what matters most your business! <span className="text-gray-500 text-3xl">"</span>
+            <span className="text-gray-500 text-3xl">" </span>Thank you for
+            choosing Know Your Compliance. We’re here to help you stay compliant
+            and focus on what matters most your business!{" "}
+            <span className="text-gray-500 text-3xl">"</span>
           </div>
 
           <div className="p-4 md:p-5 space-y-4">
@@ -121,6 +146,13 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                     </div>
                   </div>
                 ) : null}
+
+                <button
+                  onClick={handleDownload}
+                  className="border p-2 rounded-md border-gray-400 text-blue-600"
+                >
+                  Download PDF
+                </button>
 
                 {/* Display the data table if data is available */}
                 <div className="overflow-x-auto">
