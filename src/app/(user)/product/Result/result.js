@@ -54,7 +54,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          ref={contentRef}
+          // ref={contentRef}
           className="relative bg-white rounded-lg shadow dark:bg-gray-700"
         >
           <div className="flex items-center justify-between p-4 md:p-5 mx-10 rounded-t dark:border-gray-600">
@@ -147,12 +147,12 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                   </div>
                 ) : null}
 
-                <button
+                {/* <button
                   onClick={handleDownload}
                   className="border p-2 rounded-md border-gray-400 text-blue-600"
                 >
                   Download PDF
-                </button>
+                </button> */}
 
                 {/* Display the data table if data is available */}
                 <div className="overflow-x-auto">
