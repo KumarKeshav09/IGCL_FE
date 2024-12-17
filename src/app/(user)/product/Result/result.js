@@ -1,24 +1,24 @@
 "use client";
 import LoadingScreen from "@/app/components/common/Loading";
-// import html2pdf from "html2pdf.js";
+import html2pdf from "html2pdf.js";
 import React, { useRef, useState } from "react";
 
 const Modal = ({ isOpen, onClose, data, kyc }) => {
-  // const contentRef = useRef();
-  // const handleDownload = () => {
-  //   if (typeof window !== "undefined") {
-  //     const element = contentRef.current;
+  const contentRef = useRef();
+  const handleDownload = () => {
+    if (typeof window !== "undefined") {
+      const element = contentRef.current;
 
-  //     var opt = {
-  //       image: { type: "jpeg", quality: 0.98 },
-  //       html2canvas: { scale: 2 },
-  //       jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-  //     };
-  //     if (data) {
-  //       html2pdf().from(element).set(opt).save("download.pdf");
-  //     }
-  //   }
-  // };
+      var opt = {
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+      };
+      if (data) {
+        html2pdf().from(element).set(opt).save("download.pdf");
+      }
+    }
+  };
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleClose = () => {
@@ -54,7 +54,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          // ref={contentRef}
+          ref={contentRef}
           className="relative bg-white rounded-lg shadow dark:bg-gray-700"
         >
           <div className="flex items-center justify-between p-4 md:p-5 mx-10 rounded-t dark:border-gray-600">
@@ -147,12 +147,12 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                   </div>
                 ) : null}
 
-                {/* <button
+                <button
                   onClick={handleDownload}
                   className="border p-2 rounded-md border-gray-400 text-blue-600"
                 >
                   Download PDF
-                </button> */}
+                </button>
 
                 {/* Display the data table if data is available */}
                 <div className="overflow-x-auto">

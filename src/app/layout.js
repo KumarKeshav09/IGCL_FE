@@ -15,11 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link
-          href="/images/logoWIthoutBg.png"
-          rel="icon"
-          type="image/x-icon"
-        />
+        <link href="/images/logoWIthoutBg.png" rel="icon" type="image/x-icon" />
         <link
           href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
           rel="stylesheet"
@@ -59,6 +55,13 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         ></link>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+        <script
+          type="text/javascript"
+          src="https://code.jquery.com/jquery-2.1.3.js"
+        ></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
       </head>
       <body className={inter.className}>
         {children}

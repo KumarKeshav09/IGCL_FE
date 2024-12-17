@@ -4,18 +4,27 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "../../components/common/footer";
 import styles from "./product.module.css";
-import { useState } from "react";
-import Modal from "./ModelLogin/modellogin";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
-
+// Dynamically import the Modal component to disable SSR
+const Modal = dynamic(() => import("./ModelLogin/modellogin"), { ssr: false });
 
 export default function Product() {
     const [isModalOpen, setModalOpen] = useState(false);
 
     const openModal = () => setModalOpen(true);
     const closeModal = () => setModalOpen(false);
+
+    useEffect(() => {
+        // This code will run only on the client side
+        if (typeof window !== 'undefined' && typeof self !== 'undefined') {
+            const selfReference = self; // Safe to use `self` here
+        }
+    }, []);
+
     return (
-        <main className="">
+        <main>
             <Navbar />
             <div className="md:px-10">
                 <div className="text-center max-w-xl mx-auto">
@@ -48,8 +57,12 @@ export default function Product() {
                     </div>
                 </div>
             </div>
-            <Modal isOpen={isModalOpen} onClose={closeModal}>
-            </Modal>
+
+            {/* Conditionally render Modal only on the client-side */}
+            {typeof window !== 'undefined' && isModalOpen && (
+                <Modal isOpen={isModalOpen} onClose={closeModal} />
+            )}
+
             <Footer />
         </main>
     );
