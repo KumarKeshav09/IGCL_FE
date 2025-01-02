@@ -70,7 +70,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
               </p>
               <p className="text-gray-900 w-3/5">
                 <span className="text-black text-lg font-semibold">
-                  Know Your Compliance ,
+                  Know Your Compliance :
                 </span>
                 Your go-to tool for effortlessly navigating the complex
                 landscape of labour laws applicable to your establishment.
