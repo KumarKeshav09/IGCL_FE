@@ -1,45 +1,48 @@
 "use client";
-import LoadingScreen from "@/app/components/common/Loading";
-import html2pdf from "html2pdf.js";
 import React, { useRef, useState } from "react";
+import { jsPDF } from "jspdf";
+import html2pdf from "html2pdf.js";
 
 const Modal = ({ isOpen, onClose, data, kyc }) => {
   const contentRef = useRef();
-  const handleDownload = () => {
-    if (typeof window !== "undefined") {
-      const element = contentRef.current;
-
-      var opt = {
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-      };
-      if (data) {
-        html2pdf().from(element).set(opt).save("download.pdf");
-      }
-    }
-  };
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleClose = () => {
     onClose();
   };
 
-  if (!isOpen) return null;
-
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
-
-  console.log(data);
-  console.log(kyc);
-
   // Check if both kyc and data are empty
   const isNoDataAvailable =
     (!kyc || Object.keys(kyc).length === 0) && (!data || data.length === 0);
 
-  // useEffect(() => {
-  //   handleDownload();
-  // }, []);
+  const handleDownload = () => {
+    const element = document.getElementById("rep1");
+    const downloadBtn = document.getElementById("download-btn");
+    if (downloadBtn) {
+      downloadBtn.style.display = "none"; // Hide the button before generating the PDF
+    }
+    const options = {
+      filename: "report.pdf",
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "pt", format: "a3", orientation: "portrait" },
+    };
+
+    html2pdf()
+      .from(element)
+      .set(options)
+      .save()
+      .then(() => {
+        // After the PDF is generated, make sure to show the button again
+        if (downloadBtn) {
+          downloadBtn.style.display = "inline-block"; // Or whatever its original display style was
+        }
+      });
+  };
+
+  const handleOpen = () => setModalOpen(true);
+  const handleCloseModal = () => setModalOpen(false);
+
+  if (!isOpen) return null;
 
   return (
     <div
@@ -50,6 +53,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
       className="fixed top-0 right-0 left-0 z-50 w-full h-full max-h-full overflow-y-auto overflow-x-hidden flex justify-center items-center bg-transparent/[.8]"
     >
       <div
+        id="rep1"
         className="relative p-4 w-full max-w-7xl max-h-full"
         onClick={(e) => e.stopPropagation()}
       >
@@ -59,10 +63,15 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
         >
           <div className="flex items-center justify-between p-4 md:p-5 mx-10 rounded-t dark:border-gray-600">
             <div>
-              <h1 className="text-black text-4xl font-semibold">
-                Know Your Compliance
-              </h1>
+              <h1 className="text-black text-4xl font-semibold">Innovative Governance Corporation Limited (IGCL INDIA)</h1>
               <p className="text-gray-900 w-3/5">
+                A-611, Vaishali Utsav, Gandhi Path (W), Vaishali Nagar,
+                Jaipur-302021, Rajasthan (India)
+              </p>
+              <p className="text-gray-900 w-3/5">
+                <span className="text-black text-lg font-semibold">
+                  Know Your Compliance ,
+                </span>
                 Your go-to tool for effortlessly navigating the complex
                 landscape of labour laws applicable to your establishment.
               </p>
@@ -88,71 +97,72 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                 {/* If kyc exists, display the KYC table */}
                 {kyc ? (
                   <div className="overflow-x-auto">
-                    <div>
-                      <table className="min-w-full border border-gray-300 text-black text-start">
-                        <thead>
-                          <tr>
-                            <th className="border p-2 w-1/3">
-                              Name Of Organization
-                            </th>
-                            <td className="border border-gray-300 p-2">
-                              {kyc.NameOfOrganization}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th className="border border-gray-300 p-2">
-                              Date Of Commencement
-                            </th>
-                            <td className="border border-gray-300 p-2">
-                              {new Date(
-                                kyc.DateOfCommenceMent
-                              ).toLocaleDateString("en-IN")}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th className="border border-gray-300 p-2">
-                              GST Number
-                            </th>
-                            <td className="border border-gray-300 p-2">
-                              {kyc.GSTNumber}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th className="border border-gray-300 p-2">
-                              Type Of Industry
-                            </th>
-                            <td className="border border-gray-300 p-2">
-                              {kyc.TypeOfIndustry}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th className="border border-gray-300 p-2">
-                              State Of Operations
-                            </th>
-                            <td className="border border-gray-300 p-2">
-                              {kyc.StateOfOperations.join(", ")}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th className="border border-gray-300 p-2">
-                              Employee Count
-                            </th>
-                            <td className="border border-gray-300 p-2">
-                              {kyc.EmployeeCount}
-                            </td>
-                          </tr>
-                        </thead>
-                      </table>
-                    </div>
+                    <table className="min-w-full border border-gray-300 text-black text-start">
+                      <thead>
+                        <tr>
+                          <th className="border p-2 w-1/3">
+                            Name Of Organization
+                          </th>
+                          <td className="border border-gray-300 p-2">
+                            {kyc.NameOfOrganization}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th className="border border-gray-300 p-2">
+                            Date Of Commencement
+                          </th>
+                          <td className="border border-gray-300 p-2">
+                            {new Date(
+                              kyc.DateOfCommenceMent
+                            ).toLocaleDateString("en-IN")}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th className="border border-gray-300 p-2">
+                            GST Number
+                          </th>
+                          <td className="border border-gray-300 p-2">
+                            {kyc.GSTNumber}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th className="border border-gray-300 p-2">
+                            Type Of Industry
+                          </th>
+                          <td className="border border-gray-300 p-2">
+                            {kyc.TypeOfIndustry}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th className="border border-gray-300 p-2">
+                            State Of Operations
+                          </th>
+                          <td className="border border-gray-300 p-2">
+                            {kyc.StateOfOperations.join(", ")}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th className="border border-gray-300 p-2">
+                            Employee Count
+                          </th>
+                          <td className="border border-gray-300 p-2">
+                            {kyc.EmployeeCount}
+                          </td>
+                        </tr>
+                      </thead>
+                    </table>
                   </div>
                 ) : null}
 
-                <button
-                  onClick={handleDownload}
-                  className="border p-2 rounded-md border-gray-400 text-blue-600"
-                >
-                  Download PDF
-                </button>
+                <div className="px-6">
+                  <button
+                    id="download-btn"
+                    onClick={handleDownload}
+                    className="border p-2 rounded-md border-gray-400 text-blue-600"
+                  >
+                    Download PDF
+                  </button>
+                </div>
 
                 {/* Display the data table if data is available */}
                 <div className="overflow-x-auto">
@@ -169,7 +179,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Compliance Frequency
                           </th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-60 ">
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-60">
                             Remark
                           </th>
                         </tr>
@@ -187,8 +197,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                               {item.ComplianceFrequency}
                             </td>
                             <td className="px-8 py-4 text-sm text-gray-500">
-                              {console.log(item.State)}
-                              {item.remark == "This Law valid for "
+                              {item.remark === "This Law valid for "
                                 ? "-"
                                 : item.remark}
                             </td>

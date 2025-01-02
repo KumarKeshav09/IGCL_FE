@@ -19,8 +19,8 @@ const MyForm = () => {
       label: "Manufacturing without power",
     },
     { value: "Service", label: "Service" },
-    { value: "Telecom", label: "Telecom" },
-    { value: "Banking", label: "Banking" },
+    { value: "Telecom", label: "IT" },
+    { value: "Banking", label: "Banking/Finance" },
     { value: "Mines", label: "Mines" },
     {
       value: "Education Institute and NGO’s",
