@@ -23,8 +23,8 @@ const MyForm = () => {
     { value: "Banking", label: "Banking/Finance" },
     { value: "Mines", label: "Mines" },
     {
-      value: "Education Institute and NGO’s",
-      label: "Education Institute and NGO’s",
+      value: "Education Institute and NGO's",
+      label: "Education Institute and NGO's",
     },
     { value: "Pharmaceutical industry", label: "Pharmaceutical industry" },
     { value: "Construction industry", label: "Construction industry" },
@@ -148,7 +148,7 @@ const MyForm = () => {
     if (!formValues.TypeOfIndustry)
       newErrors.TypeOfIndustry = "Type of Industry is required";
     if (
-      formValues.TypeOfIndustry === "Education Institute and NGO’s" &&
+      formValues.TypeOfIndustry === "Education Institute and NGO's" &&
       !formValues.gstinNumber
     )
       newErrors.gstinNumber = "GSTIN Number is required";
@@ -223,12 +223,14 @@ const MyForm = () => {
       GSTNumber: formValues.gstinNumber,
       StateOfOperations: formValues.statesOfOperation,
       EmployeeCount: parseInt(formValues.employeeCount),
+      inAnyContractor: parseInt(formValues.maxContractLabourInAnyContract),
+      throughAnyContractor: parseInt(formValues.maxContractLabourEngaged),
       IsDeleted: false,
       pointTwelve: formValues.hasMigrantWorkers ,
-      pointThirteen: formValues.hasMigrantWorkersInContract,
+      pointThirteen: formValues.hasMigrantWorkers,
       pointFourteen: formValues.hasVehicle,
       pointFifteen: formValues.hasUnion,
-      pointSixteen: formValues.hasContractor,
+      pointSixteen: formValues.hasConstruction,
     };
 
   //   const kycData = {
@@ -266,7 +268,7 @@ const MyForm = () => {
       const verificationData = await verificationResponse.json();
 
       const response = await fetch(
-        `https://igcl-api-nodejs.onrender.com/v1/kycForm/createKyc`,
+        `${API_BASE_URL}/kycForm/createKyc`,
         {
           method: "POST",
           headers: {
