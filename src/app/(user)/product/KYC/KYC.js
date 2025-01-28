@@ -226,11 +226,11 @@ const MyForm = () => {
       inAnyContractor: parseInt(formValues.maxContractLabourInAnyContract),
       throughAnyContractor: parseInt(formValues.maxContractLabourEngaged),
       IsDeleted: false,
-      pointTwelve: formValues.hasMigrantWorkers ,
-      pointThirteen: formValues.hasMigrantWorkers,
-      pointFourteen: formValues.hasVehicle,
-      pointFifteen: formValues.hasUnion,
-      pointSixteen: formValues.hasConstruction,
+      pointTwelve: formValues.hasMigrantWorkers == "true" ? "true" : "",
+      pointThirteen: formValues.hasMigrantWorkersInContract == "true" ? "true" : "",
+      pointFourteen: formValues.hasVehicle == "true" ? "true" : "",
+      pointFifteen: formValues.hasUnion == "true" ? "true" : "",
+      pointSixteen: formValues.hasConstruction == "true" ? "true" : "",
     };
 
   //   const kycData = {
