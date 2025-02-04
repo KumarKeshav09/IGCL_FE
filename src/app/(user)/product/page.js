@@ -52,7 +52,7 @@ export default function Product() {
                             </ul>
                         </div>
                         <div className="flex justify-end mt-auto">
-                            <button onClick={openModal} className="bg-white text-indigo-500 px-4 py-2 font-semibold text-lg hover:bg-indigo-600 hover:text-white">More Info</button>
+                            <button onClick={openModal} className="bg-white text-indigo-500 px-4 py-2 font-semibold text-lg hover:bg-indigo-600 hover:text-white">Know Your Compliance</button>
                         </div>
                     </div>
                 </div>

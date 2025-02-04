@@ -62,14 +62,19 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
           className="relative bg-white rounded-lg shadow dark:bg-gray-700"
         >
           <div className="flex items-center justify-between p-4 md:p-5 mx-10 rounded-t dark:border-gray-600">
-            <div>
-              <h1 className="text-black text-4xl font-semibold">Innovative Governance Corporation Limited (IGCL INDIA)</h1>
-              <p className="text-gray-900 w-3/5">
+            <div className="justify-items-center">
+              <h1 className="text-black text-4xl font-semibold">
+                Innovative Governance Corporation Limited (IGCL INDIA)
+              </h1>
+              <p className="text-gray-900">
+                <span className="text-black text-lg font-semibold mr-2">
+                  Address :
+                </span>
                 A-611, Vaishali Utsav, Gandhi Path (W), Vaishali Nagar,
                 Jaipur-302021, Rajasthan (India)
               </p>
-              <p className="text-gray-900 w-3/5">
-                <span className="text-black text-lg font-semibold">
+              <p className="text-gray-900 w-3/5 text-center mt-8">
+                <span className="text-black text-lg font-semibold mr-2">
                   Know Your Compliance :
                 </span>
                 Your go-to tool for effortlessly navigating the complex
@@ -79,11 +84,23 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
             <img src="/images/logoWIthoutBg.png" className="w-32 h-32" />
           </div>
           <div className="border-b"></div>
-          <div className=" text-black font-semibold text-xl pt-6 px-14">
-            <span className="text-gray-500 text-3xl">" </span>Thank you for
+          {/* <div className=" text-black font-semibold text-xl pt-6 px-14">
+            <span className="text-gray-500 text-3xl">" </span>
+            <span className="">Thank you for
             choosing Know Your Compliance. We’re here to help you stay compliant
-            and focus on what matters most your business!{" "}
+            and focus on what matters most your business!{" "}</span>
             <span className="text-gray-500 text-3xl">"</span>
+          </div> */}
+
+          <div className="text-black font-semibold text-xl pt-6 px-14">
+            <div className="flex">
+              <span className="text-gray-500 text-3xl mr-2">"</span>
+              <span>
+                Thank you for choosing Know Your Compliance. We're here to help
+                you stay compliant and focus on what matters most your business!
+                <span className="text-gray-500 text-3xl"> "</span>
+              </span>
+            </div>
           </div>
 
           <div className="p-4 md:p-5 space-y-4">
@@ -210,6 +227,13 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
               </>
             )}
           </div>
+          <hr />
+          <div>
+            <p className="pl-12 pt-4 pb-8 text-black">
+              <strong>Note: </strong>
+              The applicable labour laws mentioned above are for informational purposes only.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -217,3 +241,6 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
 };
 
 export default Modal;
+
+
+// 
