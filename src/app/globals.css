@@ -48,7 +48,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
-  padding-left: 0 !important;
+  padding-left: 10px !important;
   --tw-ring-shadow: none !important;
 }
 textarea:focus {
