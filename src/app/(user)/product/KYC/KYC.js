@@ -202,12 +202,11 @@ const MyForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
   const [openModalLoading, setModalOpenLoading] = useState(false);
   const [openModalResult, setIsModalOpenResult] = useState(false);
   const [FilteredData, setFilteredData] = useState([]); // Assuming FilteredData is an array
   const [kycDataList, setKycDataList] = useState([]); // Assuming kycDataList is an array
-
 
   // Handle form submission
   const submit = async () => {
@@ -227,30 +226,31 @@ const MyForm = () => {
       throughAnyContractor: parseInt(formValues.maxContractLabourEngaged),
       IsDeleted: false,
       pointTwelve: formValues.hasMigrantWorkers == "true" ? "true" : "",
-      pointThirteen: formValues.hasMigrantWorkersInContract == "true" ? "true" : "",
+      pointThirteen:
+        formValues.hasMigrantWorkersInContract == "true" ? "true" : "",
       pointFourteen: formValues.hasVehicle == "true" ? "true" : "",
       pointFifteen: formValues.hasUnion == "true" ? "true" : "",
       pointSixteen: formValues.hasConstruction == "true" ? "true" : "",
     };
 
-  //   const kycData = {
-  //     "NameOfOrganization": "XYZ Technologies",
-  //     "DateOfCommenceMent": "2024-01-01T00:00:00Z",
-  //     "TypeOfIndustry": "Contractor",
-  //     "GSTNumber": "27AAABZ123",
-  //     "StateOfOperations": ["Himachal Pradesh"],
-  //     "EmployeeCount": 20,
-  //     "pointTwelve": "true",
-  //     "pointThirteen": "true",
-  //     "pointFourteen": "true",
-  //     "pointFifteen": "true",
-  //     "pointSixteen": "true",
-  //     // "CreatedBy": "609d29d1e9f0e1b2c3f8f9b5",
-  //     // "UpdatedDate": "2024-11-08T12:00:00Z",
-  //     "IsDeleted": false
-  // }
+    //   const kycData = {
+    //     "NameOfOrganization": "XYZ Technologies",
+    //     "DateOfCommenceMent": "2024-01-01T00:00:00Z",
+    //     "TypeOfIndustry": "Contractor",
+    //     "GSTNumber": "27AAABZ123",
+    //     "StateOfOperations": ["Himachal Pradesh"],
+    //     "EmployeeCount": 20,
+    //     "pointTwelve": "true",
+    //     "pointThirteen": "true",
+    //     "pointFourteen": "true",
+    //     "pointFifteen": "true",
+    //     "pointSixteen": "true",
+    //     // "CreatedBy": "609d29d1e9f0e1b2c3f8f9b5",
+    //     // "UpdatedDate": "2024-11-08T12:00:00Z",
+    //     "IsDeleted": false
+    // }
 
-  setKycDataList(kycData);
+    setKycDataList(kycData);
 
     try {
       const verificationResponse = await fetch(
@@ -267,22 +267,19 @@ const MyForm = () => {
 
       const verificationData = await verificationResponse.json();
 
-      const response = await fetch(
-        `${API_BASE_URL}/kycForm/createKyc`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(kycData),
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}/kycForm/createKyc`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(kycData),
+      });
 
       const resultData = await response.json();
       console.log("resultData ---->", resultData);
       setFilteredData(resultData?.matchingKyc);
-      setIsLoading(false)
+      setIsLoading(false);
     } catch (error) {
       console.error("Error during API calls:", error);
     }
@@ -399,7 +396,8 @@ const MyForm = () => {
             htmlFor="employeeCount"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
-            Employee count
+            Employee count{" "}
+            <span className="ml-1">(Including Contractual Workers)</span>
           </label>
           <input
             type="number"
@@ -407,7 +405,7 @@ const MyForm = () => {
             name="employeeCount"
             value={formValues.employeeCount}
             onChange={handleChange}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 paddingleft border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-4 pl-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             required
           />
           {errors.employeeCount && (
@@ -964,25 +962,25 @@ const MyForm = () => {
         ) : null}
       </div> */}
       <div>
-      {isLoading ? (
-        <>
-        <LoadingScreen
-          isOpen={openModalLoading}
-          onClose={closeModalLoading}
-        />
-        <h1>{console.log("isloadingUp ----->", isLoading)}</h1>
-        </>
-      ) : (
-        <>
-          <Modal
-            isOpen={openModalResult}
-            onClose={closeModalResult}
-            data={FilteredData}
-            kyc={kycDataList}
-          />
-          <h1>{console.log("isloadingUp ----->", isLoading)}</h1>
+        {isLoading ? (
+          <>
+            <LoadingScreen
+              isOpen={openModalLoading}
+              onClose={closeModalLoading}
+            />
+            <h1>{console.log("isloadingUp ----->", isLoading)}</h1>
           </>
-      )}
+        ) : (
+          <>
+            <Modal
+              isOpen={openModalResult}
+              onClose={closeModalResult}
+              data={FilteredData}
+              kyc={kycDataList}
+            />
+            <h1>{console.log("isloadingUp ----->", isLoading)}</h1>
+          </>
+        )}
       </div>
     </>
   );
