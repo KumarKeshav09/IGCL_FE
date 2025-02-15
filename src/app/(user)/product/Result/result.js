@@ -63,7 +63,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
         >
           <div className="flex items-center justify-between p-4 md:p-5 mx-10 rounded-t dark:border-gray-600">
             <div className="justify-items-center">
-              <h1 className="text-black text-4xl font-semibold">
+              <h1 className="text-black text-3xl font-bold">
                 Innovative Governance Corporation Limited (IGCL INDIA)
               </h1>
               <p className="text-gray-900">
@@ -158,14 +158,42 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                             {kyc.StateOfOperations.join(", ")}
                           </td>
                         </tr>
-                        <tr>
-                          <th className="border border-gray-300 p-2">
-                            Employee Count
-                          </th>
-                          <td className="border border-gray-300 p-2">
-                            {kyc.EmployeeCount}
-                          </td>
-                        </tr>
+                        {kyc.EmployeeCount > 0 ? (
+                          <tr>
+                            <th className="border border-gray-300 p-2">
+                              Employee Count
+                            </th>
+                            <td className="border border-gray-300 p-2">
+                              {kyc.EmployeeCount}{" "}
+                              <span className="ml-2">
+                                (Including Contractual Workers)
+                              </span>
+                            </td>
+                          </tr>
+                        ) : null}
+
+                        {kyc.inAnyContractor > 0 ? (
+                          <tr>
+                            <th className="border border-gray-300 p-2">
+                              Maximum Number of Contract Labor Engaged in any
+                              Contract
+                            </th>
+                            <td className="border border-gray-300 p-2">
+                              {kyc.inAnyContractor}{" "}
+                            </td>
+                          </tr>
+                        ) : null}
+                        {kyc.throughAnyContractor > 0 ? (
+                          <tr>
+                            <th className="border border-gray-300 p-2">
+                              Maximum Number of Contract labour Engaged through
+                              any Contractor
+                            </th>
+                            <td className="border border-gray-300 p-2">
+                              {kyc.throughAnyContractor}{" "}
+                            </td>
+                          </tr>
+                        ) : null}
                       </thead>
                     </table>
                   </div>
@@ -191,7 +219,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                             S. No.
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Act Name
+                            Indicative Acts Applicable on your Establishment
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Compliance Frequency
@@ -231,7 +259,28 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
           <div>
             <p className="pl-12 pt-4 pb-8 text-black">
               <strong>Note: </strong>
-              The applicable labour laws mentioned above are for informational purposes only.
+              <ul className="list-decimal mt-2 list-inside text-gray-600 space-y-2">
+                <li>
+                  This report is computer-generated and serves as a helpful tool
+                  for understanding the applicability of labor law within your
+                  establishment.
+                </li>
+                <li>
+                  While the information provided is informative, it is not
+                  intended to be an official document and should not be used for
+                  legal regulatory purposes.
+                </li>
+                <li>
+                  The report is designed to assist in understanding general
+                  compliance with labor laws, but it should not be relied upon
+                  as a legally binding reference.
+                </li>
+                <li>
+                  This document is for internal use and guidance only, and is
+                  not a substitute for formal legal advice or compliance
+                  documentation.
+                </li>
+              </ul>
             </p>
           </div>
         </div>
@@ -242,5 +291,4 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
 
 export default Modal;
 
-
-// 
+//
