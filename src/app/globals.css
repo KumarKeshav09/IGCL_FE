@@ -73,6 +73,12 @@ textarea:focus {
   background-size: cover;
 }
 
+.required::after {
+  content: " *";
+  color: red;
+  font-size: 20px;
+}
+
 .demo-content {
   position: relative;
 }
