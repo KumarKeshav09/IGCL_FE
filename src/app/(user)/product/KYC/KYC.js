@@ -197,6 +197,26 @@ const MyForm = () => {
           "Maximum Number of Contract Labor Engaged in any Contract is required";
       }
     }
+    
+    if (!formValues.hasMigrantWorkers)
+      newErrors.numMigrantWorkers =
+        "Please select an option you have Five or More than Five Inter-state Migrant Workers in your establishment";
+
+    if (!formValues.hasContractor)
+      newErrors.hasContractor =
+        "Please select whether you have a contractor in your establishment.";
+
+    if (!formValues.hasConstruction)
+      newErrors.hasConstruction =
+        "Please select an option for Construction Worker in your Establishment";
+
+    if (!formValues.hasUnion)
+      newErrors.hasUnion =
+        "Please select an option for Trade Union in your Establishment";
+
+    if (!formValues.hasVehicle)
+      newErrors.hasVehicle =
+        "Please select an option for motor vehicle driver workers";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -212,8 +232,13 @@ const MyForm = () => {
   const submit = async () => {
     setIsLoading(true); // Set loading to true at the beginning
     setModalOpenLoading(true); // Show loading modal
+    console.log("submit start")
 
-    // if (!validateForm()) return;
+    if (!validateForm()) {
+      setIsLoading(false);
+      console.log("submit getting error")
+      return;
+    }
 
     const kycData = {
       NameOfOrganization: formValues.organizationName,
@@ -231,6 +256,11 @@ const MyForm = () => {
       pointFourteen: formValues.hasVehicle == "true" ? "true" : "",
       pointFifteen: formValues.hasUnion == "true" ? "true" : "",
       pointSixteen: formValues.hasConstruction == "true" ? "true" : "",
+      Name: formValues.representativeName,
+      Designation: formValues.representativeDesignation,
+      Email: formValues.representativeEmail,
+      Mobile: formValues.representativeMobile,
+      Website: formValues.representativeWebsite,
     };
 
     //   const kycData = {
@@ -305,7 +335,7 @@ const MyForm = () => {
         <div className="mb-5">
           <label
             htmlFor="organizationName"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
           >
             Name of organization
           </label>
@@ -327,7 +357,7 @@ const MyForm = () => {
         <div className="mb-5">
           <label
             htmlFor="date"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
           >
             Date Of Commencement
           </label>
@@ -347,7 +377,7 @@ const MyForm = () => {
         <div className="mb-5">
           <label
             htmlFor="TypeOfIndustry"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
           >
             Type of Industry
           </label>
@@ -394,7 +424,7 @@ const MyForm = () => {
         <div className="mb-5">
           <label
             htmlFor="employeeCount"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
           >
             Employee count{" "}
             <span className="ml-1">(Including Contractual Workers)</span>
@@ -417,7 +447,7 @@ const MyForm = () => {
         <div className="mb-5">
           <label
             htmlFor="isMultiState"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
           >
             Do you operate in Multi-State?
           </label>
@@ -453,7 +483,7 @@ const MyForm = () => {
           <div className="mb-5">
             <label
               htmlFor="statesOfOperation"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
             >
               States Of Operation
             </label>
@@ -478,7 +508,7 @@ const MyForm = () => {
           <div className="mb-5">
             <label
               htmlFor="statesOfOperation"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
             >
               State Of Operation
             </label>
@@ -505,7 +535,7 @@ const MyForm = () => {
             <div className="mb-5">
               <label
                 htmlFor="hasContractor"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
               >
                 Do you have any Contractor in your establishment?
               </label>
@@ -534,13 +564,18 @@ const MyForm = () => {
               <label htmlFor="hasContractorNo" className="ml-2 text-black">
                 No
               </label>
+              {errors.hasContractor && (
+                <div className="error text-red-500 mt-1">
+                  {errors.hasContractor}
+                </div>
+              )}
             </div>
             {formValues.hasContractor === "true" && (
               <>
                 <div className="mb-5">
                   <label
                     htmlFor="numberOfContractors"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
                   >
                     Total Number of Contractors Engaged in Your Establishment
                   </label>
@@ -561,7 +596,7 @@ const MyForm = () => {
                 <div className="mb-5">
                   <label
                     htmlFor="maxContractLabourEngaged"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
                   >
                     Maximum Number of Contract labour Engaged through any
                     Contractor
@@ -585,7 +620,7 @@ const MyForm = () => {
             <div className="mb-5">
               <label
                 htmlFor="hasMigrantWorkers"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
               >
                 Do you have Five or More than Five Inter-state Migrant Workers
                 in your establishment?
@@ -615,6 +650,11 @@ const MyForm = () => {
               <label htmlFor="hasMigrantWorkersNo" className="ml-2 text-black">
                 No
               </label>
+              {errors.hasMigrantWorkers && (
+                <div className="text-red-500 text-sm mt-1">
+                  {errors.hasMigrantWorkers}
+                </div>
+              )}
             </div>
           </>
         )}
@@ -623,7 +663,7 @@ const MyForm = () => {
             <div className="mb-5">
               <label
                 htmlFor="maxContractLabourInAnyContract"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
               >
                 Maximum Number of Contract Labor Engaged in any Contract
               </label>
@@ -644,7 +684,7 @@ const MyForm = () => {
             <div className="mb-5">
               <label
                 htmlFor="hasMigrantWorkersInContract"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
               >
                 Do you have Five or More than Five Inter-state Migrant Workers
                 engaged in any Contract?
@@ -677,9 +717,9 @@ const MyForm = () => {
               >
                 No
               </label>
-              {errors.maxContractLabourInAnyContract && (
+              {errors.hasMigrantWorkersInContract && (
                 <div className="error text-red-500 mt-1">
-                  {errors.maxContractLabourInAnyContract}
+                  {errors.hasMigrantWorkersInContract}
                 </div>
               )}
             </div>
@@ -688,7 +728,7 @@ const MyForm = () => {
         <div className="mb-5">
           <label
             htmlFor="hasVehicle"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
           >
             Do you have Five or More than Five Motor Vehicle Driver Workers in
             your establishment?
@@ -715,16 +755,14 @@ const MyForm = () => {
           <label htmlFor="hasVehicleNo" className="ml-2 text-black">
             No
           </label>
-          {errors.maxContractLabourInAnyContract && (
-            <div className="error text-red-500 mt-1">
-              {errors.maxContractLabourInAnyContract}
-            </div>
+          {errors.hasVehicle && (
+            <div className="error text-red-500 mt-1">{errors.hasVehicle}</div>
           )}
         </div>
         <div className="mb-5">
           <label
             htmlFor="hasUnion"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
           >
             Is Any Trade Union in your Establishment?
           </label>
@@ -750,10 +788,8 @@ const MyForm = () => {
           <label htmlFor="hasUnionNo" className="ml-2 text-black">
             No
           </label>
-          {errors.maxContractLabourInAnyContract && (
-            <div className="error text-red-500 mt-1">
-              {errors.maxContractLabourInAnyContract}
-            </div>
+          {errors.hasUnion && (
+            <div className="error text-red-500 mt-1">{errors.hasUnion}</div>
           )}
         </div>
 
@@ -761,7 +797,7 @@ const MyForm = () => {
           <div className="mb-5">
             <label
               htmlFor="hasConstruction"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
             >
               Is Any Construction Worker in your Establishment?
             </label>
@@ -790,6 +826,11 @@ const MyForm = () => {
             <label htmlFor="hasConstructionNo" className="ml-2 text-black">
               No
             </label>
+            {errors.hasConstruction && (
+              <div className="error text-red-500 mt-1">
+                {errors.hasConstruction}
+              </div>
+            )}
           </div>
         )}
       </form>
@@ -797,7 +838,7 @@ const MyForm = () => {
         <div className="mb-5">
           <label
             htmlFor="representativeName"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
           >
             Name of Representative
           </label>
@@ -819,7 +860,7 @@ const MyForm = () => {
         <div className="mb-5">
           <label
             htmlFor="representativeDesignation"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
           >
             Designation
           </label>
@@ -841,7 +882,7 @@ const MyForm = () => {
         <div className="mb-5">
           <label
             htmlFor="representativeEmail"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
           >
             Email Address
           </label>
@@ -863,7 +904,7 @@ const MyForm = () => {
         <div className="mb-5">
           <label
             htmlFor="representativeMobile"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white required"
           >
             Mobile Number
           </label>
