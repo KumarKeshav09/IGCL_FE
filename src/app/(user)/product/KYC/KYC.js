@@ -5,11 +5,13 @@ import Select from "react-select"; // Ensure you have the react-select package i
 import { API_BASE_URL } from "../../../../../utils/constants";
 import Cookies from "js-cookie";
 import Modal from "../Result/result";
+import { useRouter } from "next/navigation";
 import LoadingScreen from "@/app/components/common/Loading";
 
 const MyForm = () => {
   const token = Cookies.get("UserId");
   const [errors, setErrors] = useState({});
+  const router = useRouter();
   const [matchedStates, setMatchedStates] = useState([]);
   // Options for the select components
   const IndustryOptions = [
@@ -19,7 +21,7 @@ const MyForm = () => {
       label: "Manufacturing without power",
     },
     { value: "Service", label: "Service" },
-    { value: "Telecom", label: "IT" },
+    { value: "Information Technology", label: "Information Technology (IT)" },
     { value: "Banking", label: "Banking/Finance" },
     { value: "Mines", label: "Mines" },
     {
@@ -197,9 +199,9 @@ const MyForm = () => {
           "Maximum Number of Contract Labor Engaged in any Contract is required";
       }
     }
-    
+
     if (!formValues.hasMigrantWorkers)
-      newErrors.numMigrantWorkers =
+      newErrors.hasMigrantWorkers =
         "Please select an option you have Five or More than Five Inter-state Migrant Workers in your establishment";
 
     if (!formValues.hasContractor)
@@ -232,11 +234,11 @@ const MyForm = () => {
   const submit = async () => {
     setIsLoading(true); // Set loading to true at the beginning
     setModalOpenLoading(true); // Show loading modal
-    console.log("submit start")
+    console.log("submit start");
 
     if (!validateForm()) {
       setIsLoading(false);
-      console.log("submit getting error")
+      console.log("submit getting error");
       return;
     }
 
@@ -319,9 +321,12 @@ const MyForm = () => {
   useEffect(() => {
     if (!isLoading) {
       if (FilteredData && FilteredData.length > 0) {
-        setIsModalOpenResult(true); // Open the result modal when data is ready
-      } else {
-        setIsModalOpenResult(false); // Close the result modal if no data
+        if (typeof window !== "undefined") {
+          localStorage.setItem("FilteredData", JSON.stringify(FilteredData));
+          localStorage.setItem("kycDataList", JSON.stringify(kycDataList));
+          window.open("/product/KycReport", "_blank");
+        }
+        // setIsModalOpenResult(true); // Open the result modal when data is ready
       }
     }
   }, [isLoading, FilteredData]); // Re-run whenever isLoading or FilteredData changes

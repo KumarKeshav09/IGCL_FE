@@ -384,7 +384,18 @@ export default function Home() {
           </section> */}
         {/* </Slider> */}
       </div>
-
+      <marquee
+        behavior="scroll"
+        direction="left"
+        className="p-2 text-lg font-bold text-white bg-indigo-600"
+        // style={{ backgroundColor: "#5E9C40" }}
+      >
+        <span className="mr-4">
+          IGCL India is proudly empaneled with the Ministry of Women and Child
+          Development, Government of India, to conduct training and awareness
+          programs under the POSH Act.
+        </span>
+      </marquee>
       {/* what we do */}
       <div className="py-2 md:py-8 whatWeDoMain px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
