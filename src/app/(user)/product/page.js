@@ -17,11 +17,12 @@ export default function Product() {
     const closeModal = () => setModalOpen(false);
 
     useEffect(() => {
-        // This code will run only on the client side
-        if (typeof window !== 'undefined' && typeof self !== 'undefined') {
-            const selfReference = self; // Safe to use `self` here
+        if (typeof window !== "undefined") {
+            const selfReference = globalThis;
+            console.log(selfReference);
         }
     }, []);
+    
 
     return (
         <main>
