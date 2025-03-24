@@ -18,32 +18,48 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
   const handleDownload = () => {
     const element = document.getElementById("rep1");
     const downloadBtn = document.getElementById("download-btn");
+    const desktopLogo = document.querySelector(".desktop-logo");
+    const mobileLogo = document.querySelector(".mobile-logo");
+
     if (downloadBtn) {
       downloadBtn.style.display = "none"; // Hide the button before generating the PDF
     }
-    // element.style.padding = "70px 10px";
+
+    // Hide the unnecessary logo based on the view
+    if (window.innerWidth >= 768) {
+      // Desktop view: hide the mobile logo
+      if (mobileLogo) mobileLogo.style.display = "none";
+    } else {
+      // Mobile view: hide the desktop logo
+      if (desktopLogo) desktopLogo.style.display = "none";
+    }
+
     const options = {
       margin: 30,
       filename: "report.pdf",
       html2canvas: { scale: 2 },
-      jsPDF: { 
-        unit: "pt", 
-        format: "a3", 
+      jsPDF: {
+        unit: "pt",
+        format: "a3",
         orientation: "portrait",
-        margin: [100, 10, 50, 10] // [top, left, bottom, right] margins
-      }
+        margin: [100, 10, 50, 10], // [top, left, bottom, right] margins
+      },
     };
-    
+
     html2pdf()
       .from(element)
       .set(options)
       .save()
       .then(() => {
+        // Restore the hidden logo after generating the PDF
+        if (mobileLogo) mobileLogo.style.display = "block";
+        if (desktopLogo) desktopLogo.style.display = "block";
+
         if (downloadBtn) {
-          downloadBtn.style.display = "inline-block"; 
+          downloadBtn.style.display = "inline-block"; // Restore the button
         }
       });
-    
+
     if (typeof window !== "undefined") {
       localStorage.removeItem("FilteredData");
       localStorage.removeItem("kycDataList");
@@ -72,10 +88,10 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
           ref={contentRef}
           className="relative m-4 border bg-white rounded-lg shadow dark:bg-gray-700"
         >
-          {/* <img
+          <img
             src="/images/logoWIthoutBg.png"
-            className="w-32 block md:hidden ml-auto mr-auto h-32"
-          /> */}
+            className="w-32 block md:hidden ml-auto mr-auto h-32 mobile-logo"
+          />
           <div className="flex items-center justify-between p-1 md:p-5 mx-4 md:mx-10 rounded-t dark:border-gray-600">
             <div className="justify-items-center">
               <h1 className="text-black md:text-3xl font-bold text-xl">
@@ -98,7 +114,7 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
             </div>
             <img
               src="/images/logoWIthoutBg.png"
-              className="w-32 hidden md:block h-32"
+              className="w-32 hidden md:block h-32 desktop-logo"
             />
           </div>
           <div className="border-b"></div>
