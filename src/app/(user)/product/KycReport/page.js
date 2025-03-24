@@ -1,30 +1,29 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
-import Modal from "../Result/result";
-import LoadingScreen from "@/app/components/common/Loading";
+const Modal = dynamic(() => import("../Result/result"), { ssr: false });
+const LoadingScreen = dynamic(() => import("@/app/components/common/Loading"), { ssr: false });
 
 const MyKycReport = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [openModalLoading, setModalOpenLoading] = useState(false);
   const [openModalResult, setIsModalOpenResult] = useState(false);
-  const [FilteredData, setFilteredData] = useState([]); // Assuming FilteredData is an array
-  const [kycDataList, setKycDataList] = useState([]); // Assuming kycDataList is an array
+  const [FilteredData, setFilteredData] = useState([]);
+  const [kycDataList, setKycDataList] = useState([]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedData = localStorage.getItem("FilteredData");
       const storedKycData = localStorage.getItem("kycDataList");
-      if (storedData && storedKycData) {
-        setFilteredData(JSON.parse(storedData));
-        setKycDataList(JSON.parse(storedKycData));
-      }
-      setIsLoading(false);
-    } // Simulate loading complete
+
+      setFilteredData(storedData ? JSON.parse(storedData) : []);
+      setKycDataList(storedKycData ? JSON.parse(storedKycData) : []);
+    }
+    setIsLoading(false);
   }, []);
 
-  // Watch FilteredData and isLoading to handle modal logic
   useEffect(() => {
     if (!isLoading) {
       if (FilteredData && FilteredData.length > 0) {
@@ -33,11 +32,11 @@ const MyKycReport = () => {
         setIsModalOpenResult(false);
       }
     }
-  }, [isLoading, FilteredData]); // Re-run whenever isLoading or FilteredData changes
+  }, [isLoading, FilteredData]);
 
-  // Close modal functions
   const closeModalLoading = () => setModalOpenLoading(false);
   const closeModalResult = () => setIsModalOpenResult(false);
+
   return (
     <>
       <div>

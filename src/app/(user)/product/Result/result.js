@@ -72,10 +72,10 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
           ref={contentRef}
           className="relative m-4 border bg-white rounded-lg shadow dark:bg-gray-700"
         >
-          <img
+          {/* <img
             src="/images/logoWIthoutBg.png"
             className="w-32 block md:hidden ml-auto mr-auto h-32"
-          />
+          /> */}
           <div className="flex items-center justify-between p-1 md:p-5 mx-4 md:mx-10 rounded-t dark:border-gray-600">
             <div className="justify-items-center">
               <h1 className="text-black md:text-3xl font-bold text-xl">
