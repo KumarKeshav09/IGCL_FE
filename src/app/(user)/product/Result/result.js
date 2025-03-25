@@ -293,24 +293,24 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
           <div>
             <p className="pl-12 pt-4 pb-8 text-black">
               <strong>Note: </strong>
-              <ul className="list-decimal mt-2 list-inside text-gray-600 space-y-2">
+              <ul className="mt-2 list-inside text-gray-600 space-y-2">
                 <li>
-                  This report is computer-generated and serves as a helpful tool
+                  1. This report is computer-generated and serves as a helpful tool
                   for understanding the applicability of labor law within your
                   establishment.
                 </li>
                 <li>
-                  While the information provided is informative, it is not
+                  2. While the information provided is informative, it is not
                   intended to be an official document and should not be used for
                   legal regulatory purposes.
                 </li>
                 <li>
-                  The report is designed to assist in understanding general
+                  3. The report is designed to assist in understanding general
                   compliance with labor laws, but it should not be relied upon
                   as a legally binding reference.
                 </li>
                 <li>
-                  This document is for internal use and guidance only, and is
+                  4. This document is for internal use and guidance only, and is
                   not a substitute for formal legal advice or compliance
                   documentation.
                 </li>
