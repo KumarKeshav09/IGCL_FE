@@ -71,6 +71,8 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
 
   if (!isOpen) return null;
 
+  console.log("kyc",kyc)
+
   return (
     <div
       onClick={handleClose}
@@ -228,6 +230,38 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                             </td>
                           </tr>
                         ) : null}
+                        <tr>
+                          <th className="border border-gray-300 p-2">
+                          Name of Representative
+                          </th>
+                          <td className="border border-gray-300 p-2">
+                            {kyc.Name}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th className="border border-gray-300 p-2">
+                          Designation
+                          </th>
+                          <td className="border border-gray-300 p-2">
+                            {kyc.Designation}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th className="border border-gray-300 p-2">
+                            Email
+                          </th>
+                          <td className="border border-gray-300 p-2">
+                            {kyc.Email}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th className="border border-gray-300 p-2">
+                            Mobile
+                          </th>
+                          <td className="border border-gray-300 p-2">
+                            {kyc.Mobile}
+                          </td>
+                        </tr>
                       </thead>
                     </table>
                   </div>
