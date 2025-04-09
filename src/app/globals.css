@@ -89,7 +89,7 @@ textarea:focus {
   align-items: center;
 }
 .heroLabourtext{
-  font-size: 6rem;
+  font-size: 5rem;
   /* font-weight: 400; */
   /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(13,22,97,1) 0%, rgba(10,38,129,1) 47%, rgba(160,161,166,1) 100%); */
   /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(13,22,97,1) 0%, rgba(10,38,129,1) 47%, rgba(0,42,255,1) 100%); */
@@ -150,9 +150,9 @@ textarea:focus {
     text-wrap: balance;
   }
 }
-@media (max-width: 1380px) {
+@media (max-width: 1440px) {
   .heroLabourtext{
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 400;
   }
 
