@@ -141,6 +141,8 @@ const MyForm = () => {
     });
   };
 
+  console.log("formValues", formValues);
+
   const validateForm = () => {
     const newErrors = {};
     // Check required fields
@@ -200,13 +202,15 @@ const MyForm = () => {
       }
     }
 
-    if (!formValues.hasMigrantWorkers)
-      newErrors.hasMigrantWorkers =
-        "Please select an option you have Five or More than Five Inter-state Migrant Workers in your establishment";
+    if (formValues.TypeOfIndustry !== "Contractor") {
+      if (!formValues.hasContractor)
+        newErrors.hasContractor =
+          "Please select whether you have a contractor in your establishment.";
 
-    if (!formValues.hasContractor)
-      newErrors.hasContractor =
-        "Please select whether you have a contractor in your establishment.";
+      if (!formValues.hasMigrantWorkers)
+        newErrors.hasMigrantWorkers =
+          "Please select an option you have Five or More than Five Inter-state Migrant Workers in your establishment";
+    }
 
     if (!formValues.hasConstruction)
       newErrors.hasConstruction =

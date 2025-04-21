@@ -106,6 +106,17 @@ const Modal = ({ isOpen, onClose, data, kyc }) => {
                 A-611, Vaishali Utsav, Gandhi Path (W), Vaishali Nagar,
                 Jaipur-302021, Rajasthan (India)
               </p>
+              <p className="text-gray-900">
+                <span className="text-black text-lg font-semibold mr-2">
+                  Mobile : <span className="text-gray-900 text-sm mr-2">9314046269</span>
+                </span>
+                <span className="text-black text-lg font-semibold mr-2">
+                  Email : <span className="text-gray-900 text-sm mr-2">info@igclindia.com</span>
+                </span>
+                <span className="text-black text-lg font-semibold mr-2">
+                  Website : <span className="text-gray-900 text-sm mr-2">https://igclindia.com</span>
+                </span>
+              </p>
               <p className="text-gray-900 md:w-3/5 text-center mt-8">
                 <span className="text-black text-lg font-semibold mr-2">
                   Know Your Compliance :
