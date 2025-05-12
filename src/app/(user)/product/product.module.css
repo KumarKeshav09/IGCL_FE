@@ -1,6 +1,6 @@
 .backgroundImg {
     height: 40rem;
-    background-image: url('/images/image2.jpg');
+    background-image: url('/images/image6.jpg');
     background-size: cover; /* Scales the image to be fully visible */
     background-repeat: no-repeat; /* Prevents image repetition */
 }

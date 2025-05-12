@@ -404,7 +404,7 @@ export default function Home() {
               <div>
                 <img
                   className="h-32 lg:h-64  w-full"
-                  src="/images/imgp1.jpeg"
+                  src="/images/hero_labourNew.jpg"
                   alt=""
                 />
               </div>
@@ -522,7 +522,7 @@ export default function Home() {
                 </div>
               </Link>
               <Link href="/services/1-detail#settings" className={styles.card}>
-                <img src="/images/image2.jpg" className={styles.image} />
+                <img src="/images/hero_labourNew.jpg" className={styles.image} />
                 <div className={styles.overlay}>
                   <div className={styles.text}>
                     <div>

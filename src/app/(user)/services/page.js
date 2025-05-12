@@ -64,7 +64,7 @@ export default function Services() {
                             </Link>
                             <Link href='/services/1-detail#settings' className={styles.card}>
                                 <img
-                                    src="/images/image2.jpg"
+                                    src="/images/hero_labourNew.jpg"
                                     className={styles.image}
                                 />
                                 <div className={styles.overlay}>
