@@ -336,7 +336,7 @@ export default function aboutUs() {
             </p>
           </div>
         </div>
-        <div className={`${styles.teamInnerSection}`}>
+        {/* <div className={`${styles.teamInnerSection}`}>
           <div className="w-[100%] md:w-[40%] lg:w-[20%] p-4">
             <img
               src="../../images/Sanju.jpeg"
@@ -358,7 +358,7 @@ export default function aboutUs() {
               and peace of mind in the complex world of labor law.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
       <hr />
 
