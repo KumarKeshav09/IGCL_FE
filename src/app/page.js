@@ -94,7 +94,7 @@ export default function Home() {
     setLoading(true); // Set loading to true before fetching
     try {
       const response = await fetch(
-        `${API_BASE_URL}/client/allClient?page=1&limit=100`
+        `${API_BASE_URL}/client/allClient?page=1&limit=500`
       );
       const data = await response.json();
       if (data.success) {
