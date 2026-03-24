@@ -28,7 +28,7 @@ export default function aboutUs() {
   const getAllClient = async () => {
     setLoading(true); // Set loading to true before fetching
     try {
-      const response = await fetch(`${API_BASE_URL}/client/allClient`);
+      const response = await fetch(`${API_BASE_URL}/client/allClient?page=1&limit=500`);
       const data = await response.json();
       if (data.success) {
         setListData(data);
